@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Chirpy</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2022-03-27T20:24:34+08:00</updated>
+  <updated>2022-03-27T21:46:04+08:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>/</uri>
@@ -17,6 +17,46 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>another test</title>
+    <link href="/posts/test-2-post/" rel="alternate" type="text/html" title="another test" />
+    <published>2022-02-04T07:32:00+08:00</published>
+  
+    <updated>2022-02-04T07:32:00+08:00</updated>
+  
+    <id>/posts/test-2-post/</id>
+    <content src="/posts/test-2-post/" />
+    <author>
+      <name>yc zheng</name>
+    </author>
+
+  
+    
+    <category term="nnnn" />
+    
+    <category term="pppp" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      This post is to enable Page Views on the Chirpy theme based blog that you just built. This requires technical knowledge and it’s recommended to keep the google_analytics.pv.* empty unless you have a good reason. If your website has low traffic, the page views count would discourage you to write more blogs. With that said, let’s start with the setup.
+
+Set up Google Analytics
+
+Create GA account a...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -181,46 +221,6 @@ There are two ways to create a new repository for this theme:
 
   Using the Chirpy Starter - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
   Forking ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Writing a New Post</title>
-    <link href="/posts/write-a-new-post/" rel="alternate" type="text/html" title="Writing a New Post" />
-    <published>2019-08-08T14:10:00+08:00</published>
-  
-    <updated>2019-08-08T14:10:00+08:00</updated>
-  
-    <id>/posts/write-a-new-post/</id>
-    <content src="/posts/write-a-new-post/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      This post will guide you how to write a post on Chirpy theme. Even if you have previous experience with Jekyll, this article is worth reading, because many features require specific variables to be set.
-
-Naming and Path
-
-Create a new file named YYYY-MM-DD-TITLE.EXTENSION and put it in the _posts of the root directory. Please note that the EXTENSION must be one of md and markdown. If you want to...
     </summary>
   
 
