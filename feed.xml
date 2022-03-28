@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-03-28T20:45:29+08:00</updated>
+  <updated>2022-03-28T20:49:02+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>Two Sum</title>
-    <link href="/posts/Write-A-Post/" rel="alternate" type="text/html" title="Two Sum" />
+    <link href="/posts/Two-Sum/" rel="alternate" type="text/html" title="Two Sum" />
     <published>2022-03-27T11:33:00+08:00</published>
   
-    <updated>2022-03-28T20:44:44+08:00</updated>
+    <updated>2022-03-27T11:33:00+08:00</updated>
   
-    <id>/posts/Write-A-Post/</id>
-    <content src="/posts/Write-A-Post/" />
+    <id>/posts/Two-Sum/</id>
+    <content src="/posts/Two-Sum/" />
     <author>
       <name>Yuchao</name>
     </author>
