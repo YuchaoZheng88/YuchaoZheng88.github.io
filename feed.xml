@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-03-28T13:41:53+08:00</updated>
+  <updated>2022-03-28T20:10:58+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -63,6 +63,101 @@ Steps:
   cd YuchaoZheng88.github.io/
   push the YuchaoZheng88.github.io submodule
  ...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Buffer over flow</title>
+    <link href="/posts/BOF/" rel="alternate" type="text/html" title="Buffer over flow" />
+    <published>2022-03-27T11:33:00+08:00</published>
+  
+    <updated>2022-03-27T11:33:00+08:00</updated>
+  
+    <id>/posts/BOF/</id>
+    <content src="/posts/BOF/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Learn from Video
+
+understand stack MOST IMPORTANT !!!
+
+What happens when you call a procedure?
+
+  https://www.youtube.com/watch?v=RU5vUIl1vRs
+
+
+Assembly Programming Assembly Function Stack Frame Explained
+
+  https://www.youtube.com/watch?v=vcfQVwtoyHY
+
+
+
+
+{low}
+ESP points to the top of the stack, at lower memory location.
+{buffer}
+EBP points to higher memory address, at the bottom of the stack,...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Jr Penetrarion Test</title>
+    <link href="/posts/Jr-Penetration-Tester/" rel="alternate" type="text/html" title="Jr Penetrarion Test" />
+    <published>2022-01-28T00:00:00+08:00</published>
+  
+    <updated>2022-01-28T00:00:00+08:00</updated>
+  
+    <id>/posts/Jr-Penetration-Tester/</id>
+    <content src="/posts/Jr-Penetration-Tester/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Content Discovery
+
+  Wappalyzer (https://www.wappalyzer.com/)
+  The Wayback Machine (https://archive.org/web/)
+  Automated Discovery https://github.com/danielmiessler/SecLists
+  ffuf,  “Fuzz Faster you Fool”
+  user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u http://MACHINE_IP/FUZZ
+  dirb
+  user@machine$ dirb http://MACHINE_IP/ /usr/share/wordlists/SecLists...
     </summary>
   
 
