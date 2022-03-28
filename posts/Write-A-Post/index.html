@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-27T11:33:00+08:00","datePublished":"2022-03-27T11:33:00+08:00","description":"How to write a post","headline":"How to write a post","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Write-A-Post/"},"url":"/posts/Write-A-Post/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-28T11:50:52+08:00","datePublished":"2022-03-27T11:33:00+08:00","description":"How to write a post","headline":"How to write a post","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Write-A-Post/"},"url":"/posts/Write-A-Post/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -584,6 +584,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -650,6 +662,24 @@
 
       <!-- lastmod date -->
       
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago"
+    data-ts="1648439452"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    >
+  2022-03-27
+</em>
+
+      </span>
+      
 
       <!-- read time -->
       <!--
@@ -671,7 +701,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="46 words">
+  title="88 words">
   <em>1 min</em> read</span>
 
 
@@ -703,6 +733,36 @@
   <li><code class="language-plaintext highlighter-rouge">cd ..</code></li>
   <li>push the zenbro.github.io module</li>
 </ul>
+
+<h5 id="easy-way"><span class="mr-2">easy way:</span><a href="#easy-way" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h5></h5>
+
+<div class="language-bash nolineno highlighter-rouge" file="quickinit.sh"><div class="code-header">
+        <span data-label-text="quickinit.sh"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c">#! /bin/bash</span>
+
+git clone https://github.com/YuchaoZheng88/zenbro.github.io.git
+<span class="nb">cd </span>zenbro.github.io
+git submodule init
+git submodule update
+<span class="nb">cd </span>YuchaoZheng88.github.io/
+git checkout main
+<span class="nb">cd</span> ..
+bundle update
+jekyll build <span class="nt">-d</span> YuchaoZheng88.github.io
+<span class="nb">cd </span>YuchaoZheng88.github.io/
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
@@ -824,6 +884,11 @@
   <div id="access-lastmod" class="post">
     <div class="panel-heading">Recently Updated</div>
     <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/Write-A-Post/">How to write a post</a></li>
       
         
         

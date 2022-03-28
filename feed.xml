@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-03-28T11:15:17+08:00</updated>
+  <updated>2022-03-28T11:51:17+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -24,7 +24,7 @@
     <link href="/posts/Write-A-Post/" rel="alternate" type="text/html" title="How to write a post" />
     <published>2022-03-27T11:33:00+08:00</published>
   
-    <updated>2022-03-27T11:33:00+08:00</updated>
+    <updated>2022-03-28T11:50:52+08:00</updated>
   
     <id>/posts/Write-A-Post/</id>
     <content src="/posts/Write-A-Post/" />

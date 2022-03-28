@@ -12,7 +12,7 @@
 
 
 
-    "snippet": "How to write a postSteps:  Create post(s) at zenbro.github.io/_posts  git clone https://github.com/YuchaoZheng88/zenbro.github.io.git  cd zenbro.github.io  git submodule init  git submodule update  cd YuchaoZheng88.github.io/  git checkout main  cd ..  bundle update  jekyll build -d YuchaoZheng88.github.io  cd YuchaoZheng88.github.io/  push the YuchaoZheng88.github.io submodule  cd ..  push the zenbro.github.io module"
+    "snippet": "How to write a postSteps:  Create post(s) at zenbro.github.io/_posts  git clone https://github.com/YuchaoZheng88/zenbro.github.io.git  cd zenbro.github.io  git submodule init  git submodule update  cd YuchaoZheng88.github.io/  git checkout main  cd ..  bundle update  jekyll build -d YuchaoZheng88.github.io  cd YuchaoZheng88.github.io/  push the YuchaoZheng88.github.io submodule  cd ..  push the zenbro.github.io moduleeasy way:#! /bin/bashgit clone https://github.com/YuchaoZheng88/zenbro.github.io.gitcd zenbro.github.iogit submodule initgit submodule updatecd YuchaoZheng88.github.io/git checkout maincd ..bundle updatejekyll build -d YuchaoZheng88.github.iocd YuchaoZheng88.github.io/"
   },
   
   {
