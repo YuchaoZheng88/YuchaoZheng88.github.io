@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-03-28T20:49:02+08:00</updated>
+  <updated>2022-03-28T20:56:54+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -118,59 +118,6 @@ EBP points to higher memory address, at the bottom of the stack,...
 
   
   <entry>
-    <title>How to write a post</title>
-    <link href="/posts/Write-A-Post/" rel="alternate" type="text/html" title="How to write a post" />
-    <published>2022-03-27T11:33:00+08:00</published>
-  
-    <updated>2022-03-27T11:33:00+08:00</updated>
-  
-    <id>/posts/Write-A-Post/</id>
-    <content src="/posts/Write-A-Post/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="dev" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      How to write a post
-
-Steps:
-
-  Create post(s) with .md format at zenbro.github.io/_posts
-  Run the bash
-     #! /bin/bash
-
- git clone https://github.com/YuchaoZheng88/zenbro.github.io.git
- cd zenbro.github.io
- git submodule init
- git submodule update
- cd YuchaoZheng88.github.io/
- git checkout main
- cd ..
- bundle update
- jekyll build -d YuchaoZheng88.github.io
- cd YuchaoZheng88.github.io/
-    
- ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
     <title>Jr Penetrarion Test</title>
     <link href="/posts/Jr-Penetration-Tester/" rel="alternate" type="text/html" title="Jr Penetrarion Test" />
     <published>2022-01-28T00:00:00+08:00</published>
@@ -264,6 +211,59 @@ When all at once I saw a crowd,
 A host, of golden daffodils;
 
 Beside the lake, beneath the t...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>How to write a post</title>
+    <link href="/posts/Write-A-Post/" rel="alternate" type="text/html" title="How to write a post" />
+    <published>2018-03-02T11:33:00+08:00</published>
+  
+    <updated>2022-03-28T20:51:28+08:00</updated>
+  
+    <id>/posts/Write-A-Post/</id>
+    <content src="/posts/Write-A-Post/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="dev" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      How to write a post
+
+Steps:
+
+  Create post(s) with .md format at zenbro.github.io/_posts
+  Run the bash
+     #! /bin/bash
+
+ git clone https://github.com/YuchaoZheng88/zenbro.github.io.git
+ cd zenbro.github.io
+ git submodule init
+ git submodule update
+ cd YuchaoZheng88.github.io/
+ git checkout main
+ cd ..
+ bundle update
+ jekyll build -d YuchaoZheng88.github.io
+ cd YuchaoZheng88.github.io/
+    
+ ...
     </summary>
   
 
