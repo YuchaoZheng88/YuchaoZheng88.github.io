@@ -1,6 +1,21 @@
 [
   
   {
+    "title": "How to write a post",
+    "url": "/posts/Write-A-Post/",
+    "categories": "Dev",
+    "tags": "Jekyll, Git",
+    "date": "2022-03-27 11:33:00 +0800",
+    
+
+
+
+
+
+    "snippet": "How to write a postSteps:  Create post(s) at zenbro.github.io/_posts  git clone https://github.com/YuchaoZheng88/zenbro.github.io.git  cd zenbro.github.io  git submodule init  git submodule update  cd YuchaoZheng88.github.io/  git checkout main  cd ..  bundle update  jekyll build -d YuchaoZheng88.github.io  cd YuchaoZheng88.github.io/  push the YuchaoZheng88.github.io submodule  cd ..  push the zenbro.github.io module"
+  },
+  
+  {
     "title": "another test",
     "url": "/posts/test-2-post/",
     "categories": "nnnn, pppp",

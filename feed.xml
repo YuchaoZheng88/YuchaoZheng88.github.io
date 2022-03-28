@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Chirpy</title>
   <subtitle>A minimal, responsive, and powerful Jekyll theme for presenting professional writing.</subtitle>
-  <updated>2022-03-28T08:54:38+08:00</updated>
+  <updated>2022-03-28T09:02:18+08:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>/</uri>
@@ -17,6 +17,56 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>How to write a post</title>
+    <link href="/posts/Write-A-Post/" rel="alternate" type="text/html" title="How to write a post" />
+    <published>2022-03-27T11:33:00+08:00</published>
+  
+    <updated>2022-03-27T11:33:00+08:00</updated>
+  
+    <id>/posts/Write-A-Post/</id>
+    <content src="/posts/Write-A-Post/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="Dev" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      How to write a post
+
+Steps:
+
+  Create post(s) at zenbro.github.io/_posts
+  git clone https://github.com/YuchaoZheng88/zenbro.github.io.git
+  cd zenbro.github.io
+  git submodule init
+  git submodule update
+  cd YuchaoZheng88.github.io/
+  git checkout main
+  cd ..
+  bundle update
+  jekyll build -d YuchaoZheng88.github.io
+  cd YuchaoZheng88.github.io/
+  push the YuchaoZheng88.github.io submodule
+ ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -173,54 +223,6 @@ Create GA account a...
 Generate the favicon
 
 Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Getting Started</title>
-    <link href="/posts/getting-started/" rel="alternate" type="text/html" title="Getting Started" />
-    <published>2019-08-09T20:55:00+08:00</published>
-  
-    <updated>2019-08-09T20:55:00+08:00</updated>
-  
-    <id>/posts/getting-started/</id>
-    <content src="/posts/getting-started/" />
-    <author>
-      <name>cotes</name>
-    </author>
-
-  
-    
-    <category term="Blogging" />
-    
-    <category term="Tutorial" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Prerequisites
-
-Follow the instructions in the Jekyll Docs to complete the installation of Ruby, RubyGems, Jekyll, and Bundler. In addition, Git is also required to be installed.
-
-Installation
-
-Creating a New Site
-
-There are two ways to create a new repository for this theme:
-
-
-  Using the Chirpy Starter - Easy to upgrade, isolates irrelevant project files so you can focus on writing.
-  Forking ...
     </summary>
   
 
