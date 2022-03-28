@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-03-28T20:10:58+08:00</updated>
+  <updated>2022-03-28T20:45:29+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>How to write a post</title>
-    <link href="/posts/Write-A-Post/" rel="alternate" type="text/html" title="How to write a post" />
+    <title>Two Sum</title>
+    <link href="/posts/Write-A-Post/" rel="alternate" type="text/html" title="Two Sum" />
     <published>2022-03-27T11:33:00+08:00</published>
   
-    <updated>2022-03-28T13:41:19+08:00</updated>
+    <updated>2022-03-28T20:44:44+08:00</updated>
   
     <id>/posts/Write-A-Post/</id>
     <content src="/posts/Write-A-Post/" />
@@ -46,23 +46,18 @@
 
 
 
-      How to write a post
+      Link
 
-Steps:
+JAVA HashMap
+    Map&amp;lt;Integer, Integer&amp;gt; map = new HashMap&amp;lt;&amp;gt;();
+    map.containskey(), map.get(),
 
-  Create post(s) at zenbro.github.io/_posts
-  git clone https://github.com/YuchaoZheng88/zenbro.github.io.git
-  cd zenbro.github.io
-  git submodule init
-  git submodule update
-  cd YuchaoZheng88.github.io/
-  git checkout main
-  cd ..
-  bundle update
-  jekyll build -d YuchaoZheng88.github.io
-  cd YuchaoZheng88.github.io/
-  push the YuchaoZheng88.github.io submodule
- ...
+
+Python HashMap
+
+  https://docs.python.org/3/tutorial/datastructures.html#dictionaries
+
+
     </summary>
   
 
@@ -116,6 +111,59 @@ Assembly Programming Assembly Function Stack Frame Explained
 ESP points to the top of the stack, at lower memory location.
 {buffer}
 EBP points to higher memory address, at the bottom of the stack,...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>How to write a post</title>
+    <link href="/posts/Write-A-Post/" rel="alternate" type="text/html" title="How to write a post" />
+    <published>2022-03-27T11:33:00+08:00</published>
+  
+    <updated>2022-03-27T11:33:00+08:00</updated>
+  
+    <id>/posts/Write-A-Post/</id>
+    <content src="/posts/Write-A-Post/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="dev" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      How to write a post
+
+Steps:
+
+  Create post(s) with .md format at zenbro.github.io/_posts
+  Run the bash
+     #! /bin/bash
+
+ git clone https://github.com/YuchaoZheng88/zenbro.github.io.git
+ cd zenbro.github.io
+ git submodule init
+ git submodule update
+ cd YuchaoZheng88.github.io/
+ git checkout main
+ cd ..
+ bundle update
+ jekyll build -d YuchaoZheng88.github.io
+ cd YuchaoZheng88.github.io/
+    
+ ...
     </summary>
   
 
