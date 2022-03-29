@@ -72,7 +72,7 @@
 
 
 
-    "snippet": "How to write a postSteps:  Create post(s) with .md format at zenbro.github.io/_posts  Run the bash     #! /bin/bash git clone https://github.com/YuchaoZheng88/zenbro.github.io.git cd zenbro.github.io git submodule init git submodule update cd YuchaoZheng88.github.io/ git checkout main cd .. bundle update jekyll build -d YuchaoZheng88.github.io cd YuchaoZheng88.github.io/         #! /bin/bash     echo inputCommitMessage read commit     git clone https://github.com/YuchaoZheng88/zenbro.github.io.git cd zenbro.github.io git submodule init git submodule update cd YuchaoZheng88.github.io/ git checkout main cd .. bundle update jekyll build -d YuchaoZheng88.github.io cd YuchaoZheng88.github.io/ git add . git commit -m \"$commit\" git push cd .. git add . git commit -m \"$commit\" git push            push YuchaoZheng88.github.io, then push main zenbro.github.io"
+    "snippet": "How to write a postSteps:  Create post(s) with .md format at zenbro.github.io/_posts  Run the bash     #! /bin/bash     echo inputCommitMessage read commit     git clone https://github.com/YuchaoZheng88/zenbro.github.io.git cd zenbro.github.io git submodule init git submodule update cd YuchaoZheng88.github.io/ git checkout main cd .. bundle update jekyll build -d YuchaoZheng88.github.io cd YuchaoZheng88.github.io/     git add . git commit -m \"$commit\" git push cd .. git add . git commit -m \"$commit\" git push            push YuchaoZheng88.github.io, then push main zenbro.github.io"
   }
   
 ]

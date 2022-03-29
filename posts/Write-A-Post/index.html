@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-28T23:14:28+08:00","datePublished":"2018-03-02T11:33:00+08:00","description":"How to write a post","headline":"How to write a post","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Write-A-Post/"},"url":"/posts/Write-A-Post/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-29T10:30:19+08:00","datePublished":"2018-03-02T11:33:00+08:00","description":"How to write a post","headline":"How to write a post","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Write-A-Post/"},"url":"/posts/Write-A-Post/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -658,7 +658,7 @@
 -->
 
 <em class="timeago"
-    data-ts="1648480468"
+    data-ts="1648521019"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
@@ -689,7 +689,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="137 words">
+  title="98 words">
   <em>1 min</em> read</span>
 
 
@@ -722,34 +722,6 @@
 10
 11
 12
-</pre></td><td class="rouge-code"><pre> <span class="c">#! /bin/bash</span>
-
- git clone https://github.com/YuchaoZheng88/zenbro.github.io.git
- <span class="nb">cd </span>zenbro.github.io
- git submodule init
- git submodule update
- <span class="nb">cd </span>YuchaoZheng88.github.io/
- git checkout main
- <span class="nb">cd</span> ..
- bundle update
- jekyll build <span class="nt">-d</span> YuchaoZheng88.github.io
- <span class="nb">cd </span>YuchaoZheng88.github.io/
-</pre></td></tr></tbody></table></code></div>    </div>
-
-    <div class="language-bash nolineno highlighter-rouge" file="quickinit.sh"><div class="code-header">
-        <span data-label-text="quickinit.sh"><i class="far fa-file-code"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
 13
 14
 15
@@ -761,6 +733,7 @@
 21
 22
 23
+24
 </pre></td><td class="rouge-code"><pre> <span class="c">#! /bin/bash</span>
     
  <span class="nb">echo </span>inputCommitMessage
@@ -776,6 +749,7 @@
  bundle update
  jekyll build <span class="nt">-d</span> YuchaoZheng88.github.io
  <span class="nb">cd </span>YuchaoZheng88.github.io/
+    
  git add <span class="nb">.</span>
  git commit <span class="nt">-m</span> <span class="s2">"</span><span class="nv">$commit</span><span class="s2">"</span>
  git push
