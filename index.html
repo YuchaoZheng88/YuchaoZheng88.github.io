@@ -495,10 +495,13 @@
 
 
         recon
+
+nmap
 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
 nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
 
 
+  22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp open  d...
       </p>
     </div>
 
@@ -545,7 +548,7 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="17 words">
+  title="241 words">
   <em>1 min</em></span>
 
 
@@ -1287,6 +1290,11 @@ Steps:
   <div id="access-lastmod" class="post">
     <div class="panel-heading">Recently Updated</div>
     <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/htb-stacked/">htb stacked</a></li>
       
         
         

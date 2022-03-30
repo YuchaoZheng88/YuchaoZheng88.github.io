@@ -1062,6 +1062,11 @@ chsh common-password  cron lightdm-greeter other ppp samba sudo
         
         
         
+      <li><a href="/posts/htb-stacked/">htb stacked</a></li>
+      
+        
+        
+        
       <li><a href="/posts/htb-popcorn/">htb popcorn</a></li>
       
         
@@ -1754,12 +1759,15 @@ See 80, 3000 port run the same thing:
 
 
                 recon
+
+nmap
 1
 2
 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
 nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
 
 
+  22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp ope...
               </p>
             </div>
           </div>

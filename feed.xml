@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-03-30T16:08:41+08:00</updated>
+  <updated>2022-03-30T22:41:43+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -24,7 +24,7 @@
     <link href="/posts/htb-stacked/" rel="alternate" type="text/html" title="htb stacked" />
     <published>2022-03-29T11:33:00+08:00</published>
   
-    <updated>2022-03-29T11:33:00+08:00</updated>
+    <updated>2022-03-30T22:39:58+08:00</updated>
   
     <id>/posts/htb-stacked/</id>
     <content src="/posts/htb-stacked/" />
@@ -47,10 +47,20 @@
 
 
       recon
+
+nmap
 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
 nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
 
 
+  22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp open  docker
+
+
+feroxbuster, directory discovery
+feroxbuster -u http://stacked.htb
+
+wfuzz, host discovery
+wfuzz -H "Host: FUZZ.stacked.htb" -u http://stacked.htb -w /usr/seclists/Discovery/DNS/subdomains-top1...
     </summary>
   
 
