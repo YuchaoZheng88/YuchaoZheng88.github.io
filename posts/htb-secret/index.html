@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-29T20:19:24+08:00","datePublished":"2021-10-30T08:00:00+08:00","description":"nmap 1 2 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120 nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120","headline":"htb secret","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-secret/"},"url":"/posts/htb-secret/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-29T20:55:37+08:00","datePublished":"2021-10-30T08:00:00+08:00","description":"nmap 1 2 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120 nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120","headline":"htb secret","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-secret/"},"url":"/posts/htb-secret/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -850,7 +850,7 @@
 -->
 
 <em class="timeago"
-    data-ts="1648556364"
+    data-ts="1648558537"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
@@ -881,7 +881,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="587 words">
+  title="586 words">
   <em>3 min</em> read</span>
 
 
@@ -989,6 +989,7 @@ git show 67d8da7
 </ul>
 
 <h2 id="forge-jwt"><span class="mr-2">Forge JWT</span><a href="#forge-jwt" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<p>https://jwt.io/</p>
 <h4 id="decode"><span class="mr-2">decode</span><a href="#decode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <p><code class="language-plaintext highlighter-rouge">pip3 install pyjwt</code></p>
 <div class="language-python highlighter-rouge"><div class="code-header">
@@ -1077,8 +1078,8 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 <h4 id="get-information-from-coredump"><span class="mr-2">get information from coredump.</span><a href="#get-information-from-coredump" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 
 <p>an suid program</p>
-<div class="language-c highlighter-rouge"><div class="code-header">
-        <span data-label-text="C"><i class="fas fa-code small"></i></span>
+<div class="language-c nolineno highlighter-rouge" file="code.c"><div class="code-header">
+        <span data-label-text="code.c"><i class="far fa-file-code"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1096,7 +1097,6 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 <span class="n">printf</span><span class="p">(</span><span class="s">"Save results a file? [y/N]: "</span><span class="p">);</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
 </pre></td></tr></tbody></table></code></div></div>
-<p>{file=”code.c” }</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge"> ps auxww | grep count</code> find pid of the program</li>
@@ -1243,6 +1243,11 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
         
         
         
+      <li><a href="/posts/htb-popcorn/">htb popcorn</a></li>
+      
+        
+        
+        
       <li><a href="/posts/htb-secret/">htb secret</a></li>
       
         
@@ -1316,6 +1321,60 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1593,66 +1652,6 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1671,10 +1670,16 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 
     
       
+      <a class="post-tag" href="/tags/htb/">htb</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
       <a class="post-tag" href="/tags/assembly/">assembly</a>
+    
+      
+      <a class="post-tag" href="/tags/aws/">aws</a>
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
@@ -1683,22 +1688,16 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
+      <a class="post-tag" href="/tags/dirtycow/">dirtycow</a>
+    
+      
       <a class="post-tag" href="/tags/file-inclusion/">file-inclusion</a>
     
       
       <a class="post-tag" href="/tags/git/">git</a>
     
       
-      <a class="post-tag" href="/tags/htb/">htb</a>
-    
-      
       <a class="post-tag" href="/tags/idor/">idor</a>
-    
-      
-      <a class="post-tag" href="/tags/injection/">injection</a>
-    
-      
-      <a class="post-tag" href="/tags/java/">java</a>
     
 
     </div>
@@ -1796,7 +1795,33 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1834,24 +1859,91 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 
 
 
-  
-    
-    
-      
-      
-        
-        
-        
-          
-
-
-
 
 
   <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
     <h3 class="pt-2 mt-1 mb-4 ml-1"
       data-toc-skip>Further Reading</h3>
     <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/htb-popcorn/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1615779180"
+    
+    >
+  2021-03-15
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb popcorn</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Recon
+
+nmap
+nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.6
+nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
+
+
+  OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/htb-stacked/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1648524780"
+    
+    >
+  2022-03-29
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb stacked</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                recon
+1
+2
+nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
+nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
+
+
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     
       
       
@@ -1891,92 +1983,6 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
         </a>
       </div>
     
-      
-      
-      <div class="card">
-        <a href="/posts/BOF/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1648351980"
-    
-    >
-  2022-03-27
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Buffer over flow</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Learn from Video
-
-understand stack MOST IMPORTANT !!!
-
-What happens when you call a procedure?
-
-  https://www.youtube.com/watch?v=RU5vUIl1vRs
-
-
-Assembly Programming Assembly Function Stack Frame Ex...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/Two-Sum/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1648351980"
-    
-    >
-  2022-03-27
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Two Sum</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Link
-
-JAVA HashMap
-1
-2
-    Map&amp;lt;Integer, Integer&amp;gt; map = new HashMap&amp;lt;&amp;gt;();
-    map.containskey(), map.get(),
-
-
-Python HashMap
-
-  https://docs.python.org/3/tutorial/datastructures.html#dict...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -1989,9 +1995,9 @@ Python HashMap
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/text-and-typography/" class="btn btn-outline-primary"
+  <a href="/posts/htb-popcorn/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Text and Typography</p>
+    <p>htb popcorn</p>
   </a>
   
 
@@ -2116,6 +2122,60 @@ Python HashMap
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2393,66 +2453,6 @@ Python HashMap
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2471,10 +2471,16 @@ Python HashMap
 
     
       
+      <a class="post-tag" href="/tags/htb/">htb</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
       <a class="post-tag" href="/tags/assembly/">assembly</a>
+    
+      
+      <a class="post-tag" href="/tags/aws/">aws</a>
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
@@ -2483,22 +2489,16 @@ Python HashMap
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
+      <a class="post-tag" href="/tags/dirtycow/">dirtycow</a>
+    
+      
       <a class="post-tag" href="/tags/file-inclusion/">file-inclusion</a>
     
       
       <a class="post-tag" href="/tags/git/">git</a>
     
       
-      <a class="post-tag" href="/tags/htb/">htb</a>
-    
-      
       <a class="post-tag" href="/tags/idor/">idor</a>
-    
-      
-      <a class="post-tag" href="/tags/injection/">injection</a>
-    
-      
-      <a class="post-tag" href="/tags/java/">java</a>
     
 
     </div>
