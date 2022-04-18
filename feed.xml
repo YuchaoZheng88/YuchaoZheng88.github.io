@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-03-31T21:00:25+08:00</updated>
+  <updated>2022-04-18T22:57:13+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,101 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>CEH samll points</title>
+    <link href="/posts/CEH-SMALL-POINTS/" rel="alternate" type="text/html" title="CEH samll points" />
+    <published>2022-04-18T11:33:00+08:00</published>
+  
+    <updated>2022-04-18T11:33:00+08:00</updated>
+  
+    <id>/posts/CEH-SMALL-POINTS/</id>
+    <content src="/posts/CEH-SMALL-POINTS/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Insertion attack
+
+  TTL field, some packets will end in IDS
+  like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious.
+  PHF attack, “phf” in GET request.
+
+
+Unicode invasion, aka Obfuscating
+
+  bypass IDS, IDS cannot recognize, but web server can decode
+  \u017F can be used as S
+
+
+SHA-1: 20-byte/ 40-hex / 160-bit, algorithm same to MD2, MD4, MD5
+MD5: 128-bit hash valu...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>htb altered</title>
+    <link href="/posts/htb-altered/" rel="alternate" type="text/html" title="htb altered" />
+    <published>2022-04-02T11:33:00+08:00</published>
+  
+    <updated>2022-04-04T20:22:59+08:00</updated>
+  
+    <id>/posts/htb-altered/</id>
+    <content src="/posts/htb-altered/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Know it`s an php lavarel application behind nginx.
+
+Brute force Laravel application pin
+
+try type juggling
+
+  change content type to application/json
+  application/x-www-form-urlencoded, body is name=admin&amp;amp;pin=1234
+  application/json, body is {"name":"admin", "pin":true} try type juggling, php == not === vulnarability, but no on this box.
+
+
+fuzz
+
+  In type Juggling, we know the php uses ===...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -159,100 +254,6 @@ Assembly Programming Assembly Function Stack Frame Explained
 ESP points to the top of the stack, at lower memory location.
 {buffer}
 EBP points to higher memory address, at the bottom of the stack,...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Jr Penetrarion Test</title>
-    <link href="/posts/Jr-Penetration-Tester/" rel="alternate" type="text/html" title="Jr Penetrarion Test" />
-    <published>2022-01-28T00:00:00+08:00</published>
-  
-    <updated>2022-01-28T00:00:00+08:00</updated>
-  
-    <id>/posts/Jr-Penetration-Tester/</id>
-    <content src="/posts/Jr-Penetration-Tester/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Content Discovery
-
-  Wappalyzer (https://www.wappalyzer.com/)
-  The Wayback Machine (https://archive.org/web/)
-  Automated Discovery https://github.com/danielmiessler/SecLists
-  ffuf,  “Fuzz Faster you Fool”
-  user@machine$ ffuf -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -u http://MACHINE_IP/FUZZ
-  dirb
-  user@machine$ dirb http://MACHINE_IP/ /usr/share/wordlists/SecLists...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>htb secret</title>
-    <link href="/posts/htb-secret/" rel="alternate" type="text/html" title="htb secret" />
-    <published>2021-10-30T08:00:00+08:00</published>
-  
-    <updated>2022-03-29T20:55:37+08:00</updated>
-  
-    <id>/posts/htb-secret/</id>
-    <content src="/posts/htb-secret/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      nmap
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120
-nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120
-
-
-See 80, 3000 port run the same thing:
-
-  maybe 80 is a reverse proxy of 3000.
-  maybe one developer version, one production version.
-  some misconfiguration
-
-
-Directory discovery
-feroxbuster -u http://10.10.11.120
-
-
-use API by document
-# /api/user/register
-curl -d '...
     </summary>
   
 
