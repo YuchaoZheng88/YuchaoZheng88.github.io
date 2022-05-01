@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-04-26T21:52:01+08:00</updated>
+  <updated>2022-05-01T22:42:29+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -20,11 +20,61 @@
 
   
   <entry>
+    <title>self reproducing code</title>
+    <link href="/posts/self-reproducing-code/" rel="alternate" type="text/html" title="self reproducing code" />
+    <published>2022-04-29T11:33:00+08:00</published>
+  
+    <updated>2022-04-29T11:33:00+08:00</updated>
+  
+    <id>/posts/self-reproducing-code/</id>
+    <content src="/posts/self-reproducing-code/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      How to write a quine
+
+self-reproducing code
+A quine is a program, takes no input and produces a copy of its own source code as its only output.
+
+original code is:
+
+Head is: malicious code + data of line numbers for tail
+Body is:  `Head in string` + `Tail in string`
+Tail   is:  reproducing code
+
+
+Tail code = print(Body.head) + print(Body) + print(Body.tail)
+
+after execution:
+
+  execute malicious...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>CEH small points</title>
     <link href="/posts/CEH-SMALL-POINTS/" rel="alternate" type="text/html" title="CEH small points" />
     <published>2022-04-18T11:33:00+08:00</published>
   
-    <updated>2022-04-26T21:48:52+08:00</updated>
+    <updated>2022-04-29T09:30:36+08:00</updated>
   
     <id>/posts/CEH-SMALL-POINTS/</id>
     <content src="/posts/CEH-SMALL-POINTS/" />
@@ -204,59 +254,6 @@ Python HashMap
   https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 
 
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Buffer over flow</title>
-    <link href="/posts/BOF/" rel="alternate" type="text/html" title="Buffer over flow" />
-    <published>2022-03-27T11:33:00+08:00</published>
-  
-    <updated>2022-03-27T11:33:00+08:00</updated>
-  
-    <id>/posts/BOF/</id>
-    <content src="/posts/BOF/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Learn from Video
-
-understand stack MOST IMPORTANT !!!
-
-What happens when you call a procedure?
-
-  https://www.youtube.com/watch?v=RU5vUIl1vRs
-
-
-Assembly Programming Assembly Function Stack Frame Explained
-
-  https://www.youtube.com/watch?v=vcfQVwtoyHY
-
-
-
-
-{low}
-ESP points to the top of the stack, at lower memory location.
-{buffer}
-EBP points to higher memory address, at the bottom of the stack,...
     </summary>
   
 

@@ -29,6 +29,12 @@
 
   
 
+    
+
+    
+
+  
+
   
 
   
@@ -36,25 +42,27 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Categories" />
+<meta property="og:title" content="self reproducing code" />
+<meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A blog to save the my learning notes with tags, easy to search." />
-<meta property="og:description" content="A blog to save the my learning notes with tags, easy to search." />
-<link rel="canonical" href="/categories/" />
-<meta property="og:url" content="/categories/" />
+<meta name="description" content="How to write a quine" />
+<meta property="og:description" content="How to write a quine" />
+<link rel="canonical" href="/posts/self-reproducing-code/" />
+<meta property="og:url" content="/posts/self-reproducing-code/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-05-01T22:42:29+08:00" />
+<meta property="article:published_time" content="2022-04-29T11:33:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Categories" />
+<meta property="twitter:title" content="self reproducing code" />
 <meta name="twitter:site" content="@0xZEN2" />
+<meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-01T22:42:29+08:00","datePublished":"2022-05-01T22:42:29+08:00","description":"A blog to save the my learning notes with tags, easy to search.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"/categories/"},"url":"/categories/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-04-29T11:33:00+08:00","datePublished":"2022-04-29T11:33:00+08:00","description":"How to write a quine","headline":"self reproducing code","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/self-reproducing-code/"},"url":"/posts/self-reproducing-code/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>Categories | Yuchao Toolbox
+  <title>self reproducing code | Yuchao Toolbox
   </title>
 
   <!--
@@ -108,7 +116,12 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css">
+  
 
+  
+    <!-- Manific Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css">
   
 
   <!-- JavaScript -->
@@ -285,7 +298,7 @@
     </li>
     <!-- the real tabs -->
     
-    <li class="nav-item active">
+    <li class="nav-item">
       <a href="/categories/" class="nav-link">
         <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i>
         
@@ -411,8 +424,12 @@
 
         
 
+      
+
+        
+
           
-            <span>Categories</span>
+            <span>self reproducing code</span>
           
 
         
@@ -426,7 +443,7 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      Categories
+      Post
     </div>
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
@@ -464,126 +481,325 @@
 
     
       
-      <h1 class="dynamic-title">
-        Categories
-      </h1>
-      <div class="post-content">
-        
+      
+        <!--
+  Refactor the HTML structure.
+-->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Add attribute 'hide-bullet' to the checkbox list -->
+
+
+
+<!-- images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
       
         
+        
+      
 
+      
+      
 
+      
+      
+      
 
+      
 
+    
 
-
-
-
-
-
+    
 
   
+
+  
+  
+
+  
+
   
   
 
   
     
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
 
     
 
     
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- Wrap prompt element of blockquote with the <div> tag -->
+
+
+
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+<h1 data-toc-skip>self reproducing code</h1>
+
+<div class="post-meta text-muted">
+
+  <!-- author -->
+  <div>
+    
     
 
-  <div class="card categories">
-    <!-- top-category -->
-    <div id="h_0"
-      class="card-header d-flex justify-content-between hide-border-bottom">
+    
+
+    By
+    <em>
+      
+        Yuchao
+      
+    </em>
+  </div>
+
+  <div class="d-flex">
+    <div>
+      <!-- published date -->
       <span>
-        <i class="far fa-folder fa-fw"></i>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
 
-        
-        <a href="/categories/dev/" class="ml-1 mr-2">dev</a>
+<em class="timeago"
+    data-ts="1651203180"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    >
+  2022-04-29
+</em>
 
-        <!-- content count -->
-        
-        <span class="text-muted small font-weight-light">
-          
-            3
-            posts
-        </span>
       </span>
 
-      <!-- arrow -->
-      
-      <span data-toggle="collapse" class="category-trigger hide-border-bottom disabled">
-        <i class="fas fa-fw fa-angle-right"></i>
-      </span>
+      <!-- lastmod date -->
       
 
-    </div> <!-- .card-header -->
+      <!-- read time -->
+      <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
 
-    <!-- Sub-categories -->
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="79 words">
+  <em>1 min</em> read</span>
+
+
+      <!-- page views -->
+      
+    </div>
+
+  </div> <!-- .d-flex -->
+
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  <h2 id="how-to-write-a-quine"><span class="mr-2">How to write a quine</span><a href="#how-to-write-a-quine" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="self-reproducing-code"><span class="mr-2">self-reproducing code</span><a href="#self-reproducing-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<p>A quine is a program, takes no input and produces a copy of its own source code as its only output.</p>
+
+<p>original code is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>Head is: malicious code + data of line numbers for tail
+Body is:  `Head in string` + `Tail in string`
+Tail   is:  reproducing code
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Tail code = print(Body.head) + print(Body) + print(Body.tail)</p>
+
+<p>after execution:</p>
+<ol>
+  <li>execute malicious code</li>
+  <li>print the code it self</li>
+</ol>
+
+<p>usage: XXS worm</p>
+
+</div>
+
+<div class="post-tail-wrapper text-muted">
+
+  <!-- categories -->
+  
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw mr-1"></i>
     
-
-  </div> <!-- .card -->
-
-    
-
+      <a href='/categories/sec/'>sec</a>
+  </div>
   
 
+  <!-- tags -->
   
-  
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      
+      <a href="/tags/c/"
+          class="post-tag no-text-decoration" >c</a>
+      
+  </div>
   
 
-  
-    
+  <div class="post-tail-bottom
+    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
 
-    
-
-    
-    
-
-  <div class="card categories">
-    <!-- top-category -->
-    <div id="h_1"
-      class="card-header d-flex justify-content-between hide-border-bottom">
-      <span>
-        <i class="far fa-folder fa-fw"></i>
+      
 
         
-        <a href="/categories/sec/" class="ml-1 mr-2">sec</a>
 
-        <!-- content count -->
-        
-        <span class="text-muted small font-weight-light">
-          
-            8
-            posts
-        </span>
-      </span>
-
-      <!-- arrow -->
-      
-      <span data-toggle="collapse" class="category-trigger hide-border-bottom disabled">
-        <i class="fas fa-fw fa-angle-right"></i>
-      </span>
-      
-
-    </div> <!-- .card-header -->
-
-    <!-- Sub-categories -->
-    
-
-  </div> <!-- .card -->
-
-    
-
-  
-
+        This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
 
       
+    </div>
+
+    <!--
+ Post sharing snippet
+-->
+
+<div class="share-wrapper">
+  <span class="share-label text-muted mr-1">Share</span>
+  <span class="share-icons">
     
-      </div>
+    
+    
+
+    
+      
+        <a href="https://twitter.com/intent/tweet?text=self+reproducing+code+-+Yuchao+Toolbox&url=%2Fposts%2Fself-reproducing-code%2F" data-toggle="tooltip" data-placement="top"
+          title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
+          <i class="fa-fw fab fa-twitter"></i>
+        </a>
+    
+      
+        <a href="https://www.facebook.com/sharer/sharer.php?title=self+reproducing+code+-+Yuchao+Toolbox&u=%2Fposts%2Fself-reproducing-code%2F" data-toggle="tooltip" data-placement="top"
+          title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-fw fab fa-facebook-square"></i>
+        </a>
+    
+      
+        <a href="https://t.me/share/url?url=%2Fposts%2Fself-reproducing-code%2F&text=self+reproducing+code+-+Yuchao+Toolbox" data-toggle="tooltip" data-placement="top"
+          title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
+          <i class="fa-fw fab fa-telegram"></i>
+        </a>
+    
+
+    <i id="copy-link" class="fa-fw fas fa-link small"
+        data-toggle="tooltip" data-placement="top"
+        title="Copy link"
+        data-title-succeed="Link copied successfully!">
+    </i>
+
+  </span>
+</div>
+
+
+  </div><!-- .post-tail-bottom -->
+
+</div><!-- div.post-tail-wrapper -->
+
+
+      
+    
     
 
     </div>
@@ -1100,11 +1316,358 @@
     </div>
 
     
+      
+      
+
+
+
+<!-- BS-toc.js will be loaded at medium priority -->
+<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
+
+<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
+  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
+  <nav id="toc" data-toggle="toc"></nav>
+</div>
+
+
+    
   </div>
 
 </div>
 
 <!-- tail -->
+
+<div class="row">
+  <div class="col-12 col-lg-11 col-xl-8">
+    <div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+      
+        
+        <!--
+ Recommend the other 3 posts according to the tags and categories of the current post,
+ if the number is not enough, use the other latest posts to supplement.
+-->
+
+<!-- The total size of related posts  -->
+
+
+<!-- An random integer that bigger than 0  -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy}  -->
+
+
+
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+<!-- Fill with the other newlest posts  -->
+
+
+
+
+
+
+  <div id="related-posts" class="mt-5 mb-2 mb-sm-4">
+    <h3 class="pt-2 mt-1 mb-4 ml-1"
+      data-toc-skip>Further Reading</h3>
+    <div class="card-deck mb-4">
+    
+      
+      
+      <div class="card">
+        <a href="/posts/htb-popcorn/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1615779180"
+    
+    >
+  2021-03-15
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb popcorn</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Recon
+
+nmap
+nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.6
+nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
+
+
+  OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/htb-secret/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1635552000"
+    
+    >
+  2021-10-30
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb secret</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                nmap
+nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120
+nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120
+
+
+See 80, 3000 port run the same thing:
+
+  maybe 80 is a reverse pro...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Jr-Penetration-Tester/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1643299200"
+    
+    >
+  2022-01-28
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Jr Penetrarion Test</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Content Discovery
+
+  Wappalyzer (https://www.wappalyzer.com/)
+  The Wayback Machine (https://archive.org/web/)
+  Automated Discovery https://github.com/danielmiessler/SecLists
+  ffuf,  “Fuzz Faster...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+    </div> <!-- .card-deck -->
+  </div> <!-- #related-posts -->
+
+
+      
+        
+        <!--
+  Navigation buttons at the bottom of the post.
+-->
+
+<div class="post-navigation d-flex justify-content-between">
+  
+  <a href="/posts/CEH-SMALL-POINTS/" class="btn btn-outline-primary"
+    prompt="Older">
+    <p>CEH small points</p>
+  </a>
+  
+
+  
+  <span class="btn btn-outline-primary disabled"
+    prompt="Newer">
+    <p>-</p>
+  </span>
+  
+
+</div>
+
+      
+        
+        <!--  The comments switcher -->
+
+
+      
+    </div>
+  </div>
+</div> <!-- .row -->
 
 
 
@@ -1615,6 +2178,65 @@
     </div> <!-- #main-wrapper -->
 
     
+      <!--
+  mermaid-js loader
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js"></script>
+
+<script>
+  $(function() {
+    function updateMermaid(event) {
+      if (event.source === window && event.data &&
+            event.data.direction === ModeToggle.ID) {
+
+        const mode = event.data.message;
+
+        if (typeof mermaid === "undefined") {
+          return;
+        }
+
+        let expectedTheme = (mode === ModeToggle.DARK_MODE? "dark" : "default");
+        let config = { theme: expectedTheme };
+
+        /* Re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */
+        $(".mermaid").each(function() {
+          let svgCode = $(this).prev().children().html();
+          $(this).removeAttr("data-processed");
+          $(this).html(svgCode);
+        });
+
+        mermaid.initialize(config);
+        mermaid.init(undefined, ".mermaid");
+      }
+    }
+
+    let initTheme = "default";
+
+    if ($("html[data-mode=dark]").length > 0
+      || ($("html[data-mode]").length == 0
+        && window.matchMedia("(prefers-color-scheme: dark)").matches ) ) {
+      initTheme = "dark";
+    }
+
+    let mermaidConf = {
+      theme: initTheme  /* <default|dark|forest|neutral> */
+    };
+
+    /* Markdown converts to HTML */
+    $("pre").has("code.language-mermaid").each(function() {
+      let svgCode = $(this).children().html();
+      $(this).addClass("unloaded");
+      $(this).after(`<div class=\"mermaid\">${svgCode}</div>`);
+    });
+
+    mermaid.initialize(mermaidConf);
+
+    window.addEventListener("message", updateMermaid);
+  });
+</script>
+
+    
 
     <div id="mask"></div>
 
@@ -1668,6 +2290,107 @@ SimpleJekyllSearch({
 <!-- layout specified -->
 
 
+  
+
+
+
+  <!-- image lazy-loading & popup & clipboard -->
+  
+
+  
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+  
+    
+
+    
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script>
 
 
 
@@ -1676,8 +2399,28 @@ SimpleJekyllSearch({
 
 
 
-<script defer src="/assets/js/dist/categories.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script>
+  /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
+  MathJax = {
+    tex: {
+      inlineMath: [              /* start/end delimiter pairs for in-line math */
+        ['$','$'],
+        ['\\(','\\)']
+      ],
+      displayMath: [             /* start/end delimiter pairs for display math */
+        ['$$', '$$'],
+        ['\\[', '\\]']
+      ]
+    }
+  };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
 
 
 <!-- commons -->

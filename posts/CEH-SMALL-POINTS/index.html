@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-04-26T21:48:52+08:00","datePublished":"2022-04-18T11:33:00+08:00","description":"Insertion attack TTL field, some packets will end in IDS like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious. PHF attack, “phf” in GET request.","headline":"CEH small points","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CEH-SMALL-POINTS/"},"url":"/posts/CEH-SMALL-POINTS/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-04-29T09:30:36+08:00","datePublished":"2022-04-18T11:33:00+08:00","description":"Insertion attack TTL field, some packets will end in IDS like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious. PHF attack, “phf” in GET request.","headline":"CEH small points","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CEH-SMALL-POINTS/"},"url":"/posts/CEH-SMALL-POINTS/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -612,12 +612,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1650980932"
+    data-ts="1651195836"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-04-26
+  2022-04-28
 </em>
 
       </span>
@@ -643,8 +643,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="6572 words">
-  <em>36 min</em> read</span>
+  title="7291 words">
+  <em>40 min</em> read</span>
 
 
       <!-- page views -->
@@ -685,6 +685,8 @@
   <li>PII: personally identifiable information</li>
 </ul>
 
+<p>NIST Cybersecurity Framework`s functions: Identify, Protect, Detect, Respond, Recover</p>
+
 <p>PCI Data Security Standards:</p>
 <ul>
   <li>Build and Maintain a Secure Network</li>
@@ -698,13 +700,6 @@
 <p>MAC address: 6-byte/ 12-hex/ 48-bit.</p>
 
 <p>MAC filtering</p>
-
-<p>On a wireless network, proper credentials: SSID and password</p>
-<ul>
-  <li>SSID    Name of a Network</li>
-  <li>BSSID  basic service set identifier</li>
-  <li>ESSID  Extended Service Set Identification</li>
-</ul>
 
 <p>CRLF attack: Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n)</p>
 <ul>
@@ -765,7 +760,14 @@ Replay attack</p>
 
 <p>Kon-Boot:  allows users to bypass Microsoft Windows and Apple macOS passwords.</p>
 
-<p>Cain &amp; Abel: password recovery tool for Microsoft Windows. forge certificates for authentication.</p>
+<p>Cain &amp; Abel:</p>
+<ul>
+  <li>password recovery tool for Microsoft Windows.</li>
+  <li>forge certificates for authentication.</li>
+  <li>create certificates that are not officially signed by a CA</li>
+</ul>
+
+<p>PAP: Password Authentication Protocol.  a weak authentication protocol. not encrypt any data.</p>
 
 <p>Markov Chains attack: assemble a certain password database</p>
 
@@ -780,10 +782,12 @@ Einstein-Podolsky-Rosen (EPR) paradox</p>
 
 <p>Firewall:</p>
 <ul>
-  <li>Application firewall: Internet Relay Chat (IRC) is an application layer protocol.</li>
-  <li>Network-based application firewalls:  can understand FTP, DNS, HTTP.</li>
+  <li>Application firewall: Internet Relay Chat (IRC) is an application layer protocol. Find SQLi, XXS. layer 7</li>
+  <li>Network-based application firewalls:  can understand FTP, DNS, HTTP. check for malware.</li>
   <li>Host-based application firewalls:  monitors application system calls or other general system communication.</li>
   <li>multi-homed firewall: a node with multiple NICs that connects to two or more networks.</li>
+  <li>statefull firewall: layer 4</li>
+  <li>Access control list: layer 3 or 4.</li>
 </ul>
 
 <p>testing:</p>
@@ -836,6 +840,16 @@ Einstein-Podolsky-Rosen (EPR) paradox</p>
   <li>-PU UDP ping</li>
   <li>-PP ICMP timestamp ping</li>
   <li>-PY SCTP init ping</li>
+  <li>-sn disable the port scan</li>
+</ul>
+
+<p>ICMP type code:</p>
+<ul>
+  <li>0 echo reply (response)</li>
+  <li>3 Destination unreachable</li>
+  <li>4 Source quench (deprecated)</li>
+  <li>5 Redirect</li>
+  <li>8 echo (request)</li>
 </ul>
 
 <p>Nikto: scanner for web servers for dangerous files/CGIs, outdated server software.</p>
@@ -850,6 +864,10 @@ Einstein-Podolsky-Rosen (EPR) paradox</p>
 </ul>
 
 <p>port: 16-bit, 4-hex, 2-byte</p>
+
+<p>IPv6: 128 bits. 32-hex, 16-byte. (4-times of v4). No broadcast, instead of multicast</p>
+
+<p>IPv4: 32 bits. 8-hex, 4-byte.</p>
 
 <p>SQL injection:</p>
 <ul>
@@ -892,14 +910,17 @@ Einstein-Podolsky-Rosen (EPR) paradox</p>
   <li>no flag.</li>
 </ul>
 
-<p>FIN scan (-sF): Fin.</p>
+<p>FIN scan (-sF): if open, no response(no previous connection).</p>
 
 <p>The Maimon scan:  sM, FIN/ACK</p>
 <ul>
   <li>open: no response. close: RST.</li>
 </ul>
 
-<p>Half-open scan: aka  SYN scan. it’s a fast and sneaky.</p>
+<p>Half-open scan: aka  SYN scan. it’s a fast and sneaky. if closed, RST is back. if open, SYN/ACK is back.</p>
+<ul>
+  <li>concern: a lot of half open connections.</li>
+</ul>
 
 <p>Scan:</p>
 <ul>
@@ -1023,6 +1044,8 @@ tcpslice: a tool for extracting portions of packet trace files generated using t
   <li>check two different IP addresses that share the same MAC address.</li>
 </ul>
 
+<p>ARP on network layer.</p>
+
 <p>BetterCap: tool for MitM.</p>
 
 <p>ARP cache: a table of IP to MAC.</p>
@@ -1060,7 +1083,8 @@ Interactive Application Security Testing (IAST)</p>
 <p>IDS/IPS:</p>
 <ul>
   <li>WIPS: Wireless Intrusion Prevention System</li>
-  <li>HIDS: host-based intrusion detection system. one of the last layers of defense and reside on computer endpoints.</li>
+  <li>HIDS: host-based intrusion detection system. one of the last layers of defense and reside on computer endpoints. signature-based
+detection method</li>
   <li>NIDS: Network-based intrusion detection system.  at the physical and network layers after it has passed through a firewall. Only packet level analysis, can be bypass by encryption.</li>
   <li>AIDS: Anomaly-based intrusion detection system. often with artificial intelligence type techniques.  a high false-positive rate</li>
   <li>SIDS: signature-based IDS</li>
@@ -1079,6 +1103,13 @@ Interactive Application Security Testing (IAST)</p>
   <li>Network address translation (NAT)</li>
   <li>Tunneling protocol</li>
 </ul>
+
+<p>Proxy server: sit in middle between an external network and the private network.</p>
+<ul>
+  <li>Routers and switches don’t sit in the middle, merely passing traffic along based on source and destination addresses.</li>
+</ul>
+
+<p>router: seperate Broadcast domains</p>
 
 <p>Sybil attack: creating a large number of pseudonymous identities. attack distributed hash table (DHT) system.
 Exploit Kits: simply a collection of exploits.</p>
@@ -1147,17 +1178,17 @@ Exploit Kits: simply a collection of exploits.</p>
 <p>Desynchronization Attack: RFID(Radio-frequency identification ) related threat.</p>
 
 <ul>
-  <li>Aircrack-ng: detector, packet sniffer, WEP and WPA/WPA2-PSK cracker and analysis tool for 802.11 wireless LANs</li>
   <li>Metasploit: important sub-projects include the Opcode Database, shellcode archive and related research.</li>
   <li>Analyst’s Notebook:  software product from IBM for data analysis and investigation.</li>
   <li>Palantir: Palantir Technologies is a public American software company that specializes in big data analytics.</li>
 </ul>
 
-<p>802.1x protocol: defines an access control and authentication protocol</p>
-
-<p>WPA: Wi-Fi Protected Access</p>
-
-<p>WPA3-Enterprise: 192-bit cryptographic strength, cryptographic tools to protect sensitive data.</p>
+<p>802.1x protocol:</p>
+<ul>
+  <li>defines an access control and authentication protocol</li>
+  <li>IEEE standard for port-based authentication</li>
+  <li>client authentication in wireless networks, security access</li>
+</ul>
 
 <p>Dragonblood: WPA3 vulnerabilities.</p>
 
@@ -1165,7 +1196,11 @@ Exploit Kits: simply a collection of exploits.</p>
 
 <p>KRACK attack: Key Reinstallation Attack, a replay attack.</p>
 
-<p>WEP: Wired Equivalent Privacy,  mimic the privacy characteristics of a wired LAN,  insecure RC4 cipher</p>
+<p>WEP: Wired Equivalent Privacy,  mimic the privacy characteristics of a wired LAN,</p>
+<ul>
+  <li>insecure RC4 cipher</li>
+  <li>Initialization Vector (IV) is Too Small</li>
+</ul>
 
 <p>RC4: symmetric stream cipher.</p>
 
@@ -1196,7 +1231,7 @@ Enumeration: active, gather more information.</p>
 
 <p>DOS:</p>
 <ul>
-  <li>Slowloris: tries to keep many connections to the target web server open and hold them open as long as possible</li>
+  <li>Slowloris: tries to keep many connections to the target web server open and hold them open as long as possible. most likely successful</li>
   <li>HTTP GET/POST (HTTP Flood):</li>
   <li>Spoofed Session Flood.  contains multiple SYN and multiple ACK packets along with one or more RST or FIN</li>
   <li>IP fragmentation scan/attack. Fragmentation is associated with IP; whereas Segmentation is associated with TCP.</li>
@@ -1204,19 +1239,13 @@ Enumeration: active, gather more information.</p>
   <li>Teardrop attack.  attempts to make a computer resource unavailable by flooding a network or server with requests and data</li>
   <li>APDoS. advanced persistent DoS.  persist for weeks</li>
   <li>Smurf. distributed denial-of-service. ICMP.</li>
+  <li>Fraggle attack. distributed denial-of-service. UDP.</li>
+  <li>bonk attack: sends fragmented UDP packets to a Windows system, may cause the system to crash, DoS</li>
   <li>Yo-yo. aimed at cloud-hosted. attack until a cloud-hosted service scales outwards. when scales back down, the attack resumes,</li>
   <li>XOIC. a ddos tool.</li>
 </ul>
 
 <p>SQLi Tautology: OR ‘1’ = ‘1’; –</p>
-
-<ul>
-  <li>802.11a: 5 GHz bands, 54 Mbit/s</li>
-  <li>802.11n: 2.4 GHz / 5 GHz bands, 54 Mbit/s to 600 Mbit/s,</li>
-  <li>802.11g: 2.4 GHz band, 54 Mbit/s,</li>
-  <li>802.11i:  specifies security mechanisms for wireless networks</li>
-  <li>802.16: 1-6 miles.</li>
-</ul>
 
 <p>Bluedriving: wardriving utility. check same devices on map.</p>
 
@@ -1254,6 +1283,8 @@ Enumeration: active, gather more information.</p>
   <li>Tethered Jailbreak:  computer running the jailbreaking software, or the iOS device will not be able to boot at all.</li>
   <li>Semi-tethered Jailbreak: can reboot, but will have an unpatched kernel.</li>
 </ul>
+
+<p>patch management: Making determinations about patch disposition for business systems.</p>
 
 <p>aLTEr attack: a fake eNodeB (the 4G cell tower), Man-in-The-Middle (MiTM)</p>
 <ul>
@@ -1302,6 +1333,8 @@ Enumeration: active, gather more information.</p>
   <li>Research honeypots. gather information about the black hat community. not to a specific organization.</li>
 </ul>
 
+<p>fingerprinting: Matching OS characteristics from a scan to a database in Nmap.</p>
+
 <p>find honey pots:</p>
 <ul>
   <li>Honeyd Honeypot: perform time-based TCP fingerprinting methods</li>
@@ -1339,7 +1372,7 @@ Enumeration: active, gather more information.</p>
 <ul>
   <li>IPSec: Key exchange, Packet headers and trailers, Authentication, Encryption, Transmission, Decryption. On layer 3 (Network).</li>
   <li>IPsec driver.  performs protocol-level functions required to encrypt and decrypt packets</li>
-  <li>IKE: Internet Key Exchange, used to set up a security association (SA)</li>
+  <li>IKE: Internet Key Exchange, used to set up a security association (SA), exchange secret keys</li>
   <li>AH (Authentication Header) protocol. integrity / ESP (Encapsulating Security Payload) protocol. integrity AND confidentiality</li>
   <li>tunnel mode (gateway-to-gateway) / transport mode (host to host)</li>
   <li>AH tunnel/ AH trasport/ ESP tunnel/ ESP transport</li>
@@ -1379,7 +1412,7 @@ TCP communication with incrementing sequence number.  create a state where the c
 
 <p>on application layer protocol:</p>
 <ul>
-  <li>SFTP: FTP over SSH (Secure Shell),  port 21,</li>
+  <li>SFTP: FTP over SSH (Secure Shell),  port 22,</li>
   <li>FTPS: FTP-SSL. (adds support for the Transport Layer Security (TLS), SSL is now prohibited)</li>
   <li>SSL:  Secure Sockets Layer</li>
 </ul>
@@ -1400,7 +1433,7 @@ access-list 102 permit ip any any
   </li>
 </ul>
 
-<p>FTP vs HTTP: FTP file transfer, HTTP website access.</p>
+<p>FTP vs HTTP: FTP file transfer, HTTP website access. Both on application layer.</p>
 
 <p>protocol:</p>
 <ul>
@@ -1420,7 +1453,9 @@ Adware: aka advertisement-supported software,</p>
   <li>Real-time protection</li>
 </ul>
 
-<p>Hit-list scanning:  a list of vulnerable hosts can be composed in advance and sent along with the worm</p>
+<p>Hit-list scanning: a list of vulnerable hosts can be composed in advance and sent along with the worm</p>
+
+<p>worm: does not need a host or human interaction to disrupt and corrupt data</p>
 
 <p>IDOR: (Insecure direct object references )</p>
 <ul>
@@ -1459,6 +1494,12 @@ Adware: aka advertisement-supported software,</p>
 
 <p>Unspecified Proxy Activities: configured multiple domains pointing to the same host to switch quickly between the domains and avoid detection</p>
 
+<p>CAM table:</p>
+<ul>
+  <li>aka content-addressable memory table</li>
+  <li>contains a list of MAC addresses that are associated with a port on a layer 2 switching device</li>
+</ul>
+
 <p>CAM Overflow: context-addressable memory (CAM) table. no more new MAC addresses can be learned. turn switch into a hub.</p>
 
 <p>VLAN hopping attack: 2 methods  switch spoofing and double tagging</p>
@@ -1466,9 +1507,9 @@ Adware: aka advertisement-supported software,</p>
 <p>email:</p>
 <ul>
   <li>spoofing.  fabrication of an email header, make the recipient think the email originated from someone else.</li>
-  <li>harvesting. (or scraping ). obtaining lists of email addresses using various methods</li>
+  <li>harvesting. (or scraping ). obtaining lists of email addresses using various methods. open-source tool: theHarvester.</li>
   <li>masquerading.  broader concept than spoofing, more than just header.</li>
-  <li>phishing.  malicious link.</li>
+  <li>phishing.  malicious link to many people. spear phishing to specific people.</li>
 </ul>
 
 <p>Evilginx:</p>
@@ -1531,12 +1572,45 @@ Adware: aka advertisement-supported software,</p>
 
 <p>Internet Engineering Task Force: IETF,  standards that comprise the Internet protocol suite (TCP/IP)</p>
 
-<hr />
+<p>Wireless networks two types:</p>
+<ul>
+  <li>ad hoc.  peer to peer. (mesh topology)</li>
+  <li>infrastructure.  an access point that all devices connect to (star topology)</li>
+</ul>
+
 <p>Wireless Network:</p>
 <ul>
   <li>The SSID (service set identifier): make your network visible and easily accessible.</li>
   <li>Invisible wifi: disable SSID, connect by configure their settings manually by including the network name, security mode, and other relevant info.</li>
-  <li>NetStumbler or Kismet can easily locate hidden networks.</li>
+  <li>
+    <p>NetStumbler or Kismet can easily locate hidden networks.</p>
+  </li>
+  <li>802.11a: 5 GHz bands, 54 Mbit/s</li>
+  <li>802.11n: 2.4 GHz / 5 GHz bands, 54 Mbit/s to 600 Mbit/s,</li>
+  <li>802.11g: 2.4 GHz band, 54 Mbit/s,</li>
+  <li>802.11i:  specifies security mechanisms for wireless networks</li>
+  <li>802.16: 1-6 miles.</li>
+</ul>
+
+<p>On a wireless network, proper credentials: SSID and password</p>
+<ul>
+  <li>SSID    Name of a Network</li>
+  <li>BSSID  basic service set identifier</li>
+  <li>ESSID  Extended Service Set Identification</li>
+</ul>
+
+<p>WPA: Wi-Fi Protected Access</p>
+
+<p>WPA2:</p>
+<ul>
+  <li>use 4 way handshake to protect against replay attacks.</li>
+  <li>use CCMP as authentication protocol</li>
+</ul>
+
+<p>WPA3-Enterprise: 192-bit cryptographic strength, cryptographic tools to protect sensitive data.</p>
+
+<ul>
+  <li>Aircrack-ng: detector, packet sniffer, WEP and WPA/WPA2-PSK cracker and analysis tool for 802.11 wireless LANs</li>
 </ul>
 
 <p>Zig-Bee: short-range wireless.</p>
@@ -1548,23 +1622,34 @@ Adware: aka advertisement-supported software,</p>
   <li>Wi-Fi Pineapple:  a wireless auditing platform</li>
 </ul>
 
+<p>Wardriving:  physically searching for wireless networks</p>
+
+<p>packet sniffers:</p>
+<ul>
+  <li>tshark (can specify the individual fields you want printed in the output)</li>
+  <li>tcpdump (can not specity individual fields)</li>
+  <li>Snoop (can not specity individual fields)</li>
+</ul>
+
 <p>some ports:</p>
 <ul>
+  <li>FTP: tcp/21(command), tcp/20(data).</li>
+  <li>SSH: tcp/22</li>
+  <li>Telnet: tcp/23</li>
+  <li>SMTP: tcp/25.</li>
   <li>DNS: udp/port 53.</li>
+  <li>POP3: tcp/110.</li>
   <li>NTP: udp/port 123 (Network Time Protocol)</li>
   <li>CHARGEN: udp,tcp/19 (Character Generator Protocol)</li>
   <li>XDMCP: udp,tcp/177 (X Display Manager Control Protocol )</li>
   <li>SNMP: udp,tcp/161 (Simple Network Management Protocol) (version3 has encryption)</li>
   <li>Server Message Block (SMB): tcp/139 (on NetBIOS) or tcp/445(after windows 2000)</li>
-  <li>LDAP (Lightweight Directory Access Protocol): tcp/389.</li>
+  <li>LDAP : tcp/389. (Lightweight Directory Access Protocol)</li>
   <li>LDAPS: tcp/636.</li>
-  <li>Telnet: tcp/23</li>
-  <li>POP3: tcp/110.</li>
-  <li>SMTP: tcp/25.</li>
-  <li>FTP: tcp/21, tcp/20.</li>
   <li>kiwi syslog:  tcp/514.</li>
   <li>printer: tcp/515.</li>
-  <li>Border Gateway Protocol (BGP): tcp/179</li>
+  <li>BGP: tcp/179 (Border Gateway Protocol)</li>
+  <li>IMAP: tcp/143, Internet Message Access Protocol</li>
   <li>Service Location Protocol (SLP)</li>
 </ul>
 
@@ -1579,9 +1664,12 @@ Adware: aka advertisement-supported software,</p>
 <ul>
   <li>Network Basic Input Output System</li>
   <li>Enumeration: list computers, shared resources</li>
+  <li>nbtstat: gather NetBIOS configurations information on Windows</li>
 </ul>
 
 <p>JXplorers: query remote LDAP servers, to gather information</p>
+
+<p>LDAP:  implementation of X.500. X.509</p>
 
 <p>LDAP Enumeration Countermeasures:</p>
 <ul>
@@ -1589,6 +1677,14 @@ Adware: aka advertisement-supported software,</p>
   <li>enable account lockout</li>
   <li>Restrict access to Active Directory by using software such as Citrix.</li>
   <li>Use NTLM.  Windows New Technology LAN Manager.  security protocols by Microsoft to authenticate users’ identity</li>
+</ul>
+
+<p>X.509:</p>
+<ul>
+  <li>standard describes what and how certificates are created.</li>
+  <li>public key cryptography.</li>
+  <li>is the specification for a certificate</li>
+  <li>organizational unit(OU) is a field in a certificate specified in X.509</li>
 </ul>
 
 <p>AOL Search <a href="https://search.aol.com/">https://search.aol.com/</a>: same as google, baidu, duckduckgo.
@@ -1791,8 +1887,6 @@ ike-scan: Discover and fingerprint IKE hosts (IPsec VPN Servers)</p>
 
 <p>Pretexting:  social engineering, make story and convince victim to give information.</p>
 
-<p>Wardriving:  physically searching for wireless networks</p>
-
 <p>php.ini: in  ‘cgi-bin’ directory, attackers can find: database logins and passwords and verbose error messages</p>
 
 <p>CVSS Score: (4,7,9)</p>
@@ -1818,6 +1912,8 @@ ike-scan: Discover and fingerprint IKE hosts (IPsec VPN Servers)</p>
 <p>hping:</p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">hping3 -1 {targetIP}</code> ICMP scan</li>
+  <li>allows you to create packets effectively from scratch</li>
+  <li>set specific individual fields</li>
 </ul>
 
 <p>Bluto:</p>
@@ -1886,11 +1982,12 @@ ike-scan: Discover and fingerprint IKE hosts (IPsec VPN Servers)</p>
 
 <p>RSA: uses 1,024- and 2,048-bit key strengths as asymmetric encryption algorithms</p>
 
-<p>DSA: Digital Signature Algorithm.</p>
+<p>DSA: Digital Signature Algorithm. compares two hash values in order to provide non-repudiation.</p>
 
 <p>AES: The Advanced Encryption Standard (AES).  fixed block size of 128 bits, and a key size of 128, 192, or 256 bits. symmetric.</p>
 <ul>
   <li>selected by NIST as the principal method for providing confidentiality after the DES algorithm</li>
+  <li>Rijdael: algorithm name selected.</li>
 </ul>
 
 <p>HMAC: Hash-based message authentication,  verify both the integrity and authenticity of a message</p>
@@ -1914,6 +2011,8 @@ ike-scan: Discover and fingerprint IKE hosts (IPsec VPN Servers)</p>
 <p>RC-4:  stream cipher</p>
 
 <p>PGP, SSL, IKE:  public-key cryptography</p>
+
+<p>PGP: Pretty Good Privacy, Phil Zimmerman create.</p>
 
 <p>A web of trust: a concept used in PGP, GnuPG, and other OpenPGP-compatible systems to establish the authenticity of the binding between a public key and its owner.</p>
 
@@ -2017,7 +2116,13 @@ Docker objects: images, containers, networks, volumes, plugins</p>
 
 <p>Launch Daemon: Adversaries install a new launch daemon execute at startup.</p>
 
-<p>Single sign-on (SSO):  login once and access services without re-entering authentication factors</p>
+<p>Single sign-on (SSO):</p>
+<ul>
+  <li>login once and access services without re-entering authentication factors</li>
+  <li>disadvantage: a single point of failure for authentication.</li>
+</ul>
+
+<p>SESAME: used for single sign-on.</p>
 
 <p>SOA: Service-oriented architecture.  can be accessed remotely</p>
 
@@ -2048,7 +2153,8 @@ Docker objects: images, containers, networks, volumes, plugins</p>
 
 <p>windows password:</p>
 <ul>
-  <li>in Security Account Manager (SAM) file at: C:\Windows\system32\config</li>
+  <li>in Security Account Manager (SAM) file at:</li>
+  <li>C:\Windows\system32\config</li>
 </ul>
 
 <p>SAM security identifier:</p>
@@ -2065,7 +2171,7 @@ Docker objects: images, containers, networks, volumes, plugins</p>
   <li>bit (physical)</li>
   <li>frame (datalink)</li>
   <li>packet (network)</li>
-  <li>segment (transport)</li>
+  <li>segment(TCP) or datagram(UDP) (transport)</li>
   <li>data(layer5-layer7) (application)</li>
 </ol>
 
@@ -2099,6 +2205,9 @@ Docker objects: images, containers, networks, volumes, plugins</p>
 <p>No ABAC validation: No proper attribute-based access control,  allows attackers to gain unauthorized access to API</p>
 
 <p>heap spray: put malicious code in different heap(non-executable part) locations, give more chance to hit and execute.</p>
+<ul>
+  <li>may not allow for remote code execution.</li>
+</ul>
 
 <p>vendor lock-in problem: customers of a cloud service provider (CSP) cannot easily move to a different vendor without substantial costs or technical incompatibilities</p>
 <ul>
@@ -2132,7 +2241,11 @@ Docker objects: images, containers, networks, volumes, plugins</p>
   <li>Technical Threat Intelligence.          short-term, low level             Specific IOC(Indicator of compromise )</li>
 </ul>
 
-<p>Key escrow:  key is held in escrow by a third party</p>
+<p>Key escrow:</p>
+<ul>
+  <li>key is held in escrow by a third party</li>
+  <li>hold certificates and keys in case the primary keys or certificates are unavailable</li>
+</ul>
 
 <p>Key whitening:  It consists of steps that combine the data with portions of the key.</p>
 
@@ -2153,6 +2266,8 @@ Docker objects: images, containers, networks, volumes, plugins</p>
   <li>Saleae Logic Analyzer:  record and display signals in your circuit to debug it fast.</li>
   <li>Cisco ASA:  hardware firewalls developed by Cisco Systems</li>
 </ul>
+
+<p>Cisco SPAN port: on a Cisco switch, Switched Port Analyzer. gather traffic</p>
 
 <p>Credential enumerator:</p>
 <ul>
@@ -2289,10 +2404,77 @@ Docker objects: images, containers, networks, volumes, plugins</p>
 
 <p>ping to death: first in 1996.</p>
 
+<p>kerberos: allow workstations to authenticate against remote services</p>
+
 <p>Kerberoasting:</p>
 <ul>
   <li>send requests using Kerberos with the intent of gathering information about accounts that could be used offline.</li>
   <li>look like legitimate traffic</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">net view /domain:&lt;domain_name&gt;</code></p>
+<ul>
+  <li>show all the systems within the domain</li>
+</ul>
+
+<p>/var/log/lastlog: the activities of the last user that signed in</p>
+
+<p>CPU instruction:</p>
+<ul>
+  <li>0x90 NOP</li>
+  <li>0x99 ADD</li>
+  <li>0x91 COPY</li>
+</ul>
+
+<p>UDP datagram payload: 65,535 - 8(header) - 20(IP header) = 65507(payload size)</p>
+
+<ul>
+  <li>shared responsibility model: determines who has responsibility for what aspects of a service with a cloud services provider.</li>
+  <li>Bell-LaPadula: data classification and management</li>
+  <li>Carnegie Mellon Maturity Model: aka Capability Maturity Model. assess maturity, especially within software development organizations.</li>
+</ul>
+
+<p>IANA: Internet Assigned Numbers Authority</p>
+
+<ul>
+  <li>administrative control: aka soft control. like Security policy.</li>
+  <li>technical control: like access control list.</li>
+  <li>physical control: mantrap, biometric device</li>
+</ul>
+
+<p>MegaPing: Windows GUI tool, do ping sweeps and port scans</p>
+
+<p>EternalBlue: takes advantage of a vulnerability in the Server Message Block protocol</p>
+
+<p>Clean desk policy: clean off their desk, empty trash, shred sensitive documents</p>
+
+<ul>
+  <li>local area network: rooms</li>
+  <li>metropolitan area network: buildings, city blocks</li>
+  <li>wide area network: countries, states</li>
+</ul>
+
+<p>RFC 1918: non-routable IP addresses. 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, and 192.168.0.0–192.168.255.255</p>
+
+<p>Defensible network architecture: includes the ability to isolate systems and detect attacks and may also include preventive measures</p>
+
+<p>EDGAR:</p>
+<ul>
+  <li>Electronic Data Gathering, Analysis, and Retrieval,</li>
+  <li>financial information about a company, including financial reports</li>
+</ul>
+
+<p>The crossover error rate (CER)</p>
+<ul>
+  <li>is the point at which the FRR(false reject rate) and the FAR(false acceptance rate) intersect.</li>
+  <li>meaning set at an optimal setting for authenticating subject</li>
+</ul>
+
+<p>windows hide file: attrib +h <filename></filename></p>
+
+<ul>
+  <li>disassembly: opcodes to assembly language, lower level</li>
+  <li>Decompilation: compiled program to source code, higher level</li>
 </ul>
 
 <hr />
@@ -2519,10 +2701,20 @@ NIDS</p>
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -2886,6 +3078,9 @@ NIDS</p>
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
+      <a class="post-tag" href="/tags/c/">c</a>
+    
+      
       <a class="post-tag" href="/tags/ceh/">ceh</a>
     
       
@@ -2893,9 +3088,6 @@ NIDS</p>
     
       
       <a class="post-tag" href="/tags/file-inclusion/">file-inclusion</a>
-    
-      
-      <a class="post-tag" href="/tags/git/">git</a>
     
 
     </div>
@@ -2941,6 +3133,19 @@ NIDS</p>
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -3219,10 +3424,10 @@ See 80, 3000 port run the same thing:
   
 
   
-  <span class="btn btn-outline-primary disabled"
+  <a href="/posts/self-reproducing-code/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </span>
+    <p>self reproducing code</p>
+  </a>
   
 
 </div>
@@ -3344,10 +3549,20 @@ See 80, 3000 port run the same thing:
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -3711,6 +3926,9 @@ See 80, 3000 port run the same thing:
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
+      <a class="post-tag" href="/tags/c/">c</a>
+    
+      
       <a class="post-tag" href="/tags/ceh/">ceh</a>
     
       
@@ -3718,9 +3936,6 @@ See 80, 3000 port run the same thing:
     
       
       <a class="post-tag" href="/tags/file-inclusion/">file-inclusion</a>
-    
-      
-      <a class="post-tag" href="/tags/git/">git</a>
     
 
     </div>
