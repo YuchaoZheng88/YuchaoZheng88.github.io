@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-04-29T09:30:36+08:00","datePublished":"2022-04-18T11:33:00+08:00","description":"Insertion attack TTL field, some packets will end in IDS like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious. PHF attack, “phf” in GET request.","headline":"CEH small points","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CEH-SMALL-POINTS/"},"url":"/posts/CEH-SMALL-POINTS/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-06T22:48:23+08:00","datePublished":"2022-04-18T11:33:00+08:00","description":"Insertion attack TTL field, some packets will end in IDS like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious. PHF attack, “phf” in GET request.","headline":"CEH small points","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CEH-SMALL-POINTS/"},"url":"/posts/CEH-SMALL-POINTS/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -612,12 +612,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1651195836"
+    data-ts="1651848503"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-04-28
+  2022-05-06
 </em>
 
       </span>
@@ -643,8 +643,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="7291 words">
-  <em>40 min</em> read</span>
+  title="7599 words">
+  <em>42 min</em> read</span>
 
 
       <!-- page views -->
@@ -669,7 +669,7 @@
   <li>\u017F can be used as S</li>
 </ul>
 
-<p>Rogue router: Message authentication to prevent.</p>
+<p>Rogue router: thentication to prevent.</p>
 
 <p>Regulation:</p>
 <ul>
@@ -701,7 +701,7 @@
 
 <p>MAC filtering</p>
 
-<p>CRLF attack: Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n)</p>
+<p>CRLF attack: Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, )</p>
 <ul>
   <li>attackers can set fake cookies, steal CSRF tokens, disclose user information by injecting a script (XSS)
     <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -765,6 +765,7 @@ Replay attack</p>
   <li>password recovery tool for Microsoft Windows.</li>
   <li>forge certificates for authentication.</li>
   <li>create certificates that are not officially signed by a CA</li>
+  <li>password cracking, ARP spoofing, and conducting man-in-the-middle attacks.</li>
 </ul>
 
 <p>PAP: Password Authentication Protocol.  a weak authentication protocol. not encrypt any data.</p>
@@ -821,8 +822,8 @@ Einstein-Podolsky-Rosen (EPR) paradox</p>
     </table></div>
   </li>
   <li>-sA ACK scan. map out firewall rulesets. For unfiltered systems, open and closed ports will both return a RST packet.</li>
-  <li>-sS scan by stealth</li>
-  <li>-sU scan for UDP. DNS, SNMP, and DHCP (registered ports 53, 161/162, and 67/68)</li>
+  <li>-sS scan by stealth/Syn</li>
+  <li>-sU scan for UDP. DNS, SNMP, and DHCP (registered ports 53, 161/162, and 67/68), open or filtered no response or UDP response(rare); closed ICMP with port unreachable.</li>
   <li>-sT scan with TCP connect.</li>
   <li>-sP scan by PING.</li>
   <li>-O OS scan need root privileges.</li>
@@ -834,14 +835,16 @@ Einstein-Podolsky-Rosen (EPR) paradox</p>
   <li>-R: reverse DNS resolution on the target IP addresses</li>
   <li>-r: randomizes the port scan order</li>
   <li>-D decoy, hide your IP in decoy IPs.</li>
-  <li>-f fragment packets, split up the TCP header over several packets,</li>
   <li>-S IP_Address (Spoof source address).</li>
-  <li>-PN dont ping</li>
   <li>-PU UDP ping</li>
   <li>-PP ICMP timestamp ping</li>
   <li>-PY SCTP init ping</li>
+  <li>-Pn dont ping. treat the target host(s) as being alive, bypass ICMP block.</li>
   <li>-sn disable the port scan</li>
+  <li>-f fragment packets, split up the TCP header over several packets, bypass IDS</li>
 </ul>
+
+<p>script help: <code class="language-plaintext highlighter-rouge">nmap --script-help &lt;script-name&gt;</code></p>
 
 <p>ICMP type code:</p>
 <ul>
@@ -893,6 +896,17 @@ Einstein-Podolsky-Rosen (EPR) paradox</p>
 <ul>
   <li>include: FIN, XMAS, NULL, URG, PSH</li>
   <li>open: no response. close: RST and ACK bits set.</li>
+  <li>
+    <div class="table-wrapper"><table>
+      <tbody>
+        <tr>
+          <td>identify: open</td>
+          <td>filtered, closed, or filtered</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </li>
+  <li>why use: Firewall Evasion</li>
 </ul>
 
 <p>Xmas Scan:</p>
@@ -909,6 +923,8 @@ Einstein-Podolsky-Rosen (EPR) paradox</p>
   <li>sN</li>
   <li>no flag.</li>
 </ul>
+
+<p>-sn: not to scan any ports. (diff to -sN)</p>
 
 <p>FIN scan (-sF): if open, no response(no previous connection).</p>
 
@@ -1015,6 +1031,8 @@ XSS Reflection: XSS in URL.</p>
   <li>TLS 1.3		2018</li>
 </ul>
 
+<p>TLS uses RSA for the handshake and key negotiation.</p>
+
 <p>Heartbleed:</p>
 <ul>
   <li>a security bug in the OpenSSL cryptography library.</li>
@@ -1064,10 +1082,12 @@ Spanning tree:</li>
 
 <p>DHCP Starvation attack:  ton of bogus DISCOVER packets. Typically next, bring attacker`s rogue DHCP server.</p>
 
-<p>Static application security testing (SAST) white-box
-dynamic application security testing (DAST) black-box
-Mobile Application Security Testing (MAST) 
-Interactive Application Security Testing (IAST)</p>
+<ul>
+  <li>Static application security testing (SAST) white-box</li>
+  <li>dynamic application security testing (DAST) black-box</li>
+  <li>Mobile Application Security Testing (MAST)</li>
+  <li>Interactive Application Security Testing (IAST)</li>
+</ul>
 
 <p>Metasploit module</p>
 <ul>
@@ -1078,6 +1098,8 @@ Interactive Application Security Testing (IAST)</p>
   <li>getsystem:  Metasploit post-exploitation module to escalate privileges.</li>
 </ul>
 
+<p>Metasploit scan for SNMP configuration: auxiliary/scanner/snmp</p>
+
 <p>msfvenom should be used in place of msfpayload+msfencode: msfencode bypass antivirus</p>
 
 <p>IDS/IPS:</p>
@@ -1086,7 +1108,7 @@ Interactive Application Security Testing (IAST)</p>
   <li>HIDS: host-based intrusion detection system. one of the last layers of defense and reside on computer endpoints. signature-based
 detection method</li>
   <li>NIDS: Network-based intrusion detection system.  at the physical and network layers after it has passed through a firewall. Only packet level analysis, can be bypass by encryption.</li>
-  <li>AIDS: Anomaly-based intrusion detection system. often with artificial intelligence type techniques.  a high false-positive rate</li>
+  <li>AIDS: Anomaly-based intrusion detection system. often with artificial intelligence type techniques.  a high false-positive rate. Baseline must be set Prior to deploying.</li>
   <li>SIDS: signature-based IDS</li>
 </ul>
 
@@ -1243,6 +1265,7 @@ Enumeration: active, gather more information.</p>
   <li>bonk attack: sends fragmented UDP packets to a Windows system, may cause the system to crash, DoS</li>
   <li>Yo-yo. aimed at cloud-hosted. attack until a cloud-hosted service scales outwards. when scales back down, the attack resumes,</li>
   <li>XOIC. a ddos tool.</li>
+  <li>LOIC: Low Orbit Ion Cannon, do DDoS.</li>
 </ul>
 
 <p>SQLi Tautology: OR ‘1’ = ‘1’; –</p>
@@ -1251,7 +1274,7 @@ Enumeration: active, gather more information.</p>
 
 <p>Bluetooth attack:</p>
 <ul>
-  <li>Bluejacking:  transmits data to the target device.</li>
+  <li>Bluejacking:  transmits data to the target device. without pairing.</li>
   <li>Bluesmacking: specially crafted packet can make a device unusable(DoS).</li>
   <li>Bluesnarfing:  theft of information from the target device.</li>
   <li>Bluebugging: Similar to bluesnarfing, 10–15 meters.</li>
@@ -1410,6 +1433,8 @@ TCP communication with incrementing sequence number.  create a state where the c
 
 <p>DMZ Network: extra layer of security</p>
 
+<p>Extranet: part of a DMZ but bridges access from organization to organization</p>
+
 <p>on application layer protocol:</p>
 <ul>
   <li>SFTP: FTP over SSH (Secure Shell),  port 22,</li>
@@ -1559,6 +1584,11 @@ Adware: aka advertisement-supported software,</p>
   </li>
 </ol>
 
+<ul>
+  <li>monitor mode: sniff layer 2. like wireless traffic.</li>
+  <li>promiscuous mode: sniff layer 3. can not capture wireless.</li>
+</ul>
+
 <p>Residual risk = (Inherent risk) – (impact of risk controls)</p>
 <ul>
   <li>the amount of risk left over after natural or inherent risks have been reduced by risk controls.</li>
@@ -1658,6 +1688,7 @@ Adware: aka advertisement-supported software,</p>
   <li>application layer, use UDP protocol</li>
   <li>protocol data units (PDUs)</li>
   <li>TRAP. An asynchronous alert sent by the agent to the SNMP manager</li>
+  <li>Community strings: is used for authentication, like password. SNMPv3 encrypts it.</li>
 </ul>
 
 <p>NetBIOS:</p>
@@ -1928,11 +1959,14 @@ ike-scan: Discover and fingerprint IKE hosts (IPsec VPN Servers)</p>
   <li><code class="language-plaintext highlighter-rouge">nslookup -recursive www_dot_google.com</code></li>
   <li>A Address record</li>
   <li>AAAA 	IPv6 address record</li>
-  <li>CNAME Canonical name record</li>
-  <li>NS Name server record</li>
+  <li>CNAME Canonical name record, alias name</li>
+  <li>NS Name server associated with a domain</li>
   <li>SOA Start of [a zone of] authority record</li>
   <li>AXFR Authoritative Zone Transfer</li>
+  <li>MX mail exchange.</li>
 </ul>
+
+<p>SOA: Service-oriented architecture.  can be accessed remotely</p>
 
 <p>IPv6 (and IPSec) allows for header authentication, IPv4 does not.</p>
 
@@ -1964,16 +1998,20 @@ ike-scan: Discover and fingerprint IKE hosts (IPsec VPN Servers)</p>
 
 <p>Orbot: Tor on Android</p>
 
+<p>DES: Data Encryption Standard (DES). fixed block size of 64 bits, and a key size of 56 bits</p>
+
 <p>Meet-in-the-middle attack:</p>
 <ul>
   <li>space–time tradeoff cryptographic attack</li>
   <li>the primary reason why Double DES is not used</li>
-  <li>why a Triple DES key (168-bit) can be bruteforced by an attacker with 256 space and 2112 operations.</li>
+  <li>why a Triple DES key (168-bit = 56*3) can be bruteforced by an attacker with 256 space and 2112 operations.</li>
 </ul>
 
-<p>Triple DES: 64-bit block size that is encrypted three times with 56-bit keys</p>
-
-<p>DES: Data Encryption Standard (DES). fixed block size of 64 bits, and a key size of 56 bits</p>
+<p>Triple DES:</p>
+<ul>
+  <li>64-bit block size that is encrypted three times with 56-bit keys</li>
+  <li>E_k3(D_k2(E_k1(plain text))), encrypt with K1, then decrypt with K2, finally encrypt with K3.</li>
+</ul>
 
 <p>IDEA: International Data Encryption Algorithm, a symmetric-key block cipher, used in PGP v2.0</p>
 <ul>
@@ -1984,13 +2022,24 @@ ike-scan: Discover and fingerprint IKE hosts (IPsec VPN Servers)</p>
 
 <p>DSA: Digital Signature Algorithm. compares two hash values in order to provide non-repudiation.</p>
 
-<p>AES: The Advanced Encryption Standard (AES).  fixed block size of 128 bits, and a key size of 128, 192, or 256 bits. symmetric.</p>
+<p>AES: The Advanced Encryption Standard (AES).</p>
 <ul>
+  <li>fixed block size of 128 bits</li>
+  <li>key size: 128, 192, or 256 bits. symmetric.</li>
   <li>selected by NIST as the principal method for providing confidentiality after the DES algorithm</li>
-  <li>Rijdael: algorithm name selected.</li>
+  <li>5 finalist: MARS, RC6, Rijdael, Serpent, Twofish.</li>
+  <li>Rijdael: algorithm finally selected as AES.</li>
 </ul>
 
-<p>HMAC: Hash-based message authentication,  verify both the integrity and authenticity of a message</p>
+<p>Encryption Mode: Electronic Codebook(ECB), Cipher-Block Chaining (CBC), Cipher Feedback (CFB), Output Feedback(OFB)</p>
+<ul>
+  <li>ECB no IV, cypher with same pattern if plaintext same.</li>
+  <li>CBC with IV.</li>
+  <li>CFB stream encryption. plain text XOR with encrypted IV, so can encrypt bit by bit. feed cypher to next block.</li>
+  <li>feed encrypt IV (cypher before XOR) to next block.</li>
+</ul>
+
+<p>HMAC: Hash-based thentication,  verify both the integrity and authenticity of a message</p>
 
 <p>Twofish: a symmetric key block cipher, block size of 128 bits, keys up to 256 bits.</p>
 
@@ -2124,8 +2173,6 @@ Docker objects: images, containers, networks, volumes, plugins</p>
 
 <p>SESAME: used for single sign-on.</p>
 
-<p>SOA: Service-oriented architecture.  can be accessed remotely</p>
-
 <p>ISAPI: recommend disable unnecessary ISAPI filters, to defend against webserver attacks.</p>
 
 <p>Sinkhole Attack: compromised node tries to attract network traffic by advertising its fake routing update.</p>
@@ -2166,6 +2213,8 @@ Docker objects: images, containers, networks, volumes, plugins</p>
   </li>
 </ul>
 
+<p>SAM log file on Registry locate: HKEY_LOCAL_MACHINE\SAM</p>
+
 <p>PDU on layers:</p>
 <ol>
   <li>bit (physical)</li>
@@ -2174,6 +2223,14 @@ Docker objects: images, containers, networks, volumes, plugins</p>
   <li>segment(TCP) or datagram(UDP) (transport)</li>
   <li>data(layer5-layer7) (application)</li>
 </ol>
+
+<p>TCP/IP vs OSI:</p>
+<ul>
+  <li>Network Interface vs Physical, Data link</li>
+  <li>Internet vs Network</li>
+  <li>Transport vs Transport</li>
+  <li>Application vs Session, Presentation, Application</li>
+</ul>
 
 <p>Rules of engagement (ROE): describes the specifics of the testing, the associated violations and essentially protects both the organization’s interest and third-party penetration tester</p>
 <ul>
@@ -2476,6 +2533,20 @@ Docker objects: images, containers, networks, volumes, plugins</p>
   <li>disassembly: opcodes to assembly language, lower level</li>
   <li>Decompilation: compiled program to source code, higher level</li>
 </ul>
+
+<p>Buffers provide static data storage capacity, while Dynamic data storage is kept on the heap</p>
+
+<p>packETH: craft packets with data in both the headers and payload.</p>
+
+<p>ISO 27001: Plan, Do, Check, Act.</p>
+
+<p>RMI: java Remote Method Invocation, passes objects between systems.</p>
+
+<p>Clark-Wilson model: use unconstrained data items (UDIs), constrained data items (CDIs), when about integrety.</p>
+
+<p>false failure rate: aka false reject rate.</p>
+
+<p>arpspoof: tool can be used to spoof a MAC address</p>
 
 <hr />
 

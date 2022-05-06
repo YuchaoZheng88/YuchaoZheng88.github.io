@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-05-01T22:42:29+08:00</updated>
+  <updated>2022-05-06T22:50:20+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -74,7 +74,7 @@ after execution:
     <link href="/posts/CEH-SMALL-POINTS/" rel="alternate" type="text/html" title="CEH small points" />
     <published>2022-04-18T11:33:00+08:00</published>
   
-    <updated>2022-04-29T09:30:36+08:00</updated>
+    <updated>2022-05-06T22:48:23+08:00</updated>
   
     <id>/posts/CEH-SMALL-POINTS/</id>
     <content src="/posts/CEH-SMALL-POINTS/" />
@@ -109,11 +109,11 @@ Unicode invasion, aka Obfuscating
   \u017F can be used as S
 
 
-Rogue router: Message authentication to prevent.
+Rogue router: thentication to prevent.
 
 Regulation:
 
-  HIPAA:  Health Insuranc...
+  HIPAA:  Health Insurance Portabil...
     </summary>
   
 
