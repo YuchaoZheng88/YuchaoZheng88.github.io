@@ -76,21 +76,6 @@
   },
   
   {
-    "title": "Two Sum",
-    "url": "/posts/Two-Sum/",
-    "categories": "dev",
-    "tags": "leetcode, java, python",
-    "date": "2022-03-27 11:33:00 +0800",
-    
-
-
-
-
-
-    "snippet": "LinkJAVA HashMap    Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();    map.containskey(), map.get(),Python HashMap  https://docs.python.org/3/tutorial/datastructures.html#dictionaries"
-  },
-  
-  {
     "title": "Buffer over flow",
     "url": "/posts/BOF/",
     "categories": "sec",
@@ -121,6 +106,21 @@
   },
   
   {
+    "title": "cryptography",
+    "url": "/posts/cryptography/",
+    "categories": "sec",
+    "tags": "cryptography",
+    "date": "2021-11-13 11:33:00 +0800",
+    
+
+
+
+
+
+    "snippet": "secret key encryptiontr 'a-z' 'A-Z' &lt;  test.txt to upper caseEncryption Mode: Electronic Codebook(ECB), Cipher-Block Chaining (CBC), Cipher Feedback (CFB), Output Feedback(OFB)  ECB no IV, cypher with same pattern if plaintext same.  CBC with IV.  CFB stream encryption. plain text XOR with encrypted IV, so can encrypt bit by bit. feed cypher to next block.  OFB Output Feedback. feed encrypt IV (cypher before XOR) to next block.padding oracle.hashmd5sum file.txtsha256sum file.txtopenssl dgst -sha256 file.txtopenssl sha256 file.txtmysql&gt; SELECT SHA2('message', 256) -- SHA-2 family of hash functions (SHA-224, SHA-256, SHA-384, and SHA-512).import hashlibm = hashlib.sha256()m.update(\"message\")m.hexdigest()echo hash('sha256', 'message');x=$((16#3200))# x is 3200 in 16echo $x# print x in 10hash collision:  hash(A+B1+C) = hash(A+B2+C), if hash(A+B1) = hash(A+B2)  A+B1+B1+C, benign version  A+B1+B2+C, malicious version  C: if(b1=b2) benign code or malicious code.  benign and malicious version of softwares have same hash value.MAC: Hash Length Extension Attack.                              Hash( K                     S+MS) = Hash ( Hash( K                     S) + MS )                      so we can add Malicious String behind.HMAC: add a layer of hash with opad and ipad.  avoid Hash Length Extention Attack.  echo -n \"a messsage\" | openssl dgst -sha256 -hmac \"secretkey\"  culculate hmac based on sha256 algorithmpublic-key cryptographydiffie-hellman key exchange  A,B gree on g (can be small), p (very large)  A keeps X, B keeps Y  A send B:    g^X mod p, B can not find X  B send A:    g^Y mod p, A can not find Y  B culculate: (g^X mod p) ^ Y mod p = g ^ (xy) mod p  A culculate: (g^Y mod p) ^ X mod p = g ^ (yx) mod p  get common secret number, through open channel.turn diffie-hellman to public key encrytion  private key of A: x.  public key of A: g, p,  g^x mod p.  B encrypt message by g^xy mod p. y is secret of B.  B send A: 1. g^y mod p, and 2. secret message.RSAPKITLSBitcoin"
+  },
+  
+  {
     "title": "htb secret",
     "url": "/posts/htb-secret/",
     "categories": "sec",
@@ -148,6 +148,21 @@
 
 
     "snippet": "Tools:cheetsheethttps://highon.coffee/blog/penetration-testing-tools-cheat-sheetScanners  Nikto  OpenVAS  sqlmap  Nessus  NmapOSINT  WHOIS  Nslookup  FOCA  theHarvester  Shodan  Maltego  Recon-ng  CensysRemote Access Tools  Secure Shell (SSH)  Ncat  NeTCAT  ProxychainsCredential Testing Tools  Hashcat  Medusa  Hydra  CeWL  John the Ripper  Cain and Abel  Mimikatz  Patator  DirBuster  W3AFWireless  Aircrack-ng  Kismet  WiFiteNetworking Tools  Wireshark  HpingDebuggers  OllyDbgTools of the Trade 19  Immunity Debugger  GDB  WinDbg  IDAWeb Proxies  OWASP ZAP  Burp SuiteMobile Tools  Drozer  APKX  APK StudioSoftware Assurance  FindBugs/find-sec-bugs  Peach  AFL  SonarQube  YASCASocial Engineering Tools  SeT  BeeFMiscellaneous Tools  SearchSploit  PowerSploit  Responder  Impacket  empire  Metasploit frameworkfour phases:  Planning and Scoping  Information Gathering and Vulnerability Identification  Attacking and Exploiting  Reporting and Communicating ResultsPenetration Testing Execution Standard:  http://www.pentest-standard.org/index.php/Main_Pagerules of engagement (RoE)  timeline  locations, systems, applications, or other potential targets  Data handling requirements  target behaviors  resources are committed to the test  Legal concerns  communications  particular events  Who is permitted to engageapi documents:  XML: Web Services Description Language (WSDL)  Web Application Description Language (WADL)  SOAP  reference: Swagger, a suite of API developer tools. https://petstore.swagger.iolegal:  SOW: statement of work. define project-specific activities, deliverables, and timelines  SOOs: statements of objectives  PWSs: performance work statements  MSA: master services agreement. The terms that will govern future agreements.  NDAs: nondisclosure agreements  CAs: confidentiality agreementscompliance:  HIPAA, FERPA, SOX, GLBA, and PCI DSS  PCI DSS, guide line: https://www.pcisecuritystandards.org/documents/Penetration_Testing_Guidance_March_2015.pdf  https://www.pcisecuritystandards.org/  GLBA: requires fi nancial institutions to protect against “reasonably anticipated threats”  HIPAA: forbid protected health information (PHI) from being accessedproper signing authority  ISO(information security officer) or the sponsor may be it.Disclaimers  Point-in-time assessment  ComprehensivenessNAC  NETWORK ACCESS CONTROLScope creep  additional items are added to the scope of an assessmentCertificate pinning  associates a host with an X.509 certificate (or a public key) and then uses that association to make a trust decision.  pinning list, called a pinset.CERT  Computer Emergency Response Team      , &lt;https://www.us-cert.gov&gt;, &lt;https://www.sei.cmu.edu/our-work/cybersecurity-center-development/national-csirts/index.cfm&gt;  MITRE  CAPEC: The Common Attack Pattern Enumeration and Classification. https://capec.mitre.org  CVE: Common Vulnerabilities and Exposures. https://www.cve.mitre.org  CWE: Common Weakness Enumeration. &lt; https://cwe.mitre.org&gt;ISC  SANS. https://pen-testing.sans.org/blog/pen-testingmetadata scanning tools  ExifTool  FOCA, Fingerprinting Organizations with Collected ArchivesDNShistorical view of the domain registration information  domainhistory.net  whoismind.comhost google.comzone transfer  host -t axfr domain.name dns-server  dig axfr @target.nameserver.com domain.name  nmap –script dns-zone-transfer.nse –script-args dns-zone-transfer.domain&lt;domain&gt; -p53 &lt;hosts&gt;Routes  traceroute (or tracert on Windows): tracert www.netflix.com  tracert * * * : No response to query(maybe timeout) but traffic is going through. hosts not respond but route traffic properly.  BGP looking glasses: http://www.bgp4.as/looking-glasses, allow for route inspection.DatatheHarvester  gather emails, domain information, hostnames, employee names, and open ports and banners  using search engines and MaltegoRecon-ng  OSINTcommon ports  20 TCP, UDP FTP data  21 TCP, UDP FTP control  22 TCP, UDP SSH  23 TCP, UDP Telnet  25 TCP, UDP SMTP (email)  53 UDP DNS  67 TCP, UDP DHCP server  68 TCP, UDP DHCP client  69 TCP, UDP TFTP  80 TCP, UDP HTTP  88 TCP, UDP Kerberos  110 TCP, UDP POP3  123 TCP, UDP NTP  135 TCP, UDP Microsoft EPMAP  136-139 TCP, UDP NetBIOS  143 TCP IMAP  161 UDP SNMP  162 TCP, UDP SNMP traps  389 TCP, UDP LDAP  443 TCP, UDP HTTPS  445 TCP Microsoft AD and SMB  500 TCP, UDP ISAKMP, IKE  515 TCP LPD print services  1433 TCP Microsoft SQL Server  1434 TCP, UDP Microsoft SQL Monitor  1521 TCP Oracle database listener  1812, 1813 TCP, UDP RADIUSKismet additional features:  find hidden SSIDs  passive association of wireless clients and access points  tools help to decrypt encrypted trafficSNMP sweep  network topology map and device discovery  need correct community stringpacket crafting  Hping is popular. create custom packets easily.  sending SYN packets. hping -S -V targetsite.com -p 8080 verbose output  Scapy, Yersina, and even NETCAT.Enumerationusers: SMB, SNMP are most common. and email user enumeration.email: theHarvester, Metasploit  msf&gt; use auxiliary/gather/search_email_collector  purchase commercial email address listsgroup  snmp snmpwalk public -v1 10.0.0.1 1 | grep 77.1.2.25 | cut -d \"\" -f4  samrdump https://github.com/SecureAuthCorp/impacket/blob/impacket_0_9_15/examples/samrdump.py  Impacket Python libraries: SMB tools, NTLM and Kerberos authentication capabilities https://www.coresecurity.com/corelabs-research/open-source-tools/impacketexpired certificates  indicators of improper maintenanceport scan  Hping: hping example.com -V –scan 1-1024  NETCAT: nc -zv example.com 1-2014  Telnet: Telnet to each port, looking for a blank screenscanfirst test:  NDA: nondisclosure agreement  SOW: statement of work  MSA: master services agreement  An authenticated(credentialed) scan: provides the most detailed view of the system.  ln /dev/null ~/.bash_history -sf make bash history to null  Nmap will scan the 1,000 most common ports for both TCP and UDP, by default.  VLAN hopping: one technique: double tagging attack.  determine if in VM: Run wmic baseboard to get manufacturer, product"
+  },
+  
+  {
+    "title": "Algorithm",
+    "url": "/posts/Algorithm/",
+    "categories": "dev",
+    "tags": "leetcode, java, python",
+    "date": "2021-03-27 11:33:00 +0800",
+    
+
+
+
+
+
+    "snippet": "LinkJAVA HashMap    Map&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();    map.containskey(), map.get(),Python HashMap  https://docs.python.org/3/tutorial/datastructures.html#dictionaries"
   },
   
   {
