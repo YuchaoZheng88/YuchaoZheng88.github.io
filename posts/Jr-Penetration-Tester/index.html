@@ -3336,6 +3336,16 @@ run
         
         
         
+      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
+      
+        
+        
+        
       <li><a href="/posts/CEH-SMALL-POINTS/">CEH small points</a></li>
       
         
@@ -3347,16 +3357,6 @@ run
         
         
       <li><a href="/posts/htb-stacked/">htb stacked</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/htb-popcorn/">htb popcorn</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/htb-secret/">htb secret</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -3453,6 +3453,32 @@ run
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3581,38 +3607,6 @@ run
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3647,8 +3641,6 @@ run
     
     
     
-    
-      
     
   
     
@@ -3691,8 +3683,6 @@ run
     
     
     
-    
-      
     
   
     
@@ -3742,8 +3732,6 @@ run
     
     
     
-    
-      
     
   
     
@@ -3786,6 +3774,9 @@ run
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
@@ -3796,9 +3787,6 @@ run
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/c/">c</a>
@@ -3947,7 +3935,33 @@ run
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -4021,7 +4035,7 @@ run
       
       
       <div class="card">
-        <a href="/posts/htb-popcorn/">
+        <a href="/posts/BurpSuite-Lab/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -4029,13 +4043,13 @@ run
 -->
 
 <em class="timeago small"
-    data-ts="1615779180"
+    data-ts="1652153580"
     
     >
-  2021-03-15
+  2022-05-10
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb popcorn</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>BurpSuite Lab</h3>
             <div class="text-muted small">
               <p>
                 
@@ -4044,14 +4058,95 @@ run
 
 
 
-                Recon
+                sql injection
 
-nmap
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.6
-nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
+cheetsheet
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+&#39;+OR+1=1--
+&#39;+UNION+SELECT+NULL,N...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/pentestPlus/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1621308780"
+    
+    >
+  2021-05-18
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Pentest+ notes</h3>
+            <div class="text-muted small">
+              <p>
+                
 
 
-  OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
+
+
+
+                Tools:
+
+cheetsheet
+https://highon.coffee/blog/penetration-testing-tools-cheat-sheet
+
+Scanners
+
+  Nikto
+  OpenVAS
+  sqlmap
+  Nessus
+  Nmap
+
+
+OSINT
+
+  WHOIS
+  Nslookup
+  FOCA
+  theHarvester
+  Shodan
+...
               </p>
             </div>
           </div>
@@ -4092,48 +4187,6 @@ nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120
 See 80, 3000 port run the same thing:
 
   maybe 80 is a reverse pro...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/BOF/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1648351980"
-    
-    >
-  2022-03-27
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Buffer over flow</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Learn from Video
-
-understand stack MOST IMPORTANT !!!
-
-What happens when you call a procedure?
-
-  https://www.youtube.com/watch?v=RU5vUIl1vRs
-
-
-Assembly Programming Assembly Function Stack Frame Ex...
               </p>
             </div>
           </div>
@@ -4313,6 +4366,32 @@ Assembly Programming Assembly Function Stack Frame Ex...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -4441,38 +4520,6 @@ Assembly Programming Assembly Function Stack Frame Ex...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -4507,8 +4554,6 @@ Assembly Programming Assembly Function Stack Frame Ex...
     
     
     
-    
-      
     
   
     
@@ -4551,8 +4596,6 @@ Assembly Programming Assembly Function Stack Frame Ex...
     
     
     
-    
-      
     
   
     
@@ -4602,8 +4645,6 @@ Assembly Programming Assembly Function Stack Frame Ex...
     
     
     
-    
-      
     
   
     
@@ -4646,6 +4687,9 @@ Assembly Programming Assembly Function Stack Frame Ex...
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
@@ -4656,9 +4700,6 @@ Assembly Programming Assembly Function Stack Frame Ex...
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/c/">c</a>

@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-05-06T22:50:20+08:00</updated>
+  <updated>2022-05-10T22:17:11+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,56 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>BurpSuite Lab</title>
+    <link href="/posts/BurpSuite-Lab/" rel="alternate" type="text/html" title="BurpSuite Lab" />
+    <published>2022-05-10T11:33:00+08:00</published>
+  
+    <updated>2022-05-10T20:08:58+08:00</updated>
+  
+    <id>/posts/BurpSuite-Lab/</id>
+    <content src="/posts/BurpSuite-Lab/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      sql injection
+
+cheetsheet
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+
+'+OR+1=1--
+'+UNION+SELECT+NULL,NULL--
+
+-- find columns are compatible with string data
+'+UNION+SELECT+'abcdef',NULL,NULL--
+
+-- oracle, find database type and version
+'+UNION+SELECT+'abc','def'+FROM+dual--
+'+UNION+SELECT+BANNER,+NULL+FROM+v$version--
+
+-- mysql, find database type and verion
+'+UNION+SELECT+'...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -209,51 +259,6 @@ feroxbuster -u http://stacked.htb
 
 wfuzz, host discovery
 wfuzz -H "Host: FUZZ.stacked.htb" -u http://stacked.htb -w /usr/seclists/Discovery/DNS/subdomains-top1...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Two Sum</title>
-    <link href="/posts/Two-Sum/" rel="alternate" type="text/html" title="Two Sum" />
-    <published>2022-03-27T11:33:00+08:00</published>
-  
-    <updated>2022-03-27T11:33:00+08:00</updated>
-  
-    <id>/posts/Two-Sum/</id>
-    <content src="/posts/Two-Sum/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="dev" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Link
-
-JAVA HashMap
-    Map&amp;lt;Integer, Integer&amp;gt; map = new HashMap&amp;lt;&amp;gt;();
-    map.containskey(), map.get(),
-
-
-Python HashMap
-
-  https://docs.python.org/3/tutorial/datastructures.html#dictionaries
-
-
     </summary>
   
 

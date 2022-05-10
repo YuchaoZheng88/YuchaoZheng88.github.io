@@ -484,6 +484,97 @@
 
   <div class="post-preview">
     <h1>
+      <a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a>
+    </h1>
+
+    <div class="post-content">
+      <p>
+        
+
+
+
+
+
+        sql injection
+
+cheetsheet
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+
+&#39;+OR+1=1--
+&#39;+UNION+SELECT+NULL,NULL--
+
+-- find columns are compatible with string data
+&#39;+UNION+SELECT+&#39;abcd...
+      </p>
+    </div>
+
+    <div class="post-meta text-muted d-flex">
+
+      <div class="mr-auto">
+        <!-- posted date -->
+        <i class="far fa-calendar fa-fw"></i>
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago"
+    data-ts="1652153580"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    
+      data-capitalize="true"
+    >
+  2022-05-10
+</em>
+
+
+        <!-- time to read -->
+        <i class="far fa-clock fa-fw"></i>
+        <!--
+  Calculate the post's reading time, and display the word count in tooltip
+ -->
+
+
+
+<!-- words per minute  -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span class="readtime" data-toggle="tooltip" data-placement="bottom"
+  title="153 words">
+  <em>1 min</em></span>
+
+
+        <!-- categories -->
+        
+          <i class="far fa-folder-open fa-fw"></i>
+          <span>
+          
+            sec
+          </span>
+        
+      </div>
+
+      
+
+    </div> <!-- .post-meta -->
+
+  </div> <!-- .post-review -->
+
+
+
+  <div class="post-preview">
+    <h1>
       <a href="/posts/self-reproducing-code/">self reproducing code</a>
     </h1>
 
@@ -1198,7 +1289,7 @@ See 80, 3000 port run the same thing:
 
   <div class="post-preview">
     <h1>
-      <a href="/posts/htb-popcorn/">htb popcorn</a>
+      <a href="/posts/pentestPlus/">Pentest+ notes</a>
     </h1>
 
     <div class="post-content">
@@ -1209,14 +1300,28 @@ See 80, 3000 port run the same thing:
 
 
 
-        Recon
+        Tools:
 
-nmap
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.6
-nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
+cheetsheet
+https://highon.coffee/blog/penetration-testing-tools-cheat-sheet
+
+Scanners
+
+  Nikto
+  OpenVAS
+  sqlmap
+  Nessus
+  Nmap
 
 
-  OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
+OSINT
+
+  WHOIS
+  Nslookup
+  FOCA
+  theHarvester
+  Shodan
+...
       </p>
     </div>
 
@@ -1231,14 +1336,14 @@ nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
 -->
 
 <em class="timeago"
-    data-ts="1615779180"
+    data-ts="1621308780"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     
       data-capitalize="true"
     >
-  2021-03-15
+  2021-05-18
 </em>
 
 
@@ -1263,8 +1368,8 @@ nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="301 words">
-  <em>1 min</em></span>
+  title="762 words">
+  <em>4 min</em></span>
 
 
         <!-- categories -->
@@ -1273,97 +1378,6 @@ nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
           <span>
           
             sec
-          </span>
-        
-      </div>
-
-      
-
-    </div> <!-- .post-meta -->
-
-  </div> <!-- .post-review -->
-
-
-
-  <div class="post-preview">
-    <h1>
-      <a href="/posts/text-and-typography/">Text and Typography</a>
-    </h1>
-
-    <div class="post-content">
-      <p>
-        
-
-
-
-
-
-        This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.
-
-Titles
-
-
-H1 - heading
-
-H2 - heading
-
-H3 - h...
-      </p>
-    </div>
-
-    <div class="post-meta text-muted d-flex">
-
-      <div class="mr-auto">
-        <!-- posted date -->
-        <i class="far fa-calendar fa-fw"></i>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago"
-    data-ts="1565235180"
-    
-      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
-    
-    
-      data-capitalize="true"
-    >
-  2019-08-08
-</em>
-
-
-        <!-- time to read -->
-        <i class="far fa-clock fa-fw"></i>
-        <!--
-  Calculate the post's reading time, and display the word count in tooltip
- -->
-
-
-
-<!-- words per minute  -->
-
-
-
-
-
-
-
-
-
-
-<!-- return element -->
-<span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="635 words">
-  <em>3 min</em></span>
-
-
-        <!-- categories -->
-        
-          <i class="far fa-folder-open fa-fw"></i>
-          <span>
-          
-            dev
           </span>
         
       </div>
@@ -1486,6 +1500,16 @@ H3 - h...
         
         
         
+      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
+      
+        
+        
+        
       <li><a href="/posts/CEH-SMALL-POINTS/">CEH small points</a></li>
       
         
@@ -1497,16 +1521,6 @@ H3 - h...
         
         
       <li><a href="/posts/htb-stacked/">htb stacked</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/htb-popcorn/">htb popcorn</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/htb-secret/">htb secret</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1603,6 +1617,32 @@ H3 - h...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1731,38 +1771,6 @@ H3 - h...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1797,8 +1805,6 @@ H3 - h...
     
     
     
-    
-      
     
   
     
@@ -1841,8 +1847,6 @@ H3 - h...
     
     
     
-    
-      
     
   
     
@@ -1892,8 +1896,6 @@ H3 - h...
     
     
     
-    
-      
     
   
     
@@ -1936,6 +1938,9 @@ H3 - h...
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
@@ -1946,9 +1951,6 @@ H3 - h...
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/c/">c</a>
@@ -2112,6 +2114,32 @@ H3 - h...
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2240,38 +2268,6 @@ H3 - h...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2306,8 +2302,6 @@ H3 - h...
     
     
     
-    
-      
     
   
     
@@ -2350,8 +2344,6 @@ H3 - h...
     
     
     
-    
-      
     
   
     
@@ -2401,8 +2393,6 @@ H3 - h...
     
     
     
-    
-      
     
   
     
@@ -2445,6 +2435,9 @@ H3 - h...
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
@@ -2455,9 +2448,6 @@ H3 - h...
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/c/">c</a>

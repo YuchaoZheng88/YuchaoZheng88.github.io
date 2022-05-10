@@ -1353,6 +1353,16 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
         
         
         
+      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
+      
+        
+        
+        
       <li><a href="/posts/CEH-SMALL-POINTS/">CEH small points</a></li>
       
         
@@ -1364,16 +1374,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
         
         
       <li><a href="/posts/htb-stacked/">htb stacked</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/htb-popcorn/">htb popcorn</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/htb-secret/">htb secret</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1470,6 +1470,32 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1598,38 +1624,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1664,8 +1658,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
-    
-      
     
   
     
@@ -1708,8 +1700,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
-    
-      
     
   
     
@@ -1759,8 +1749,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
-    
-      
     
   
     
@@ -1803,6 +1791,9 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
@@ -1813,9 +1804,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/c/">c</a>
@@ -1925,7 +1913,33 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -2038,46 +2052,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
       
       
       <div class="card">
-        <a href="/posts/htb-popcorn/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1615779180"
-    
-    >
-  2021-03-15
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb popcorn</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Recon
-
-nmap
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.6
-nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
-
-
-  OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/htb-secret/">
           <div class="card-body">
             <!--
@@ -2149,6 +2123,46 @@ try type juggling
 
   change content type to application/json
   application/x-www-form-urlencoded, body is na...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/htb-popcorn/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1615779180"
+    
+    >
+  2021-03-15
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb popcorn</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Recon
+
+nmap
+nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.6
+nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
+
+
+  OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
               </p>
             </div>
           </div>
@@ -2328,6 +2342,32 @@ try type juggling
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2456,38 +2496,6 @@ try type juggling
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2522,8 +2530,6 @@ try type juggling
     
     
     
-    
-      
     
   
     
@@ -2566,8 +2572,6 @@ try type juggling
     
     
     
-    
-      
     
   
     
@@ -2617,8 +2621,6 @@ try type juggling
     
     
     
-    
-      
     
   
     
@@ -2661,6 +2663,9 @@ try type juggling
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
@@ -2671,9 +2676,6 @@ try type juggling
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/c/">c</a>
