@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-10T20:08:58+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-11T22:38:52+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -659,12 +659,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1652184538"
+    data-ts="1652279932"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-05-10
+  2022-05-11
 </em>
 
       </span>
@@ -690,7 +690,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="153 words">
+  title="189 words">
   <em>1 min</em> read</span>
 
 
@@ -776,24 +776,66 @@ TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span 
   <li><code class="language-plaintext highlighter-rouge">&lt;script&gt; alert(1) &lt;/script&gt;</code></li>
 </ul>
 
-<h4 id="dom-based"><span class="mr-2">dom based</span><a href="#dom-based" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="dom-xss"><span class="mr-2">DOM XSS</span><a href="#dom-xss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <ul>
-  <li>search “asdf”</li>
-  <li>as the input writes out to the html page, by using document.write function by site.
-    <div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;img src="/resources/images/tracker.gif?searchTerms=asdf"&gt;
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-  <li>change the input as</li>
+  <li>“View source” option won’t work for DOM XSS testing</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+<p>document.write</p>
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>&lt;img src="/resources/images/tracker.gif?searchTerms=asdf" &lt;svg="" onload="alert(1)"&gt;
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">trackSearch</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;img src="/resources/images/tracker.gif?searchTerms=</span><span class="dl">'</span><span class="o">+</span><span class="nx">query</span><span class="o">+</span><span class="dl">'</span><span class="s1">"&gt;</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">)).</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">search</span><span class="dl">'</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">trackSearch</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">"&gt;&lt;svg onload=alert(1)&gt;</code></li>
+</ul>
+
+<p>innerHTML</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">doSearchQuery</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">searchMessage</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">query</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">)).</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">search</span><span class="dl">'</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">doSearchQuery</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;img src=1 onerror=alert(1)&gt;</code></li>
+</ul>
+
+<p>href attribute</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge"></code></li>
+</ul>
 
 
 </div>
@@ -917,12 +959,12 @@ TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span 
         
         
         
-      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
+      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
       
         
         
         
-      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
+      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
       
         
         
@@ -1010,11 +1052,6 @@ TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span 
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1064,11 +1101,6 @@ TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span 
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -1386,10 +1418,10 @@ TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span 
       <a class="post-tag" href="/tags/ceh/">ceh</a>
     
       
-      <a class="post-tag" href="/tags/cryptography/">cryptography</a>
+      <a class="post-tag" href="/tags/dirtycow/">dirtycow</a>
     
       
-      <a class="post-tag" href="/tags/dirtycow/">dirtycow</a>
+      <a class="post-tag" href="/tags/file-inclusion/">file-inclusion</a>
     
 
     </div>
@@ -1441,19 +1473,6 @@ TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span 
 
   
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
   
 
   
@@ -1909,11 +1928,6 @@ See 80, 3000 port run the same thing:
     
     
     
-  
-    
-    
-    
-    
       
         
         
@@ -1963,11 +1977,6 @@ See 80, 3000 port run the same thing:
     
     
       
-    
-  
-    
-    
-    
     
   
     
@@ -2285,10 +2294,10 @@ See 80, 3000 port run the same thing:
       <a class="post-tag" href="/tags/ceh/">ceh</a>
     
       
-      <a class="post-tag" href="/tags/cryptography/">cryptography</a>
+      <a class="post-tag" href="/tags/dirtycow/">dirtycow</a>
     
       
-      <a class="post-tag" href="/tags/dirtycow/">dirtycow</a>
+      <a class="post-tag" href="/tags/file-inclusion/">file-inclusion</a>
     
 
     </div>
