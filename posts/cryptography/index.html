@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-13T22:31:35+08:00","datePublished":"2021-11-13T11:33:00+08:00","description":"secret key encryption","headline":"cryptography","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/cryptography/"},"url":"/posts/cryptography/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-13T22:44:32+08:00","datePublished":"2021-11-13T11:33:00+08:00","description":"secret key encryption","headline":"cryptography","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/cryptography/"},"url":"/posts/cryptography/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -875,7 +875,7 @@
 -->
 
 <em class="timeago"
-    data-ts="1652452295"
+    data-ts="1652453072"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
@@ -906,7 +906,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1095 words">
+  title="1107 words">
   <em>6 min</em> read</span>
 
 
@@ -1251,19 +1251,33 @@ openssl sha256 file.txt
   <li>Sign</li>
 </ul>
 
-<pre><code class="language-phtyon"># Probabilistic Signature Scheme (PSS) 
-from Crypto.Signature import pss
-from Crypto.Hash import SHA256
-from Crypto.PublicKey import RSA
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="c1"># Probabilistic Signature Scheme (PSS) 
+</span><span class="kn">from</span> <span class="nn">Crypto.Signature</span> <span class="kn">import</span> <span class="n">pss</span>
+<span class="kn">from</span> <span class="nn">Crypto.Hash</span> <span class="kn">import</span> <span class="n">SHA256</span>
+<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
 
-message = b'this is a message'
-key_pem = open('private.pem').read()
-key = RSA.import_key(key_pem, passphrase='ddd')
-h = SHA256.new(message)
-signer = pss.new(key)
-signature = signer.sign(h)
-open('signature.bin', 'wb').write(signature)
-</code></pre>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'this is a message'</span>
+<span class="n">key_pem</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">import_key</span><span class="p">(</span><span class="n">key_pem</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">signer</span> <span class="o">=</span> <span class="n">pss</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">signature</span> <span class="o">=</span> <span class="n">signer</span><span class="p">.</span><span class="n">sign</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="nb">open</span><span class="p">(</span><span class="s">'signature.bin'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <ul>
   <li>Verify</li>
