@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-12T23:00:22+08:00","datePublished":"2021-11-13T11:33:00+08:00","description":"secret key encryption","headline":"cryptography","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/cryptography/"},"url":"/posts/cryptography/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-13T22:31:35+08:00","datePublished":"2021-11-13T11:33:00+08:00","description":"secret key encryption","headline":"cryptography","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/cryptography/"},"url":"/posts/cryptography/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -676,6 +676,126 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -755,12 +875,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1652367622"
+    data-ts="1652452295"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-05-12
+  2022-05-13
 </em>
 
       </span>
@@ -786,8 +906,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="956 words">
-  <em>5 min</em> read</span>
+  title="1095 words">
+  <em>6 min</em> read</span>
 
 
       <!-- page views -->
@@ -1026,26 +1146,11 @@ openssl sha256 file.txt
 
 <p>Usage</p>
 <ul>
-  <li>Key Generation
-```python
-#!/usr/bin/python3</li>
+  <li>Key Generation</li>
 </ul>
 
-<p>from Crypto.PublicKey import RSA</p>
-
-<p>key = RSA.generate(2048) # key length
-pem = key.export_key(format=’PEM’, passphrase=’ddd’)
-f = open(‘private.pem’, ‘wb’)
-f.write(pem)
-f.close()</p>
-
-<p>pub = key.publickey()
-pub_pem = pub.export_key(format=’PEM’)
-f = open(‘public.pem’, ‘wb’)
-f.write(pub_pem)
-f.close()</p>
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1061,39 +1166,29 @@ f.close()</p>
 13
 14
 15
-</pre></td><td class="rouge-code"><pre>- Encryption
-```python
-#!/usr/bin/python3
+</pre></td><td class="rouge-code"><pre><span class="c1">#!/usr/bin/python3
+</span>
+<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
 
-from Crypto.Cipher imprt PKCS1_OAEP
-from Crypto.PublicKey import RSA
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> <span class="c1"># key length
+</span><span class="n">pem</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="n">export_key</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s">'PEM'</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">pem</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 
-message = b'a secret message\n'
-
-key = RSA.importKey(open('public.pem').read())
-cipher = PKCS1_OAEP.new(key)
-ciphertext = cipher.encrypt(messagge)
-f = open('ciphertext.bin', 'wb')
-f.write(ciphertext)
-f.close()
+<span class="n">pub</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="n">publickey</span><span class="p">()</span>
+<span class="n">pub_pem</span> <span class="o">=</span> <span class="n">pub</span><span class="p">.</span><span class="n">export_key</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s">'PEM'</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">pub_pem</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
+
 <ul>
-  <li>Decryption
-```python
-#!/usr/bin/python3</li>
+  <li>Encryption</li>
 </ul>
 
-<p>from Crypto.Cipher imprt PKCS1_OAEP
-from Crypto.PublicKey import RSA</p>
-
-<p>ciphertext = open(‘ciphertext.bin’, ‘rb’).read()
-prikey_pem = open(‘private.pem’).read()
-prikey = RSA.importKey(prikey_pem, passphrase=’ddd’)
-cipher = PKCS1_OAEP.new(prikey)
-message = cipher.decrypt(ciphertext)
-print(message)</p>
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -1107,10 +1202,56 @@ print(message)</p>
 11
 12
 13
-14
-</pre></td><td class="rouge-code"><pre>- Sign
-```phtyon
-# Probabilistic Signature Scheme (PSS) 
+</pre></td><td class="rouge-code"><pre><span class="c1">#!/usr/bin/python3
+</span>
+<span class="k">from</span> <span class="n">Crypto</span><span class="p">.</span><span class="n">Cipher</span> <span class="n">imprt</span> <span class="n">PKCS1_OAEP</span>
+<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'a secret message</span><span class="se">\n</span><span class="s">'</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">importKey</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">).</span><span class="n">read</span><span class="p">())</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_OAEP</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">ciphertext</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">messagge</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'ciphertext.bin'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>Decryption</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c1">#!/usr/bin/python3
+</span>
+<span class="k">from</span> <span class="n">Crypto</span><span class="p">.</span><span class="n">Cipher</span> <span class="n">imprt</span> <span class="n">PKCS1_OAEP</span>
+<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+
+<span class="n">ciphertext</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'ciphertext.bin'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
+<span class="n">prikey_pem</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
+<span class="n">prikey</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">importKey</span><span class="p">(</span><span class="n">prikey_pem</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_OAEP</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">prikey</span><span class="p">)</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
+  <li>Sign</li>
+</ul>
+
+<pre><code class="language-phtyon"># Probabilistic Signature Scheme (PSS) 
 from Crypto.Signature import pss
 from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA
@@ -1122,10 +1263,13 @@ h = SHA256.new(message)
 signer = pss.new(key)
 signature = signer.sign(h)
 open('signature.bin', 'wb').write(signature)
-</pre></td></tr></tbody></table></code></div></div>
+</code></pre>
+
 <ul>
-  <li>Verify
-    <div class="language-python highlighter-rouge"><div class="code-header">
+  <li>Verify</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1143,17 +1287,104 @@ open('signature.bin', 'wb').write(signature)
 <span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 <span class="n">verifier</span> <span class="o">=</span> <span class="n">pss</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
-  <span class="n">verifier</span><span class="p">.</span><span class="n">verify</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">'valid'</span><span class="p">)</span>
+	<span class="n">verifier</span><span class="p">.</span><span class="n">verify</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">'valid'</span><span class="p">)</span>
 <span class="k">except</span> <span class="p">(</span><span class="nb">ValueError</span><span class="p">,</span> <span class="nb">TypeError</span><span class="p">):</span>
-  <span class="k">print</span><span class="p">(</span><span class="s">'Not Valid'</span><span class="p">)</span>
-</pre></td></tr></tbody></table></code></div>    </div>
-  </li>
-</ul>
+	<span class="k">print</span><span class="p">(</span><span class="s">'Not Valid'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h1 id="pki">PKI</h1>
 
+<p><code class="language-plaintext highlighter-rouge">openssl s_client -help</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">openssl s_client -showcerts -connect www.paypal.com:443</code></p>
+<ul>
+  <li>show paypal`s certificate</li>
+  <li>return paypal<code class="language-plaintext highlighter-rouge">s certificate, and intermidia CA signs paypal</code>s certificate</li>
+</ul>
+
+<p>copy paypal`s certificate to paypal.pem</p>
+
+<p>see plain text description of the certificate
+<code class="language-plaintext highlighter-rouge">openssl x509 -in paypal.pem -text -noout</code></p>
+
+<p>show certs on system
+<code class="language-plaintext highlighter-rouge">cd /etc/ssl/certs</code></p>
+
+<p>check DigiCert_High_Assurance_EV_Root_CA.pem in plain text, its self-signed.</p>
+
+<h4 id="revoking"><span class="mr-2">Revoking</span><a href="#revoking" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>CRL: Certificate Revocation List</li>
+  <li>OCSP: Online Certificate Status Protocol</li>
+</ul>
+
+<h4 id="become-a-ca"><span class="mr-2">become a CA</span><a href="#become-a-ca" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li><a href="https://www.udemy.com/course/du-cryptography/learn/lecture/31600238#overview">https://www.udemy.com/course/du-cryptography/learn/lecture/31600238#overview</a></li>
+</ul>
+
+<h4 id="apache"><span class="mr-2">Apache</span><a href="#apache" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>/etc/apache2/sites-available/bank32_apache_ssl.conf</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>&lt;VirtualHost *:443&gt;
+	DocumentRoot /var/www/bank32
+	ServerName www.bank32.com
+	SSLEngine On
+	SSLCertificateFile /certs/bank32.crt
+	SSLCertificateKeyFile /certs/bank32.key
+&lt;/VirtualHost&gt;
+</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>bank32.crt contain information of CAs, in a list(if many level)</li>
+  <li>ban32.key contain private key.</li>
+</ul>
+
+<h4 id="certificate"><span class="mr-2">certificate</span><a href="#certificate" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>include: ID, PK, Sig.</li>
+</ul>
+
+<h4 id="mitm-proxy"><span class="mr-2">MITM proxy</span><a href="#mitm-proxy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>trusted man in the middle.</li>
+</ul>
+
+<h4 id="attack-on-pki"><span class="mr-2">attack on PKI</span><a href="#attack-on-pki" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<p>attack surface:</p>
+<ol>
+  <li>Approve</li>
+  <li>Certificate</li>
+  <li>Verify</li>
+  <li>Confirm</li>
+</ol>
+
+<p>case:</p>
+<ul>
+  <li>Comodo Breach</li>
+  <li>DigiNotar</li>
+</ul>
+
 <h1 id="tls">TLS</h1>
+
+<h4 id="tls-handshake"><span class="mr-2">TLS HandShake</span><a href="#tls-handshake" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<h4 id="tls-data-transmission"><span class="mr-2">TLS Data Transmission</span><a href="#tls-data-transmission" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<h4 id="tls-program"><span class="mr-2">TLS program</span><a href="#tls-program" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<h4 id="tlk-proxy"><span class="mr-2">TLK Proxy</span><a href="#tlk-proxy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 
 <h1 id="bitcoin">Bitcoin</h1>
 
