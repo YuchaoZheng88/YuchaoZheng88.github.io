@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-05-17T21:07:42+08:00</updated>
+  <updated>2022-05-19T21:09:49+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,169 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>THM Attacktive Directory</title>
+    <link href="/posts/THM-Attacktive-Directory/" rel="alternate" type="text/html" title="THM Attacktive Directory" />
+    <published>2022-05-18T11:33:00+08:00</published>
+  
+    <updated>2022-05-18T11:33:00+08:00</updated>
+  
+    <id>/posts/THM-Attacktive-Directory/</id>
+    <content src="/posts/THM-Attacktive-Directory/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      install Impacket
+
+
+  https://github.com/SecureAuthCorp/impacket
+
+
+git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
+pip3 install -r /opt/impacket/requirements.txt
+cd /opt/impacket/ &amp;amp;&amp;amp; python3 ./setup.py install
+
+
+Installing Bloodhound and Neo4j
+
+
+  https://github.com/BloodHoundAD/BloodHound
+  https://github.com/neo4j
+
+
+apt install bloodhound neo4j
+
+
+nmap
+nmap -sC -s...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Zero Logon CVE</title>
+    <link href="/posts/Zero-Logon/" rel="alternate" type="text/html" title="Zero Logon CVE" />
+    <published>2022-05-17T11:33:00+08:00</published>
+  
+    <updated>2022-05-17T11:33:00+08:00</updated>
+  
+    <id>/posts/Zero-Logon/</id>
+    <content src="/posts/Zero-Logon/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Zero Logon
+
+CVE-2020-1472
+
+  abuses a feature within MS-NRPC (Microsoft NetLogon Remote Protocol)
+  AES-CFB8 with hard coded IV.
+  https://github.com/SecuraBV/CVE-2020-1472, the POC
+  https://github.com/Sq00ky/Zero-Logon-Exploit, change password to null after exploit
+
+
+step
+impacket installation
+python3 -m pip install virtualenv
+
+python3 -m virtualenv impacketEnv
+
+source impacketEnv/bin/activat...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>Yara</title>
+    <link href="/posts/yara/" rel="alternate" type="text/html" title="Yara" />
+    <published>2022-05-16T11:33:00+08:00</published>
+  
+    <updated>2022-05-16T11:33:00+08:00</updated>
+  
+    <id>/posts/yara/</id>
+    <content src="/posts/yara/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      install
+sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
+sudo apt install yara
+
+
+usage
+yara myfirstrule.yar somefile
+
+
+write rules
+
+  https://yara.readthedocs.io/en/stable/writingrules.html
+  https://medium.com/malware-buddy/security-infographics-9c4d3bd891ef#18dd
+
+
+awesome-yara
+
+  https://github.com/InQuest/awesome-yara
+
+
+Loki
+
+  python loki.py -h
+  python loki.py -p . path of current directo...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -113,152 +276,6 @@ Tail code = print(Body.head) + print(Body) + print(Body.tail)
 after execution:
 
   execute malicious...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>CEH small points</title>
-    <link href="/posts/CEH-SMALL-POINTS/" rel="alternate" type="text/html" title="CEH small points" />
-    <published>2022-04-18T11:33:00+08:00</published>
-  
-    <updated>2022-05-06T22:48:23+08:00</updated>
-  
-    <id>/posts/CEH-SMALL-POINTS/</id>
-    <content src="/posts/CEH-SMALL-POINTS/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Insertion attack
-
-  TTL field, some packets will end in IDS
-  like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious.
-  PHF attack, “phf” in GET request.
-
-
-Unicode invasion, aka Obfuscating
-
-  bypass IDS, IDS cannot recognize, but web server can decode
-  \u017F can be used as S
-
-
-Rogue router: thentication to prevent.
-
-Regulation:
-
-  HIPAA:  Health Insurance Portabil...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>htb altered</title>
-    <link href="/posts/htb-altered/" rel="alternate" type="text/html" title="htb altered" />
-    <published>2022-04-02T11:33:00+08:00</published>
-  
-    <updated>2022-04-04T20:22:59+08:00</updated>
-  
-    <id>/posts/htb-altered/</id>
-    <content src="/posts/htb-altered/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Know it`s an php lavarel application behind nginx.
-
-Brute force Laravel application pin
-
-try type juggling
-
-  change content type to application/json
-  application/x-www-form-urlencoded, body is name=admin&amp;amp;pin=1234
-  application/json, body is {"name":"admin", "pin":true} try type juggling, php == not === vulnarability, but no on this box.
-
-
-fuzz
-
-  In type Juggling, we know the php uses ===...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>htb stacked</title>
-    <link href="/posts/htb-stacked/" rel="alternate" type="text/html" title="htb stacked" />
-    <published>2022-03-29T11:33:00+08:00</published>
-  
-    <updated>2022-03-31T20:58:39+08:00</updated>
-  
-    <id>/posts/htb-stacked/</id>
-    <content src="/posts/htb-stacked/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      recon
-
-nmap
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
-nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
-
-
-  22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp open  docker
-
-
-feroxbuster, directory discovery
-feroxbuster -u http://stacked.htb
-
-wfuzz, host discovery
-wfuzz -H "Host: FUZZ.stacked.htb" -u http://stacked.htb -w /usr/seclists/Discovery/DNS/subdomains-top1...
     </summary>
   
 
