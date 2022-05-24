@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-05-22T22:31:54+08:00</updated>
+  <updated>2022-05-24T21:11:25+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,46 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Linux for CTF</title>
+    <link href="/posts/Linux-for-CTF/" rel="alternate" type="text/html" title="Linux for CTF" />
+    <published>2022-05-23T11:33:00+08:00</published>
+  
+    <updated>2022-05-23T11:33:00+08:00</updated>
+  
+    <id>/posts/Linux-for-CTF/</id>
+    <content src="/posts/Linux-for-CTF/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      sshpass, dd, gzip
+sshpass -p raspberry ssh pi@10.10.10.48 "sudo dd if=/dev/sdb | gzip -1 -" | dd of=usb.gz
+
+  sshpass -p raspberry - use the password “raspberry” for the following SSH command (like ssh and scp)
+  ssh pi@10.10.10.48 "[command]" - SSH into Mirai and run the command
+  sudo dd if=/dev/sdb - read all of /dev/sdb and print it to STDOUT
+  | gzip -1 - - compress the file read from STDI...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -226,56 +266,6 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
 
 -- mysql, find database type and verion
 '+UNION+SELECT+'...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>self reproducing code</title>
-    <link href="/posts/self-reproducing-code/" rel="alternate" type="text/html" title="self reproducing code" />
-    <published>2022-04-29T11:33:00+08:00</published>
-  
-    <updated>2022-04-29T11:33:00+08:00</updated>
-  
-    <id>/posts/self-reproducing-code/</id>
-    <content src="/posts/self-reproducing-code/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      How to write a quine
-
-self-reproducing code
-A quine is a program, takes no input and produces a copy of its own source code as its only output.
-
-original code is:
-
-Head is: malicious code + data of line numbers for tail
-Body is:  `Head in string` + `Tail in string`
-Tail   is:  reproducing code
-
-
-Tail code = print(Body.head) + print(Body) + print(Body.tail)
-
-after execution:
-
-  execute malicious...
     </summary>
   
 
