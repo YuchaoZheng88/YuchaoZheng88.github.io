@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-16T22:49:38+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-27T12:02:02+08:00","datePublished":"2022-05-10T11:33:00+08:00","description":"sql injection","headline":"BurpSuite Lab","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/BurpSuite-Lab/"},"url":"/posts/BurpSuite-Lab/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -556,6 +556,30 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -635,12 +659,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1652712578"
+    data-ts="1653624122"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-05-16
+  2022-05-26
 </em>
 
       </span>
@@ -666,8 +690,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="531 words">
-  <em>2 min</em> read</span>
+  title="646 words">
+  <em>3 min</em> read</span>
 
 
       <!-- page views -->
@@ -865,6 +889,12 @@ Possible values:</li>
 
 <p>AngularJS expression</p>
 
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></div></div>
+
 <hr />
 
 <p>Reflected DOM XSS</p>
@@ -887,6 +917,62 @@ Possible values:</li>
   <li><code class="language-plaintext highlighter-rouge">a = {"results":[],"searchTerm":"\\\\"}</code> Good</li>
   <li>An arithmetic operator (in this case the subtraction operator) is then used to separate the expressions before the alert() function is called.</li>
 </ul>
+
+<hr />
+
+<h1 id="cross-site-request-forgery-csrf">Cross-site request forgery (CSRF)</h1>
+
+<h4 id="csrf-poc-generator"><span class="mr-2">CSRF PoC Generator</span><a href="#csrf-poc-generator" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>online tool(search one) <a href="https://github.com/merttasci/csrf-poc-generator">https://github.com/merttasci/csrf-poc-generator</a></li>
+  <li>or Burp Professional -&gt; Engagement tools: Generate CSRF PoC. -&gt; options: Include auto-submit script.</li>
+  <li>online tools can not change the &amp;# format.</li>
+  <li>HTML character set <a href="https://www.w3.org/MarkUp/html-spec/html-spec_13.html">https://www.w3.org/MarkUp/html-spec/html-spec_13.html</a></li>
+  <li><code class="language-plaintext highlighter-rouge">&amp;#64;</code> as @</li>
+  <li><code class="language-plaintext highlighter-rouge">&amp;#46;</code> as .</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;script&gt;  document.forms[0].submit();  &lt;/script&gt;</code> auto submit the CSRF</li>
+</ul>
+
+<h4 id="change-request-method"><span class="mr-2">change Request method</span><a href="#change-request-method" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<p>Change from POST to GET,  may avoid csrf token check.</p>
+
+<h1 id="clickjacking">Clickjacking</h1>
+
+<h1 id="dom-based-vulnerabilities">DOM-based vulnerabilities</h1>
+
+<h1 id="cross-origin-resource-sharing-cors">Cross-origin resource sharing (CORS)</h1>
+
+<h1 id="xml-external-entity-xxe-injection">XML external entity (XXE) injection</h1>
+
+<h1 id="server-side-request-forgery-ssrf">Server-side request forgery (SSRF)</h1>
+
+<h1 id="http-request-smuggling">HTTP request smuggling</h1>
+
+<h1 id="os-command-injection">OS command injection</h1>
+
+<h1 id="server-side-template-injection">Server-side template injection</h1>
+
+<h1 id="directory-traversal">Directory traversal</h1>
+
+<h1 id="access-control-vulnerabilities">Access control vulnerabilities</h1>
+
+<h1 id="authentication">Authentication</h1>
+
+<h1 id="websockets">WebSockets</h1>
+
+<h1 id="web-cache-poisoning">Web cache poisoning</h1>
+
+<h1 id="insecure-deserialization">Insecure deserialization</h1>
+
+<h1 id="information-disclosure">Information disclosure</h1>
+
+<h1 id="business-logic-vulnerabilities">Business logic vulnerabilities</h1>
+
+<h1 id="http-host-header-attacks">HTTP Host header attacks</h1>
+
+<h1 id="oauth-authentication">OAuth authentication</h1>
+
+<h1 id="file-upload-vulnerabilities">File upload vulnerabilities</h1>
 
 </div>
 
@@ -1014,17 +1100,17 @@ Possible values:</li>
         
         
         
+      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
+      
+        
+        
+        
       <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
       
         
         
         
       <li><a href="/posts/cryptography/">cryptography</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
       
         
         

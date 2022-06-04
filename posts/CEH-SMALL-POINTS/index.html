@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-22T22:30:40+08:00","datePublished":"2022-04-18T11:33:00+08:00","description":"Insertion attack TTL field, some packets will end in IDS like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious. PHF attack, “phf” in GET request.","headline":"CEH small points","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CEH-SMALL-POINTS/"},"url":"/posts/CEH-SMALL-POINTS/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-06-05T00:09:47+08:00","datePublished":"2022-04-18T11:33:00+08:00","description":"Insertion attack TTL field, some packets will end in IDS like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious. PHF attack, “phf” in GET request.","headline":"CEH small points","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CEH-SMALL-POINTS/"},"url":"/posts/CEH-SMALL-POINTS/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -707,12 +707,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1653229840"
+    data-ts="1654358987"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-05-22
+  2022-06-04
 </em>
 
       </span>
@@ -738,8 +738,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="7690 words">
-  <em>42 min</em> read</span>
+  title="8170 words">
+  <em>45 min</em> read</span>
 
 
       <!-- page views -->
@@ -823,6 +823,7 @@
   <li>was a collection of tools that enabled administrative access to a computer or network</li>
   <li>now provides root-level, privileged access while hiding</li>
   <li>Sensitive data stolen, Malware infection, File removal, Eavesdropping, Remote control</li>
+  <li>impacted Ring 0</li>
 </ul>
 
 <h1 id="type-of-rootkit">type of rootkit</h1>
@@ -908,9 +909,19 @@
   <li>Network-based application firewalls:  can understand FTP, DNS, HTTP. check for malware.</li>
   <li>Host-based application firewalls:  monitors application system calls or other general system communication.</li>
   <li>multi-homed firewall: a node with multiple NICs that connects to two or more networks.</li>
-  <li>statefull firewall: layer 4</li>
+  <li>stateful firewall: layer 4</li>
   <li>Access control list: layer 3 or 4.</li>
 </ul>
+
+<h1 id="stateful-firewall">Stateful firewall</h1>
+<ul>
+  <li>NEW: SYN message has been sent</li>
+  <li>RELATED: has an association with an existing stream</li>
+  <li>ESTABLISHED: three-way handshake has been completed</li>
+</ul>
+
+<h1 id="stateful-firewall-1">Stateful firewall</h1>
+<p>tracks all communications streams, and packets are inspected</p>
 
 <h1 id="testing">testing</h1>
 <ul>
@@ -975,6 +986,7 @@
   <li>4 Source quench (deprecated)</li>
   <li>5 Redirect</li>
   <li>8 echo (request)</li>
+  <li>11 Time Exceeded</li>
 </ul>
 
 <h1 id="netsparker">netsparker</h1>
@@ -1014,6 +1026,12 @@
 <h1 id="tcp-connectfull-open-scan">TCP Connect/Full Open Scan</h1>
 <ul>
   <li>full 3-way hand shake.  most reliable</li>
+</ul>
+
+<h1 id="tcp-seq-ack">TCP, SEQ ACK</h1>
+<ul>
+  <li>each sender SEQ = this sender last SEQ + 1</li>
+  <li>ACK = other SEQ + 1</li>
 </ul>
 
 <h1 id="inverse-tcp-flag-scanning">Inverse TCP flag scanning</h1>
@@ -1175,7 +1193,10 @@
 </ul>
 
 <h1 id="tls">TLS</h1>
-<p>uses RSA for the handshake and key negotiation.</p>
+<ul>
+  <li>uses RSA for the handshake and key negotiation.</li>
+  <li>Whenever a client is trying to establish a Secure Sockets Layer connection, the first packet is flagged to “Don’t Fragment.” This prevents an adversary from injecting their own packets in the middle of a secure data stream</li>
+</ul>
 
 <h1 id="heartbleed">Heartbleed</h1>
 <ul>
@@ -1188,14 +1209,13 @@
 <h1 id="ssltls-renegotiation-vulnerability">SSL/TLS Renegotiation Vulnerability</h1>
 <p>DoS, or MITM into HTTPS sessions.</p>
 
-<h1 id="poodle-attack">POODLE attack:</h1>
+<h1 id="poodle-attack">POODLE attack</h1>
 <ul>
   <li>“Padding Oracle On Downgraded Legacy Encryption”</li>
   <li>fallback to SSL 3.0.</li>
+  <li>Man in the middle</li>
+  <li>Moller, Duong, and Kotowicz. first discover.</li>
 </ul>
-
-<h1 id="snort-modes">Snort modes</h1>
-<p>Sniffer Mode / Packet Logger Mode / Network Intrusion Detection System Mode</p>
 
 <h1 id="tcpdump">tcpdump</h1>
 <p>Wireshark for CLI</p>
@@ -1275,10 +1295,14 @@
   <li>auxiliary/scanner/snmp</li>
 </ul>
 
+<h1 id="metasploit-scan-vs-nmap">Metasploit scan VS nmap</h1>
+<p>store results in a database so the results can be looked up later</p>
+
 <h1 id="msfvenom">msfvenom</h1>
 <ul>
   <li>be used in place of msfpayload and msfencode</li>
   <li>msfencode: bypass antivirus</li>
+  <li>easily create an executable that could be deployed on a system to connect back to a command and control system</li>
 </ul>
 
 <h1 id="idsips">IDS/IPS</h1>
@@ -1291,11 +1315,15 @@ detection method</li>
   <li>SIDS: signature-based IDS</li>
 </ul>
 
+<h1 id="snort-modes">Snort modes</h1>
+<p>Sniffer Mode / Packet Logger Mode / Network Intrusion Detection System Mode</p>
+
 <h1 id="snort-rule">Snort rule</h1>
 <ul>
-  <li>``` alert tcp any 21 -&gt; 10.199.12.8 any (msg:”FTP Packet “; sid:1000010)</li>
-  <li>Rule Header, Rule Option</li>
-  <li>action protocol LIP LPort direction RIP RPort, Rule Option</li>
+  <li><code class="language-plaintext highlighter-rouge">alert tcp any 21 -&gt; 10.199.12.8 any (msg:"FTP Packet "; sid:1000010)</code></li>
+  <li>which are: Rule Header (Rule Option)</li>
+  <li>Rule Header: action protocol LIP LPort direction RIP RPort\</li>
+  <li>’!’ means not. <code class="language-plaintext highlighter-rouge">alert tcp !home_net any - &gt; external_net</code></li>
 </ul>
 
 <h1 id="intranet-machine-to-visit-internet">Intranet machine to visit Internet</h1>
@@ -1328,10 +1356,10 @@ detection method</li>
 
 <h1 id="saas-paas-iaas">SaaS, PaaS, IaaS</h1>
 <ul>
-  <li>On-Premises user manage: Infrastructure + Virtualization, Servers, Storage, Networking.</li>
-  <li>Infrastructure user manage: Platform + Runtime, Middleware, O/S.</li>
-  <li>Platform user manage: Application, Data.</li>
   <li>Software user manage: Null.</li>
+  <li>Platform user manage: Application, Data.</li>
+  <li>Infrastructure user manage: Platform + Runtime, Middleware, O/S.</li>
+  <li>On-Premises user manage: Infrastructure + Virtualization, Servers, Storage, Networking.</li>
 </ul>
 
 <h1 id="staas---storage-as-a-service">Staas - Storage as a Service</h1>
@@ -1352,7 +1380,7 @@ detection method</li>
   <li>stealth virus: change the read system call, when the user asks to read a code modified by a virus, the original form of code is shown rather than infected code. types:  boot virus,  file virus, Macroviruses. ex:  Virus.DOS.Stealth.551, Exploit.Macro.Stealth, Exploit.MSWord.Stealth, Brain, Fish.</li>
   <li>tunneling virus: bypass scanner. installing itself in the interrupt handler chain. or in device drivers</li>
   <li>A polymorphic virus: generates numerous mutated versions of itself.</li>
-  <li>Macro virus: documents, spreadsheets, and other data files</li>
+  <li>Macro virus: documents, spreadsheets, and other data files, ILOVEYOU virus.</li>
   <li>Cavity virus: aka Spacefiller, overwriting unused areas of executable files.</li>
   <li>Encryption virus, aka Ransomware</li>
 </ul>
@@ -1393,7 +1421,7 @@ detection method</li>
 
 <h1 id="session-splicing">Session Splicing</h1>
 <ul>
-  <li>split the attack traffic into many packets such that no single packet triggers the IDS.</li>
+  <li>split the attack payload into many packets such that no single packet triggers the IDS.</li>
   <li>tools: Nessus,  ‘Nikto’, ‘whisker’ and ‘Sandcat’</li>
 </ul>
 
@@ -1416,17 +1444,12 @@ detection method</li>
   <li>client authentication in wireless networks, security access</li>
 </ul>
 
-<h1 id="dragonblood-wpa3-vulnerabilities">Dragonblood: WPA3 vulnerabilities.</h1>
-
-<h1 id="key-reinstallation-attack-krack-a-severe-replay-attack-on-wpa2">Key reinstallation attack: KRACK, a severe replay attack on WPA2.</h1>
-
-<h1 id="krack-attack-key-reinstallation-attack-a-replay-attack">KRACK attack: Key Reinstallation Attack, a replay attack.</h1>
-
 <h1 id="wep">WEP</h1>
 <ul>
   <li>Wired Equivalent Privacy,  mimic the privacy characteristics of a wired LAN,</li>
   <li>insecure RC4 cipher</li>
   <li>Initialization Vector (IV) is Too Small</li>
+  <li>RC4: 40 to 232 bits key size. weakness is IV.</li>
 </ul>
 
 <h1 id="rc456">RC4/5/6</h1>
@@ -1472,7 +1495,7 @@ detection method</li>
   <li>Teardrop attack.  attempts to make a computer resource unavailable by flooding a network or server with requests and data</li>
   <li>APDoS. advanced persistent DoS.  persist for weeks</li>
   <li>Smurf. distributed denial-of-service. ICMP.</li>
-  <li>Fraggle attack. distributed denial-of-service. UDP.</li>
+  <li>Fraggle attack. distributed denial-of-service. UDP. an amplification attack</li>
   <li>bonk attack: sends fragmented UDP packets to a Windows system, may cause the system to crash, DoS</li>
   <li>Yo-yo. aimed at cloud-hosted. attack until a cloud-hosted service scales outwards. when scales back down, the attack resumes,</li>
   <li>XOIC. a ddos tool.</li>
@@ -1614,8 +1637,15 @@ detection method</li>
   <li>IPsec driver.  performs protocol-level functions required to encrypt and decrypt packets</li>
   <li>IKE: Internet Key Exchange, used to set up a security association (SA), exchange secret keys</li>
   <li>AH (Authentication Header) protocol. integrity / ESP (Encapsulating Security Payload) protocol. integrity AND confidentiality</li>
-  <li>tunnel mode (gateway-to-gateway) / transport mode (host to host)</li>
+  <li>tunnel mode: gateway-to-gateway, encrypt payload not header,</li>
+  <li>transport mode: host to host, encrypt both payload and header</li>
   <li>AH tunnel/ AH trasport/ ESP tunnel/ ESP transport</li>
+</ul>
+
+<h1 id="isakmp">ISAKMP</h1>
+<ul>
+  <li>Internet Security Association and Key Management Protocol</li>
+  <li>establishes the key agreement</li>
 </ul>
 
 <h1 id="remote-access-policy">Remote access policy</h1>
@@ -1769,7 +1799,12 @@ access-list 102 permit ip any any
 </ul>
 
 <h1 id="cam-overflow">CAM Overflow</h1>
-<p>context-addressable memory (CAM) table. no more new MAC addresses can be learned. turn switch into a hub.</p>
+<ul>
+  <li>layer 2 switch is flooded</li>
+  <li>context-addressable memory (CAM) table.</li>
+  <li>no more new MAC addresses can be learned.</li>
+  <li>turn switch into a hub.</li>
+</ul>
 
 <h1 id="vlan-hopping-attack-2-methods">VLAN hopping attack 2 methods</h1>
 <ul>
@@ -1839,8 +1874,14 @@ access-list 102 permit ip any any
   <li>promiscuous mode: sniff layer 3. can not capture wireless.</li>
 </ul>
 
-<h1 id="residual-risk--inherent-risk--impact-of-risk-controls">Residual risk = (Inherent risk) – (impact of risk controls)</h1>
-<p>the amount of risk left over after natural or inherent risks have been reduced by risk controls.</p>
+<h1 id="broadcast-frame">Broadcast frame</h1>
+<p>send a layer 2 message to every device in a broadcast or collision domain</p>
+
+<h1 id="residual-risk">Residual risk</h1>
+<ul>
+  <li>Equal to: (Inherent risk) – (impact of risk controls)</li>
+  <li>the amount of risk left over after natural or inherent risks have been reduced by risk controls.</li>
+</ul>
 
 <h1 id="whois">WHOIS:</h1>
 <p>protocol that used for querying databases that store the registered users or assignees of an Internet resource</p>
@@ -1883,6 +1924,9 @@ access-list 102 permit ip any any
   <li>ESSID  Extended Service Set Identification</li>
 </ul>
 
+<h1 id="beacon-frame">Beacon frame</h1>
+<p>wireless access points use to adverte its SSID to wireless devices</p>
+
 <h1 id="wpa">WPA</h1>
 <p>Wi-Fi Protected Access</p>
 
@@ -1894,6 +1938,12 @@ access-list 102 permit ip any any
 
 <h1 id="wpa3-enterprise">WPA3-Enterprise</h1>
 <p>192-bit cryptographic strength, cryptographic tools to protect sensitive data.</p>
+
+<h1 id="dragonblood-wpa3-vulnerabilities">Dragonblood: WPA3 vulnerabilities.</h1>
+
+<h1 id="key-reinstallation-attack-krack-a-severe-replay-attack-on-wpa2">Key reinstallation attack: KRACK, a severe replay attack on WPA2.</h1>
+
+<h1 id="krack-attack-key-reinstallation-attack-a-replay-attack">KRACK attack: Key Reinstallation Attack, a replay attack.</h1>
 
 <h1 id="aircrack-ng">Aircrack-ng</h1>
 <p>detector, packet sniffer, WEP and WPA/WPA2-PSK cracker and analysis tool for 802.11 wireless LANs</p>
@@ -1953,7 +2003,14 @@ access-list 102 permit ip any any
   <li>Network Basic Input Output System</li>
   <li>Enumeration: list computers, shared resources</li>
   <li>nbtstat: gather NetBIOS configurations information on Windows</li>
+  <li>services: NBT - UDP 137; NetBIOS session - TCP 139; NetBIOS datagram - UDP 138</li>
 </ul>
+
+<h1 id="nbtstat">nbtstat</h1>
+<p>collect information about the Windows network, including the workgroup or domain you are connected to</p>
+
+<h1 id="netstat">netstat</h1>
+<p>a command-line network utility that displays network connections for TCP, routing tables, and network protocol statistics.</p>
 
 <h1 id="jxplorers">JXplorers</h1>
 <p>query remote LDAP servers, to gather information</p>
@@ -2150,7 +2207,7 @@ access-list 102 permit ip any any
   <li>NOOP –  testing to avoid timeouts</li>
   <li>EXPN – verify the existence of one or more mailboxes</li>
   <li>StartTLS - use TLS or SSL</li>
-  <li>VRFY, EXPN used to find valid users, email boxes by hackers.</li>
+  <li>VRFY, EXPN used to find valid users, email boxes by hackers</li>
 </ul>
 
 <h1 id="open-mail-relay">open mail relay</h1>
@@ -2244,6 +2301,7 @@ access-list 102 permit ip any any
   <li>SOA Start of [a zone of] authority record</li>
   <li>AXFR Authoritative Zone Transfer</li>
   <li>MX mail exchange.</li>
+  <li>PTR map an IP address to a hostname</li>
 </ul>
 
 <h1 id="soa">SOA</h1>
@@ -2332,8 +2390,17 @@ access-list 102 permit ip any any
   <li>key size: 128, 192, or 256 bits. symmetric.</li>
   <li>selected by NIST as the principal method for providing confidentiality after the DES algorithm</li>
   <li>5 finalist: MARS, RC6, Rijdael, Serpent, Twofish.</li>
-  <li>Rijdael: algorithm finally selected as AES.</li>
+  <li>Rijndael: algorithm finally selected as AES.</li>
 </ul>
+
+<h1 id="vignere">Vignere</h1>
+<p>uses a matrix of two alphabets: one across the top, with another down the side.</p>
+
+<h1 id="caesar-cipher">Caesar cipher</h1>
+<p>uses two alphabets: one with the plain text, while the second one is rotated some number of characters</p>
+
+<h1 id="rot13">Rot13</h1>
+<p>uses the Caesar cipher.</p>
 
 <h1 id="encryption-mode-electronic-codebookecb-cipher-block-chaining-cbc-cipher-feedback-cfb-output-feedbackofb">Encryption Mode: Electronic Codebook(ECB), Cipher-Block Chaining (CBC), Cipher Feedback (CFB), Output Feedback(OFB)</h1>
 <ul>
@@ -2444,6 +2511,9 @@ access-list 102 permit ip any any
   <li>windows TTL: 128</li>
   <li>linux TTL: 64</li>
 </ul>
+
+<h1 id="ttl">TTL</h1>
+<p>prevents IP packets from circulating throughout the Internet forever</p>
 
 <h1 id="five-tier-container-technology-architecture">five-tier container technology architecture</h1>
 <ul>
@@ -2708,6 +2778,13 @@ access-list 102 permit ip any any
 <h1 id="cisco-span-port">Cisco SPAN port</h1>
 <p>on a Cisco switch, Switched Port Analyzer. gather traffic</p>
 
+<h1 id="leap">LEAP</h1>
+<ul>
+  <li>Lightweight Extensible Authentication Protocol</li>
+  <li>a Cisco proprietary protocol and can be used in place of TKIP</li>
+  <li>for building security tunnels</li>
+</ul>
+
 <h1 id="credential-enumerator">Credential enumerator</h1>
 <ul>
   <li>a self-extracting RAR file (containing bypass and service components),</li>
@@ -2871,6 +2948,9 @@ access-list 102 permit ip any any
   <li>look like legitimate traffic</li>
 </ul>
 
+<h1 id="tgt">TGT</h1>
+<p>When the client receives the TGT, the subject authenticated within Kerberos.</p>
+
 <h1 id="net">net</h1>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">net view /domain:&lt;domain_name&gt;</code></li>
@@ -2893,6 +2973,7 @@ access-list 102 permit ip any any
 <h1 id="udp-datagram-payload-size">UDP datagram payload size</h1>
 <ul>
   <li>65,535 - 8(header) - 20(IP header) = 65507(payload size)</li>
+  <li>UDP header has 4 fields: Lport, Dport, Checksum, Length</li>
 </ul>
 
 <h1 id="security-model">security model</h1>
@@ -2925,6 +3006,12 @@ access-list 102 permit ip any any
   <li>physical control: mantrap, biometric device</li>
 </ul>
 
+<h1 id="when-actual-practices-not-follow-security-policies">when actual practices not follow security policies</h1>
+<ul>
+  <li>sign that the policies are not up-to-date</li>
+  <li>evaluates and make changes to the security policies</li>
+</ul>
+
 <h1 id="megaping">MegaPing</h1>
 <p>Windows GUI tool, do ping sweeps and port scans</p>
 
@@ -2954,7 +3041,7 @@ access-list 102 permit ip any any
 
 <h1 id="edgar">EDGAR</h1>
 <ul>
-  <li>Electronic Data Gathering, Analysis, and Retrieval,</li>
+  <li>Electronic Data Gathering, Analysis, and Retrieval</li>
   <li>financial information about a company, including financial reports</li>
 </ul>
 
@@ -3001,6 +3088,21 @@ access-list 102 permit ip any any
 
 <h1 id="arpspoof">arpspoof</h1>
 <p>tool can be used to spoof a MAC address</p>
+
+<h1 id="executive-summary-report">Executive summary report</h1>
+<p>a high-level view of the overall penetration testing results. It is geared toward senior officials and managers.</p>
+
+<h1 id="port-address-translation-pat">Port address translation (PAT)</h1>
+<ul>
+  <li>most common network access translation type</li>
+  <li>translates communications made between hosts on a private network and hosts on a public network.</li>
+</ul>
+
+<h1 id="msconfig">MSConfig</h1>
+<p>command in Windows allows you to bring up a list of startup items, including their locations in the Registry or the file system</p>
+
+<h1 id="mimikatz">mimikatz</h1>
+<p>used to capture passwords from the system Registry as well as from memory of a compromised system</p>
 
 <hr />
 
@@ -3143,17 +3245,17 @@ NIDS</p>
         
         
         
+      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
+      
+        
+        
+        
       <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
       
         
         
         
       <li><a href="/posts/cryptography/">cryptography</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
       
         
         
