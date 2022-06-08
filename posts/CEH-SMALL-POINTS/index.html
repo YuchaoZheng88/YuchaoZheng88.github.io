@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-06-05T00:09:47+08:00","datePublished":"2022-04-18T11:33:00+08:00","description":"Insertion attack TTL field, some packets will end in IDS like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious. PHF attack, “phf” in GET request.","headline":"CEH small points","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CEH-SMALL-POINTS/"},"url":"/posts/CEH-SMALL-POINTS/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-06-08T23:41:44+08:00","datePublished":"2022-04-18T11:33:00+08:00","description":"Insertion attack TTL field, some packets will end in IDS like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious. PHF attack, “phf” in GET request.","headline":"CEH small points","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CEH-SMALL-POINTS/"},"url":"/posts/CEH-SMALL-POINTS/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -707,12 +707,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1654358987"
+    data-ts="1654702904"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-06-04
+  2022-06-08
 </em>
 
       </span>
@@ -738,7 +738,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="8170 words">
+  title="8259 words">
   <em>45 min</em> read</span>
 
 
@@ -878,6 +878,7 @@
   <li>forge certificates for authentication.</li>
   <li>create certificates that are not officially signed by a CA</li>
   <li>password cracking, ARP spoofing, and conducting man-in-the-middle attacks.</li>
+  <li>crack WEP passwords</li>
 </ul>
 
 <h1 id="pap">PAP:</h1>
@@ -1311,7 +1312,7 @@
   <li>HIDS: host-based intrusion detection system. one of the last layers of defense and reside on computer endpoints. signature-based
 detection method</li>
   <li>NIDS: Network-based intrusion detection system.  at the physical and network layers after it has passed through a firewall. Only packet level analysis, can be bypass by encryption.</li>
-  <li>AIDS: Anomaly-based intrusion detection system. often with artificial intelligence type techniques.  a high false-positive rate. Baseline must be set Prior to deploying.</li>
+  <li>AIDS: Anomaly-based intrusion detection system. often with artificial intelligence type techniques.  a high false-positive rate. Network baseline set must be set Prior to deploying.</li>
   <li>SIDS: signature-based IDS</li>
 </ul>
 
@@ -1487,7 +1488,7 @@ detection method</li>
 
 <h1 id="dos">DOS</h1>
 <ul>
-  <li>Slowloris: tries to keep many connections to the target web server open and hold them open as long as possible. most likely successful</li>
+  <li>Slowloris: tries to keep many connections to the target web server open and hold them open as long as possible. most likely successful. also tool name.</li>
   <li>HTTP GET/POST (HTTP Flood):</li>
   <li>Spoofed Session Flood.  contains multiple SYN and multiple ACK packets along with one or more RST or FIN</li>
   <li>IP fragmentation scan/attack. Fragmentation is associated with IP; whereas Segmentation is associated with TCP.</li>
@@ -1657,6 +1658,9 @@ detection method</li>
   <li>Encapsulating Security Protocol (ESP),</li>
   <li>Security Association (SA), one of the most common is Internet Key Exchange (IKE)</li>
 </ul>
+
+<h1 id="ipsec-1">IPsec</h1>
+<p>support IPv6 natively.</p>
 
 <h1 id="some-attacks">some attacks</h1>
 <ul>
@@ -1870,7 +1874,7 @@ access-list 102 permit ip any any
 
 <h1 id="lan">LAN</h1>
 <ul>
-  <li>monitor mode: sniff layer 2. like wireless traffic.</li>
+  <li>monitor mode: sniff layer 2. capture capture 802.11/wireless traffic. enabled in order to see radio headers.</li>
   <li>promiscuous mode: sniff layer 3. can not capture wireless.</li>
 </ul>
 
@@ -1971,7 +1975,7 @@ access-list 102 permit ip any any
 <h1 id="some-ports">some ports:</h1>
 <ul>
   <li>FTP: tcp/21(command), tcp/20(data).</li>
-  <li>SSH: tcp/22</li>
+  <li>SSH: tcp/22, SCP(Secure Copy Protocol) on it.</li>
   <li>Telnet: tcp/23</li>
   <li>SMTP: tcp/25.</li>
   <li>DNS: udp/port 53.</li>
@@ -3016,7 +3020,10 @@ access-list 102 permit ip any any
 <p>Windows GUI tool, do ping sweeps and port scans</p>
 
 <h1 id="eternalblue">EternalBlue</h1>
-<p>takes advantage of a vulnerability in the Server Message Block protocol</p>
+<ul>
+  <li>SMB, takes advantage of a vulnerability in the  Server Message Block protocol</li>
+  <li>on Windows System</li>
+</ul>
 
 <h1 id="clean-desk-policy">Clean desk policy</h1>
 <p>clean off their desk, empty trash, shred sensitive documents</p>
@@ -3103,6 +3110,28 @@ access-list 102 permit ip any any
 
 <h1 id="mimikatz">mimikatz</h1>
 <p>used to capture passwords from the system Registry as well as from memory of a compromised system</p>
+
+<h1 id="clearance">clearance</h1>
+<ul>
+  <li>A subject is given a security label called a clearance.</li>
+  <li>Their trustworthiness to process sensitive information determines their level of clearance, such as secret or confidential.</li>
+</ul>
+
+<h1 id="modbus">Modbus</h1>
+<ul>
+  <li>a protocol</li>
+  <li>in industrial control system, to communicate with programmable logic controllers</li>
+</ul>
+
+<h1 id="scada-1">SCADA</h1>
+<ul>
+  <li>a category of software applications</li>
+  <li>for controlling industrial processes</li>
+  <li>supervisory control and data acquisition</li>
+</ul>
+
+<h1 id="dirb">DIRB</h1>
+<p>a Web Content Scanner</p>
 
 <hr />
 
