@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-06-08T23:43:00+08:00</updated>
+  <updated>2022-07-11T22:33:52+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,54 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>OSCP Command</title>
+    <link href="/posts/OSCP-commands/" rel="alternate" type="text/html" title="OSCP Command" />
+    <published>2022-07-09T11:33:00+08:00</published>
+  
+    <updated>2022-07-09T11:33:00+08:00</updated>
+  
+    <id>/posts/OSCP-commands/</id>
+    <content src="/posts/OSCP-commands/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="dev" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Commands
+
+  service smbd restart &amp;amp;&amp;amp; dhclient eth0
+  tcpdump -nnttttAr wireless.cap
+  tcpdump -nnttttAi lo
+  aircrack-ng -w wordlist.txt wireless.cap
+  netstat -antp
+  nmap -p- -A -T5 {IP}
+  dirb {IP} -u {usr}:{passwd}
+  zsteg -a suspicious.png
+  john --show --format=Raw-MD5 hashfile
+  ssh admin@{IP} -p6464 -t "bash --noprofile"
+  https://ghidra-sre.org/
+  ssh-keygen
+  steghide extract -...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -216,56 +264,6 @@ Loki
 
   python loki.py -h
   python loki.py -p . path of current directo...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>BurpSuite Lab</title>
-    <link href="/posts/BurpSuite-Lab/" rel="alternate" type="text/html" title="BurpSuite Lab" />
-    <published>2022-05-10T11:33:00+08:00</published>
-  
-    <updated>2022-05-27T12:02:02+08:00</updated>
-  
-    <id>/posts/BurpSuite-Lab/</id>
-    <content src="/posts/BurpSuite-Lab/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      sql injection
-
-cheetsheet
-https://portswigger.net/web-security/sql-injection/cheat-sheet
-
-'+OR+1=1--
-'+UNION+SELECT+NULL,NULL--
-
--- find columns are compatible with string data
-'+UNION+SELECT+'abcdef',NULL,NULL--
-
--- oracle, find database type and version
-'+UNION+SELECT+'abc','def'+FROM+dual--
-'+UNION+SELECT+BANNER,+NULL+FROM+v$version--
-
--- mysql, find database type and verion
-'+UNION+SELECT+'...
     </summary>
   
 

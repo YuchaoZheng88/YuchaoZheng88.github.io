@@ -887,6 +887,11 @@
         
         
         
+      <li><a href="/posts/BOF/">Buffer over flow</a></li>
+      
+        
+        
+        
       <li><a href="/posts/CEH-SMALL-POINTS/">CEH small points</a></li>
       
         
@@ -903,11 +908,6 @@
         
         
       <li><a href="/posts/cryptography/">cryptography</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/htb-altered/">htb altered</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1233,6 +1233,121 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1422,55 +1537,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1498,6 +1564,9 @@
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/thm/">thm</a>
     
       
@@ -1514,9 +1583,6 @@
     
       
       <a class="post-tag" href="/tags/c/">c</a>
-    
-      
-      <a class="post-tag" href="/tags/ceh/">ceh</a>
     
 
     </div>
@@ -1796,6 +1862,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1805,18 +1884,6 @@
 
 <!-- Fill with the other newlest posts  -->
 
-
-
-
-  
-    
-    
-      
-      
-        
-        
-        
-          
 
 
 
@@ -1915,7 +1982,7 @@ Python HashMap
       
       
       <div class="card">
-        <a href="/posts/Linux-for-CTF/">
+        <a href="/posts/OSCP-commands/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -1923,13 +1990,13 @@ Python HashMap
 -->
 
 <em class="timeago small"
-    data-ts="1653276780"
+    data-ts="1657337580"
     
     >
-  2022-05-23
+  2022-07-09
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Linux for CTF</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>OSCP Command</h3>
             <div class="text-muted small">
               <p>
                 
@@ -1938,10 +2005,15 @@ Python HashMap
 
 
 
-                sshpass, dd, gzip
-sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&quot; | dd of=usb.gz
+                Commands
 
-  sshpass -p raspberry - use the password “raspberry” for the following SSH command (like...
+  service smbd restart &amp;amp;&amp;amp; dhclient eth0
+  tcpdump -nnttttAr wireless.cap
+  tcpdump -nnttttAi lo
+  aircrack-ng -w wordlist.txt wireless.cap
+  netstat -antp
+  nmap -p- -A -T5 {IP}
+ ...
               </p>
             </div>
           </div>
@@ -2350,6 +2422,121 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2539,55 +2726,6 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
     
     
     
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2615,6 +2753,9 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/thm/">thm</a>
     
       
@@ -2631,9 +2772,6 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
     
       
       <a class="post-tag" href="/tags/c/">c</a>
-    
-      
-      <a class="post-tag" href="/tags/ceh/">ceh</a>
     
 
     </div>
