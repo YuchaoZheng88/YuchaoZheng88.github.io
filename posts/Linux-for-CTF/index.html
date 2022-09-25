@@ -45,8 +45,8 @@
 <meta property="og:title" content="Linux for CTF" />
 <meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="sshpass, dd, gzip sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&quot; | dd of=usb.gz sshpass -p raspberry - use the password “raspberry” for the following SSH command (like ssh and scp) ssh pi@10.10.10.48 &quot;[command]&quot; - SSH into Mirai and run the command sudo dd if=/dev/sdb - read all of /dev/sdb and print it to STDOUT | gzip -1 - - compress the file read from STDIN (-) and print the result to STDOUT The result of that command run over SSH is now printed to STDOUT on my local VM | dd =of=usb.gz - write that output to usb.gz gunzip usb.gz HTB: Mirai" />
-<meta property="og:description" content="sshpass, dd, gzip sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&quot; | dd of=usb.gz sshpass -p raspberry - use the password “raspberry” for the following SSH command (like ssh and scp) ssh pi@10.10.10.48 &quot;[command]&quot; - SSH into Mirai and run the command sudo dd if=/dev/sdb - read all of /dev/sdb and print it to STDOUT | gzip -1 - - compress the file read from STDIN (-) and print the result to STDOUT The result of that command run over SSH is now printed to STDOUT on my local VM | dd =of=usb.gz - write that output to usb.gz gunzip usb.gz HTB: Mirai" />
+<meta name="description" content="mostly from IPPSEC and 0xdf writeups. https://ippsec.rocks/ https://0xdf.gitlab.io/" />
+<meta property="og:description" content="mostly from IPPSEC and 0xdf writeups. https://ippsec.rocks/ https://0xdf.gitlab.io/" />
 <link rel="canonical" href="/posts/Linux-for-CTF/" />
 <meta property="og:url" content="/posts/Linux-for-CTF/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-05-23T11:33:00+08:00","datePublished":"2022-05-23T11:33:00+08:00","description":"sshpass, dd, gzip sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&quot; | dd of=usb.gz sshpass -p raspberry - use the password “raspberry” for the following SSH command (like ssh and scp) ssh pi@10.10.10.48 &quot;[command]&quot; - SSH into Mirai and run the command sudo dd if=/dev/sdb - read all of /dev/sdb and print it to STDOUT | gzip -1 - - compress the file read from STDIN (-) and print the result to STDOUT The result of that command run over SSH is now printed to STDOUT on my local VM | dd =of=usb.gz - write that output to usb.gz gunzip usb.gz HTB: Mirai","headline":"Linux for CTF","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Linux-for-CTF/"},"url":"/posts/Linux-for-CTF/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-07-25T22:07:33+08:00","datePublished":"2022-05-23T11:33:00+08:00","description":"mostly from IPPSEC and 0xdf writeups. https://ippsec.rocks/ https://0xdf.gitlab.io/","headline":"Linux for CTF","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Linux-for-CTF/"},"url":"/posts/Linux-for-CTF/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -604,6 +604,24 @@
 
       <!-- lastmod date -->
       
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago"
+    data-ts="1658758053"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    >
+  2022-07-25
+</em>
+
+      </span>
+      
 
       <!-- read time -->
       <!--
@@ -625,7 +643,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="177 words">
+  title="237 words">
   <em>1 min</em> read</span>
 
 
@@ -638,7 +656,13 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="sshpass-dd-gzip">sshpass, dd, gzip</h1>
+  <h1 id="mostly-from-ippsec-and-0xdf-writeups">mostly from IPPSEC and 0xdf writeups.</h1>
+<ul>
+  <li>https://ippsec.rocks/</li>
+  <li>https://0xdf.gitlab.io/</li>
+</ul>
+
+<h1 id="sshpass-dd-gzip">sshpass, dd, gzip</h1>
 <p><code class="language-plaintext highlighter-rouge">sshpass -p raspberry ssh pi@10.10.10.48 "sudo dd if=/dev/sdb | gzip -1 -" | dd of=usb.gz</code></p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">sshpass -p raspberry</code> - use the password “raspberry” for the following SSH command (like ssh and scp)</li>
@@ -673,7 +697,7 @@
 
 <h1 id="udp-port-scan">UDP port scan</h1>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">sudo nmap -sU -top-ports=100 panda.htb</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sudo nmap -sU -top-ports=100 panda.htb</code> 100 top most common ports</li>
 </ul>
 
 <h1 id="feroxbuster">feroxbuster</h1>
@@ -692,6 +716,19 @@
 <h1 id="ls">ls</h1>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">ls -ld {directory}</code> list directory information, not content.</li>
+</ul>
+
+<h1 id="wfuzz">wfuzz</h1>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">wfuzz -u http://panda.htb -H "Host: FUZZ.panda.htb" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt --hh 33560</code> fuzz virtual hosts, hide default length.</li>
+</ul>
+
+<h1 id="snmp---udp-161">SNMP - UDP 161</h1>
+<ul>
+  <li>community string: basically a password</li>
+  <li><code class="language-plaintext highlighter-rouge">onesixtyone 10.10.10.20 -c /usr/share/doc/onesixtyone/dict.txt </code> try some community strings</li>
+  <li><code class="language-plaintext highlighter-rouge">apt install snmp snmp-mibs-downloader</code></li>
+  <li><code class="language-plaintext highlighter-rouge">snmpwalk -v 2c -c public 10.10.11.136 | tee snmp-full</code></li>
 </ul>
 
 
@@ -825,6 +862,16 @@
         
         
         
+      <li><a href="/posts/OSCP-commands/">OSCP Command</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/Linux-for-CTF/">Linux for CTF</a></li>
+      
+        
+        
+        
       <li><a href="/posts/BOF/">Buffer over flow</a></li>
       
         
@@ -836,16 +883,6 @@
         
         
       <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/cryptography/">cryptography</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1316,6 +1353,153 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1433,48 +1617,6 @@
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
     
   
     
@@ -1505,6 +1647,9 @@
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
+      <a class="post-tag" href="/tags/oscp/">oscp</a>
+    
+      
       <a class="post-tag" href="/tags/thm/">thm</a>
     
       
@@ -1518,9 +1663,6 @@
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/c/">c</a>
     
 
     </div>
@@ -1566,6 +1708,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -1850,55 +2005,17 @@
 
 
 
-                Commands
+                From 0SCP-like Vulnhub boxes
+
+  https://www.vulnhub.com/
+
+
+Commands
 
   service smbd restart &amp;amp;&amp;amp; dhclient eth0
   tcpdump -nnttttAr wireless.cap
   tcpdump -nnttttAi lo
-  aircrack-ng -w wordlist.txt wireless.cap
-  netstat -antp
-  nmap -p- -A -T5 {IP}
- ...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/htb-stacked/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1648524780"
-    
-    >
-  2022-03-29
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb stacked</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                recon
-
-nmap
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
-nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
-
-
-  22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp open  d...
+  aircrack-ng -w wordlis...
               </p>
             </div>
           </div>
@@ -1939,6 +2056,46 @@ try type juggling
 
   change content type to application/json
   application/x-www-form-urlencoded, body is na...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/htb-popcorn/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1615779180"
+    
+    >
+  2021-03-15
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb popcorn</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Recon
+
+nmap
+nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.6
+nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
+
+
+  OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
               </p>
             </div>
           </div>
@@ -2492,6 +2649,153 @@ try type juggling
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2609,48 +2913,6 @@ try type juggling
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
     
   
     
@@ -2681,6 +2943,9 @@ try type juggling
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
+      <a class="post-tag" href="/tags/oscp/">oscp</a>
+    
+      
       <a class="post-tag" href="/tags/thm/">thm</a>
     
       
@@ -2694,9 +2959,6 @@ try type juggling
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/c/">c</a>
     
 
     </div>

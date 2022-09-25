@@ -1353,6 +1353,16 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
         
         
         
+      <li><a href="/posts/OSCP-commands/">OSCP Command</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/Linux-for-CTF/">Linux for CTF</a></li>
+      
+        
+        
+        
       <li><a href="/posts/BOF/">Buffer over flow</a></li>
       
         
@@ -1364,16 +1374,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
         
         
       <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/cryptography/">cryptography</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1844,6 +1844,153 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1961,48 +2108,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
     
   
     
@@ -2033,6 +2138,9 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
+      <a class="post-tag" href="/tags/oscp/">oscp</a>
+    
+      
       <a class="post-tag" href="/tags/thm/">thm</a>
     
       
@@ -2046,9 +2154,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/c/">c</a>
     
 
     </div>
@@ -2102,6 +2207,19 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2403,6 +2521,46 @@ try type juggling
       
       
       <div class="card">
+        <a href="/posts/Linux-for-CTF/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1653276780"
+    
+    >
+  2022-05-23
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Linux for CTF</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                mostly from IPPSEC and 0xdf writeups.
+
+  https://ippsec.rocks/
+  https://0xdf.gitlab.io/
+
+
+sshpass, dd, gzip
+sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&quot; | dd of=usb.gz...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
         <a href="/posts/htb-popcorn/">
           <div class="card-body">
             <!--
@@ -2434,46 +2592,6 @@ nmap -p 22,80 -sC -sV -oA scans/tcpscripts 10.10.10.6
 
 
   OpenSSH 5.1p1, Apache httpd 2.2.12  —&amp;gt; older than Ubuntu Trusty 1...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/htb-secret/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1635552000"
-    
-    >
-  2021-10-30
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb secret</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                nmap
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.120
-nmap -p 22,80,3000 -sCV -oA scans/nmap-tcpscripts 10.10.11.120
-
-
-See 80, 3000 port run the same thing:
-
-  maybe 80 is a reverse pro...
               </p>
             </div>
           </div>
@@ -3027,6 +3145,153 @@ See 80, 3000 port run the same thing:
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3144,48 +3409,6 @@ See 80, 3000 port run the same thing:
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
     
   
     
@@ -3216,6 +3439,9 @@ See 80, 3000 port run the same thing:
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
+      <a class="post-tag" href="/tags/oscp/">oscp</a>
+    
+      
       <a class="post-tag" href="/tags/thm/">thm</a>
     
       
@@ -3229,9 +3455,6 @@ See 80, 3000 port run the same thing:
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/c/">c</a>
     
 
     </div>

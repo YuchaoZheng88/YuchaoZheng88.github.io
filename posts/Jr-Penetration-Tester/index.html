@@ -3336,6 +3336,16 @@ run
         
         
         
+      <li><a href="/posts/OSCP-commands/">OSCP Command</a></li>
+      
+        
+        
+        
+      <li><a href="/posts/Linux-for-CTF/">Linux for CTF</a></li>
+      
+        
+        
+        
       <li><a href="/posts/BOF/">Buffer over flow</a></li>
       
         
@@ -3347,16 +3357,6 @@ run
         
         
       <li><a href="/posts/pentestPlus/">Pentest+ notes</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/BurpSuite-Lab/">BurpSuite Lab</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/cryptography/">cryptography</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -3827,6 +3827,153 @@ run
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3944,48 +4091,6 @@ run
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
     
   
     
@@ -4016,6 +4121,9 @@ run
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
+      <a class="post-tag" href="/tags/oscp/">oscp</a>
+    
+      
       <a class="post-tag" href="/tags/thm/">thm</a>
     
       
@@ -4029,9 +4137,6 @@ run
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/c/">c</a>
     
 
     </div>
@@ -4085,6 +4190,19 @@ run
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -4422,48 +4540,6 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
       
       
       <div class="card">
-        <a href="/posts/htb-stacked/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1648524780"
-    
-    >
-  2022-03-29
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>htb stacked</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                recon
-
-nmap
-1
-2
-nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.11.112
-nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
-
-
-  22/tcp   open  ssh; 80/tcp   open  http; 2376/tcp ope...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/htb-altered/">
           <div class="card-body">
             <!--
@@ -4495,6 +4571,46 @@ try type juggling
 
   change content type to application/json
   application/x-www-form-urlencoded, body is na...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/CEH-SMALL-POINTS/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1650252780"
+    
+    >
+  2022-04-18
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>CEH small points</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Insertion attack
+
+  TTL field, some packets will end in IDS
+  like tcp 3 packets [maliciou][xxx][s], IDS see maliciouxxxs, backend see malicious.
+  PHF attack, “phf” in GET request.
+
+
+Unicode invas...
               </p>
             </div>
           </div>
@@ -5048,6 +5164,153 @@ try type juggling
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -5165,48 +5428,6 @@ try type juggling
     
     
       
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
     
   
     
@@ -5237,6 +5458,9 @@ try type juggling
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
+      <a class="post-tag" href="/tags/oscp/">oscp</a>
+    
+      
       <a class="post-tag" href="/tags/thm/">thm</a>
     
       
@@ -5250,9 +5474,6 @@ try type juggling
     
       
       <a class="post-tag" href="/tags/bof/">bof</a>
-    
-      
-      <a class="post-tag" href="/tags/c/">c</a>
     
 
     </div>
