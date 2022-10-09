@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-09-26T00:19:00+08:00","datePublished":"2022-08-25T11:33:00+08:00","description":"Linux","headline":"OffSecNotes","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OffSec-Notes/"},"url":"/posts/OffSec-Notes/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-09-30T23:58:17+08:00","datePublished":"2022-08-25T11:33:00+08:00","description":"Linux","headline":"OffSecNotes","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OffSec-Notes/"},"url":"/posts/OffSec-Notes/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -546,6 +546,18 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -635,12 +647,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1664122740"
+    data-ts="1664553497"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-09-25
+  2022-09-30
 </em>
 
       </span>
@@ -666,8 +678,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="310 words">
-  <em>1 min</em> read</span>
+  title="782 words">
+  <em>4 min</em> read</span>
 
 
       <!-- page views -->
@@ -709,9 +721,87 @@
   <li><code class="language-plaintext highlighter-rouge">watch -n 5 w</code> execute command w every 5 seconds. command w, show who is loged in and what are they doing.</li>
   <li><code class="language-plaintext highlighter-rouge">sudo dpkg -i man-db_2.7.0.2-5_amd64.deb</code> install a debian package offline.</li>
   <li><code class="language-plaintext highlighter-rouge">sudo tail -3 /var/log/auth.log</code></li>
-  <li><code class="language-plaintext highlighter-rouge">who /var/log/wtmp | tail -5</code></li>
-  <li><code class="language-plaintext highlighter-rouge">last</code></li>
+  <li><code class="language-plaintext highlighter-rouge">who</code> who is logged on.</li>
+  <li><code class="language-plaintext highlighter-rouge">who /var/log/wtmp | tail -5</code> another file, default /var/run/utmp</li>
+  <li><code class="language-plaintext highlighter-rouge">last</code> show last login users.</li>
   <li><code class="language-plaintext highlighter-rouge">journalctl</code> Query the systemd journal</li>
+  <li><code class="language-plaintext highlighter-rouge">free -m</code> information on memory, in mebibytes.</li>
+  <li><code class="language-plaintext highlighter-rouge">df -hT</code> disk mounted usage information, in human-readable format, show -T type.</li>
+  <li><code class="language-plaintext highlighter-rouge">mount -t ext4</code> display the partitions formatted as ext4</li>
+  <li><code class="language-plaintext highlighter-rouge">fdisk -l</code> can check USB drive</li>
+  <li><code class="language-plaintext highlighter-rouge">mkdir /mnt/usb &amp;&amp; mount /dev/sdb1 /mnt/usb</code> mount device(eg. a USB) to directory tree</li>
+  <li><code class="language-plaintext highlighter-rouge">cd ~ &amp;&amp; umount /mnt/usb</code> unmount the device, not in its directory, nor it will be busy.</li>
+</ul>
+
+<h2 id="windows"><span class="mr-2">Windows</span><a href="#windows" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dir /A</code> dir is a builtin command, ls is not.</li>
+  <li><code class="language-plaintext highlighter-rouge">help</code> display all build-in commands.</li>
+  <li><code class="language-plaintext highlighter-rouge">systeminfo /?</code> configuration information about the system</li>
+  <li><code class="language-plaintext highlighter-rouge">echo %username%</code> %<VARIABLE-NAME>%</VARIABLE-NAME></li>
+  <li><code class="language-plaintext highlighter-rouge">set</code> Display environment variables.</li>
+  <li><code class="language-plaintext highlighter-rouge">psinfo</code> vital local system information</li>
+  <li><code class="language-plaintext highlighter-rouge">echo "New File" &gt; NewFile.txt</code> standard input to a file.</li>
+  <li><code class="language-plaintext highlighter-rouge">echo 2&gt; EmptyFile.txt</code> standard error to a file.</li>
+  <li><code class="language-plaintext highlighter-rouge">del EmptyFile.txt</code> delete a file.</li>
+  <li><code class="language-plaintext highlighter-rouge">rename NewFile.txt RenamedFile.txt</code> rename a file.</li>
+  <li><code class="language-plaintext highlighter-rouge">move RenamedFile.txt .\Music</code> move to different directory.</li>
+  <li><code class="language-plaintext highlighter-rouge">mkdir ANewDirectory</code> create folders.</li>
+  <li><code class="language-plaintext highlighter-rouge">rmdir ANewDirectory</code> delete folder.</li>
+  <li><code class="language-plaintext highlighter-rouge">rmdir /S .\ThisFolder</code> delete folder with files in it.</li>
+  <li><code class="language-plaintext highlighter-rouge">copy RenamedFile.txt ThisIsntMusic.txt</code> copy file.</li>
+  <li><code class="language-plaintext highlighter-rouge">fc 1.txt 2.txt</code> compare files.</li>
+  <li><code class="language-plaintext highlighter-rouge">mklink softlink fileToBeLinkedTo.txt</code> create soft link.</li>
+  <li><code class="language-plaintext highlighter-rouge">mklink /h hardlink fileToBeLinkedTo.txt</code> create hard link.</li>
+  <li><code class="language-plaintext highlighter-rouge">dir /s trojan.txt</code> search in the given folder and any of its subfolders.</li>
+  <li><code class="language-plaintext highlighter-rouge">dir /s *.exe /p</code>  search with wildcard; /P Pauses after each screenful of information.</li>
+  <li><code class="language-plaintext highlighter-rouge">tree</code></li>
+  <li><code class="language-plaintext highlighter-rouge">forfiles /P C:\Windows /S /M notepad.exe /c "cmd /c echo @PATH"</code>/S recursive, /M search what, /c command, /P path to search.</li>
+  <li><code class="language-plaintext highlighter-rouge">find "password" C:\Users\Offsec\importantfile.txt</code> like Linux grep. find do NOT support regular expressions.</li>
+  <li>
+    <div class="table-wrapper"><table>
+      <tbody>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">type importantfile.txt |find "password"</code> like Linux: cat importantfile.txt</td>
+          <td>grep password</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </li>
+  <li>
+    <div class="table-wrapper"><table>
+      <tbody>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">dir | find "important"</code> ls</td>
+          <td>grep <directory></directory></td>
+        </tr>
+      </tbody>
+    </table></div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">findstr "Johnny password" importantfile.txt</code> find jonny OR password, findstr support regular expressions.</li>
+  <li><code class="language-plaintext highlighter-rouge">sort /R numbers.txt</code> sort from large number to small.</li>
+  <li>Everyone. SID: S-1-1-0. . includes all users on the machine.</li>
+  <li>Administrator. SID: S-1-5-domain-500. .</li>
+  <li>Guests group. SID: SID S-1-5-32-546.</li>
+  <li><code class="language-plaintext highlighter-rouge">whoami /user</code> show user,name,SID.</li>
+  <li><code class="language-plaintext highlighter-rouge">net user /add Tristan greatpassword</code> create user.</li>
+  <li><code class="language-plaintext highlighter-rouge">net user {username}</code> retrieve user information.</li>
+  <li><code class="language-plaintext highlighter-rouge">net localgroup Administrators user123 /add</code> add user123 to Administrators group.</li>
+  <li><code class="language-plaintext highlighter-rouge">net localgroup Administrators user123 /del</code> remove from group.</li>
+  <li><code class="language-plaintext highlighter-rouge">net user /del user123</code> delete the account.</li>
+  <li><code class="language-plaintext highlighter-rouge">cmd /c echo hi</code> run command in another cmd.exe process.</li>
+  <li><code class="language-plaintext highlighter-rouge">icacls Music</code> view folder permissions. each line of the output is considered an ACE.</li>
+  <li><code class="language-plaintext highlighter-rouge">icacls Music /grant Susan:(OI)(CI)(F)</code> provide rights to folder. /deny to remove rights.</li>
+  <li><code class="language-plaintext highlighter-rouge">accesschk.exe "users" c:\</code>  permissions the users group has on the C:\ drive.</li>
+  <li>smss.exe(Session Manager Subsystem): the first User mode process started on a Windows machine.</li>
+  <li>smss.exe: spawn twitce. 1st spawns winlogon.exe and csrss.exe. 2nd stays alive to watch over the user’s session.</li>
+  <li>winlogon.exe: listen’s for the famous Ctr+Alt+Delete.</li>
+  <li><code class="language-plaintext highlighter-rouge">tasklist /fi "USERNAME eq NT AUTHORITY\SYSTEM" /fi "STATUS eq running"</code> filter</li>
+  <li><code class="language-plaintext highlighter-rouge">tasklist /fi "imagename eq cmd.exe"</code> filter</li>
+  <li><code class="language-plaintext highlighter-rouge">tasklist |find "cmd.exe"</code> anther way to filter</li>
+  <li><code class="language-plaintext highlighter-rouge">taskkill /?</code> terminate a process by ID or image name.</li>
+  <li><code class="language-plaintext highlighter-rouge">taskkill /PID 84</code> kill process ID 84</li>
 </ul>
 
 </div>
