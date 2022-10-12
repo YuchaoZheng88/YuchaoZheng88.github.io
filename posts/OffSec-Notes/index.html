@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-10-09T13:12:13+08:00","datePublished":"2022-08-25T11:33:00+08:00","description":"Linux","headline":"OffSecNotes","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OffSec-Notes/"},"url":"/posts/OffSec-Notes/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-10-12T16:10:24+08:00","datePublished":"2022-08-25T11:33:00+08:00","description":"Linux","headline":"OffSecNotes","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OffSec-Notes/"},"url":"/posts/OffSec-Notes/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -647,12 +647,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1665292333"
+    data-ts="1665562224"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-10-08
+  2022-10-12
 </em>
 
       </span>
@@ -678,8 +678,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="884 words">
-  <em>4 min</em> read</span>
+  title="941 words">
+  <em>5 min</em> read</span>
 
 
       <!-- page views -->
@@ -694,6 +694,7 @@
   <h2 id="linux"><span class="mr-2">Linux</span><a href="#linux" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <ul>
+  <li><code class="language-plaintext highlighter-rouge">man -k pass</code> find manuals with matched keyword ‘pass’</li>
   <li><code class="language-plaintext highlighter-rouge">ls /etc/apache2/sites-available/*.conf</code> ls with regular expression</li>
   <li><code class="language-plaintext highlighter-rouge">echo $HISTFILE</code> show environment variable</li>
   <li><code class="language-plaintext highlighter-rouge">set</code> explore environment variables</li>
@@ -705,6 +706,7 @@
   <li><code class="language-plaintext highlighter-rouge">locate {file_name}</code> search in locate.db</li>
   <li><code class="language-plaintext highlighter-rouge">find -name {filename} -iname{case insensitive} -type f/d/l/s(file,directory,link,socket) -size 2M -mtime +1(one day or more) -1(in 24 hours)</code></li>
   <li><code class="language-plaintext highlighter-rouge">echo "I need to try hard" | sed 's/hard/harder/'</code> replace</li>
+  <li><code class="language-plaintext highlighter-rouge">cat file.txt | sed ':a;N;$!ba;s/\n//g'</code> remove newline from file.txt</li>
   <li><code class="language-plaintext highlighter-rouge">echo "hello::there::friend" | awk -F "::" '{print $1, $3}'</code></li>
   <li><code class="language-plaintext highlighter-rouge">comm -12 scan-a.txt scan-b.txt</code> appear in both file, -1 suppress column 1 (lines unique to FILE1)</li>
   <li><code class="language-plaintext highlighter-rouge">diff -u scan-a.txt scan-b.txt</code> -u unified format; -b ignore blank lines; -d try hard to find a smaller set of changes</li>
@@ -796,6 +798,11 @@
   <li><code class="language-plaintext highlighter-rouge">type environment</code> show exported registry, in hex format.(can be read when transfered to ascii)</li>
   <li><code class="language-plaintext highlighter-rouge">schtasks /?</code> like Linux cronjobs.</li>
   <li><code class="language-plaintext highlighter-rouge">schtasks /create /sc weekly /d mon /tn runme /tr C:\runme.exe /st 09:00</code> a scheduled task example.</li>
+  <li><code class="language-plaintext highlighter-rouge">fsutil</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fsutil fsinfo volumeinfo C:</code></li>
+  <li><code class="language-plaintext highlighter-rouge">echo fileTwo uses the 'offsec' stream &gt; offsecStream.txt:offsec</code> echo to NTFS`s ADS. Alternate Data Streams</li>
+  <li><code class="language-plaintext highlighter-rouge">more offsecStream.txt:offsec</code> read from ADS, can not just type out ADS.</li>
+  <li><code class="language-plaintext highlighter-rouge">dir /r</code> allow us to detect ADS usage.</li>
 </ul>
 
 </div>
