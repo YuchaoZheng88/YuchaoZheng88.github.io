@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-11-06T03:52:55+08:00</updated>
+  <updated>2022-11-07T13:23:57+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -24,7 +24,7 @@
     <link href="/posts/OffSec-Notes/" rel="alternate" type="text/html" title="OffSecNotes" />
     <published>2022-08-25T11:33:00+08:00</published>
   
-    <updated>2022-10-18T12:52:54+08:00</updated>
+    <updated>2022-11-07T13:23:26+08:00</updated>
   
     <id>/posts/OffSec-Notes/</id>
     <content src="/posts/OffSec-Notes/" />
@@ -46,7 +46,10 @@
 
 
 
-      Linux
+      Intro
+The notes are from offensive Security official traning.
+
+Linux
 
 
   man -k pass find manuals with matched keyword ‘pass’
@@ -55,8 +58,7 @@
   set explore environment variables
   alias ll='ls -la' alias for zsh
   uname -a show kernel information
-  ln -s ~/original.txt symlink.txt soft link, like windows link, deleted as rm original
-  ln ~/offsec123.txt hardlink....
+  ln -s ~/original.txt symlink.txt soft link, like wind...
     </summary>
   
 

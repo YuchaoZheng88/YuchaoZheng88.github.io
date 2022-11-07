@@ -45,8 +45,8 @@
 <meta property="og:title" content="OffSecNotes" />
 <meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Linux" />
-<meta property="og:description" content="Linux" />
+<meta name="description" content="Intro The notes are from offensive Security official traning." />
+<meta property="og:description" content="Intro The notes are from offensive Security official traning." />
 <link rel="canonical" href="/posts/OffSec-Notes/" />
 <meta property="og:url" content="/posts/OffSec-Notes/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-10-18T12:52:54+08:00","datePublished":"2022-08-25T11:33:00+08:00","description":"Linux","headline":"OffSecNotes","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OffSec-Notes/"},"url":"/posts/OffSec-Notes/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-11-07T13:23:26+08:00","datePublished":"2022-08-25T11:33:00+08:00","description":"Intro The notes are from offensive Security official traning.","headline":"OffSecNotes","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OffSec-Notes/"},"url":"/posts/OffSec-Notes/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -671,12 +671,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1666068774"
+    data-ts="1667798606"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-10-17
+  2022-11-06
 </em>
 
       </span>
@@ -702,8 +702,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1110 words">
-  <em>6 min</em> read</span>
+  title="1567 words">
+  <em>8 min</em> read</span>
 
 
       <!-- page views -->
@@ -715,7 +715,10 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h2 id="linux"><span class="mr-2">Linux</span><a href="#linux" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+  <h1 id="intro">Intro</h1>
+<p>The notes are from offensive Security official traning.</p>
+
+<h2 id="linux"><span class="mr-2">Linux</span><a href="#linux" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">man -k pass</code> find manuals with matched keyword ‘pass’</li>
@@ -746,7 +749,7 @@
   <li><code class="language-plaintext highlighter-rouge">sudo tail -f /var/log/apache2/access.log</code> -f follow, monitor file change.</li>
   <li><code class="language-plaintext highlighter-rouge">watch -n 5 w</code> execute command w every 5 seconds. command w, show who is loged in and what are they doing.</li>
   <li><code class="language-plaintext highlighter-rouge">sudo dpkg -i man-db_2.7.0.2-5_amd64.deb</code> install a debian package offline.</li>
-  <li><code class="language-plaintext highlighter-rouge">sudo tail -3 /var/log/auth.log</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sudo tail -3 /var/log/auth.log</code> show last 3 lines</li>
   <li><code class="language-plaintext highlighter-rouge">who</code> who is logged on.</li>
   <li><code class="language-plaintext highlighter-rouge">who /var/log/wtmp | tail -5</code> another file, default /var/run/utmp</li>
   <li><code class="language-plaintext highlighter-rouge">last</code> show last login users.</li>
@@ -757,6 +760,7 @@
   <li><code class="language-plaintext highlighter-rouge">fdisk -l</code> can check USB drive</li>
   <li><code class="language-plaintext highlighter-rouge">mkdir /mnt/usb &amp;&amp; mount /dev/sdb1 /mnt/usb</code> mount device(eg. a USB) to directory tree</li>
   <li><code class="language-plaintext highlighter-rouge">cd ~ &amp;&amp; umount /mnt/usb</code> unmount the device, not in its directory, nor it will be busy.</li>
+  <li><code class="language-plaintext highlighter-rouge">cp *9*16.png /anotherFoler</code> copy files end with 9*16.png to another folder.</li>
 </ul>
 
 <h2 id="windows"><span class="mr-2">Windows</span><a href="#windows" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
@@ -919,9 +923,174 @@
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="c">#!/bin/bash</span>
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c"># arg.sh</span>
+<span class="c">#!/bin/bash</span>
 <span class="nb">echo</span> <span class="s2">"There are </span><span class="nv">$# </span><span class="s2">arguments"</span>
 <span class="nb">echo</span> <span class="s2">"The first two arguments are </span><span class="nv">$1</span><span class="s2"> and </span><span class="nv">$2</span><span class="s2">"</span>
+<span class="c"># ./arg.sh who goes there?</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>special variable names</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>$0			The name of the Bash script
+$1 - $9	The first 9 arguments to the Bash script
+$#		Number of arguments passed to the Bash script
+$@		All arguments passed to the Bash script
+$?			The exit status of the most recently run process
+$$			The process ID of the current script
+$USER	The username of the user running the script
+$UID		The user identifier of the user running the script
+$HOSTNAME		The hostname of the machine
+$RANDOM			A random number
+$LINENO			The current line number in the script
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>same line read to user, with prompt</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">read</span> <span class="nt">-p</span> <span class="s1">'Enter your name: '</span> user
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>operators</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>OPERATOR						DESCRIPTION: EXPRESSION TRUE IF...
+!EXPRESSION					The EXPRESSION is false.
+-n STRING							STRING length is greater than zero
+-z STRING							The length of STRING is zero (empty)
+STRING1 != STRING2		STRING1 is not equal to STRING2
+STRING1 = STRING2			STRING1 is equal to STRING2
+INTEGER1 -eq INTEGER2	INTEGER1 is equal to INTEGER2
+INTEGER1 -ne INTEGER2	INTEGER1 is not equal to INTEGER2
+INTEGER1 -gt INTEGER2	INTEGER1 is greater than INTEGER2
+INTEGER1 -lt INTEGER2		INTEGER1 is less than INTEGER2
+INTEGER1 -ge INTEGER2	INTEGER1 is greater than or equal to INTEGER 2
+INTEGER1 -le INTEGER2	INTEGER1 is less than or equal to INTEGER 2
+-d FILE								FILE exists and is a directory
+-e FILE								FILE exists
+-r FILE								FILE exists and has read permission
+-s FILE								FILE exists and it is not empty
+-w FILE								FILE exists and has write permission
+-x FILE								FILE exists and has execute permission
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>if</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nb">read</span> <span class="nt">-p</span> <span class="s2">"file name: "</span> file
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-e</span> <span class="nv">$file</span> <span class="o">]</span>
+<span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"file exists!"</span>
+<span class="k">else
+  </span><span class="nb">echo</span> <span class="s2">"file does not exist!"</span>
+<span class="k">fi</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>AND OR</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">grep</span> <span class="nv">$user2</span> /etc/passwd <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$user2</span><span class="s2"> found</span><span class="se">\!</span><span class="s2">"</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$user2</span><span class="s2"> not found</span><span class="se">\!</span><span class="s2">"</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Loop</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">for </span>ip <span class="k">in</span> <span class="si">$(</span><span class="nb">seq </span>1 10<span class="si">)</span><span class="p">;</span> <span class="k">do </span><span class="nb">echo </span>10.11.1.<span class="nv">$ip</span><span class="p">;</span> <span class="k">done</span>
+<span class="c"># another way</span>
+<span class="k">for </span>ip <span class="k">in</span> <span class="o">{</span>1..10<span class="o">}</span><span class="p">;</span> <span class="k">do </span><span class="nb">echo </span>10.11.1.<span class="nv">$ip</span><span class="p">;</span><span class="k">done</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Loop read lines of a file</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nv">file</span><span class="o">=</span><span class="s2">"poem.txt"</span>
+<span class="k">while </span><span class="nb">read </span>line
+   <span class="nb">echo</span> <span class="nv">$line</span>
+<span class="k">done</span> &lt; <span class="nv">$file</span>
+<span class="c"># redirect the file into the done command</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Function in shell</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>print_me <span class="o">()</span>
+<span class="o">{</span>
+	<span class="nb">echo</span> <span class="s2">"print it</span><span class="se">\!</span><span class="s2">"</span>
+<span class="o">}</span>
+
+print_me
+<span class="c"># notice the exclamation mark.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>pass args to function</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>pass_arg<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">"Today's random number is: </span><span class="nv">$1</span><span class="s2">"</span>
+<span class="o">}</span>
+
+pass_arg 123123
 </pre></td></tr></tbody></table></code></div></div>
 
 </div>
