@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-11-28T11:33:00+08:00","datePublished":"2022-11-28T11:33:00+08:00","description":"From cherno C++ https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/","headline":"C++ The Cherno","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CPP-the-Cherno/"},"url":"/posts/CPP-the-Cherno/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-12-19T05:59:53+08:00","datePublished":"2022-11-28T11:33:00+08:00","description":"From cherno C++ https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/","headline":"C++ The Cherno","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CPP-the-Cherno/"},"url":"/posts/CPP-the-Cherno/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -604,6 +604,24 @@
 
       <!-- lastmod date -->
       
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago"
+    data-ts="1671400793"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    >
+  2022-12-18
+</em>
+
+      </span>
+      
 
       <!-- read time -->
       <!--
@@ -625,8 +643,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1242 words">
-  <em>6 min</em> read</span>
+  title="2886 words">
+  <em>16 min</em> read</span>
 
 
       <!-- page views -->
@@ -904,6 +922,7 @@ fwef)"</span><span class="p">;</span> <span class="c1">// change line easily, R 
   <li>initialize class.</li>
   <li>Entity() : m_Name(“Unknown”), m_Score(0) {}        // same as below</li>
   <li>Entity() { m_Name = “Unknown”; m_Score = 0; }    // same as above</li>
+  <li>Entity(const std::string&amp; name) : m_Name(name) {} // another example</li>
 </ul>
 
 <p>e36 Ternary</p>
@@ -914,8 +933,642 @@ fwef)"</span><span class="p">;</span> <span class="c1">// change line easily, R 
 <p>e37</p>
 <ul>
   <li>using namespace std; // is not not not recommended.</li>
-  <li></li>
+  <li>Entity* entity = new Entity();</li>
+  <li>entity-&gt;function(); or (*entiry).function(); // pointer -&gt; , dereference .</li>
 </ul>
+
+<p>e38 new</p>
+<ul>
+  <li>new on heap</li>
+  <li>right click ‘new’ -&gt; go to definition. new is an operator.</li>
+  <li>void* __CRTDECL operator new(size_t _Size);</li>
+  <li>Entity* e = new Entiry();                              // same as below, but call constructor.</li>
+  <li>Entity* e = (Entity*)malloc(sizeof(Entity));   // same as above, but not call constructor.</li>
+  <li>delete e; // when use new, must delete.</li>
+  <li>Entity* e = new(ptr) Entiry(); // new to a specific pointer.</li>
+</ul>
+
+<p>e39</p>
+<ul>
+  <li>explicit constructor, stricter rule</li>
+</ul>
+
+<p>e40 operator overloading</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="n">Vector2</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span><span class="p">{</span>
+	<span class="k">return</span> <span class="n">Vector2</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">other</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span><span class="c1">// overload + </span>
+
+<span class="n">Verctor2</span> <span class="n">Add</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span><span class="p">{</span>
+	<span class="k">return</span> <span class="o">*</span><span class="k">this</span> <span class="o">+</span> <span class="n">other</span><span class="p">;</span> 
+<span class="p">}</span><span class="c1">// this is a pointer to the object, *this is Vector2</span>
+
+<span class="n">Verctor2</span> <span class="n">Add</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span><span class="p">{</span>
+	<span class="k">return</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">other</span><span class="p">);</span>
+<span class="p">}</span> <span class="c1">// same as above, but werid.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>overload std::cout to print class Vector2</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="n">cont</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">){</span>
+	<span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">", "</span> <span class="o">&lt;&lt;</span> <span class="n">other</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">stream</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e41 this</p>
+<ul>
+  <li>pointer to the current object instance that the method(non-static) belongs to.</li>
+</ul>
+
+<p>e42</p>
+<ul>
+  <li>
+    <p>allocate object on stack, will destroy when code out of scope. On heap, it is not.
+```c++
+class ScopedPtr{
+private:
+  Entity* m_Ptr;
+public:
+  ScopedPtr(Entity* ptr): m_Ptr(ptr) {}</p>
+
+    <p>~ScopedPtr() { delete m_Ptr; }
+}</p>
+  </li>
+</ul>
+
+<p>int main() {
+	{ ScopedPtr e = new Entity(); }
+}</p>
+
+<p>// new on heap will not auto free memory when out of scope, 
+// but with ScopedPtr, the pointer on stack will free the memory on heap by its destructor.</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>
+e42 smart pointer
+- call new on heap, do not need to delete.
+- wrapper around a raw pointer.
+- can not copy a unique pointer, one auto delete will affect the other.
+```c++
+#include &lt;memory&gt;
+{
+	{ std::unique_ptr&lt;Entity&gt; entity = std::make_unique&lt;Entity&gt;(); } // best safe way 
+	// { std::unique_ptr&lt;Entity&gt; entity(new Entitry()); }  another way to initialize.
+	// can not use = new Entitry(); to initialize, because explicit keywork in unique_ptr.
+	// entity will be destroyed when out of scope.
+}
+
+//in unique_ptr classs
+unique_ptr(const unique_ptr&amp;)            = delete;
+unique_ptr&amp; operator=(const unique_ptr&amp;) = delete;
+// in case copy a unique pointer.
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>shared pointer</p>
+<ul>
+  <li>std::unique_ptr, std::shared_ptr, std::weak_ptr</li>
+  <li>need reference counter, count how many instances have created.</li>
+  <li>memory freed when last pointer dies.
+    <div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+  <span class="p">{</span>	
+  <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span> <span class="n">e0</span><span class="p">;</span>
+      <span class="p">{</span>
+          <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Entiry</span><span class="o">&gt;</span> <span class="n">sharedEntity</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span><span class="p">();</span>
+          <span class="n">e0</span> <span class="o">=</span> <span class="n">sharedEntiry</span><span class="p">;</span> 
+      <span class="p">}</span>  <span class="c1">// heap not freed here. e0 still exists.</span>
+  <span class="p">}</span> <span class="c1">// heap freed here, e0 out of scope.</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p>weak pointer</p>
+<ul>
+  <li>do not count the instances, act as an observer, use after asking if exists.
+    <div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">std</span><span class="o">::</span><span class="n">weak_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">gw</span><span class="p">;</span>
+<span class="n">gw</span><span class="p">.</span><span class="n">use_count</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">spt</span> <span class="o">=</span> <span class="n">gw</span><span class="p">.</span><span class="n">lock</span><span class="p">())</span> <span class="p">{}</span> <span class="c1">// no object, lock return empty, so false</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">gw</span><span class="p">.</span><span class="n">expired</span><span class="p">())</span> <span class="p">{}</span> <span class="c1">// Equivalent to use_count() == 0</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p>e44</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nc">String</span><span class="p">{</span>
+<span class="nl">private:</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">m_Buffer</span><span class="p">;</span>
+	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_Size</span><span class="p">;</span>
+<span class="nl">public:</span>
+	<span class="n">String</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">string</span><span class="p">){</span>
+		<span class="n">m_Size</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">string</span><span class="p">);</span>
+		<span class="n">m_Buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">m_Size</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// 1 for null termination character.</span>
+		<span class="n">memcpy</span><span class="p">(</span><span class="n">m_Buffer</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">m_Size</span><span class="p">);</span> <span class="c1">// m_Size in bytes.</span>
+		<span class="n">m_Buffer</span><span class="p">[</span><span class="n">m_Size</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="o">~</span><span class="n">String</span><span class="p">(){</span>
+		<span class="k">delete</span><span class="p">[]</span> <span class="n">m_Buffer</span><span class="p">;</span>	
+	<span class="p">}</span>
+	
+	<span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">String</span><span class="o">&amp;</span> <span class="n">string</span><span class="p">);</span>
+	<span class="c1">// this allow ostream &lt;&lt; operator to get String class private value m_Buffer.</span>
+<span class="p">};</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span> <span class="k">const</span> <span class="n">String</span><span class="o">&amp;</span> <span class="n">string</span><span class="p">){</span>
+	<span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="n">string</span><span class="p">.</span><span class="n">m_Buffer</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">stream</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+	<span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">"abc"</span><span class="p">;</span>
+	<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+	<span class="c1">// a is a reference, b just copied all variable from a. shallow copy.</span>
+	<span class="c1">// copy int value and memory address.</span>
+	<span class="c1">// end of scope, it will destruct twice, cause program to crash.</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>copy constructor</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="n">String</span><span class="p">(</span><span class="k">const</span> <span class="n">String</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">m_Buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">m_Size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+	<span class="n">memcoy</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">other</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">other</span><span class="p">));</span> <span class="c1">//deep copy</span>
+	<span class="c1">// *this.buffer = other.buffer; *this.size=other.size shallow copy</span>
+<span class="p">}</span>
+<span class="c1">// default will be shallow copy.</span>
+<span class="c1">// make your version of how to copy.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e45</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="p">((</span><span class="n">Vector3</span><span class="o">*</span><span class="p">)</span><span class="nb">nullptr</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">y</span><span class="p">;</span>
+<span class="c1">// check offset of a class.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e46 std::vector</p>
+<ul>
+  <li>dynamic array. opposite to raw array, size fixed.
+```c++
+#include <vector></vector></li>
+</ul>
+
+<p>std::vector<MyStruct> mystruct;
+mystruct.push_back({1,2,3}); // {1,2,3} initialize a new mystruct.
+int i = mystruct.size();</MyStruct></p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>
+e47 vector push_back copy times
+- test how many times a class has been copied.
+- log in copy constructor.
+```c++
+std::vector&lt;Vertex&gt; vertices;
+vertices.push_back(Vertex(1,2,3)); // copy *1, total 1. copy from main stack, to heap.
+vertices.push_back(Vertex(4,5,6)); // copy *2, total 3. resize, then on heap.
+vertices.push_back(Vertex(7,8,9)); // copy *3, total 6. resize, then on heap.
+
+vertices.reserve(3); // use before push_back
+</pre></td></tr></tbody></table></code></div></div>
+<ul>
+  <li>ALWAYS try to reserve before you start pushing back elements into the container.
+    <div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c1">// no single copy version</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">vertices</span><span class="p">;</span>
+<span class="n">vertices</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">vertices</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">vertices</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span>
+<span class="n">vertices</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
+<span class="c1">// total 0 copy !!!</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p>e48 static in scope</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kt">void</span> <span class="nf">function</span><span class="p">(){</span>
+	<span class="k">static</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">i</span><span class="o">++</span><span class="p">;</span>  
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// output: 1,2,3,.....</span>
+</pre></td></tr></tbody></table></code></div></div>
+<p>singleton by static, easy and clean</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">class</span> <span class="nf">Singleton</span><span class="p">(){</span>
+<span class="nl">public:</span>
+	<span class="k">static</span> <span class="n">Singleton</span><span class="o">&amp;</span> <span class="n">get</span><span class="p">(){</span>
+		<span class="k">static</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="p">;</span> <span class="c1">// first time will create it on stack, later will not.</span>
+		<span class="k">return</span> <span class="n">instance</span><span class="p">;</span>	
+	<span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e49</p>
+<ul>
+  <li>glfw3.dll   dynamic library.  glfw3dll.lib  static library use with .dll. link at compile time.</li>
+  <li>glfw3.lib   static library</li>
+  <li>config -&gt; c/c++ -&gt; Genral -&gt; Additional Include Directories.  for header.</li>
+  <li>config -&gt; Linker -&gt; Input -&gt; Additional Dependencies.  for lib file name.</li>
+  <li>config -&gt; Linker -&gt; General -&gt; Additional Library Directories. for lib path.</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">extern</span> <span class="s">"C"</span> <span class="kt">int</span> <span class="nf">glfwInit</span><span class="p">();</span> 
+<span class="c1">// glfw is a C library, without extern “C” will mangling the name with C++.</span>
+<span class="c1">// preserve the name even though it is in C.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e50 dll</p>
+<ul>
+  <li>use when should use. runtime.</li>
+  <li>config -&gt; Linker -&gt; Input -&gt; Additional Dependencies.  add glfw3dll.lib. this help find .dll function address.</li>
+  <li>complie and run. get error. can not find glfw3.dll.</li>
+  <li>simple way: copy .dll to .exe, in same path.
+```c++
+/* GLFWAPI is used to declare public API functions for export</li>
+  <li>from the DLL / shared library / dynamic library.
+ <em>/
+#if defined(_WIN32) &amp;&amp; defined(_GLFW_BUILD_DLL)
+ /</em> We are building GLFW as a Win32 DLL <em>/
+ #define GLFWAPI <strong>declspec(dllexport)
+#elif defined(_WIN32) &amp;&amp; defined(GLFW_DLL)
+ /* We are calling a GLFW Win32 DLL */
+ #define GLFWAPI __declspec(dllimport)
+#elif defined(__GNUC</strong>) &amp;&amp; defined(_GLFW_BUILD_DLL)
+ /</em> We are building GLFW as a Unix shared library */
+ #define GLFWAPI <strong>attribute</strong>((visibility(“default”)))
+#else
+ #define GLFWAPI
+#endif
+```</li>
+</ul>
+
+<p>e51</p>
+<ul>
+  <li>more projects in one solution.</li>
+  <li>right click one project -&gt; add -&gt; reference -&gt; another project.</li>
+  <li>complie A and B, if A rely on B.</li>
+</ul>
+
+<p>e52</p>
+<ul>
+  <li>function parsing pointer than reference, good thing is null can be parsed.</li>
+  <li>array, vector difference. Just assign value(without new): array data on stack, vector data on heap.</li>
+  <li>tuple, struct.</li>
+</ul>
+
+<p>e53 templates</p>
+<ul>
+  <li>compiler write code for you.
+```c++
+template<typename T="">
+void function(T value){ // do somethin.}
+function(5);
+function("afsdf");</typename></li>
+</ul>
+
+<p>// if define class name
+template<class T="">
+function<int>(5);
+function&lt;std::string&gt;("aasdf");</int></class></p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre>- If not call templeta function, compiler will ignore it, even with sytax error.
+- template only create code when we use the function.
+```c++
+template&lt;typename T, int N&gt;
+
+class Array{
+private:
+	T m_Array[N];
+public:
+	int GetSize() const {return N;}
+};
+
+// in main
+Array&lt;int, 5&gt; array;
+// in compile time, the array class will be coded as m_Array[5]
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e54</p>
+<ul>
+  <li>new allocate on heap.</li>
+  <li>delete value, delete[] array; after using new.</li>
+  <li>new will call malloc function, which ask free list, for free memory to allocate.</li>
+  <li>allocate on stack is one CPU instruction; while on heap, a series of instructions.</li>
+  <li>stack: mov DWORD PTR _value$[ebp], 5 ; one instruction</li>
+</ul>
+
+<p>e55 macro</p>
+<ul>
+  <li>find and replace</li>
+  <li>#define WAIT std::cin.get()</li>
+  <li>debug mode need more logs.</li>
+  <li>Indebug mode: C/C++ -&gt; Preprocessor -&gt; Preprocessor Definitions: add PR_DEBUG in the list.</li>
+  <li>same as above in release mode, add PR_RELEASE.
+```c++
+#ifdef PR_DEBUG
+#define LOG(x) std::cout « x « std::endl
+#elif defined(PR_RELEASE)
+#define LOG(x)
+#endif</li>
+</ul>
+
+<p>// if in debug mode, LOG(x) will print; in other mode, LOG(x) do nothing</p>
+
+<p>// another way
+#define PR_DEBUG 1
+#if PR_DEBUG == 1
+// same as above, maybe a little bit clear</p>
+
+<p>// like comment out all macro, see below
+#if 0
+// all the marco you want to comment out here.
+#endif</p>
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>
+e58/59 function pointer, lambda
+```c++
+void fun(int a){}
+
+void (*fun_ptr)(int) = &amp;fun;
+
+auto x1 = [](int i){ return i; }; // lambda
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e62 threads</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">DoWork</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="n">chrono_literals</span><span class="p">;</span>  <span class="c1">// use 1s later</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">get_id</span><span class="p">();</span>   <span class="c1">// print thread ID.</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="mx">1s</span><span class="p">);</span>   		 	 <span class="c1">// sleep for 1 second.</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+	<span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">worker</span><span class="p">(</span><span class="n">DoWork</span><span class="p">);</span>
+	<span class="n">work</span><span class="p">.</span><span class="n">join</span><span class="p">();</span> <span class="c1">// main thread wait for worker thread to finish.</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e63</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="cp">#include</span> <span class="cpf">&lt;chrono&gt;</span><span class="cp">
+</span>
+<span class="k">auto</span> <span class="n">start</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">duration</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">duration</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>
+
+<span class="c1">////////////////////////////////////</span>
+
+<span class="k">struct</span> <span class="nc">Timer</span><span class="p">{</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">time_point</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">&gt;</span> <span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">;</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">duration</span><span class="p">;</span>
+	
+	<span class="n">Timer</span><span class="p">(){</span>
+		<span class="n">start</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>	
+	<span class="p">}</span>
+	
+	<span class="o">~</span><span class="n">Timer</span><span class="p">(){</span>
+		<span class="n">end</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+		<span class="n">duration</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+		<span class="kt">float</span> <span class="n">ms</span> <span class="o">=</span> <span class="n">duration</span><span class="p">.</span><span class="n">count</span><span class="p">()</span> <span class="o">*</span> <span class="mf">1000.0</span><span class="n">f</span><span class="p">;</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">Timer</span> <span class="n">took</span> <span class="o">&lt;&lt;</span> <span class="n">ms</span> <span class="o">&lt;&lt;</span> <span class="s">"ms"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>	
+	<span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// test the run time of code block, just put </span>
+<span class="c1">// Timer timer;</span>
+<span class="c1">// in the beginning of the code block.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e65 sorting</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">values</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">values</span><span class="p">,</span><span class="n">end</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
+	<span class="k">return</span> <span class="n">a</span><span class="o">&lt;</span><span class="n">b</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e66 type punning</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">Entity</span> <span class="n">e</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">e</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)((</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">e</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span>  <span class="c1">// 4 char is 4 byte, to the next int y, then dereference.</span>
+</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
@@ -1038,6 +1691,11 @@ fwef)"</span><span class="p">;</span> <span class="c1">// change line easily, R 
         
         
         
+      <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
+      
+        
+        
+        
       <li><a href="/posts/OffSec-Notes/">OffSecNotes</a></li>
       
         
@@ -1054,11 +1712,6 @@ fwef)"</span><span class="p">;</span> <span class="c1">// change line easily, R 
         
         
       <li><a href="/posts/BOF/">Buffer over flow</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/CEH-SMALL-POINTS/">CEH small points</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
