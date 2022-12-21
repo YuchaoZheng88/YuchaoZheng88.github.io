@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-12-19T05:59:53+08:00","datePublished":"2022-11-28T11:33:00+08:00","description":"From cherno C++ https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/","headline":"C++ The Cherno","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CPP-the-Cherno/"},"url":"/posts/CPP-the-Cherno/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-12-21T08:25:50+08:00","datePublished":"2022-11-28T11:33:00+08:00","description":"From cherno C++ https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb/","headline":"C++ The Cherno","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/CPP-the-Cherno/"},"url":"/posts/CPP-the-Cherno/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -612,12 +612,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1671400793"
+    data-ts="1671582350"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-12-18
+  2022-12-20
 </em>
 
       </span>
@@ -643,8 +643,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2886 words">
-  <em>16 min</em> read</span>
+  title="3237 words">
+  <em>17 min</em> read</span>
 
 
       <!-- page views -->
@@ -1321,25 +1321,42 @@ vertices.reserve(3); // use before push_back
   <li>use when should use. runtime.</li>
   <li>config -&gt; Linker -&gt; Input -&gt; Additional Dependencies.  add glfw3dll.lib. this help find .dll function address.</li>
   <li>complie and run. get error. can not find glfw3.dll.</li>
-  <li>simple way: copy .dll to .exe, in same path.
-```c++
-/* GLFWAPI is used to declare public API functions for export</li>
-  <li>from the DLL / shared library / dynamic library.
- <em>/
-#if defined(_WIN32) &amp;&amp; defined(_GLFW_BUILD_DLL)
- /</em> We are building GLFW as a Win32 DLL <em>/
- #define GLFWAPI <strong>declspec(dllexport)
-#elif defined(_WIN32) &amp;&amp; defined(GLFW_DLL)
- /* We are calling a GLFW Win32 DLL */
- #define GLFWAPI __declspec(dllimport)
-#elif defined(__GNUC</strong>) &amp;&amp; defined(_GLFW_BUILD_DLL)
- /</em> We are building GLFW as a Unix shared library */
- #define GLFWAPI <strong>attribute</strong>((visibility(“default”)))
-#else
- #define GLFWAPI
-#endif
-```</li>
+  <li>simple way: copy .dll to .exe, in same path.</li>
 </ul>
+
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="cm">/* GLFWAPI is used to declare public API functions for export
+ * from the DLL / shared library / dynamic library.
+ */</span>
+<span class="cp">#if defined(_WIN32) &amp;&amp; defined(_GLFW_BUILD_DLL)
+</span> <span class="cm">/* We are building GLFW as a Win32 DLL */</span>
+ <span class="cp">#define GLFWAPI __declspec(dllexport)
+#elif defined(_WIN32) &amp;&amp; defined(GLFW_DLL)
+</span> <span class="cm">/* We are calling a GLFW Win32 DLL */</span>
+ <span class="cp">#define GLFWAPI __declspec(dllimport)
+#elif defined(__GNUC__) &amp;&amp; defined(_GLFW_BUILD_DLL)
+</span> <span class="cm">/* We are building GLFW as a Unix shared library */</span>
+ <span class="cp">#define GLFWAPI __attribute__((visibility("default")))
+#else
+</span> <span class="cp">#define GLFWAPI
+#endif
+</span></pre></td></tr></tbody></table></code></div></div>
 
 <p>e51</p>
 <ul>
@@ -1568,6 +1585,168 @@ auto x1 = [](int i){ return i; }; // lambda
 </pre></td><td class="rouge-code"><pre><span class="n">Entity</span> <span class="n">e</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
 <span class="kt">int</span><span class="o">*</span> <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">e</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="o">*</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)((</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">e</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span>  <span class="c1">// 4 char is 4 byte, to the next int y, then dereference.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e67</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="k">struct</span> <span class="nc">Vector4</span><span class="p">{</span>
+	<span class="k">union</span><span class="p">{</span>
+		<span class="k">struct</span><span class="p">{</span>
+			<span class="kt">float</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">w</span><span class="p">;</span>		
+		<span class="p">};</span>
+		<span class="k">struct</span><span class="p">{</span>
+			<span class="n">vector2</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+		<span class="p">};</span>
+	<span class="p">}</span>
+<span class="p">};</span>
+<span class="c1">// using vector4.z, you can set vector2.b.x</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e68 virtual destructor</p>
+<ul>
+  <li>like virtual function.
+    <div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="n">Base</span><span class="o">*</span> <span class="n">poly</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Derived</span><span class="p">();</span>
+<span class="k">delete</span> <span class="n">poly</span><span class="p">;</span>
+<span class="c1">// ~Derived() will not be called.</span>
+<span class="c1">// only call: Base constructor, Derived constructor, Base Destructor.</span>
+<span class="c1">// if free memory action in ~Derived(), it will not be called.</span>
+<span class="c1">// in Base class, add virtual keyword before ~Base(){}, the ~Derived() will be called.</span>
+<span class="c1">// order will be: base cons, derived cons, base destructor, derived destructor.</span>
+</pre></td></tr></tbody></table></code></div>    </div>
+  </li>
+</ul>
+
+<p>e69 casting</p>
+<ul>
+  <li>static_cast, dynamic_cast, reinterpret_cast, explicit cast, const_cast</li>
+  <li>static_cast: no run-time test, use when know passed object type.</li>
+  <li>dynamic_cast: don’t know what the dynamic type of the object is. bad_cast exception. can not down casting. safe.</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="n">DerivedClass</span> <span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">DerivedClass</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">baseObject</span><span class="p">);</span>
+<span class="c1">// down casting, return nullptr.</span>
+
+<span class="n">Player</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">actuallyEnemy</span><span class="p">);</span>
+<span class="c1">// run time error.</span>
+<span class="k">if</span><span class="p">(</span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">actuallyEnemy</span><span class="p">))</span> <span class="p">{}</span>
+<span class="c1">// like C# is, Java instanceof().  If actuallyEnemy is a Player.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e70 condition &amp; actions</p>
+<ul>
+  <li>set condition in runtime</li>
+  <li>use condition &amp; action together</li>
+  <li>debug easily</li>
+</ul>
+
+<p>e71</p>
+<ul>
+  <li>precompiled headers. PCH.</li>
+</ul>
+
+<p>e74 benchmark</p>
+<ul>
+  <li>ref e63</li>
+  <li>use release mode</li>
+</ul>
+
+<p>e75 structured binding</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">CreatePerson</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span><span class="p">{</span><span class="s">"name"</span><span class="p">,</span> <span class="mi">15</span><span class="p">};}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">person</span><span class="p">);</span> <span class="c1">// get the first element of tuple</span>
+
+<span class="c1">// another way</span>
+<span class="n">std</span><span class="o">::</span><span class="n">tie</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="o">=</span> <span class="n">CreatePerson</span><span class="p">();</span>
+
+<span class="c1">// another way, cpp version 17 feature</span>
+<span class="k">auto</span><span class="p">[</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">]</span> <span class="o">=</span> <span class="n">CreatePerson</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e76 optional data</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">ReadFileAsString</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">filepath</span><span class="p">){</span>
+	<span class="n">std</span><span class="o">::</span><span class="n">ifstream</span> <span class="n">stream</span><span class="p">(</span><span class="n">filepath</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">stream</span><span class="p">){</span>
+		<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">result</span><span class="p">;</span>
+		<span class="n">stream</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+		<span class="k">return</span> <span class="n">result</span><span class="p">;</span>	
+	<span class="p">}</span>
+	
+	<span class="k">return</span> <span class="p">{};</span>
+<span class="p">}</span>
+
+
+<span class="n">std</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">ReadFileAsString</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">has_value</span><span class="p">()){}</span> <span class="c1">// check if data is empty</span>
+<span class="p">}</span>
+<span class="c1">// nicer way to handle if value not be present.</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>e77</p>
+<div class="language-c++ highlighter-rouge"><div class="code-header">
+        <span data-label-text="C++"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="n">std</span><span class="o">::</span><span class="n">variant</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">data</span><span class="p">;</span> <span class="c1">// can save 2 different types of data</span>
+<span class="n">data</span><span class="p">.</span><span class="n">index</span><span class="p">()</span> <span class="c1">// save string will be 0, in will be 1.</span>
+<span class="k">auto</span><span class="o">*</span> <span class="n">value</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get_if</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">data</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 </div>
