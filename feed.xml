@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2022-12-21T08:25:55+08:00</updated>
+  <updated>2023-01-29T13:39:01+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -12,11 +12,62 @@
   <link rel="self" type="application/atom+xml" href="/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
     href="/"/>
-  <generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator>
-  <rights> © 2022 Yuchao </rights>
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
+  <rights> © 2023 Yuchao </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Forensic</title>
+    <link href="/posts/Forensic/" rel="alternate" type="text/html" title="Forensic" />
+    <published>2023-01-29T11:33:00+08:00</published>
+  
+    <updated>2023-01-29T11:33:00+08:00</updated>
+  
+    <id>/posts/Forensic/</id>
+    <content src="/posts/Forensic/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Read Practical Malware Analysis
+
+types
+- Backdoor, botnet, downloader, launcher, rootkit, scareware, spam, worm
+- persistence mechanism: windows registry
+
+
+static
+1. hash as a fingerprint.
+2. find strings
+3. detect packed and obfuscated malware
+4. linked library and functions
+5. PE file headers: meta data about the file
+
+
+Dynamic:
+1. source-level, assembly-level debug.
+2. kernel, user-mode debu...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -200,62 +251,6 @@ sshpass -p raspberry ssh pi@10.10.10.48 "sudo dd if=/dev/sdb | gzip -1 -" | dd o
   sshpass -p raspberry - use the password “raspberry” for the following SSH command (like ssh and scp)
   ssh pi@10.10.10.48 "[command]" - SSH into Mirai and run the command
   sudo dd if=/dev/sdb - r...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>THM Attacktive Directory</title>
-    <link href="/posts/THM-Attacktive-Directory/" rel="alternate" type="text/html" title="THM Attacktive Directory" />
-    <published>2022-05-18T11:33:00+08:00</published>
-  
-    <updated>2022-05-18T11:33:00+08:00</updated>
-  
-    <id>/posts/THM-Attacktive-Directory/</id>
-    <content src="/posts/THM-Attacktive-Directory/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      install Impacket
-
-
-  https://github.com/SecureAuthCorp/impacket
-
-
-git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
-pip3 install -r /opt/impacket/requirements.txt
-cd /opt/impacket/ &amp;amp;&amp;amp; python3 ./setup.py install
-
-
-Installing Bloodhound and Neo4j
-
-
-  https://github.com/BloodHoundAD/BloodHound
-  https://github.com/neo4j
-
-
-apt install bloodhound neo4j
-
-
-nmap
-nmap -sC -s...
     </summary>
   
 
