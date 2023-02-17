@@ -959,10 +959,10 @@ openssl sha256 file.txt
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">hashlib</span>
-<span class="n">m</span> <span class="o">=</span> <span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">()</span>
-<span class="n">m</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="s">"message"</span><span class="p">)</span>
-<span class="n">m</span><span class="p">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">hashlib</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">hashlib</span><span class="p">.</span><span class="nf">sha256</span><span class="p">()</span>
+<span class="n">m</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="s">"message"</span><span class="p">)</span>
+<span class="n">m</span><span class="p">.</span><span class="nf">hexdigest</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-php highlighter-rouge"><div class="code-header">
@@ -1156,19 +1156,19 @@ openssl sha256 file.txt
 15
 </pre></td><td class="rouge-code"><pre><span class="c1">#!/usr/bin/python3
 </span>
-<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+<span class="kn">from</span> <span class="n">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
 
-<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> <span class="c1"># key length
-</span><span class="n">pem</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="n">export_key</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s">'PEM'</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
-<span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">pem</span><span class="p">)</span>
-<span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="nf">generate</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span> <span class="c1"># key length
+</span><span class="n">pem</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="nf">export_key</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s">'PEM'</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">pem</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
 
-<span class="n">pub</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="n">publickey</span><span class="p">()</span>
-<span class="n">pub_pem</span> <span class="o">=</span> <span class="n">pub</span><span class="p">.</span><span class="n">export_key</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s">'PEM'</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
-<span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">pub_pem</span><span class="p">)</span>
-<span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">pub</span> <span class="o">=</span> <span class="n">key</span><span class="p">.</span><span class="nf">publickey</span><span class="p">()</span>
+<span class="n">pub_pem</span> <span class="o">=</span> <span class="n">pub</span><span class="p">.</span><span class="nf">export_key</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s">'PEM'</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">pub_pem</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1193,16 +1193,16 @@ openssl sha256 file.txt
 </pre></td><td class="rouge-code"><pre><span class="c1">#!/usr/bin/python3
 </span>
 <span class="k">from</span> <span class="n">Crypto</span><span class="p">.</span><span class="n">Cipher</span> <span class="n">imprt</span> <span class="n">PKCS1_OAEP</span>
-<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+<span class="kn">from</span> <span class="n">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
 
 <span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'a secret message</span><span class="se">\n</span><span class="s">'</span>
 
-<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">importKey</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">).</span><span class="n">read</span><span class="p">())</span>
-<span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_OAEP</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="n">ciphertext</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">messagge</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'ciphertext.bin'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
-<span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
-<span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="nf">importKey</span><span class="p">(</span><span class="nf">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">).</span><span class="nf">read</span><span class="p">())</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_OAEP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">ciphertext</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">encrypt</span><span class="p">(</span><span class="n">messagge</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">'ciphertext.bin'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1225,14 +1225,14 @@ openssl sha256 file.txt
 </pre></td><td class="rouge-code"><pre><span class="c1">#!/usr/bin/python3
 </span>
 <span class="k">from</span> <span class="n">Crypto</span><span class="p">.</span><span class="n">Cipher</span> <span class="n">imprt</span> <span class="n">PKCS1_OAEP</span>
-<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+<span class="kn">from</span> <span class="n">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
 
-<span class="n">ciphertext</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'ciphertext.bin'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
-<span class="n">prikey_pem</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
-<span class="n">prikey</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">importKey</span><span class="p">(</span><span class="n">prikey_pem</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
-<span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_OAEP</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">prikey</span><span class="p">)</span>
-<span class="n">message</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">ciphertext</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">'ciphertext.bin'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">).</span><span class="nf">read</span><span class="p">()</span>
+<span class="n">prikey_pem</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">).</span><span class="nf">read</span><span class="p">()</span>
+<span class="n">prikey</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="nf">importKey</span><span class="p">(</span><span class="n">prikey_pem</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_OAEP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">prikey</span><span class="p">)</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">cipher</span><span class="p">.</span><span class="nf">decrypt</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1254,17 +1254,17 @@ openssl sha256 file.txt
 11
 12
 </pre></td><td class="rouge-code"><pre><span class="c1"># Probabilistic Signature Scheme (PSS) 
-</span><span class="kn">from</span> <span class="nn">Crypto.Signature</span> <span class="kn">import</span> <span class="n">pss</span>
-<span class="kn">from</span> <span class="nn">Crypto.Hash</span> <span class="kn">import</span> <span class="n">SHA256</span>
-<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+</span><span class="kn">from</span> <span class="n">Crypto.Signature</span> <span class="kn">import</span> <span class="n">pss</span>
+<span class="kn">from</span> <span class="n">Crypto.Hash</span> <span class="kn">import</span> <span class="n">SHA256</span>
+<span class="kn">from</span> <span class="n">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
 
 <span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'this is a message'</span>
-<span class="n">key_pem</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
-<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">import_key</span><span class="p">(</span><span class="n">key_pem</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-<span class="n">signer</span> <span class="o">=</span> <span class="n">pss</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="n">signature</span> <span class="o">=</span> <span class="n">signer</span><span class="p">.</span><span class="n">sign</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-<span class="nb">open</span><span class="p">(</span><span class="s">'signature.bin'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
+<span class="n">key_pem</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">'private.pem'</span><span class="p">).</span><span class="nf">read</span><span class="p">()</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="nf">import_key</span><span class="p">(</span><span class="n">key_pem</span><span class="p">,</span> <span class="n">passphrase</span><span class="o">=</span><span class="s">'ddd'</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">signer</span> <span class="o">=</span> <span class="n">pss</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">signature</span> <span class="o">=</span> <span class="n">signer</span><span class="p">.</span><span class="nf">sign</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="nf">open</span><span class="p">(</span><span class="s">'signature.bin'</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">).</span><span class="nf">write</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
@@ -1284,15 +1284,15 @@ openssl sha256 file.txt
 9
 10
 </pre></td><td class="rouge-code"><pre><span class="n">message</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'this is a message'</span>
-<span class="n">signature</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'signature.bin'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
-<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="n">import_key</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">).</span><span class="n">read</span><span class="p">())</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-<span class="n">verifier</span> <span class="o">=</span> <span class="n">pss</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">signature</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">'signature.bin'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">).</span><span class="nf">read</span><span class="p">()</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="p">.</span><span class="nf">import_key</span><span class="p">(</span><span class="nf">open</span><span class="p">(</span><span class="s">'public.pem'</span><span class="p">).</span><span class="nf">read</span><span class="p">())</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">SHA256</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="n">verifier</span> <span class="o">=</span> <span class="n">pss</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="k">try</span><span class="p">:</span>
-	<span class="n">verifier</span><span class="p">.</span><span class="n">verify</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
-	<span class="k">print</span><span class="p">(</span><span class="s">'valid'</span><span class="p">)</span>
-<span class="k">except</span> <span class="p">(</span><span class="nb">ValueError</span><span class="p">,</span> <span class="nb">TypeError</span><span class="p">):</span>
-	<span class="k">print</span><span class="p">(</span><span class="s">'Not Valid'</span><span class="p">)</span>
+	<span class="n">verifier</span><span class="p">.</span><span class="nf">verify</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">'valid'</span><span class="p">)</span>
+<span class="nf">except </span><span class="p">(</span><span class="nb">ValueError</span><span class="p">,</span> <span class="nb">TypeError</span><span class="p">):</span>
+	<span class="nf">print</span><span class="p">(</span><span class="s">'Not Valid'</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h1 id="pki">PKI</h1>
@@ -1530,10 +1530,10 @@ openssl sha256 file.txt
 52
 </pre></td><td class="rouge-code"><pre><span class="c1"># client.py
 </span>
-<span class="kn">import</span> <span class="nn">socket</span>
-<span class="kn">import</span> <span class="nn">ssl</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="kn">import</span> <span class="n">socket</span>
+<span class="kn">import</span> <span class="n">ssl</span>
+<span class="kn">import</span> <span class="n">sys</span>
+<span class="kn">import</span> <span class="n">pprint</span>
 
 <span class="n">hostname</span> <span class="o">=</span> <span class="n">sys</span><span class="p">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">port</span> <span class="o">=</span> <span class="mi">443</span>
@@ -1541,9 +1541,9 @@ openssl sha256 file.txt
 
 <span class="c1"># Set up TLS context
 # context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)   # TLS 1.2
-</span><span class="n">context</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="n">SSLContext</span><span class="p">(</span><span class="n">ssl</span><span class="p">.</span><span class="n">PROTOCOL_TLS_CLIENT</span><span class="p">)</span> <span class="c1"># 1.3
+</span><span class="n">context</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="nc">SSLContext</span><span class="p">(</span><span class="n">ssl</span><span class="p">.</span><span class="n">PROTOCOL_TLS_CLIENT</span><span class="p">)</span> <span class="c1"># 1.3
 </span>
-<span class="n">context</span><span class="p">.</span><span class="n">load_verify_locations</span><span class="p">(</span><span class="n">capath</span><span class="o">=</span><span class="n">cadir</span><span class="p">)</span> <span class="c1"># where to find trusted certificate
+<span class="n">context</span><span class="p">.</span><span class="nf">load_verify_locations</span><span class="p">(</span><span class="n">capath</span><span class="o">=</span><span class="n">cadir</span><span class="p">)</span> <span class="c1"># where to find trusted certificate
 </span><span class="n">context</span><span class="p">.</span><span class="n">verify_mode</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="n">CERT_REQUIRED</span>
 
 <span class="c1"># hostname if as in certificate , in case DNS redirect and MitM. Many forget it.
@@ -1551,19 +1551,19 @@ openssl sha256 file.txt
 
 
 <span class="c1"># Create TCP connection
-</span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="p">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
-<span class="n">sock</span><span class="p">.</span><span class="n">connect</span><span class="p">((</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
-<span class="nb">input</span><span class="p">(</span><span class="s">"TCP connected, press to continue"</span><span class="p">)</span>
+</span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="nf">socket</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="p">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<span class="n">sock</span><span class="p">.</span><span class="nf">connect</span><span class="p">((</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+<span class="nf">input</span><span class="p">(</span><span class="s">"TCP connected, press to continue"</span><span class="p">)</span>
 
 <span class="c1"># Add the TLS
-</span><span class="n">ssock</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="n">wrap_socket</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">server_hostname</span><span class="o">=</span><span class="n">hostname</span><span class="p">,</span> <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> <span class="c1"># tell TLS which TCP to use, not do handshake automaticly
-</span><span class="n">ssock</span><span class="p">.</span><span class="n">do_handshake</span><span class="p">()</span>  <span class="c1"># do handshake manually
-</span><span class="k">print</span><span class="p">(</span><span class="s">"=== Cipher used: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ssock</span><span class="p">.</span><span class="n">cipher</span><span class="p">()))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"=== Server hostname: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">ssock</span><span class="p">.</span><span class="n">server_hostname</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"=== Server certificate: "</span><span class="p">)</span>
-<span class="n">pprint</span><span class="p">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">ssock</span><span class="p">.</span><span class="n">getpeercert</span><span class="p">())</span>
-<span class="n">pprint</span><span class="p">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="n">get_ca_certs</span><span class="p">())</span>
-<span class="nb">input</span><span class="p">(</span><span class="s">"After TLS handshake, Press to continue"</span><span class="p">)</span>
+</span><span class="n">ssock</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">wrap_socket</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">server_hostname</span><span class="o">=</span><span class="n">hostname</span><span class="p">,</span> <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span> <span class="c1"># tell TLS which TCP to use, not do handshake automaticly
+</span><span class="n">ssock</span><span class="p">.</span><span class="nf">do_handshake</span><span class="p">()</span>  <span class="c1"># do handshake manually
+</span><span class="nf">print</span><span class="p">(</span><span class="s">"=== Cipher used: {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">ssock</span><span class="p">.</span><span class="nf">cipher</span><span class="p">()))</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"=== Server hostname: {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">ssock</span><span class="p">.</span><span class="n">server_hostname</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">"=== Server certificate: "</span><span class="p">)</span>
+<span class="n">pprint</span><span class="p">.</span><span class="nf">pprint</span><span class="p">(</span><span class="n">ssock</span><span class="p">.</span><span class="nf">getpeercert</span><span class="p">())</span>
+<span class="n">pprint</span><span class="p">.</span><span class="nf">pprint</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="nf">get_ca_certs</span><span class="p">())</span>
+<span class="nf">input</span><span class="p">(</span><span class="s">"After TLS handshake, Press to continue"</span><span class="p">)</span>
 
 <span class="c1"># Send HTTP request
 </span><span class="n">request</span> <span class="o">=</span> <span class="sa">b</span><span class="s">"GET / HTTP/1.0</span><span class="se">\r\n</span><span class="s">Host: “ + hostname.encode('utf-8') + b"</span>\<span class="n">r</span>\<span class="n">n</span>\<span class="n">r</span>\<span class="n">n</span><span class="s">"
@@ -1626,26 +1626,26 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
 <span class="n">SERVER_CERT</span>     <span class="o">=</span> <span class="s">'./server-certs/mycert.crt'</span>
 <span class="n">SERVER_PRIVATE</span> <span class="o">=</span> <span class="s">'./server-certs/mycert.key'</span>
 
-<span class="n">context</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="n">SSLContext</span><span class="p">(</span><span class="n">ssl</span><span class="p">.</span><span class="n">PROTOCOL_TLS_SERVER</span><span class="p">)</span>
-<span class="n">context</span><span class="p">.</span><span class="n">load_cert_chain</span><span class="p">(</span><span class="n">SERVER_CERT</span><span class="p">,</span> <span class="n">SERVER_PRIVATE</span><span class="p">)</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">ssl</span><span class="p">.</span><span class="nc">SSLContext</span><span class="p">(</span><span class="n">ssl</span><span class="p">.</span><span class="n">PROTOCOL_TLS_SERVER</span><span class="p">)</span>
+<span class="n">context</span><span class="p">.</span><span class="nf">load_cert_chain</span><span class="p">(</span><span class="n">SERVER_CERT</span><span class="p">,</span> <span class="n">SERVER_PRIVATE</span><span class="p">)</span>
 
 <span class="c1"># create tcp server
-</span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="p">.</span><span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">sock</span><span class="p">.</span><span class="n">bind</span><span class="p">((</span><span class="s">'0.0.0.0'</span><span class="p">,</span> <span class="mi">443</span><span class="p">))</span>
-<span class="n">sock</span><span class="p">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="nf">socket</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="p">.</span><span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">sock</span><span class="p">.</span><span class="nf">bind</span><span class="p">((</span><span class="s">'0.0.0.0'</span><span class="p">,</span> <span class="mi">443</span><span class="p">))</span>
+<span class="n">sock</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-	<span class="n">newsock</span><span class="p">,</span> <span class="n">fromaddr</span> <span class="o">=</span> <span class="n">sock</span><span class="p">.</span><span class="n">accept</span><span class="p">()</span>
+	<span class="n">newsock</span><span class="p">,</span> <span class="n">fromaddr</span> <span class="o">=</span> <span class="n">sock</span><span class="p">.</span><span class="nf">accept</span><span class="p">()</span>
 	<span class="k">try</span><span class="p">:</span>
-		<span class="n">ssock</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="n">wrap_socket</span><span class="p">(</span><span class="n">newsock</span><span class="p">,</span> <span class="n">server_side</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-		<span class="k">print</span><span class="p">(</span><span class="s">'TLS connection established'</span><span class="p">)</span>
-		<span class="n">data</span> <span class="o">=</span> <span class="n">ssock</span><span class="p">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>                           <span class="c1"># Read data over TLS
-</span>		<span class="n">pprint</span><span class="p">.</span><span class="n">pprint</span><span class="p">(</span><span class="s">"Request: {}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">datat</span><span class="p">))</span>    <span class="c1"># Send data over TLS
-</span>		<span class="n">ssock</span><span class="p">.</span><span class="n">sendall</span><span class="p">(</span><span class="n">html</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+		<span class="n">ssock</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">wrap_socket</span><span class="p">(</span><span class="n">newsock</span><span class="p">,</span> <span class="n">server_side</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+		<span class="nf">print</span><span class="p">(</span><span class="s">'TLS connection established'</span><span class="p">)</span>
+		<span class="n">data</span> <span class="o">=</span> <span class="n">ssock</span><span class="p">.</span><span class="nf">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>                           <span class="c1"># Read data over TLS
+</span>		<span class="n">pprint</span><span class="p">.</span><span class="nf">pprint</span><span class="p">(</span><span class="s">"Request: {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">datat</span><span class="p">))</span>    <span class="c1"># Send data over TLS
+</span>		<span class="n">ssock</span><span class="p">.</span><span class="nf">sendall</span><span class="p">(</span><span class="n">html</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
 		
 		<span class="c1"># close TLS connection
-</span>		<span class="n">ssock</span><span class="p">.</span><span class="n">shutdown</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">SHUT_PDWR</span><span class="p">)</span>
-		<span class="n">ssock</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</span>		<span class="n">ssock</span><span class="p">.</span><span class="nf">shutdown</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">SHUT_PDWR</span><span class="p">)</span>
+		<span class="n">ssock</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="tls-proxy"><span class="mr-2">TLS Proxy</span><a href="#tls-proxy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
@@ -1780,6 +1780,11 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
         
         
         
+      <li><a href="/posts/Network-Security/">Network Security</a></li>
+      
+        
+        
+        
       <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
       
         
@@ -1796,11 +1801,6 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
         
         
       <li><a href="/posts/Linux-for-CTF/">Linux for CTF</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/BOF/">Buffer over flow</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1932,6 +1932,120 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2156,6 +2270,46 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2274,162 +2428,10 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2606,13 +2608,13 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
-    
-      
-      <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/oscp/">oscp</a>
@@ -2676,6 +2678,19 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2976,49 +2991,6 @@ HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s">Content-Type: 
       
       
       <div class="card">
-        <a href="/posts/self-reproducing-code/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1651203180"
-    
-    >
-  2022-04-29
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>self reproducing code</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                How to write a quine
-
-self-reproducing code
-A quine is a program, takes no input and produces a copy of its own source code as its only output.
-
-original code is:
-
-1
-2
-3
-Head is: malicious code + d...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/BurpSuite-Lab/">
           <div class="card-body">
             <!--
@@ -3134,6 +3106,46 @@ write rules
 
   https://yara.readthedocs.io/en/stable/writingrules.html
 ...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/Zero-Logon/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1652758380"
+    
+    >
+  2022-05-17
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Zero Logon CVE</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                Zero Logon
+
+CVE-2020-1472
+
+  abuses a feature within MS-NRPC (Microsoft NetLogon Remote Protocol)
+  AES-CFB8 with hard coded IV.
+  https://github.com/SecuraBV/CVE-2020-1472, the POC
+  https://githu...
               </p>
             </div>
           </div>
@@ -3348,6 +3360,120 @@ write rules
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3572,6 +3698,46 @@ write rules
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3690,162 +3856,10 @@ write rules
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -4022,13 +4036,13 @@ write rules
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
-    
-      
-      <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/oscp/">oscp</a>

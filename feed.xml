@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2023-01-29T13:39:01+08:00</updated>
+  <updated>2023-02-17T15:37:16+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,57 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Network Security</title>
+    <link href="/posts/Network-Security/" rel="alternate" type="text/html" title="Network Security" />
+    <published>2023-02-15T11:33:00+08:00</published>
+  
+    <updated>2023-02-17T15:36:14+08:00</updated>
+  
+    <id>/posts/Network-Security/</id>
+    <content src="/posts/Network-Security/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Seed network security
+
+
+
+Basic
+
+Basic Network Utilities
+
+  Wireshark, ping, netcat, telnet, ssh, iptables, ip addr, ip route, dig
+
+
+classful addressing
+
+  A: 0.0.0.0      - 127.255.255.255,  0…        , /8
+  B: 128.0.0.0  - 191.255.255.255,  10…      , /16
+  C: 192.0.0.0  - 223.255.255.255,  110…    , /24
+  D: 224.0.0.0  - 239.255.255.255,  1110…  , multicast
+  E: 240.0.0.0  - 255.255.255.255, ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -206,51 +257,6 @@ Commands
   john --show --format=Raw-MD5 hashfile
   ssh admin@{IP} -p6464 -t "bash --noprofile"
 ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>Linux for CTF</title>
-    <link href="/posts/Linux-for-CTF/" rel="alternate" type="text/html" title="Linux for CTF" />
-    <published>2022-05-23T11:33:00+08:00</published>
-  
-    <updated>2022-07-25T22:07:33+08:00</updated>
-  
-    <id>/posts/Linux-for-CTF/</id>
-    <content src="/posts/Linux-for-CTF/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      mostly from IPPSEC and 0xdf writeups.
-
-  https://ippsec.rocks/
-  https://0xdf.gitlab.io/
-
-
-sshpass, dd, gzip
-sshpass -p raspberry ssh pi@10.10.10.48 "sudo dd if=/dev/sdb | gzip -1 -" | dd of=usb.gz
-
-  sshpass -p raspberry - use the password “raspberry” for the following SSH command (like ssh and scp)
-  ssh pi@10.10.10.48 "[command]" - SSH into Mirai and run the command
-  sudo dd if=/dev/sdb - r...
     </summary>
   
 

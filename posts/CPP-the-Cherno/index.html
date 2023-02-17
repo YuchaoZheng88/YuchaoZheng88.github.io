@@ -775,7 +775,7 @@
 <span class="c1">// value is a reference of the parameter, so the parameter can be increased, out of the function.</span>
 <span class="c1">// less code than below.</span>
 
-<span class="kt">void</span> <span class="n">IncrementPointer</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">void</span> <span class="nf">IncrementPointer</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// dereference the pointer first, then increase the value.</span>
 <span class="p">}</span> 
 <span class="c1">// increase the value of the pointer, same effect as using reference.</span>
@@ -975,7 +975,7 @@ fwef)"</span><span class="p">;</span> <span class="c1">// change line easily, R 
 	<span class="k">return</span> <span class="o">*</span><span class="k">this</span> <span class="o">+</span> <span class="n">other</span><span class="p">;</span> 
 <span class="p">}</span><span class="c1">// this is a pointer to the object, *this is Vector2</span>
 
-<span class="n">Verctor2</span> <span class="n">Add</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span><span class="p">{</span>
+<span class="n">Verctor2</span> <span class="nf">Add</span><span class="p">(</span><span class="k">const</span> <span class="n">Vector2</span><span class="o">&amp;</span> <span class="n">other</span><span class="p">)</span> <span class="k">const</span><span class="p">{</span>
 	<span class="k">return</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">other</span><span class="p">);</span>
 <span class="p">}</span> <span class="c1">// same as above, but werid.</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1166,7 +1166,7 @@ unique_ptr&amp; operator=(const unique_ptr&amp;) = delete;
 	<span class="k">return</span> <span class="n">stream</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
 	<span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">"abc"</span><span class="p">;</span>
 	<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
 	<span class="c1">// a is a reference, b just copied all variable from a. shallow copy.</span>
@@ -1498,7 +1498,7 @@ auto x1 = [](int i){ return i; }; // lambda
 	<span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="mx">1s</span><span class="p">);</span>   		 	 <span class="c1">// sleep for 1 second.</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
 	<span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">worker</span><span class="p">(</span><span class="n">DoWork</span><span class="p">);</span>
 	<span class="n">work</span><span class="p">.</span><span class="n">join</span><span class="p">();</span> <span class="c1">// main thread wait for worker thread to finish.</span>
 <span class="p">}</span>
@@ -1870,6 +1870,11 @@ auto x1 = [](int i){ return i; }; // lambda
         
         
         
+      <li><a href="/posts/Network-Security/">Network Security</a></li>
+      
+        
+        
+        
       <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
       
         
@@ -1886,11 +1891,6 @@ auto x1 = [](int i){ return i; }; // lambda
         
         
       <li><a href="/posts/Linux-for-CTF/">Linux for CTF</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/BOF/">Buffer over flow</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -2022,6 +2022,120 @@ auto x1 = [](int i){ return i; }; // lambda
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2246,6 +2360,46 @@ auto x1 = [](int i){ return i; }; // lambda
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2364,162 +2518,10 @@ auto x1 = [](int i){ return i; }; // lambda
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2696,13 +2698,13 @@ auto x1 = [](int i){ return i; }; // lambda
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
-    
-      
-      <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/oscp/">oscp</a>
@@ -2766,6 +2768,19 @@ auto x1 = [](int i){ return i; }; // lambda
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -3400,6 +3415,120 @@ H3 - h...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3624,6 +3753,46 @@ H3 - h...
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3742,162 +3911,10 @@ H3 - h...
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -4074,13 +4091,13 @@ H3 - h...
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
-    
-      
-      <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/oscp/">oscp</a>

