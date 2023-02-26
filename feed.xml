@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2023-02-17T15:37:16+08:00</updated>
+  <updated>2023-02-26T14:05:07+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -75,7 +75,7 @@ classful addressing
     <link href="/posts/Forensic/" rel="alternate" type="text/html" title="Forensic" />
     <published>2023-01-29T11:33:00+08:00</published>
   
-    <updated>2023-01-29T11:33:00+08:00</updated>
+    <updated>2023-02-26T14:03:32+08:00</updated>
   
     <id>/posts/Forensic/</id>
     <content src="/posts/Forensic/" />
@@ -97,24 +97,24 @@ classful addressing
 
 
 
-      Read Practical Malware Analysis
+      SANS 3MinMax
 
-types
-- Backdoor, botnet, downloader, launcher, rootkit, scareware, spam, worm
-- persistence mechanism: windows registry
+Kevin Ripa  36
+
+5 Windows Quick Win Artifacts
+
+Registry
+
+  aka. hives: SAM,System,Software,Secrutiy,NTUser
+  find what: MRU Lists, System searches, Browser typed URLs, USB/Wifi connection, SSIDs, Network connections, Programs/services running at startup, etc.
+  Registry Explorer.(by Eric Zimmerman)
+  C:\Windows\system32\config\SAM
+  RecentDocs, USBSTOR,
 
 
-static
-1. hash as a fingerprint.
-2. find strings
-3. detect packed and obfuscated malware
-4. linked library and functions
-5. PE file headers: meta data about the file
+Jumplists
 
-
-Dynamic:
-1. source-level, assembly-level debug.
-2. kernel, user-mode debu...
+  file, folder...
     </summary>
   
 

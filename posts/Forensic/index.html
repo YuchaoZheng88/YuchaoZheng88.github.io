@@ -45,8 +45,8 @@
 <meta property="og:title" content="Forensic" />
 <meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Read Practical Malware Analysis" />
-<meta property="og:description" content="Read Practical Malware Analysis" />
+<meta name="description" content="SANS 3MinMax" />
+<meta property="og:description" content="SANS 3MinMax" />
 <link rel="canonical" href="/posts/Forensic/" />
 <meta property="og:url" content="/posts/Forensic/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-01-29T11:33:00+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"Read Practical Malware Analysis","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-02-26T14:03:32+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -810,13 +810,92 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
 
     
 
-  
-
-  
-  
+    
 
   
 
@@ -831,6 +910,106 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
+
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -914,6 +1093,24 @@
 
       <!-- lastmod date -->
       
+      <span>
+        Updated
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago"
+    data-ts="1677391412"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    >
+  2023-02-26
+</em>
+
+      </span>
+      
 
       <!-- read time -->
       <!--
@@ -935,8 +1132,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1251 words">
-  <em>6 min</em> read</span>
+  title="1700 words">
+  <em>9 min</em> read</span>
 
 
       <!-- page views -->
@@ -948,7 +1145,85 @@
 </div> <!-- .post-meta -->
 
 <div class="post-content">
-  <h1 id="read-practical-malware-analysis">Read Practical Malware Analysis</h1>
+  <h1 id="sans-3minmax">SANS 3MinMax</h1>
+
+<p>Kevin Ripa  36</p>
+
+<h2 id="5-windows-quick-win-artifacts"><span class="mr-2">5 Windows Quick Win Artifacts</span><a href="#5-windows-quick-win-artifacts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="registry"><span class="mr-2">Registry</span><a href="#registry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>aka. hives: SAM,System,Software,Secrutiy,NTUser</li>
+  <li>find what: MRU Lists, System searches, Browser typed URLs, USB/Wifi connection, SSIDs, Network connections, Programs/services running at startup, etc.</li>
+  <li>Registry Explorer.(by Eric Zimmerman)</li>
+  <li>C:\Windows\system32\config\SAM</li>
+  <li>RecentDocs, USBSTOR,</li>
+</ul>
+
+<h4 id="jumplists"><span class="mr-2">Jumplists</span><a href="#jumplists" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>file, folder user performed historically.</li>
+  <li>{userFile}\AppData\Roaming\Microsoft\Recent Items\AutomaticDestinations</li>
+  <li>last folder above need to be input manually.</li>
+  <li>“{appID}.automaticDestinations-ms” files</li>
+  <li>jumplist explorer: “jlecmd -f {one-ms file path} “</li>
+  <li>“jlecmd -f {one-ms file path}  –csv {output path}” output as csv.</li>
+</ul>
+
+<h4 id="lnk"><span class="mr-2">“.LNK”</span><a href="#lnk" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>{userFile}\AppData\Roaming\Microsoft\Recent Items</li>
+  <li>files in above folder, are files interacted before.</li>
+  <li>when date created same as date modified, mean opened once. Otherwise, more than once.</li>
+  <li>real file has different time stamp, as file above is the shortcut`s timestamp.</li>
+  <li>when real file deleted, link file still stays.</li>
+  <li><code class="language-plaintext highlighter-rouge">lecmd -f {linkFilePath} --csv {outPutPath}</code> or -d to directory.</li>
+</ul>
+
+<h4 id="shellbags"><span class="mr-2">Shellbags</span><a href="#shellbags" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>open a folder again, same location, same window size.</li>
+  <li>{userFile}\AppData\Roaming\Microsoft\Windows\UsrClass.dat</li>
+  <li>HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\Shell</li>
+  <li>ZM tool: ShellBags Explorer. <code class="language-plaintext highlighter-rouge">SBECmd.exe -l --csv {outPutPath}</code></li>
+  <li>eg. F: may not be the same USB device, watch meta data to check.</li>
+</ul>
+
+<h4 id="prefetch"><span class="mr-2">Prefetch</span><a href="#prefetch" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>C:\Windows\Prefetch</li>
+  <li>file name eg. CONHOST.EXE-0C6456FB.pf, MSEDGEWEBVIEW2.EXE-053FE714.pf</li>
+  <li>ZM tool: <code class="language-plaintext highlighter-rouge">pecmd -f {.pf file path}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">pecmd -d C:\Windows\Prefetch\ --csv C:\Temp1 -q</code></li>
+  <li>WinPrefetchView, www.nirsoft.net</li>
+</ul>
+
+<h2 id="bigger-data"><span class="mr-2">Bigger data</span><a href="#bigger-data" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>NAS: network attached storage.</li>
+  <li>RAID: Redundant Array of Independent(Inexpensive) Disks.</li>
+  <li>RAID 5: maybe the most popular one. One drive lose is acceptable. Recover takes time. Use parity.</li>
+  <li>synology, QNAP.</li>
+</ul>
+
+<h2 id="online-evidence"><span class="mr-2">Online evidence</span><a href="#online-evidence" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>https://hunch.ly/</li>
+  <li>https://www.aircrack-ng.org/ IP not sufficient -&gt; device</li>
+</ul>
+
+<h2 id="image-surface-pro"><span class="mr-2">image Surface Pro</span><a href="#image-surface-pro" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>only 3 ports: Power Interface, USB 3, mini Display.</li>
+  <li>use USB 3 powered hub.</li>
+  <li>connect: USB with boot program, hard drive(get image).</li>
+  <li>UEFI screen. Boot to Paladin OS.</li>
+  <li>https://sumuri.com/paladin-manual/</li>
+</ul>
+
+<hr />
+
+<h1 id="read-practical-malware-analysis">Read Practical Malware Analysis</h1>
 
 <h2 id="types"><span class="mr-2">types</span><a href="#types" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1119,7 +1394,6 @@
 </pre></td><td class="rouge-code"><pre>only one copy of the program is running at a time.
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
 <h2 id="dynamic-analysis"><span class="mr-2">Dynamic analysis…</span><a href="#dynamic-analysis" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <h4 id="before-run-malware"><span class="mr-2">Before run malware:</span><a href="#before-run-malware" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
@@ -1153,7 +1427,6 @@
 	find what the malware requested.
 </pre></td></tr></tbody></table></code></div></div>
 
-<hr />
 <h2 id="ida-pro-dll"><span class="mr-2">IDA Pro DLL</span><a href="#ida-pro-dll" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -1172,12 +1445,9 @@
 - Rabit hole: IDA may fail to label function like printf, and you may lost in it.
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="dfir-digital-forensics-and-incident-response">DFIR (Digital Forensics and Incident Response)</h1>
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>From THM
-</pre></td></tr></tbody></table></code></div></div>
+<hr />
+
+<h1 id="thm-dfir-digital-forensics-and-incident-response">THM DFIR (Digital Forensics and Incident Response)</h1>
 
 <h2 id="eric-zimmerman"><span class="mr-2">Eric Zimmerman</span><a href="#eric-zimmerman" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -1403,6 +1673,82 @@
 </pre></td><td class="rouge-code"><pre>he sent a floppy disk, recover a deleted word document.
 </pre></td></tr></tbody></table></code></div></div>
 
+<h1 id="malware-analysis">Malware Analysis</h1>
+
+<h3 id="syscalls"><span class="mr-2">syscalls</span><a href="#syscalls" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
+<ul>
+  <li>32bit: https://syscalls32.paolostivanin.com/</li>
+  <li>64bit: https://syscalls64.paolostivanin.com/</li>
+</ul>
+
+<h3 id="paradies-clipper"><span class="mr-2">Paradies Clipper</span><a href="#paradies-clipper" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
+<ul>
+  <li>when copy and paste BTC address, the malware will change it.</li>
+  <li>A C2 server to monitor the replacement.</li>
+  <li>user32.dll -&gt; f: Open/Get/Set/EmptyClipboard</li>
+</ul>
+
+<hr />
+
+<h1 id="certs">Certs</h1>
+
+<h2 id="giac-reverse-engineering-malware-grem"><span class="mr-2">GIAC Reverse Engineering Malware (GREM)</span><a href="#giac-reverse-engineering-malware-grem" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Analyzing Malicious Office Macros</li>
+  <li>Analyzing Malicious PDFs</li>
+  <li>Analyzing Malicious RTF Files</li>
+  <li>Analyzing Obfuscated Malware</li>
+  <li>Behavioral Analysis Fundamentals</li>
+  <li>Common Malware Patterns</li>
+  <li>Core Reverse Engineering Concepts</li>
+  <li>Identifying and Bypassing Anti-Analysis Techniques</li>
+  <li>Malware Analysis Fundamentals</li>
+  <li>Malware Flow Control and Structures</li>
+  <li>Overcoming Misdirection Techniques</li>
+  <li>Reversing Functions in Assembly</li>
+  <li>Static Analysis Fundamentals</li>
+  <li>Unpacking and Debugging Packed Malware</li>
+</ul>
+
+<h2 id="giac-certified-incident-handler-gcih"><span class="mr-2">GIAC Certified Incident Handler (GCIH)</span><a href="#giac-certified-incident-handler-gcih" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Detecting Covert Communications</li>
+  <li>Detecting Evasive Techniques</li>
+  <li>Detecting Exploitation Tools</li>
+  <li>Drive-By Attacks</li>
+  <li>Endpoint Attack and Pivoting</li>
+  <li>Incident Response and Cyber Investigation</li>
+  <li>Memory and Malware Investigation</li>
+  <li>Network Investigations</li>
+  <li>Networked Environment Attack</li>
+  <li>Password Attacks</li>
+  <li>Post-Exploitation Attacks</li>
+  <li>Reconnaissance and Open-Source Intelligence</li>
+  <li>Scanning and Mapping</li>
+  <li>SMB Scanning</li>
+  <li>Web App Attacks</li>
+</ul>
+
+<h2 id="giac-certified-intrusion-analyst-gcia"><span class="mr-2">GIAC Certified Intrusion Analyst (GCIA)</span><a href="#giac-certified-intrusion-analyst-gcia" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Advanced IDS Concepts</li>
+  <li>Application Protocols</li>
+  <li>Concepts of TCP/IP and the Link Layer</li>
+  <li>Fragmentation</li>
+  <li>IDS Fundamentals and Network Architecture</li>
+  <li>Intrusion Detection System Rules</li>
+  <li>IP Headers</li>
+  <li>IPv6</li>
+  <li>Network Forensics and Traffic Analysis</li>
+  <li>Packet Engineering</li>
+  <li>SiLK and Other Traffic Analysis Tools</li>
+  <li>TCP</li>
+  <li>Tcpdump Filters</li>
+  <li>UDP and ICMP</li>
+  <li>Wireshark Fundamentals</li>
+</ul>
+
+
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -1524,6 +1870,11 @@
         
         
         
+      <li><a href="/posts/Forensic/">Forensic</a></li>
+      
+        
+        
+        
       <li><a href="/posts/Network-Security/">Network Security</a></li>
       
         
@@ -1540,11 +1891,6 @@
         
         
       <li><a href="/posts/OSCP-commands/">OSCP Command</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/Linux-for-CTF/">Linux for CTF</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
