@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2023-02-26T14:05:07+08:00</updated>
+  <updated>2023-03-02T05:13:50+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -75,7 +75,7 @@ classful addressing
     <link href="/posts/Forensic/" rel="alternate" type="text/html" title="Forensic" />
     <published>2023-01-29T11:33:00+08:00</published>
   
-    <updated>2023-02-26T14:03:32+08:00</updated>
+    <updated>2023-03-02T05:12:56+08:00</updated>
   
     <id>/posts/Forensic/</id>
     <content src="/posts/Forensic/" />
@@ -99,7 +99,7 @@ classful addressing
 
       SANS 3MinMax
 
-Kevin Ripa  36
+Kevin Ripa  52
 
 5 Windows Quick Win Artifacts
 

@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-02-26T14:03:32+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-02T05:12:56+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -894,6 +894,126 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -950,6 +1070,102 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -1101,12 +1317,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1677391412"
+    data-ts="1677705176"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2023-02-26
+  2023-03-01
 </em>
 
       </span>
@@ -1132,8 +1348,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1700 words">
-  <em>9 min</em> read</span>
+  title="2022 words">
+  <em>11 min</em> read</span>
 
 
       <!-- page views -->
@@ -1147,7 +1363,7 @@
 <div class="post-content">
   <h1 id="sans-3minmax">SANS 3MinMax</h1>
 
-<p>Kevin Ripa  36</p>
+<p>Kevin Ripa  52</p>
 
 <h2 id="5-windows-quick-win-artifacts"><span class="mr-2">5 Windows Quick Win Artifacts</span><a href="#5-windows-quick-win-artifacts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -1219,6 +1435,168 @@
   <li>connect: USB with boot program, hard drive(get image).</li>
   <li>UEFI screen. Boot to Paladin OS.</li>
   <li>https://sumuri.com/paladin-manual/</li>
+</ul>
+
+<h2 id="log"><span class="mr-2">log</span><a href="#log" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>c:\Windows\System32\winevt\Logs</li>
+  <li>gkape: https://ericzimmerman.github.io/KapeDocs/#!index.md</li>
+  <li>EZ tool: Timeline Explorer.</li>
+  <li>Event Log Explorer. (filter)</li>
+  <li>logon type: https://learn.microsoft.com/en-us/windows-server/identity/securing-privileged-access/reference-tools-logon-types</li>
+  <li>Oalerts</li>
+</ul>
+
+<h2 id="lies-computer-tolds"><span class="mr-2">lies computer tolds</span><a href="#lies-computer-tolds" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>LNK file: ftk imager can look at master file table(MFT), and show files, which Windows may not. (same file names, but some of them deleted)</li>
+</ul>
+
+<h2 id="volume-shadow-copy"><span class="mr-2">Volume Shadow Copy</span><a href="#volume-shadow-copy" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>system-&gt;about-&gt;system protection</li>
+  <li><code class="language-plaintext highlighter-rouge">svvadmin list shadows /for=E:</code></li>
+  <li>arsenal image mounter</li>
+  <li>ShadowExplorer</li>
+</ul>
+
+<h2 id="webcache"><span class="mr-2">webcache</span><a href="#webcache" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Browser-&gt;Website Data Settings-&gt;Current Location.</li>
+  <li></li>
+</ul>
+
+<h2 id="tools"><span class="mr-2">Tools</span><a href="#tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="acquisition-tools"><span class="mr-2">Acquisition tools</span><a href="#acquisition-tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>Arsenal Image Mounter</li>
+  <li>FTK Imager</li>
+  <li>Magnet Acquire</li>
+  <li>gkape</li>
+  <li>USB WhiteProtectOFF/ON</li>
+  <li>Forensic Copy</li>
+  <li>Magnet RAM Capture</li>
+</ul>
+
+<h4 id="forensic-suites"><span class="mr-2">Forensic Suites</span><a href="#forensic-suites" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>BlackLight</li>
+  <li>IEF - Internet Evidence Finder</li>
+  <li>IEF Report Viewer</li>
+  <li>AXIOMProcess</li>
+  <li>AXIOMExamine</li>
+  <li>Paraben P2C</li>
+  <li>Autopsy</li>
+</ul>
+
+<h4 id="artifact-tools"><span class="mr-2">Artifact Tools</span><a href="#artifact-tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>autorunner</li>
+  <li>DCode Date</li>
+  <li>ExifTool GUI</li>
+  <li>GENA</li>
+  <li>Hexinator - HEX EDITOR</li>
+  <li>Highligher</li>
+  <li>JumpList Explorer</li>
+  <li>md5summer</li>
+  <li>PhotoRec GUI</li>
+  <li>QuickHash - FILE HASHER</li>
+  <li>ShadowExplorer</li>
+  <li>ShellBags Explorer</li>
+  <li>Skype Log View</li>
+  <li>SRUM_DUMP</li>
+  <li>Structured Storage Viewer</li>
+  <li>thumbcache_viewer</li>
+  <li>thumbs_viewer</li>
+  <li>Timeline Explorer</li>
+  <li>win prefetch view</li>
+  <li>WinHex</li>
+</ul>
+
+<h4 id="browser-tools"><span class="mr-2">Browser Tools</span><a href="#browser-tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>ESEDatabase View</li>
+  <li>chrome cookies view</li>
+  <li>FOXTRON History Examiner</li>
+  <li>mozilla history view</li>
+  <li>mozilla cache view</li>
+  <li>hindsight GUI</li>
+  <li>chrome cache view</li>
+  <li>Mozilla Cookies</li>
+  <li>DB Browser for SQLite</li>
+  <li>browser add ons view</li>
+  <li>browsing history view</li>
+  <li>chrome history view</li>
+  <li>firefox downloads view</li>
+  <li>flash cookies view</li>
+  <li>GA Cookie Cruncher</li>
+  <li>NirLauncher</li>
+</ul>
+
+<h4 id="usb-forensics"><span class="mr-2">USB Forensics</span><a href="#usb-forensics" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>USBDevice Forensics</li>
+  <li>USB Detective</li>
+  <li>UVCView</li>
+</ul>
+
+<h4 id="event-log-tools"><span class="mr-2">Event Log Tools</span><a href="#event-log-tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>Event Log Explorer</li>
+  <li>EVTX_VIEW</li>
+</ul>
+
+<h4 id="email-tools"><span class="mr-2">Email Tools</span><a href="#email-tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>NUIX</li>
+  <li>Kernel OST Viewer</li>
+  <li>Kernel Outlook PST Viewer</li>
+</ul>
+
+<h4 id="registry-tools"><span class="mr-2">Registry Tools</span><a href="#registry-tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>Registry Explorer</li>
+  <li>Registry Recon</li>
+  <li>RegistryViewer</li>
+  <li>regripper</li>
+  <li>SAMInside</li>
+  <li>UserAssist</li>
+</ul>
+
+<hr />
+
+<h1 id="guided-hacking">Guided Hacking</h1>
+
+<h2 id="where-to-download-new-malware-samples"><span class="mr-2">Where to Download New Malware Samples</span><a href="#where-to-download-new-malware-samples" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>https://abuse.ch/</li>
+  <li>https://bazaar.abuse.ch/</li>
+  <li>https://www.virustotal.com/gui/home/upload</li>
+  <li>https://www.intezer.com/</li>
+  <li>https://malpedia.caad.fkie.fraunhofer.de/</li>
+  <li>https://tria.ge/</li>
+  <li>https://www.unpac.me/#/</li>
+</ul>
+
+<h2 id="setup-vm"><span class="mr-2">setup VM</span><a href="#setup-vm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>https://github.com/mandiant/flare-vm common tools on Windows.</li>
+  <li>https://www.uwamp.com/en/ light weight PHP server, can change version.</li>
+  <li>https://www.telerik.com/fiddler Proxy, Find C2, script(own language) reponses.</li>
+  <li>https://github.com/mandiant/flare-fakenet-ng python script</li>
+  <li>https://github.com/a0rtega/pafish check what to patch, to make malware do not aware in VM.</li>
+  <li>https://github.com/d4rksystem/VBoxCloak After this ps script, pafish will find much less VM traits.</li>
+  <li>https://hex-rays.com/ida-free/</li>
+  <li>https://github.com/mandiant/flare-ida IDA plugins.</li>
+  <li>IDA plug: ret-sync.</li>
+</ul>
+
+<h2 id="youhacker"><span class="mr-2">YouHacker</span><a href="#youhacker" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Detect It Easy -&gt; find library .NET</li>
+  <li>dnspy -&gt; . NET assembly editor</li>
+  <li>https://pypi.org/project/pydumpck/</li>
 </ul>
 
 <hr />
@@ -1314,7 +1692,7 @@
 </pre></td><td class="rouge-code"><pre>page virtual memory to the disk to slove: more virtual memory than physical memory allocated.
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="tools"><span class="mr-2">Tools:</span><a href="#tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h2 id="tools-1"><span class="mr-2">Tools:</span><a href="#tools-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -1620,7 +1998,7 @@
 </pre></td><td class="rouge-code"><pre>puts all the activities in chronological order.
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="tools-1"><span class="mr-2">Tools:</span><a href="#tools-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h2 id="tools-2"><span class="mr-2">Tools:</span><a href="#tools-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -1748,6 +2126,13 @@
   <li>Wireshark Fundamentals</li>
 </ul>
 
+<h2 id="giac-battlefield-forensics-and-acquisition-gbfa"><span class="mr-2">GIAC Battlefield Forensics and Acquisition (GBFA)</span><a href="#giac-battlefield-forensics-and-acquisition-gbfa" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Acquiring RAM and OS Artifacts</li>
+  <li>Acquisition Preparation</li>
+</ul>
+
+<h2 id="giac-certified-forensic-analyst-gcfa"><span class="mr-2">GIAC Certified Forensic Analyst (GCFA)</span><a href="#giac-certified-forensic-analyst-gcfa" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
 </div>
 
