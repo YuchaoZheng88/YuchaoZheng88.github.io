@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-02T05:12:56+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-10T01:07:23+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1014,6 +1014,66 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1317,12 +1377,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1677705176"
+    data-ts="1678381643"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2023-03-01
+  2023-03-09
 </em>
 
       </span>
@@ -1348,7 +1408,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2022 words">
+  title="2137 words">
   <em>11 min</em> read</span>
 
 
@@ -1363,7 +1423,7 @@
 <div class="post-content">
   <h1 id="sans-3minmax">SANS 3MinMax</h1>
 
-<p>Kevin Ripa  52</p>
+<p>Kevin Ripa  80</p>
 
 <h2 id="5-windows-quick-win-artifacts"><span class="mr-2">5 Windows Quick Win Artifacts</span><a href="#5-windows-quick-win-artifacts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -1371,9 +1431,11 @@
 <ul>
   <li>aka. hives: SAM,System,Software,Secrutiy,NTUser</li>
   <li>find what: MRU Lists, System searches, Browser typed URLs, USB/Wifi connection, SSIDs, Network connections, Programs/services running at startup, etc.</li>
-  <li>Registry Explorer.(by Eric Zimmerman)</li>
+  <li>https://github.com/EricZimmerman -&gt; Registry Explorer.</li>
   <li>C:\Windows\system32\config\SAM</li>
-  <li>RecentDocs, USBSTOR,</li>
+  <li>popular: OpenSavePidIMRU, RecentDocs, SAM, USBSTOR, AppCompatCache, WordWheelQuery, ComputerName, TimeZoneInformation, CurrentVersion.</li>
+  <li>Regeditor shows no information of SAM hive, but Registry Explorer shows the information.</li>
+  <li>Transaction Logs: https://andreafortuna.org/2021/02/06/windows-registry-transaction-logs-in-forensic-analysis/</li>
 </ul>
 
 <h4 id="jumplists"><span class="mr-2">Jumplists</span><a href="#jumplists" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
@@ -1463,7 +1525,54 @@
 <h2 id="webcache"><span class="mr-2">webcache</span><a href="#webcache" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <ul>
   <li>Browser-&gt;Website Data Settings-&gt;Current Location.</li>
-  <li></li>
+  <li>If you want to see it: 1. show hidden files. 2. (Not) Hide protected operating system files.</li>
+</ul>
+
+<h2 id="cellphone"><span class="mr-2">Cellphone</span><a href="#cellphone" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Do not turn off.</li>
+  <li>Different kinds.</li>
+</ul>
+
+<h2 id="password"><span class="mr-2">password</span><a href="#password" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>https://www.grc.com/haystack.htm</li>
+  <li>cupp: wordlist builder</li>
+  <li>Password Manager: Dashlane, Lastpass, Keypass, 1Password.</li>
+</ul>
+
+<h1 id="data">data</h1>
+<ul>
+  <li>Bit: binary digit</li>
+  <li>Byte: By eight</li>
+  <li>nibble: 4 bits, one hex.</li>
+</ul>
+
+<h2 id="forensic-resources"><span class="mr-2">Forensic resources</span><a href="#forensic-resources" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Cellebrite.com/en/home</li>
+  <li>smarterforensics.com/blog/</li>
+  <li>Mac4n6.com</li>
+  <li>Thisweekin4n6.com</li>
+  <li>Aboutdfir.com</li>
+  <li>sans.org/blog/</li>
+  <li>blog.elcomsoft.com</li>
+  <li>Thebinaryhick.blog</li>
+  <li>https://www.youtube.com/@MagnetForensics1/videos</li>
+  <li>binaryforay.blogspot.com</li>
+</ul>
+
+<h2 id="kape"><span class="mr-2">Kape</span><a href="#kape" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Kroll Artifact Parser &amp; Extractor</li>
+  <li>target, executable, modules.</li>
+  <li>GUI version: gkape.</li>
+</ul>
+
+<h2 id="ezviewer"><span class="mr-2">EZViewer</span><a href="#ezviewer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>If do not know how to handle a file, it will open in hex.</li>
+  <li>right bottom, view in hex.</li>
 </ul>
 
 <h2 id="tools"><span class="mr-2">Tools</span><a href="#tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
@@ -2255,6 +2364,11 @@
         
         
         
+      <li><a href="/posts/OffSec-Notes/">OffSecNotes</a></li>
+      
+        
+        
+        
       <li><a href="/posts/Forensic/">Forensic</a></li>
       
         
@@ -2266,11 +2380,6 @@
         
         
       <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/OffSec-Notes/">OffSecNotes</a></li>
       
         
         

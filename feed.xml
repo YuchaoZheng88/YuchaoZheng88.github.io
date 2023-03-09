@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2023-03-02T05:13:50+08:00</updated>
+  <updated>2023-03-10T01:13:14+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -75,7 +75,7 @@ classful addressing
     <link href="/posts/Forensic/" rel="alternate" type="text/html" title="Forensic" />
     <published>2023-01-29T11:33:00+08:00</published>
   
-    <updated>2023-03-02T05:12:56+08:00</updated>
+    <updated>2023-03-10T01:07:23+08:00</updated>
   
     <id>/posts/Forensic/</id>
     <content src="/posts/Forensic/" />
@@ -99,7 +99,7 @@ classful addressing
 
       SANS 3MinMax
 
-Kevin Ripa  52
+Kevin Ripa  80
 
 5 Windows Quick Win Artifacts
 
@@ -107,14 +107,9 @@ Registry
 
   aka. hives: SAM,System,Software,Secrutiy,NTUser
   find what: MRU Lists, System searches, Browser typed URLs, USB/Wifi connection, SSIDs, Network connections, Programs/services running at startup, etc.
-  Registry Explorer.(by Eric Zimmerman)
+  https://github.com/EricZimmerman -&amp;gt; Registry Explorer.
   C:\Windows\system32\config\SAM
-  RecentDocs, USBSTOR,
-
-
-Jumplists
-
-  file, folder...
+  popular: OpenSavePidIMRU, Re...
     </summary>
   
 
@@ -171,7 +166,7 @@ e5
     <link href="/posts/OffSec-Notes/" rel="alternate" type="text/html" title="OffSecNotes" />
     <published>2022-08-25T11:33:00+08:00</published>
   
-    <updated>2022-11-07T14:02:24+08:00</updated>
+    <updated>2023-03-10T01:08:41+08:00</updated>
   
     <id>/posts/OffSec-Notes/</id>
     <content src="/posts/OffSec-Notes/" />
@@ -194,18 +189,26 @@ e5
 
 
       Intro
-The notes are from offensive Security official traning.
 
-Linux
+  The notes are from offensive Security official traning.
+  Must finish before: 2023-09-20.
+  PEN-103 (Kali Linux Revealed) + 1 KLCP exam attempt
+  PEN-210 (Offensive Security Wireless Attacks) + 1 OSWP exam attempt
 
 
-  man -k pass find manuals with matched keyword ‘pass’
-  ls /etc/apache2/sites-available/*.conf ls with regular expression
-  echo $HISTFILE show environment variable
-  set explore environment variables
-  alias ll='ls -la' alias for zsh
-  uname -a show kernel information
-  ln -s ~/original.txt symlink.txt soft link, like wind...
+
+
+PEN-103 (KLCP)
+
+From book: Kali Linux Revealed
+
+1. About
+
+
+  Johnny Long
+  WHoppiX -&amp;gt; WHAX -&amp;gt; BackTrack -&amp;gt; BackTrack 4 -&amp;gt; Kali.
+  mobile: Kali NetHunter.
+  cm...
     </summary>
   
 

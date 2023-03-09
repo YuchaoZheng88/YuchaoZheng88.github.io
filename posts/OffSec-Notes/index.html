@@ -45,8 +45,8 @@
 <meta property="og:title" content="OffSecNotes" />
 <meta name="author" content="Yuchao" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Intro The notes are from offensive Security official traning." />
-<meta property="og:description" content="Intro The notes are from offensive Security official traning." />
+<meta name="description" content="Intro The notes are from offensive Security official traning. Must finish before: 2023-09-20. PEN-103 (Kali Linux Revealed) + 1 KLCP exam attempt PEN-210 (Offensive Security Wireless Attacks) + 1 OSWP exam attempt" />
+<meta property="og:description" content="Intro The notes are from offensive Security official traning. Must finish before: 2023-09-20. PEN-103 (Kali Linux Revealed) + 1 KLCP exam attempt PEN-210 (Offensive Security Wireless Attacks) + 1 OSWP exam attempt" />
 <link rel="canonical" href="/posts/OffSec-Notes/" />
 <meta property="og:url" content="/posts/OffSec-Notes/" />
 <meta property="og:site_name" content="Yuchao Toolbox" />
@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2022-11-07T14:02:24+08:00","datePublished":"2022-08-25T11:33:00+08:00","description":"Intro The notes are from offensive Security official traning.","headline":"OffSecNotes","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OffSec-Notes/"},"url":"/posts/OffSec-Notes/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-10T01:08:41+08:00","datePublished":"2022-08-25T11:33:00+08:00","description":"Intro The notes are from offensive Security official traning. Must finish before: 2023-09-20. PEN-103 (Kali Linux Revealed) + 1 KLCP exam attempt PEN-210 (Offensive Security Wireless Attacks) + 1 OSWP exam attempt","headline":"OffSecNotes","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/OffSec-Notes/"},"url":"/posts/OffSec-Notes/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -582,6 +582,30 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -594,6 +618,53 @@
 
   
   
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+
+    
 
   
 
@@ -671,12 +742,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1667800944"
+    data-ts="1678381721"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2022-11-06
+  2023-03-09
 </em>
 
       </span>
@@ -702,8 +773,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="1630 words">
-  <em>9 min</em> read</span>
+  title="1951 words">
+  <em>10 min</em> read</span>
 
 
       <!-- page views -->
@@ -716,7 +787,83 @@
 
 <div class="post-content">
   <h1 id="intro">Intro</h1>
-<p>The notes are from offensive Security official traning.</p>
+<ul>
+  <li>The notes are from offensive Security official traning.</li>
+  <li>Must finish before: 2023-09-20.</li>
+  <li>PEN-103 (Kali Linux Revealed) + 1 KLCP exam attempt</li>
+  <li>PEN-210 (Offensive Security Wireless Attacks) + 1 OSWP exam attempt</li>
+</ul>
+
+<hr />
+
+<h1 id="pen-103-klcp">PEN-103 (KLCP)</h1>
+
+<h2 id="from-book-kali-linux-revealed"><span class="mr-2">From book: Kali Linux Revealed</span><a href="#from-book-kali-linux-revealed" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="1-about"><span class="mr-2">1. About</span><a href="#1-about" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<ul>
+  <li>Johnny Long</li>
+  <li>WHoppiX -&gt; WHAX -&gt; BackTrack -&gt; BackTrack 4 -&gt; Kali.</li>
+  <li>mobile: Kali NetHunter.</li>
+  <li>cmd lspci , CUDA library, hash cat.</li>
+  <li>Kali rolling. you will receive updates every single day.</li>
+  <li>Kali based on “Debian Testing”: https://www.debian.org/releases/testing/</li>
+  <li>Debian derivatives: https://www.debian.org/derivatives/#list</li>
+  <li>Kali packet tracker: https://pkg.kali.org/derivative/kali-dev/</li>
+  <li>live-build configuration: https://gitlab.com/kalilinux/build-scripts/live-build-config Completely Customizable</li>
+  <li>Kali Linux disables any installed service that would listen on a public network interface by default, such as HTTP and SSH</li>
+  <li>Kali Bug Tracker: https://bugs.kali.org/my_view_page.php</li>
+</ul>
+
+<h4 id="2-getting-started"><span class="mr-2">2. Getting started</span><a href="#2-getting-started" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<p>Kali on USB:</p>
+
+<ol>
+  <li>Windows
+    <ul>
+      <li>Win32 Disk Imager, https://sourceforge.net/projects/win32diskimager/</li>
+      <li>Launch Win32 Disk Imager and choose the Kali Linux ISO file that you want to copy on the USB key.</li>
+    </ul>
+  </li>
+  <li>Linux GUI
+    <ul>
+      <li>Same on linux as above: GNOME desktop, “Restore Disk Image”</li>
+    </ul>
+  </li>
+  <li>Linux Command
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge"># dd if=kali-linux-2020.3-live-amd64.iso of=/dev/sdb</code></li>
+    </ul>
+  </li>
+</ol>
+
+<p>BIOS/UEFI</p>
+<ul>
+  <li>key is often Delete or Escape, and sometimes F2, F8, F10 or F12.</li>
+</ul>
+
+<h4 id="3-fundamentals"><span class="mr-2">3. Fundamentals</span><a href="#3-fundamentals" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>Linux isthe operating system kernel.</li>
+  <li>The kernel exports data about detected hardware through the /proc/ and /sys/ virtual file systems.</li>
+  <li>two types of device files: block(finite size) and character(a flow of characters). brw-rw—-, crw-rw—-</li>
+  <li>block: disk drives and partitions.  character: mouse, keyboard.</li>
+  <li>file system formats: ext2, ext3, ext4, VFAT; <code class="language-plaintext highlighter-rouge">mkfs.ext4</code> make filesystem. other: NFS. (network filesystem)</li>
+  <li>process identifier (PID)</li>
+  <li>virtual console: ctr + alt + F1 to F6.</li>
+  <li>Environment variables: /etc/profile, ~/.profile, /etc/environment.</li>
+  <li></li>
+</ul>
+
+<hr />
+
+<h1 id="exp-100">EXP-100</h1>
+
+<hr />
+
+<h1 id="pen-100">PEN-100</h1>
 
 <h2 id="linux"><span class="mr-2">Linux</span><a href="#linux" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -987,7 +1134,11 @@ $LINENO			The current line number in the script
 16
 17
 18
-</pre></td><td class="rouge-code"><pre>OPERATOR						DESCRIPTION: EXPRESSION TRUE IF...
+19
+20
+</pre></td><td class="rouge-code"><pre>ref link: https://linuxhint.com/bash_operator_examples/
+
+OPERATOR						DESCRIPTION: EXPRESSION TRUE IF...
 !EXPRESSION					The EXPRESSION is false.
 -n STRING							STRING length is greater than zero
 -z STRING							The length of STRING is zero (empty)
@@ -1130,6 +1281,57 @@ display_usage
 <span class="c"># do some text art</span>
 </pre></td></tr></tbody></table></code></div></div>
 
+<h2 id="python"><span class="mr-2">python</span><a href="#python" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<p>slice string</p>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="n">tag</span> <span class="o">=</span> <span class="s">'&lt;a href="https://www.offensive-security.com/blog"&gt;Blog&lt;/a&gt;'</span>
+<span class="n">start</span> <span class="o">=</span> <span class="s">"http"</span>
+<span class="n">end</span> <span class="o">=</span> <span class="s">"</span><span class="se">\"</span><span class="s">&gt;"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">tag</span><span class="p">[</span><span class="n">tag</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">start</span><span class="p">):</span><span class="n">tag</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">end</span><span class="p">)]</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>File</p>
+<div class="language-python highlighter-rouge"><div class="code-header">
+        <span data-label-text="Python"><i class="fas fa-code small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="n">myData</span> <span class="o">=</span> <span class="s">"I'm sample data to be written to a file"</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">myData</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+
 </div>
 
 <div class="post-tail-wrapper text-muted">
@@ -1251,6 +1453,11 @@ display_usage
         
         
         
+      <li><a href="/posts/OffSec-Notes/">OffSecNotes</a></li>
+      
+        
+        
+        
       <li><a href="/posts/Forensic/">Forensic</a></li>
       
         
@@ -1262,11 +1469,6 @@ display_usage
         
         
       <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/OffSec-Notes/">OffSecNotes</a></li>
       
         
         
