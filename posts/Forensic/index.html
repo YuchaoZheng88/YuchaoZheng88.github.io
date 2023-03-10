@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-10T01:07:23+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-10T09:55:19+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1074,6 +1074,54 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1081,41 +1129,6 @@
 
   
   
-
-  
-    
-    
-
-    
-      
-        
-        
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-
-    
 
   
 
@@ -1377,7 +1390,7 @@
 -->
 
 <em class="timeago"
-    data-ts="1678381643"
+    data-ts="1678413319"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
@@ -1408,8 +1421,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2137 words">
-  <em>11 min</em> read</span>
+  title="2195 words">
+  <em>12 min</em> read</span>
 
 
       <!-- page views -->
@@ -1423,7 +1436,7 @@
 <div class="post-content">
   <h1 id="sans-3minmax">SANS 3MinMax</h1>
 
-<p>Kevin Ripa  80</p>
+<p>Kevin Ripa  93</p>
 
 <h2 id="5-windows-quick-win-artifacts"><span class="mr-2">5 Windows Quick Win Artifacts</span><a href="#5-windows-quick-win-artifacts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -1541,7 +1554,7 @@
   <li>Password Manager: Dashlane, Lastpass, Keypass, 1Password.</li>
 </ul>
 
-<h1 id="data">data</h1>
+<h2 id="data"><span class="mr-2">data</span><a href="#data" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <ul>
   <li>Bit: binary digit</li>
   <li>Byte: By eight</li>
@@ -1573,6 +1586,15 @@
 <ul>
   <li>If do not know how to handle a file, it will open in hex.</li>
   <li>right bottom, view in hex.</li>
+</ul>
+
+<h2 id="incorrected-conclusion"><span class="mr-2">Incorrected conclusion.</span><a href="#incorrected-conclusion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>MFT entry 2 - Deleted abc.dll -&gt; Cluster 13.</li>
+  <li>MFT entry 3 - Exists Koala.jpg -&gt; Cluster 13.</li>
+  <li>Then, MFT entry 3, Koala.jpg deleted, and points to Cluster 14 like abc.xlsx.</li>
+  <li>wrong conclusion may be: some one hide Koala.jpg as abc.dll in a system directory.</li>
+  <li>Because Entry and storage space have no relationship between each other.</li>
 </ul>
 
 <h2 id="tools"><span class="mr-2">Tools</span><a href="#tools" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
@@ -1701,11 +1723,24 @@
   <li>IDA plug: ret-sync.</li>
 </ul>
 
+<h2 id="syscalls"><span class="mr-2">syscalls</span><a href="#syscalls" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>32bit: https://syscalls32.paolostivanin.com/</li>
+  <li>64bit: https://syscalls64.paolostivanin.com/</li>
+</ul>
+
 <h2 id="youhacker"><span class="mr-2">YouHacker</span><a href="#youhacker" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <ul>
   <li>Detect It Easy -&gt; find library .NET</li>
   <li>dnspy -&gt; . NET assembly editor</li>
   <li>https://pypi.org/project/pydumpck/</li>
+</ul>
+
+<h2 id="paradies-clipper"><span class="mr-2">Paradies Clipper</span><a href="#paradies-clipper" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>when copy and paste BTC address, the malware will change it.</li>
+  <li>A C2 server to monitor the replacement.</li>
+  <li>user32.dll -&gt; f: Open/Get/Set/EmptyClipboard</li>
 </ul>
 
 <hr />
@@ -1934,7 +1969,10 @@
 
 <hr />
 
-<h1 id="thm-dfir-digital-forensics-and-incident-response">THM DFIR (Digital Forensics and Incident Response)</h1>
+<h1 id="thm">THM</h1>
+<ul>
+  <li>keywords: forensic, DFIR, AV, malware, reverse engineering, siem.</li>
+</ul>
 
 <h2 id="eric-zimmerman"><span class="mr-2">Eric Zimmerman</span><a href="#eric-zimmerman" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
@@ -2160,21 +2198,6 @@
 </pre></td><td class="rouge-code"><pre>he sent a floppy disk, recover a deleted word document.
 </pre></td></tr></tbody></table></code></div></div>
 
-<h1 id="malware-analysis">Malware Analysis</h1>
-
-<h3 id="syscalls"><span class="mr-2">syscalls</span><a href="#syscalls" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
-<ul>
-  <li>32bit: https://syscalls32.paolostivanin.com/</li>
-  <li>64bit: https://syscalls64.paolostivanin.com/</li>
-</ul>
-
-<h3 id="paradies-clipper"><span class="mr-2">Paradies Clipper</span><a href="#paradies-clipper" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3></h3>
-<ul>
-  <li>when copy and paste BTC address, the malware will change it.</li>
-  <li>A C2 server to monitor the replacement.</li>
-  <li>user32.dll -&gt; f: Open/Get/Set/EmptyClipboard</li>
-</ul>
-
 <hr />
 
 <h1 id="certs">Certs</h1>
@@ -2364,12 +2387,12 @@
         
         
         
-      <li><a href="/posts/OffSec-Notes/">OffSecNotes</a></li>
+      <li><a href="/posts/Forensic/">Forensic</a></li>
       
         
         
         
-      <li><a href="/posts/Forensic/">Forensic</a></li>
+      <li><a href="/posts/OffSec-Notes/">OffSecNotes</a></li>
       
         
         
