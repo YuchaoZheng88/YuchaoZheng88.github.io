@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-12T14:50:36+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-12T15:01:49+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1086,102 +1086,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -1203,6 +1107,114 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -1450,7 +1462,7 @@
 -->
 
 <em class="timeago"
-    data-ts="1678603836"
+    data-ts="1678604509"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
@@ -1481,7 +1493,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2391 words">
+  title="2395 words">
   <em>13 min</em> read</span>
 
 
@@ -1999,7 +2011,9 @@
 
 <h2 id="eric-zimmerman"><span class="mr-2">Eric Zimmerman</span><a href="#eric-zimmerman" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 
-<h2 id="artifacts"><span class="mr-2">artifacts:</span><a href="#artifacts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h2 id="dfir-an-introduction-room"><span class="mr-2">DFIR: An Introduction, room</span><a href="#dfir-an-introduction-room" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="artifacts"><span class="mr-2">artifacts:</span><a href="#artifacts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -2054,7 +2068,7 @@
 </pre></td><td class="rouge-code"><pre>- pieces of information that provide evidence of human activity.
 - collected from the Endpoint or Server's file system, memory, or network activity.
 
-#### type:
+##### type:
 	- Strings ("exec": a backdoor)
 	- API calls
 	- Memory dumps
@@ -2065,7 +2079,7 @@
 	- IP address string routable to Command and control server
 	- IOCs can be MD5, SHA1, SHA256 hashes, IP address, C2 domain, file size, filename, file path, a registry key, etc.
 
-#### Windows Registry
+##### Windows Registry
 	- if only access to disk image.
 		C:\Windows\System32\Config
 		NTUSER.DAT, USRCLASS.DAT
@@ -2088,7 +2102,7 @@
 			ShimCache
 		External Devices, USB
 
-#### Disk:
+##### Disk:
 	- Autospy disk recovery.
 		data on the disk in different unallocated clusters, which can possibly be recovered. 
 		X mark indicates a deleted file.
@@ -2102,7 +2116,7 @@
 		information related to attached devices
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="linux-forensic"><span class="mr-2">Linux forensic:</span><a href="#linux-forensic" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h4 id="linux-forensic"><span class="mr-2">Linux forensic:</span><a href="#linux-forensic" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -2145,30 +2159,30 @@
 	Syslog, Auth logs, Third-party logs
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="evidence-preservation"><span class="mr-2">Evidence Preservation</span><a href="#evidence-preservation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h4 id="evidence-preservation"><span class="mr-2">Evidence Preservation</span><a href="#evidence-preservation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 
-<h2 id="chain-of-custody"><span class="mr-2">Chain of custody</span><a href="#chain-of-custody" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h4 id="chain-of-custody"><span class="mr-2">Chain of custody</span><a href="#chain-of-custody" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>integrity of the data.
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="order-of-volatility"><span class="mr-2">Order of volatility</span><a href="#order-of-volatility" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h4 id="order-of-volatility"><span class="mr-2">Order of volatility</span><a href="#order-of-volatility" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>preserve RAM before hard drive.
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="timeline-creation"><span class="mr-2">Timeline creation</span><a href="#timeline-creation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h4 id="timeline-creation"><span class="mr-2">Timeline creation</span><a href="#timeline-creation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>puts all the activities in chronological order.
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="tools-2"><span class="mr-2">Tools:</span><a href="#tools-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h4 id="tools-2"><span class="mr-2">Tools:</span><a href="#tools-2" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -2207,14 +2221,14 @@
 - Velociraptor
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="nist-and-sans-incident-handling-guide"><span class="mr-2">NIST and SANS incident handling guide.</span><a href="#nist-and-sans-incident-handling-guide" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h4 id="nist-and-sans-incident-handling-guide"><span class="mr-2">NIST and SANS incident handling guide.</span><a href="#nist-and-sans-incident-handling-guide" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>1. Preparation 2. Identification 3. Containment 4. Eradication 5. Recovery 6. Lessons Learned
 </pre></td></tr></tbody></table></code></div></div>
 
-<h2 id="btk-serial-killer"><span class="mr-2">BTK serial killer</span><a href="#btk-serial-killer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h4 id="btk-serial-killer"><span class="mr-2">BTK serial killer</span><a href="#btk-serial-killer" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
