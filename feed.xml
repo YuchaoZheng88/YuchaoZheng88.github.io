@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2023-03-10T09:59:41+08:00</updated>
+  <updated>2023-03-12T14:56:54+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -75,7 +75,7 @@ classful addressing
     <link href="/posts/Forensic/" rel="alternate" type="text/html" title="Forensic" />
     <published>2023-01-29T11:33:00+08:00</published>
   
-    <updated>2023-03-10T09:55:19+08:00</updated>
+    <updated>2023-03-12T14:50:36+08:00</updated>
   
     <id>/posts/Forensic/</id>
     <content src="/posts/Forensic/" />
@@ -99,7 +99,7 @@ classful addressing
 
       SANS 3MinMax
 
-Kevin Ripa  93
+Kevin Ripa  101
 
 5 Windows Quick Win Artifacts
 
@@ -109,7 +109,7 @@ Registry
   find what: MRU Lists, System searches, Browser typed URLs, USB/Wifi connection, SSIDs, Network connections, Programs/services running at startup, etc.
   https://github.com/EricZimmerman -&amp;gt; Registry Explorer.
   C:\Windows\system32\config\SAM
-  popular: OpenSavePidIMRU, Re...
+  popular: OpenSavePidIMRU, R...
     </summary>
   
 
