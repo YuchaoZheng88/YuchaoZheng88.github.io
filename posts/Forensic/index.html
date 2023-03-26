@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-12T15:04:00+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-27T02:24:48+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1086,6 +1086,42 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1107,6 +1143,114 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -1462,12 +1606,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1678604640"
+    data-ts="1679855088"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2023-03-12
+  2023-03-26
 </em>
 
       </span>
@@ -1493,8 +1637,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2395 words">
-  <em>13 min</em> read</span>
+  title="2754 words">
+  <em>15 min</em> read</span>
 
 
       <!-- page views -->
@@ -1994,14 +2138,6 @@
 
 <hr />
 
-<h1 id="13cubed">13Cubed</h1>
-
-<ul>
-  <li>https://www.youtube.com/@13Cubed/featured</li>
-</ul>
-
-<hr />
-
 <h1 id="thm">THM</h1>
 
 <h2 id="room-keywords"><span class="mr-2">room keywords</span><a href="#room-keywords" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
@@ -2257,7 +2393,116 @@
 
 <p>Full excercise: https://cfreds.nist.gov/ , to download the disk image</p>
 
-<h2 id="disk-analysis--autopsy-room"><span class="mr-2">Disk Analysis &amp; Autopsy, room</span><a href="#disk-analysis--autopsy-room" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h2 id="linux-forensics-room"><span class="mr-2">Linux Forensics, room</span><a href="#linux-forensics-room" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
+<h4 id="system-config"><span class="mr-2">system config</span><a href="#system-config" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cat /etc/os-release</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cat /etc/sudoers</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sudo last -f /var/log/wtmp</code> last logins</li>
+  <li><code class="language-plaintext highlighter-rouge">sudo last -f /var/log/btmp</code> failed logins</li>
+  <li><code class="language-plaintext highlighter-rouge">/var/log/auth.log</code> Authentication logs</li>
+  <li><code class="language-plaintext highlighter-rouge">cat /etc/hostname</code> hostname</li>
+  <li><code class="language-plaintext highlighter-rouge">cat /etc/timezone</code> timezone</li>
+  <li><code class="language-plaintext highlighter-rouge">cat /etc/network/interfaces</code> network config</li>
+  <li><code class="language-plaintext highlighter-rouge">ip address show</code></li>
+  <li><code class="language-plaintext highlighter-rouge">netstat -natp</code> Active network connections</li>
+  <li><code class="language-plaintext highlighter-rouge">ps</code> running processes</li>
+  <li><code class="language-plaintext highlighter-rouge">/etc/resolv.conf</code> DNS server</li>
+</ul>
+
+<h4 id="persistence"><span class="mr-2">persistence</span><a href="#persistence" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<p>ways a program can survive after a system reboot.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cat /etc/crontab</code> Cron jobs.</li>
+  <li><code class="language-plaintext highlighter-rouge">cd /etc/init.d</code> services startup in this folder.</li>
+  <li><code class="language-plaintext highlighter-rouge">cat ~/.bashrc</code> commands run after bash shell spawned.</li>
+  <li>/etc/bash.bashrc, /etc/profile. -&gt; System-wide settings</li>
+</ul>
+
+<h4 id="evidence-of-execution"><span class="mr-2">evidence of execution</span><a href="#evidence-of-execution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>Sudo execution history: <code class="language-plaintext highlighter-rouge">cat /var/log/auth.log* |grep -i COMMAND</code></li>
+  <li>Bash history: <code class="language-plaintext highlighter-rouge">cat ~/.bash_history</code></li>
+  <li>Files accessed using vim: <code class="language-plaintext highlighter-rouge">cat ~/.viminfo</code></li>
+</ul>
+
+<h4 id="log-1"><span class="mr-2">Log</span><a href="#log-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>Syslog, <code class="language-plaintext highlighter-rouge">cat /var/log/syslog*</code>, check former hostname.</li>
+  <li>Auth logs, <code class="language-plaintext highlighter-rouge">cat /var/log/auth.log*</code></li>
+  <li>Third-party logs, <code class="language-plaintext highlighter-rouge">ls /var/log</code></li>
+  <li>/var/log/httpd, /var/log/cron, /var/log/auth.log, /var/log/secure, /var/log/kern.</li>
+  <li>/var/log/apache, /var/log/httpd.</li>
+  <li>Ways of Log Ingestion of SIEM:  1) Agent / Forwarder, 2) Syslog, 3) Manual Upload, 4) Port-Forwarding</li>
+</ul>
+
+<h2 id="volatility-room"><span class="mr-2">Volatility, room</span><a href="#volatility-room" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>https://volatility3.readthedocs.io/en/latest/</li>
+  <li>https://github.com/volatilityfoundation/volatility3</li>
+  <li>syntax changed in volatility3 from volatility2. (python3 -&gt; python2)</li>
+  <li>Virtual memory: VMWare - .vmem; Hyper-V - .bin; Parallels - .mem; VirtualBox - .sav file.</li>
+  <li>imageinfo: list best possible OS profiles</li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f dump.vmem windows.info</code> use plugin windows.info to get information from dump.vmem.</li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.pslist</code> listing processes. Can not see unlinked rootkits.</li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.psscan</code> help combat evasion techniques above.</li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.pstree</code></li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.netstat</code> another tool in this case may be better-&gt; bulk_extractor.</li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.dlllist</code></li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.malfind</code> attempt to identify injected processes</li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.yarascan</code></li>
+</ul>
+
+<h4 id="hooking"><span class="mr-2">Hooking</span><a href="#hooking" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>one evasion technique</li>
+  <li>SSDT Hooks, IRP Hooks, IAT Hooks, EAT Hooks, Inline Hooks.</li>
+  <li>SSDT: System Service Descriptor Table. modify pointers to a location the rootkit controls.</li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.ssdt</code></li>
+</ul>
+
+<h4 id="find-driver-files-as-part-of-their-evasion"><span class="mr-2">find driver files as part of their evasion</span><a href="#find-driver-files-as-part-of-their-evasion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.modules</code> dump a list of loaded kernel modules</li>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f &lt;file&gt; windows.driverscan</code> identify driver files in the kernel, which “modules” may miss</li>
+</ul>
+
+<h4 id="dump-pid-1640"><span class="mr-2">dump pid 1640</span><a href="#dump-pid-1640" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">python3 vol.py -f /Scenarios/Investigations/Investigation-1.vmem -o ./mydump windows.memmap.Memmap --pid 1640 --dump</code></li>
+</ul>
+
+<h4 id="resources"><span class="mr-2">resources</span><a href="#resources" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>https://github.com/volatilityfoundation/volatility/wiki</li>
+  <li>https://eforensicsmag.com/finding-advanced-malware-using-volatility/</li>
+  <li>https://book.hacktricks.xyz/generic-methodologies-and-resources/basic-forensic-methodology/memory-dump-analysis/volatility-cheatsheet</li>
+  <li>https://book.cyberyozh.com/counter-forensics-anti-computer-forensics/</li>
+</ul>
+
+<h2 id="redline-room"><span class="mr-2">Redline, room</span><a href="#redline-room" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>FireEye tool</li>
+</ul>
+
+<hr />
+
+<h1 id="bookcyberyozhcom">book.cyberyozh.com</h1>
+
+<h4 id="anti-forensic"><span class="mr-2">anti-forensic</span><a href="#anti-forensic" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>hidden OS. Different password to different file container. TrueCrypt, VeraCrypt.</li>
+  <li>DMA attack: FireWire port, cold boot attack.</li>
+</ul>
+
+<hr />
+
+<h1 id="13cubed">13Cubed</h1>
+
+<ul>
+  <li>https://www.youtube.com/@13Cubed/featured</li>
+</ul>
 
 <hr />
 
@@ -2336,7 +2581,7 @@
   <li>Working With Evidence Files</li>
 </ul>
 
-<h2 id="giac-certified-forensic-analyst-gcfa"><span class="mr-2">GIAC Certified Forensic Analyst (GCFA)</span><a href="#giac-certified-forensic-analyst-gcfa" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<h2 id="giac-certified-forensic-analyst-gcfa-aka-for508"><span class="mr-2">GIAC Certified Forensic Analyst (GCFA), aka. FOR508</span><a href="#giac-certified-forensic-analyst-gcfa-aka-for508" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <ul>
   <li>Analyzing Volatile Malicious Event Artifacts</li>
   <li>Analyzing Volatile Windows Event Artifacts</li>
@@ -2349,6 +2594,9 @@
   <li>NTFS Artifact Analysis</li>
   <li>Windows Artifact Analysis</li>
 </ul>
+
+<h2 id="for500-windows-forensic-analysis"><span class="mr-2">FOR500: Windows Forensic Analysis</span><a href="#for500-windows-forensic-analysis" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+
 
 </div>
 

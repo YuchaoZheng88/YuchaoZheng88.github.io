@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2023-03-12T15:05:53+08:00</updated>
+  <updated>2023-03-27T02:26:06+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -75,7 +75,7 @@ classful addressing
     <link href="/posts/Forensic/" rel="alternate" type="text/html" title="Forensic" />
     <published>2023-01-29T11:33:00+08:00</published>
   
-    <updated>2023-03-12T15:04:00+08:00</updated>
+    <updated>2023-03-27T02:24:48+08:00</updated>
   
     <id>/posts/Forensic/</id>
     <content src="/posts/Forensic/" />
@@ -166,7 +166,7 @@ e5
     <link href="/posts/OffSec-Notes/" rel="alternate" type="text/html" title="OffSecNotes" />
     <published>2022-08-25T11:33:00+08:00</published>
   
-    <updated>2023-03-10T01:08:41+08:00</updated>
+    <updated>2023-03-27T02:24:21+08:00</updated>
   
     <id>/posts/OffSec-Notes/</id>
     <content src="/posts/OffSec-Notes/" />
