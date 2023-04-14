@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-03-27T02:24:48+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-04-15T01:59:14+08:00","datePublished":"2023-01-29T11:33:00+08:00","description":"SANS 3MinMax","headline":"Forensic","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Forensic/"},"url":"/posts/Forensic/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1122,6 +1122,150 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -1143,6 +1287,90 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
       
 
       
@@ -1606,12 +1834,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1679855088"
+    data-ts="1681495154"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2023-03-26
+  2023-04-14
 </em>
 
       </span>
@@ -1637,8 +1865,8 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="2754 words">
-  <em>15 min</em> read</span>
+  title="3391 words">
+  <em>18 min</em> read</span>
 
 
       <!-- page views -->
@@ -1915,7 +2143,7 @@
 
 <hr />
 
-<h1 id="read-practical-malware-analysis">Read Practical Malware Analysis</h1>
+<h1 id="book-practical-malware-analysis">book: Practical Malware Analysis</h1>
 
 <h2 id="types"><span class="mr-2">types</span><a href="#types" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
@@ -2138,11 +2366,47 @@
 
 <hr />
 
+<h1 id="book-learning-malware-analysis">book: Learning malware analysis</h1>
+
+<ul>
+  <li>all kinds of malware: https://www.malwarebytes.com/glossary</li>
+  <li>INetSim: Internet Services Simulation Suite</li>
+</ul>
+
+<h2 id="source"><span class="mr-2">source</span><a href="#source" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>Hybrid Analysis: https:/​/​www.​hybrid-​analysis.​com/​</li>
+  <li>KernelMode.info: http:/​/​www.​kernelmode.​info/​forum/​viewforum.​php?​f=​16VirusBay: https:/​/​beta.​virusbay.​io/​</li>
+  <li>Contagio malware dump: http:/​/​contagiodump.​blogspot.​com/​</li>
+  <li>AVCaesar: https:/​/​avcaesar.​malware.​lu/​</li>
+  <li>Malwr: https:/​/​malwr.​com/​</li>
+  <li>VirusShare: https:/​/​virusshare.​com/​</li>
+  <li>theZoo: http:/​/​thezoo.​morirt.​com/</li>
+  <li>https://zeltser.com/malware-sample-sources/</li>
+</ul>
+
+<h2 id="strings"><span class="mr-2">Strings</span><a href="#strings" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>https://github.com/mandiant/flare-floss, extract strings and decode obfuscated strings. <code class="language-plaintext highlighter-rouge">$ ./floss test.exe</code></li>
+</ul>
+
+<h2 id="pack"><span class="mr-2">pack</span><a href="#pack" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<p><code class="language-plaintext highlighter-rouge">$ upx -o spybot_packed.exe spybot.exe</code></p>
+
+<h2 id="pe-structure-in-image"><span class="mr-2">pe structure in image.</span><a href="#pe-structure-in-image" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>https://github.com/corkami/pics/blob/master/binary/pe101/pe101.pdf</li>
+  <li>http://www.openrce.org/reference_library/files/reference/PE%20Format.pdf</li>
+  <li>more file stuctures in picture: https://github.com/corkami/pics/tree/master/binary</li>
+</ul>
+
+<hr />
+
 <h1 id="thm">THM</h1>
 
 <h2 id="room-keywords"><span class="mr-2">room keywords</span><a href="#room-keywords" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
 <ul>
-  <li>forensic, DFIR, AV, malware, reverse engineering, siem.</li>
+  <li>forensic, DFIR, AV, malware, reverse engineering, siem, blue.</li>
 </ul>
 
 <h2 id="eric-zimmerman"><span class="mr-2">Eric Zimmerman</span><a href="#eric-zimmerman" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
@@ -2498,10 +2762,170 @@
 
 <hr />
 
-<h1 id="13cubed">13Cubed</h1>
+<h1 id="13cubed-investigating-windows-endpoints">13Cubed (Investigating Windows Endpoints)</h1>
 
 <ul>
-  <li>https://www.youtube.com/@13Cubed/featured</li>
+  <li>https://www.13cubed.com/</li>
+</ul>
+
+<h2 id="alexiou-principle"><span class="mr-2">Alexiou principle</span><a href="#alexiou-principle" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>What question are you trying to answer?</li>
+  <li>What data do you need to answer that question?</li>
+  <li>How do you extract that data?</li>
+  <li>What does that data tell you?</li>
+</ul>
+
+<h2 id="setup"><span class="mr-2">Setup</span><a href="#setup" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>windows sandbox (ctr+R: optionalfeatures)</li>
+  <li>linux on windows (windows store)</li>
+  <li>sysinternals suite (windows store) -&gt; RDCMan(RDP manager)</li>
+  <li>powertoys (windows store)</li>
+  <li>FTK imager.</li>
+  <li>Arsenal Recon: Arsenal Image Mounter, Hibernation Recon.</li>
+  <li>Zimmerman tools. &amp; KAPE</li>
+  <li>NIRSOFT tools.</li>
+  <li>Other: Chainsaw, MemProcFS, PEstudio, RegRipper, TestDisk, thumbs_viewer.</li>
+</ul>
+
+<h2 id="windows-event-log"><span class="mr-2">Windows Event Log</span><a href="#windows-event-log" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>file: .evt</li>
+  <li>vista introduce evtx format.</li>
+  <li>ctl+R: \windows\system32\winevt\logs</li>
+  <li>Event Viewer -&gt; Windows Logs -&gt; Channels: Application, Security, Setup, System, Forwarded Events.</li>
+  <li>power shell: <code class="language-plaintext highlighter-rouge">Get-Help Get-WinEvent</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Get-WinEvent -LogName Security</code></li>
+  <li>Ntds. dit: a database that stores Active Directory data. (hashcat: can get the credentials)</li>
+  <li>application event ID 216: move Nsds.dit database, caused by volumn shadow copy, no worry.</li>
+  <li>RDP related logs: https://ponderthebits.com/</li>
+  <li>ZMtool -&gt; EvtxeCmd -&gt; Maps. <code class="language-plaintext highlighter-rouge">EvtxECmd.exe -d {logPath} --csv {outputPath}</code></li>
+  <li>ZMtool -&gt;  – vss options -&gt; powerful to get data from shadow volume.</li>
+  <li>https://github.com/BeanBagKing/BaselineLogging</li>
+  <li>https://nullsec.us/windows-baseline-logging/</li>
+  <li>Sysmon: addtion to event log, not default.</li>
+</ul>
+
+<h2 id="registry-1"><span class="mr-2">Registry</span><a href="#registry-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>https://dfir.ru/2020/10/03/exporting-registry-hives-from-a-live-system/</li>
+  <li>some may only stay in memory, others on disk as hive.</li>
+  <li>system hives: C:\Windows\System32\config, DEFAULT; SAM; SECURITY; SOFTWARE; SYSTEM.</li>
+  <li>HKEY_CURRENT_USER: NTUSR.DAT; usrClass.dat.</li>
+  <li>C:\Windows\appcompat\Programs\Amcache.hve</li>
+  <li>https://www.13cubed.com/downloads/windows_registry_cheat_sheet.pdf</li>
+  <li>keys and subkeys have last write time; but values in it do not have.</li>
+  <li>shellbag: even delete the path, shellbag still exists.</li>
+  <li>HKLM/SYSTEM/Select(current) -&gt; check which control set is using.</li>
+  <li>https://github.com/EricZimmerman/RECmd/blob/master/BatchExamples/Kroll_Batch.reb (filter out potentially irrelevant information from the Windows Registry)</li>
+  <li>regripper: another tool</li>
+</ul>
+
+<h2 id="evidence-of-execution-1"><span class="mr-2">Evidence of Execution</span><a href="#evidence-of-execution-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>two major type: 1. user experience. 2. backwards compatibility.</li>
+</ul>
+
+<h4 id="prefetch-1"><span class="mr-2">prefetch</span><a href="#prefetch-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>user experience</li>
+  <li>prefetch: speed up app start up. (monitor app for around 10 seconds, to see the resources it needs.)</li>
+  <li>GUI or CMD.</li>
+  <li>C:\Windows\Prefetch</li>
+  <li>name: {appName}-{8digitsHash}.pf</li>
+  <li>different hash may means same exe name in different locations or with different parameters.</li>
+  <li>sometimes parameters in hash calculation, not always.</li>
+  <li>created time -&gt; first execute; modified time -&gt; last execute.</li>
+  <li>default on desktop windows, not server.</li>
+  <li>last 8 time of execution is tracked in pf file, since windows 8.</li>
+  <li>32-bit app runs on 64-bit system, not reverse. so malware authors use 32-bit. at: windows/SysWOW64. 2 CMD pf files, one 32-bit.</li>
+  <li>ZM tool: PECmd.exe</li>
+  <li>after delete binary, prefetch still exists.</li>
+  <li>anti-forensic: delete prefetch. <code class="language-plaintext highlighter-rouge">sdelete *.pf</code> delete all prefetch.</li>
+  <li>sdelete-hash.pf left, in PECmd.exe, in “file referenced”, we can know what it deleted.</li>
+  <li>https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete</li>
+  <li>https://www.youtube.com/watch?v=f4RAtR_3zcs</li>
+</ul>
+
+<h4 id="shimcache"><span class="mr-2">Shimcache</span><a href="#shimcache" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>backwards compatibility</li>
+  <li>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache</li>
+  <li>used to be evidence of execution, before windows 10, not in windows 10/newer.</li>
+  <li>the higher on the list, the more recent it shimed.</li>
+  <li>same modified time, may mean same file just with different name.(eg. find renamed malware)</li>
+  <li>files viewd in window explorer, will be in the cache. NOT only when executed.</li>
+  <li>reboot computer will refresh shimcache.</li>
+  <li>ZM: AppCompatCacheParser.exe</li>
+</ul>
+
+<h4 id="amcache"><span class="mr-2">AmCache</span><a href="#amcache" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>https://www.ssi.gouv.fr/uploads/2019/01/anssi-coriin_2019-analysis_amcache.pdf</li>
+  <li>C:\Windows\appcompat\Programs\Amcache.hve</li>
+  <li>contain many program metadata. linkdate(compilation date)</li>
+  <li>can not use to proof execution.</li>
+  <li>InventoryApplication, InventoryApplicationFile, InventoryDriverBinary.</li>
+  <li>ZM: AmcacheParser.exe</li>
+</ul>
+
+<h4 id="pca-program-compatibility-assistant"><span class="mr-2">PCA (Program Compatibility Assistant)</span><a href="#pca-program-compatibility-assistant" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>very new, Windows 11 22H2</li>
+  <li>C:\Windows\appcompat\pca\PcaAppLaunchDic.txt</li>
+</ul>
+
+<h4 id="muicache"><span class="mr-2">MUICache</span><a href="#muicache" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache</li>
+  <li>ApplicationCompany, FriendlyAppName. (rename exe do not change them)</li>
+  <li>no MRU list, so no timestamp info.</li>
+  <li>per user artifact for gui program.</li>
+</ul>
+
+<h4 id="userassist-registry"><span class="mr-2">UserAssist Registry</span><a href="#userassist-registry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>Run counter, Focus Count.</li>
+  <li>https://imphash.medium.com/userassist-with-a-pinch-of-salt-as-an-evidence-of-execution-4dc4e9640a77</li>
+</ul>
+
+<h4 id="srum"><span class="mr-2">SRUM</span><a href="#srum" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>System Resource Utilization Monitor</li>
+  <li>C:\Windows\System32\sru\SRUDB.dat</li>
+  <li>ZM: SrumECmd.exe</li>
+</ul>
+
+<h2 id="persistentence"><span class="mr-2">persistentence</span><a href="#persistentence" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>BatchExamples/RegistryASEPs.reb (Auto Start Extensibility Points)</li>
+  <li>Process: Local Security Authority Process.</li>
+  <li>https://blog.netwrix.com/2021/11/30/extracting-password-hashes-from-the-ntds-dit-file/</li>
+  <li>ntdlutil</li>
+  <li>https://www.crowdstrike.com/cybersecurity-101/privilege-escalation</li>
+  <li>impacket below:</li>
+  <li>https://www.13cubed.com/downloads/impacket_exec_commands_cheat_sheet.pdf</li>
+  <li>https://www.13cubed.com/downloads/impacket_exec_commands_cheat_sheet_poster.pdf</li>
+  <li>MACB: Modified, Accessed, Changed ($MFT Modified), Birth (file creation time)</li>
+  <li>SumECmd.exe</li>
+  <li>User Access Logging (UAL)</li>
+</ul>
+
+<hr />
+
+<h1 id="13cubed-videos">13cubed videos</h1>
+
+<h2 id="thumbnail-forensic"><span class="mr-2">thumbnail forensic</span><a href="#thumbnail-forensic" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>tools: thumbsviewer, thumb cache.</li>
+  <li>thumbcache_xxx.db (xxx is the resolution)</li>
+</ul>
+
+<h2 id="malware-analysis"><span class="mr-2">malware analysis</span><a href="#malware-analysis" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2>
+<ul>
+  <li>IDA -&gt; plugin -&gt; OllyDumpEx</li>
+  <li>IDA -&gt; plugin -&gt; Scylla: IAT Autosearch</li>
 </ul>
 
 <hr />
