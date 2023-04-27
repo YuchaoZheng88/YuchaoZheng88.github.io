@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2023-04-24T12:53:30+08:00</updated>
+  <updated>2023-04-28T04:12:47+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,66 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>IDA Python</title>
+    <link href="/posts/IDA-Python/" rel="alternate" type="text/html" title="IDA Python" />
+    <published>2023-04-26T11:33:00+08:00</published>
+  
+    <updated>2023-04-28T04:02:24+08:00</updated>
+  
+    <id>/posts/IDA-Python/</id>
+    <content src="/posts/IDA-Python/" />
+    <author>
+      <name>Yuchao</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      PE format
+
+  https://github.com/corkami/pics/blob/master/binary/PE.png
+  https://github.com/corkami/pics/blob/master/binary/PE101.png
+  https://github.com/corkami/pics/blob/master/binary/PE102.png
+
+
+unit42
+
+  https://unit42.paloaltonetworks.com/tag/idapython/
+
+
+
+
+The Beginner’s Guide to IDAPython
+
+  by Alexander Hanel
+
+
+three modules
+
+  idc, idautils, idaapi.
+
+
+basics
+
+  ea=ide.get_screen_ea();...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -209,57 +269,6 @@ From book: Kali Linux Revealed
   WHoppiX -&amp;gt; WHAX -&amp;gt; BackTrack -&amp;gt; BackTrack 4 -&amp;gt; Kali.
   mobile: Kali NetHunter.
   cm...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>OSCP Command</title>
-    <link href="/posts/OSCP-commands/" rel="alternate" type="text/html" title="OSCP Command" />
-    <published>2022-07-09T11:33:00+08:00</published>
-  
-    <updated>2022-07-25T22:12:05+08:00</updated>
-  
-    <id>/posts/OSCP-commands/</id>
-    <content src="/posts/OSCP-commands/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="dev" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      From 0SCP-like Vulnhub boxes
-
-  https://www.vulnhub.com/
-
-
-Commands
-
-  service smbd restart &amp;amp;&amp;amp; dhclient eth0
-  tcpdump -nnttttAr wireless.cap
-  tcpdump -nnttttAi lo
-  aircrack-ng -w wordlist.txt wireless.cap
-  netstat -antp
-  nmap -p- -A -T5 {IP}
-  dirb {IP} -u {usr}:{passwd}
-  zsteg -a suspicious.png
-  john --show --format=Raw-MD5 hashfile
-  ssh admin@{IP} -p6464 -t "bash --noprofile"
-...
     </summary>
   
 

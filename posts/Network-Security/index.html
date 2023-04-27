@@ -1284,6 +1284,11 @@
         
         
         
+      <li><a href="/posts/IDA-Python/">IDA Python</a></li>
+      
+        
+        
+        
       <li><a href="/posts/Forensic/">Forensic</a></li>
       
         
@@ -1300,11 +1305,6 @@
         
         
       <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/OSCP-commands/">OSCP Command</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1626,36 +1626,6 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -1732,57 +1702,7 @@
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -1890,6 +1810,168 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2048,36 +2130,6 @@
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2118,6 +2170,9 @@
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
+      <a class="post-tag" href="/tags/forensic/">forensic</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
@@ -2134,9 +2189,6 @@
     
       
       <a class="post-tag" href="/tags/aws/">aws</a>
-    
-      
-      <a class="post-tag" href="/tags/bof/">bof</a>
     
 
     </div>
@@ -2190,6 +2242,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2586,7 +2651,7 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
       
       
       <div class="card">
-        <a href="/posts/BurpSuite-Lab/">
+        <a href="/posts/yara/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2594,13 +2659,13 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
 -->
 
 <em class="timeago small"
-    data-ts="1652153580"
+    data-ts="1652671980"
     
     >
-  2022-05-10
+  2022-05-16
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>BurpSuite Lab</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Yara</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2609,16 +2674,19 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
 
 
 
-                sql injection
+                install
+sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
+sudo apt install yara
 
-cheetsheet
-https://portswigger.net/web-security/sql-injection/cheat-sheet
 
-&#39;+OR+1=1--
-&#39;+UNION+SELECT+NULL,NULL--
+usage
+yara myfirstrule.yar somefile
 
--- find columns are compatible with string data
-&#39;+UNION+SELECT+&#39;abcd...
+
+write rules
+
+  https://yara.readthedocs.io/en/stable/writingrules.html
+  http...
               </p>
             </div>
           </div>
@@ -2644,10 +2712,10 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
   
 
   
-  <span class="btn btn-outline-primary disabled"
+  <a href="/posts/IDA-Python/" class="btn btn-outline-primary"
     prompt="Newer">
-    <p>-</p>
-  </span>
+    <p>IDA Python</p>
+  </a>
   
 
 </div>
@@ -3023,36 +3091,6 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
         
         
@@ -3129,57 +3167,7 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
     
   
     
@@ -3287,6 +3275,168 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3445,36 +3595,6 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3515,6 +3635,9 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
     
       
+      <a class="post-tag" href="/tags/forensic/">forensic</a>
+    
+      
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
     
       
@@ -3531,9 +3654,6 @@ https://portswigger.net/web-security/sql-injection/cheat-sheet
     
       
       <a class="post-tag" href="/tags/aws/">aws</a>
-    
-      
-      <a class="post-tag" href="/tags/bof/">bof</a>
     
 
     </div>
