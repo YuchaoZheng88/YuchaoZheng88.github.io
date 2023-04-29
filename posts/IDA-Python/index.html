@@ -57,7 +57,7 @@
 <meta name="twitter:site" content="@0xZEN2" />
 <meta name="twitter:creator" content="@Yuchao" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-04-28T04:02:24+08:00","datePublished":"2023-04-26T11:33:00+08:00","description":"PE format https://github.com/corkami/pics/blob/master/binary/PE.png https://github.com/corkami/pics/blob/master/binary/PE101.png https://github.com/corkami/pics/blob/master/binary/PE102.png","headline":"IDA Python","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/IDA-Python/"},"url":"/posts/IDA-Python/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Yuchao"},"dateModified":"2023-04-30T05:53:56+08:00","datePublished":"2023-04-26T11:33:00+08:00","description":"PE format https://github.com/corkami/pics/blob/master/binary/PE.png https://github.com/corkami/pics/blob/master/binary/PE101.png https://github.com/corkami/pics/blob/master/binary/PE102.png","headline":"IDA Python","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/IDA-Python/"},"url":"/posts/IDA-Python/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -580,6 +580,162 @@
       
 
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+
+    
 
     
 
@@ -659,12 +815,12 @@
 -->
 
 <em class="timeago"
-    data-ts="1682625744"
+    data-ts="1682805236"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
     >
-  2023-04-27
+  2023-04-29
 </em>
 
       </span>
@@ -690,7 +846,7 @@
 
 <!-- return element -->
 <span class="readtime" data-toggle="tooltip" data-placement="bottom"
-  title="146 words">
+  title="292 words">
   <em>1 min</em> read</span>
 
 
@@ -710,11 +866,6 @@
   <li>https://github.com/corkami/pics/blob/master/binary/PE102.png</li>
 </ul>
 
-<h1 id="unit42">unit42</h1>
-<ul>
-  <li>https://unit42.paloaltonetworks.com/tag/idapython/</li>
-</ul>
-
 <hr />
 
 <h1 id="the-beginners-guide-to-idapython">The Beginner’s Guide to IDAPython</h1>
@@ -722,7 +873,7 @@
   <li>by Alexander Hanel</li>
 </ul>
 
-<p>three modules</p>
+<h4 id="three-modules"><span class="mr-2">three modules</span><a href="#three-modules" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 <ul>
   <li>idc, idautils, idaapi.</li>
 </ul>
@@ -733,9 +884,11 @@
   <li><code class="language-plaintext highlighter-rouge">idc.get_inf_attr(INF_MIN_EA)</code></li>
   <li><code class="language-plaintext highlighter-rouge">idc.get_segm_name(ea)</code></li>
   <li><code class="language-plaintext highlighter-rouge">idc.generate_disasm_line(ea, 0)</code> flag 0: returns the displayed disassembly that IDA discovered during its analysis; flag 1: To disassembly a particularoffset and ignore IDA’s analysis.</li>
-  <li><code class="language-plaintext highlighter-rouge">idc.print_insn_mnem(ea)</code> result eg: lea, eg2: mov …</li>
+  <li><code class="language-plaintext highlighter-rouge">idc.print_insn_mnem(ea)</code> another way of above. result eg: lea, eg2: mov …</li>
+  <li><code class="language-plaintext highlighter-rouge">idaapi.decode_insn(ea)</code></li>
   <li><code class="language-plaintext highlighter-rouge">hex(idaapi.BADADDR) # output: 0xffffffffL</code> 32 bit bad address</li>
   <li><code class="language-plaintext highlighter-rouge">hex(idc.BADADDR) # output: 0xffffffffffffffff</code> 64 bit bad address</li>
+  <li><code class="language-plaintext highlighter-rouge">idc.get_operand_type(line, 0)</code> https://www.hex-rays.com/products/ida/support/idadoc/276.shtml</li>
 </ul>
 
 <h4 id="segments"><span class="mr-2">segments</span><a href="#segments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
@@ -755,13 +908,49 @@
   <li><code class="language-plaintext highlighter-rouge">for func in idautils.Functions(): print hex(func), idc.get_func_name(func)</code></li>
   <li><code class="language-plaintext highlighter-rouge">idautils.Functions(start_addr, end_addr)</code> search functions in range</li>
   <li><code class="language-plaintext highlighter-rouge">idc.get_func_name(ea)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">func = idaapi.get_func(ea); print "Start: 0x%x, End: 0x%x" % (func.startEA, func.endEA)</code> class idaapi.func_t</li>
+  <li><code class="language-plaintext highlighter-rouge">dir(func)</code> check how to use class returned above as idaapi.func_t</li>
+  <li><code class="language-plaintext highlighter-rouge">idc.get_next_func(ea); idc.get_prev_func(ea)</code> ea:  an address within the boundaries of the analyzed function</li>
+  <li><code class="language-plaintext highlighter-rouge">idc.get_func_attr(ea, attr)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">idautils.FuncItems(ea)</code> loop through address in function, in case jmp outside the function.</li>
+  <li><code class="language-plaintext highlighter-rouge">idc.get_func_attr(ea, FUNCATTR_FLAGS)</code> retrieve function flags.</li>
+  <li>9 flags: FUNC_NORET, FUNC_FAR, FUNC_LIB, FUNC_STATIC, FUNC_FRAME, FUNC_USERFAR, FUNC_HIDDEN, FUNC_THUNK, FUNC_BOTTOMBP.</li>
+  <li>a function can consist of multiple flags</li>
 </ul>
+
+<h4 id="instructions"><span class="mr-2">Instructions</span><a href="#instructions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<ul>
+  <li>get list of instruction address in a function: <code class="language-plaintext highlighter-rouge">dism_addr = list(idautils.FuncItems(here()))</code> note: instructions have different length.</li>
+  <li><code class="language-plaintext highlighter-rouge">for line in dism_addr: print hex(line), idc.generate_disasm_line(line, 0)</code> continue above</li>
+  <li><code class="language-plaintext highlighter-rouge">idc.next_head(ea)</code> next instruction, not next address. Similar <code class="language-plaintext highlighter-rouge">prev_instr = idc.prev_head(ea)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">dir(idaapi.cmd)</code> check the attributes of idaapi.cmd</li>
+</ul>
+
+<h4 id="operands"><span class="mr-2">Operands</span><a href="#operands" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+
+<h4 id="xrefs"><span class="mr-2">Xrefs</span><a href="#xrefs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="searching"><span class="mr-2">Searching</span><a href="#searching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="selecting-data"><span class="mr-2">Selecting Data</span><a href="#selecting-data" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="comments--renaming"><span class="mr-2">Comments &amp; Renaming</span><a href="#comments--renaming" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="accessing-raw-data"><span class="mr-2">Accessing Raw Data</span><a href="#accessing-raw-data" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="patching"><span class="mr-2">Patching</span><a href="#patching" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="input-and-output"><span class="mr-2">Input and Output</span><a href="#input-and-output" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="intel-pin-logger"><span class="mr-2">Intel Pin Logger</span><a href="#intel-pin-logger" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="batch-file-generation"><span class="mr-2">Batch File Generation</span><a href="#batch-file-generation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
+<h4 id="executing-scripts"><span class="mr-2">Executing Scripts</span><a href="#executing-scripts" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4></h4>
 
 <hr />
 
 <h1 id="the-ida-pro-book-the-unofficial-guide">The IDA Pro Book The Unofficial Guide</h1>
 <ul>
   <li>by Chris Eagle</li>
+</ul>
+
+<hr />
+
+<h1 id="unit42">unit42</h1>
+<ul>
+  <li>https://unit42.paloaltonetworks.com/tag/idapython/</li>
 </ul>
 
 <hr />
