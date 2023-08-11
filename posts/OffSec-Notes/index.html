@@ -1292,9 +1292,9 @@ display_usage
 4
 5
 6
-</pre></td><td class="rouge-code"><pre><span class="n">tag</span> <span class="o">=</span> <span class="s">'&lt;a href="https://www.offensive-security.com/blog"&gt;Blog&lt;/a&gt;'</span>
-<span class="n">start</span> <span class="o">=</span> <span class="s">"http"</span>
-<span class="n">end</span> <span class="o">=</span> <span class="s">"</span><span class="se">\"</span><span class="s">&gt;"</span>
+</pre></td><td class="rouge-code"><pre><span class="n">tag</span> <span class="o">=</span> <span class="sh">'</span><span class="s">&lt;a href=</span><span class="sh">"</span><span class="s">https://www.offensive-security.com/blog</span><span class="sh">"</span><span class="s">&gt;Blog&lt;/a&gt;</span><span class="sh">'</span>
+<span class="n">start</span> <span class="o">=</span> <span class="sh">"</span><span class="s">http</span><span class="sh">"</span>
+<span class="n">end</span> <span class="o">=</span> <span class="sh">"</span><span class="se">\"</span><span class="s">&gt;</span><span class="sh">"</span>
 <span class="n">url</span> <span class="o">=</span> <span class="n">tag</span><span class="p">[</span><span class="n">tag</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">start</span><span class="p">):</span><span class="n">tag</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">end</span><span class="p">)]</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -1316,17 +1316,17 @@ display_usage
 11
 12
 13
-</pre></td><td class="rouge-code"><pre><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
-<span class="n">myData</span> <span class="o">=</span> <span class="s">"I'm sample data to be written to a file"</span>
+<span class="n">myData</span> <span class="o">=</span> <span class="sh">"</span><span class="s">I</span><span class="sh">'</span><span class="s">m sample data to be written to a file</span><span class="sh">"</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="s">"data.txt"</span><span class="p">,</span> <span class="s">"a"</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">myData</span><span class="p">)</span>
 <span class="n">f</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -1453,6 +1453,11 @@ display_usage
         
         
         
+      <li><a href="/posts/Case-STOLEN-SZECHUAN-SAUCE/">Case Szechuan Sauce</a></li>
+      
+        
+        
+        
       <li><a href="/posts/IDA-Python/">IDA Python</a></li>
       
         
@@ -1469,11 +1474,6 @@ display_usage
         
         
       <li><a href="/posts/Network-Security/">Network Security</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1650,6 +1650,82 @@ display_usage
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1795,84 +1871,6 @@ display_usage
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1978,8 +1976,6 @@ display_usage
     
     
     
-    
-      
     
   
     
@@ -2138,8 +2134,6 @@ display_usage
     
     
     
-    
-      
     
   
     
@@ -2333,13 +2327,13 @@ display_usage
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/forensic/">forensic</a>
+    
+      
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
-    
-      
-      <a class="post-tag" href="/tags/forensic/">forensic</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
@@ -2411,6 +2405,19 @@ display_usage
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2780,51 +2787,6 @@ Commands
       
       
       <div class="card">
-        <a href="/posts/yara/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1652671980"
-    
-    >
-  2022-05-16
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Yara</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                install
-sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
-sudo apt install yara
-
-
-usage
-yara myfirstrule.yar somefile
-
-
-write rules
-
-  https://yara.readthedocs.io/en/stable/writingrules.html
-  http...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/Zero-Logon/">
           <div class="card-body">
             <!--
@@ -2856,6 +2818,47 @@ CVE-2020-1472
   AES-CFB8 with hard coded IV.
   https://github.com/SecuraBV/CVE-2020-1472, the POC
   https://githu...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/THM-Attacktive-Directory/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1652844780"
+    
+    >
+  2022-05-18
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>THM Attacktive Directory</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                install Impacket
+
+
+  https://github.com/SecureAuthCorp/impacket
+
+
+git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
+pip3 install -r /opt/impacket/requirements.txt
+cd /opt/impac...
               </p>
             </div>
           </div>
@@ -3115,6 +3118,82 @@ CVE-2020-1472
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3260,84 +3339,6 @@ CVE-2020-1472
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3443,8 +3444,6 @@ CVE-2020-1472
     
     
     
-    
-      
     
   
     
@@ -3603,8 +3602,6 @@ CVE-2020-1472
     
     
     
-    
-      
     
   
     
@@ -3798,13 +3795,13 @@ CVE-2020-1472
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/forensic/">forensic</a>
+    
+      
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
-    
-      
-      <a class="post-tag" href="/tags/forensic/">forensic</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>

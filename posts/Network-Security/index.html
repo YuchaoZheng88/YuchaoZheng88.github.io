@@ -1024,7 +1024,7 @@
 10
 11
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">socket</span>
-<span class="n">IP</span> <span class="o">=</span> <span class="s">"0.0.0.0"</span>
+<span class="n">IP</span> <span class="o">=</span> <span class="sh">"</span><span class="s">0.0.0.0</span><span class="sh">"</span>
 <span class="n">PORT</span> <span class="o">=</span> <span class="mi">9090</span>
 
 <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="nf">socket</span><span class="p">(</span><span class="n">socket</span><span class="p">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="p">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
@@ -1032,8 +1032,8 @@
 </span>
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
 	<span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span> <span class="o">=</span> <span class="n">sock</span><span class="p">.</span><span class="nf">recvfrom</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
-	<span class="nf">print</span><span class="p">(</span><span class="s">"Sender: {} and Port: {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
-	<span class="nf">print</span><span class="p">(</span><span class="s">"Received message: {}"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+	<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Sender: {} and Port: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">port</span><span class="p">))</span>
+	<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Received message: {}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>c</p>
@@ -1284,6 +1284,11 @@
         
         
         
+      <li><a href="/posts/Case-STOLEN-SZECHUAN-SAUCE/">Case Szechuan Sauce</a></li>
+      
+        
+        
+        
       <li><a href="/posts/IDA-Python/">IDA Python</a></li>
       
         
@@ -1300,11 +1305,6 @@
         
         
       <li><a href="/posts/Network-Security/">Network Security</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1481,6 +1481,82 @@
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1626,84 +1702,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1809,8 +1807,6 @@
     
     
     
-    
-      
     
   
     
@@ -1969,8 +1965,6 @@
     
     
     
-    
-      
     
   
     
@@ -2164,13 +2158,13 @@
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/forensic/">forensic</a>
+    
+      
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
-    
-      
-      <a class="post-tag" href="/tags/forensic/">forensic</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
@@ -2242,6 +2236,19 @@
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2651,7 +2658,7 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
       
       
       <div class="card">
-        <a href="/posts/yara/">
+        <a href="/posts/Zero-Logon/">
           <div class="card-body">
             <!--
   Date format snippet
@@ -2659,13 +2666,13 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
 -->
 
 <em class="timeago small"
-    data-ts="1652671980"
+    data-ts="1652758380"
     
     >
-  2022-05-16
+  2022-05-17
 </em>
 
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Yara</h3>
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Zero Logon CVE</h3>
             <div class="text-muted small">
               <p>
                 
@@ -2674,19 +2681,14 @@ sshpass -p raspberry ssh pi@10.10.10.48 &quot;sudo dd if=/dev/sdb | gzip -1 -&qu
 
 
 
-                install
-sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
-sudo apt install yara
+                Zero Logon
 
+CVE-2020-1472
 
-usage
-yara myfirstrule.yar somefile
-
-
-write rules
-
-  https://yara.readthedocs.io/en/stable/writingrules.html
-  http...
+  abuses a feature within MS-NRPC (Microsoft NetLogon Remote Protocol)
+  AES-CFB8 with hard coded IV.
+  https://github.com/SecuraBV/CVE-2020-1472, the POC
+  https://githu...
               </p>
             </div>
           </div>
@@ -2946,6 +2948,82 @@ write rules
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -3091,84 +3169,6 @@ write rules
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3274,8 +3274,6 @@ write rules
     
     
     
-    
-      
     
   
     
@@ -3434,8 +3432,6 @@ write rules
     
     
     
-    
-      
     
   
     
@@ -3629,13 +3625,13 @@ write rules
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/forensic/">forensic</a>
+    
+      
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
-    
-      
-      <a class="post-tag" href="/tags/forensic/">forensic</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>

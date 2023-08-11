@@ -821,7 +821,7 @@ wfuzz -H "Cookie: TrackingId=qi1dv3ezFEfn1WHY' || (SELECT CASE WHEN (SUBSTR(pass
 	<span class="nb">document</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;img src="/resources/images/tracker.gif?searchTerms=</span><span class="dl">'</span><span class="o">+</span><span class="nx">query</span><span class="o">+</span><span class="dl">'</span><span class="s1">"&gt;</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nc">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">)).</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">search</span><span class="dl">'</span><span class="p">);</span>
-<span class="nf">if</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
 	<span class="nf">trackSearch</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
@@ -844,7 +844,7 @@ wfuzz -H "Cookie: TrackingId=qi1dv3ezFEfn1WHY' || (SELECT CASE WHEN (SUBSTR(pass
     <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">searchMessage</span><span class="dl">'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">query</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">(</span><span class="k">new</span> <span class="nc">URLSearchParams</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">)).</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">search</span><span class="dl">'</span><span class="p">);</span>
-<span class="nf">if</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">query</span><span class="p">)</span> <span class="p">{</span>
     <span class="nf">doSearchQuery</span><span class="p">(</span><span class="nx">query</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -862,7 +862,7 @@ wfuzz -H "Cookie: TrackingId=qi1dv3ezFEfn1WHY' || (SELECT CASE WHEN (SUBSTR(pass
 4
 </pre></td><td class="rouge-code"><pre><span class="nf">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">hashchange</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="nf">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">section.blog-list h2:contains(</span><span class="dl">'</span> <span class="o">+</span> <span class="nf">decodeURIComponent</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">)</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nf">if </span><span class="p">(</span><span class="nx">post</span><span class="p">)</span> <span class="nx">post</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">scrollIntoView</span><span class="p">();</span>
+    <span class="k">if </span><span class="p">(</span><span class="nx">post</span><span class="p">)</span> <span class="nx">post</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nf">scrollIntoView</span><span class="p">();</span>
 <span class="p">});</span>
 </pre></td></tr></tbody></table></code></div></div>
 
@@ -1095,6 +1095,11 @@ Possible values:</li>
         
         
         
+      <li><a href="/posts/Case-STOLEN-SZECHUAN-SAUCE/">Case Szechuan Sauce</a></li>
+      
+        
+        
+        
       <li><a href="/posts/IDA-Python/">IDA Python</a></li>
       
         
@@ -1111,11 +1116,6 @@ Possible values:</li>
         
         
       <li><a href="/posts/Network-Security/">Network Security</a></li>
-      
-        
-        
-        
-      <li><a href="/posts/CPP-the-Cherno/">C++ The Cherno</a></li>
       
     </ul>
   </div> <!-- #access-lastmod -->
@@ -1292,6 +1292,82 @@ Possible values:</li>
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1437,84 +1513,6 @@ Possible values:</li>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1620,8 +1618,6 @@ Possible values:</li>
     
     
     
-    
-      
     
   
     
@@ -1780,8 +1776,6 @@ Possible values:</li>
     
     
     
-    
-      
     
   
     
@@ -1975,13 +1969,13 @@ Possible values:</li>
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/forensic/">forensic</a>
+    
+      
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
-    
-      
-      <a class="post-tag" href="/tags/forensic/">forensic</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>
@@ -2045,6 +2039,19 @@ Possible values:</li>
 
 
 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
   
@@ -2409,54 +2416,6 @@ Possible values:</li>
       
       
       <div class="card">
-        <a href="/posts/yara/">
-          <div class="card-body">
-            <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/timeago.js
--->
-
-<em class="timeago small"
-    data-ts="1652671980"
-    
-    >
-  2022-05-16
-</em>
-
-            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Yara</h3>
-            <div class="text-muted small">
-              <p>
-                
-
-
-
-
-
-                install
-1
-2
-sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
-sudo apt install yara
-
-
-usage
-1
-yara myfirstrule.yar somefile
-
-
-write rules
-
-  https://yara.readthedocs.io/en/stable/writingrules.html
-...
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      
-      
-      <div class="card">
         <a href="/posts/Zero-Logon/">
           <div class="card-body">
             <!--
@@ -2488,6 +2447,50 @@ CVE-2020-1472
   AES-CFB8 with hard coded IV.
   https://github.com/SecuraBV/CVE-2020-1472, the POC
   https://githu...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/THM-Attacktive-Directory/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1652844780"
+    
+    >
+  2022-05-18
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>THM Attacktive Directory</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                install Impacket
+
+
+  https://github.com/SecureAuthCorp/impacket
+
+
+1
+2
+3
+git clone https://github.com/SecureAuthCorp/impacket.git /opt/impacket
+pip3 install -r /opt/impacket/requirements.txt
+cd /opt...
               </p>
             </div>
           </div>
@@ -2747,6 +2750,82 @@ CVE-2020-1472
     
     
     
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2892,84 +2971,6 @@ CVE-2020-1472
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -3075,8 +3076,6 @@ CVE-2020-1472
     
     
     
-    
-      
     
   
     
@@ -3235,8 +3234,6 @@ CVE-2020-1472
     
     
     
-    
-      
     
   
     
@@ -3430,13 +3427,13 @@ CVE-2020-1472
       <a class="post-tag" href="/tags/htb/">htb</a>
     
       
+      <a class="post-tag" href="/tags/forensic/">forensic</a>
+    
+      
       <a class="post-tag" href="/tags/linux/">linux</a>
     
       
       <a class="post-tag" href="/tags/burpsuite/">burpsuite</a>
-    
-      
-      <a class="post-tag" href="/tags/forensic/">forensic</a>
     
       
       <a class="post-tag" href="/tags/jekyll/">jekyll</a>

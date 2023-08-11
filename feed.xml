@@ -4,7 +4,7 @@
   <id>/</id>
   <title>Yuchao Toolbox</title>
   <subtitle>A blog to save the my learning notes with tags, easy to search.</subtitle>
-  <updated>2023-04-30T05:54:55+08:00</updated>
+  <updated>2023-08-11T12:51:47+08:00</updated>
   <author>
     <name>Yuchao</name>
     <uri>/</uri>
@@ -17,6 +17,66 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Case Szechuan Sauce</title>
+    <link href="/posts/Case-STOLEN-SZECHUAN-SAUCE/" rel="alternate" type="text/html" title="Case Szechuan Sauce" />
+    <published>2023-08-11T11:33:00+08:00</published>
+  
+    <updated>2023-08-11T12:49:54+08:00</updated>
+  
+    <id>/posts/Case-STOLEN-SZECHUAN-SAUCE/</id>
+    <content src="/posts/Case-STOLEN-SZECHUAN-SAUCE/" />
+    <author>
+      <name>Johnny</name>
+    </author>
+
+  
+    
+    <category term="sec" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Info
+
+https://dfirmadness.com/the-stolen-szechuan-sauce/
+
+Methods
+
+Registry
+``` some command ```
+
+
+$I30 filter file “From Slack”
+``` MFTECmd -f {$I30 path} --csv {output folder} --csvf {output file name}  ```
+
+
+Findings
+
+DESKTOP-SDN1RPT-Protected Files
+- find aaaa
+- find bbbb
+
+
+DC01-ProtectedFiles
+- find cccc
+- find dddd
+
+
+
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -212,60 +272,6 @@ e5
   code compile to .obj file, linker them to .exe
   VS error list is garbage. Use Output window.
   Declaration VS Definition. Linker wiil find...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>OffSecNotes</title>
-    <link href="/posts/OffSec-Notes/" rel="alternate" type="text/html" title="OffSecNotes" />
-    <published>2022-08-25T11:33:00+08:00</published>
-  
-    <updated>2023-03-27T02:24:21+08:00</updated>
-  
-    <id>/posts/OffSec-Notes/</id>
-    <content src="/posts/OffSec-Notes/" />
-    <author>
-      <name>Yuchao</name>
-    </author>
-
-  
-    
-    <category term="sec" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      Intro
-
-  The notes are from offensive Security official traning.
-  Must finish before: 2023-09-20.
-  PEN-103 (Kali Linux Revealed) + 1 KLCP exam attempt
-  PEN-210 (Offensive Security Wireless Attacks) + 1 OSWP exam attempt
-
-
-
-
-PEN-103 (KLCP)
-
-From book: Kali Linux Revealed
-
-1. About
-
-
-  Johnny Long
-  WHoppiX -&amp;gt; WHAX -&amp;gt; BackTrack -&amp;gt; BackTrack 4 -&amp;gt; Kali.
-  mobile: Kali NetHunter.
-  cm...
     </summary>
   
 

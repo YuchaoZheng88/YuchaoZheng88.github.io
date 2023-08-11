@@ -1,6 +1,21 @@
 [
   
   {
+    "title": "Case Szechuan Sauce",
+    "url": "/posts/Case-STOLEN-SZECHUAN-SAUCE/",
+    "categories": "sec",
+    "tags": "forensic, windows",
+    "date": "2023-08-11 11:33:00 +0800",
+    
+
+
+
+
+
+    "snippet": "Infohttps://dfirmadness.com/the-stolen-szechuan-sauce/MethodsRegistry``` some command ```$I30 filter file “From Slack”``` MFTECmd -f {$I30 path} --csv {output folder} --csvf {output file name}  ```FindingsDESKTOP-SDN1RPT-Protected Files- find aaaa- find bbbbDC01-ProtectedFiles- find cccc- find dddd"
+  },
+  
+  {
     "title": "IDA Python",
     "url": "/posts/IDA-Python/",
     "categories": "sec",
